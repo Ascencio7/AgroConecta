@@ -1,8 +1,8 @@
-sv.edu.agroconecta.app-pngs-0 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\generated\res\pngs\debug
-sv.edu.agroconecta.app-res-1 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\generated\res\processDebugGoogleServices
-sv.edu.agroconecta.app-updated_navigation_xml-2 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\generated\updated_navigation_xml\debug
-sv.edu.agroconecta.app-packageDebugResources-3 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-sv.edu.agroconecta.app-packageDebugResources-4 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-sv.edu.agroconecta.app-debug-5 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\build\intermediates\merged_res\debug\mergeDebugResources
-sv.edu.agroconecta.app-debug-6 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\src\debug\res
-sv.edu.agroconecta.app-main-7 C:\Users\samue\Downloads\AgroConecta-master final\AgroConecta-fixed2\app\src\main\res
+sv.edu.agroconecta.app-pngs-0 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\pngs\debug
+sv.edu.agroconecta.app-res-1 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices
+sv.edu.agroconecta.app-updated_navigation_xml-2 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\updated_navigation_xml\debug
+sv.edu.agroconecta.app-packageDebugResources-3 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+sv.edu.agroconecta.app-packageDebugResources-4 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+sv.edu.agroconecta.app-debug-5 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\merged_res\debug\mergeDebugResources
+sv.edu.agroconecta.app-debug-6 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\debug\res
+sv.edu.agroconecta.app-main-7 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res

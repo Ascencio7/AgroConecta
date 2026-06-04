@@ -2,36 +2,39 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorAgregarEditar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_primario"
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutAgregarEditar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/crema"
         android:orientation="vertical"
-        android:background="@color/crema">
+        android:paddingBottom="72dp">
 
         <!-- HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@color/verde_primario"
-            android:paddingTop="12dp"
-            android:paddingBottom="14dp"
-            android:paddingHorizontal="20dp"
+            android:elevation="8dp"
             android:gravity="center_vertical"
-            android:elevation="8dp">
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="14dp">
 
             <ImageView
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:src="@drawable/logoapp"
-                android:scaleType="fitCenter"
                 android:layout_marginEnd="12dp"
-                android:contentDescription="Logo"/>
+                android:contentDescription="Logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logoapp" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -45,7 +48,7 @@
                     android:text="AgroConecta"
                     android:textColor="@color/blanco"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtTitulo"
@@ -53,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:text="Gestionar Producto"
                     android:textColor="#AAFFCC"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -64,9 +67,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="90dp"
-                android:clipToPadding="false">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -79,9 +80,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
+                        app:cardBackgroundColor="@color/blanco"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp"
-                        app:cardBackgroundColor="@color/blanco">
+                        app:cardElevation="2dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -92,55 +93,57 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
                                 android:text="DATOS DEL PRODUCTO"
-                                android:textSize="11sp"
-                                android:textStyle="bold"
                                 android:textColor="@color/texto_secundario"
-                                android:layout_marginBottom="16dp"/>
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
 
                             <com.google.android.material.textfield.TextInputLayout
+                                style="@style/TextInputOutlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Nombre del producto"
                                 android:layout_marginBottom="12dp"
-                                style="@style/TextInputOutlined">
+                                android:hint="Nombre del producto">
+
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etNombre"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="textCapWords"/>
+                                    android:inputType="textCapWords" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputLayout
+                                style="@style/TextInputOutlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Descripción"
                                 android:layout_marginBottom="12dp"
-                                style="@style/TextInputOutlined">
+                                android:hint="Descripción">
+
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etDescripcion"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:gravity="top"
                                     android:inputType="textMultiLine"
-                                    android:minLines="3"
-                                    android:gravity="top"/>
+                                    android:minLines="3" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
                                 android:text="CATEGORÍA"
-                                android:textSize="11sp"
-                                android:textStyle="bold"
                                 android:textColor="@color/texto_secundario"
-                                android:layout_marginBottom="8dp"/>
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
 
                             <Spinner
                                 android:id="@+id/spCategoria"
                                 android:layout_width="match_parent"
                                 android:layout_height="54dp"
                                 android:background="@drawable/bg_input"
-                                android:paddingHorizontal="12dp"/>
+                                android:paddingHorizontal="12dp" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -149,9 +152,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
+                        app:cardBackgroundColor="@color/blanco"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp"
-                        app:cardBackgroundColor="@color/blanco">
+                        app:cardElevation="2dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -162,11 +165,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
                                 android:text="PRECIO Y EXISTENCIA"
-                                android:textSize="11sp"
-                                android:textStyle="bold"
                                 android:textColor="@color/texto_secundario"
-                                android:layout_marginBottom="16dp"/>
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -174,31 +177,33 @@
                                 android:orientation="horizontal">
 
                                 <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/TextInputOutlined"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:hint="Precio ($)"
                                     android:layout_marginEnd="6dp"
-                                    style="@style/TextInputOutlined">
+                                    android:layout_weight="1"
+                                    android:hint="Precio ($)">
+
                                     <com.google.android.material.textfield.TextInputEditText
                                         android:id="@+id/etPrecio"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:inputType="numberDecimal"/>
+                                        android:inputType="numberDecimal" />
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/TextInputOutlined"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:hint="Existencia"
                                     android:layout_marginStart="6dp"
-                                    style="@style/TextInputOutlined">
+                                    android:layout_weight="1"
+                                    android:hint="Existencia">
+
                                     <com.google.android.material.textfield.TextInputEditText
                                         android:id="@+id/etExistencia"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:inputType="number"/>
+                                        android:inputType="number" />
                                 </com.google.android.material.textfield.TextInputLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -208,9 +213,9 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/blanco"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp"
-                        app:cardBackgroundColor="@color/blanco">
+                        app:cardElevation="2dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -221,35 +226,37 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
                                 android:text="INFORMACIÓN ADICIONAL"
-                                android:textSize="11sp"
-                                android:textStyle="bold"
                                 android:textColor="@color/texto_secundario"
-                                android:layout_marginBottom="16dp"/>
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
 
                             <com.google.android.material.textfield.TextInputLayout
+                                style="@style/TextInputOutlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="URL de imagen"
                                 android:layout_marginBottom="12dp"
-                                style="@style/TextInputOutlined">
+                                android:hint="URL de imagen">
+
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etImagenUrl"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="textUri"/>
+                                    android:inputType="textUri" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputLayout
+                                style="@style/TextInputOutlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="ID Vendedor"
-                                style="@style/TextInputOutlined">
+                                android:hint="ID Vendedor">
+
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etUsuarioId"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="number"/>
+                                    android:inputType="number" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -262,30 +269,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:padding="20dp"
                 android:background="@color/crema"
-                android:elevation="8dp">
+                android:elevation="8dp"
+                android:padding="20dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGuardar"
+                    style="@style/BtnPrimario"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
-                    android:text="Guardar Producto"
-                    style="@style/BtnPrimario"/>
+                    android:text="Guardar Producto" />
             </LinearLayout>
 
         </FrameLayout>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/admin_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
     </LinearLayout>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavAdmin"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutAgregarEditar"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/admin_nav_menu" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

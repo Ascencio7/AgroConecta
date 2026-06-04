@@ -9,10 +9,12 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutAddProductoVendedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/crema">
+        android:background="@color/crema"
+        android:paddingBottom="72dp">
 
         <!-- HEADER -->
         <LinearLayout
@@ -211,18 +213,20 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavVendedorAdd"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/seller_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
-
     </LinearLayout>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavVendedorAdd"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutAddProductoVendedor"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/seller_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

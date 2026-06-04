@@ -3969,6 +3969,7 @@ int id contiguous 0x7f0800c5
 int id continuousVelocity 0x7f0800c6
 int id coordinator 0x7f0800c7
 int id coordinatorAdmin 0x7f0800c8
+int id coordinatorAgregarEditar 0x7f080312
 int id coordinatorAgregarProducto 0x7f0800c9
 int id coordinatorEditarUsuario 0x7f0800ca
 int id coordinatorMain 0x7f0800cb
@@ -4131,6 +4132,17 @@ int id line1 0x7f080167
 int id line2 0x7f080168
 int id line3 0x7f080169
 int id linear 0x7f08016a
+int id linearLayout2 0x7f080313
+int id linearLayoutAddProductoVendedor 0x7f080315
+int id linearLayoutAgregarEditar 0x7f080316
+int id linearLayoutCrearUsuario 0x7f080317
+int id linearLayoutEditarUsuario 0x7f080318
+int id linearLayoutMain 0x7f080319
+int id linearLayoutProductoDetalle 0x7f08031a
+int id linearLayoutProductosAdmin 0x7f08031b
+int id linearLayoutReportes 0x7f08031c
+int id linearLayoutUsuarios 0x7f08031d
+int id linearLayoutVendedor 0x7f08031e
 int id listMode 0x7f08016b
 int id list_item 0x7f08016c
 int id llCategorias 0x7f08016d

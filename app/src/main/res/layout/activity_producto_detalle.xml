@@ -8,9 +8,11 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutProductoDetalle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="72dp">
 
         <!-- HEADER ESTILO APP -->
     <LinearLayout
@@ -411,17 +413,20 @@
             </LinearLayout>
         </ScrollView>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
     </LinearLayout>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutProductoDetalle"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

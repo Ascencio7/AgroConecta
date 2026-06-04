@@ -119,6 +119,7 @@ id cbTarjeta
 id cbTransferencia
 id contenedorMensajes
 id coordinatorAdmin
+id coordinatorAgregarEditar
 id coordinatorAgregarProducto
 id coordinatorEditarUsuario
 id coordinatorMain
@@ -166,6 +167,17 @@ id layoutContact
 id line1
 id line2
 id line3
+id linearLayout2
+id linearLayoutAddProductoVendedor
+id linearLayoutAgregarEditar
+id linearLayoutCrearUsuario
+id linearLayoutEditarUsuario
+id linearLayoutMain
+id linearLayoutProductoDetalle
+id linearLayoutProductosAdmin
+id linearLayoutReportes
+id linearLayoutUsuarios
+id linearLayoutVendedor
 id llCategorias
 id llFincas
 id mapFragment

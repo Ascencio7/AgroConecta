@@ -91,7 +91,7 @@
     </style>
 
     <!-- BottomNav Restaurado al código funcional -->
-    <style name="Widget.App.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemIconTint">@color/bottom_nav_color</item>
         <item name="itemTextColor">@color/bottom_nav_color</item>
         <item name="itemIconSize">22dp</item>

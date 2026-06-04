@@ -9,10 +9,12 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/crema">
+        android:background="@color/crema"
+        android:paddingBottom="72dp">
 
         <!-- HEADER FIJO -->
         <LinearLayout
@@ -111,19 +113,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <!-- BOTTOM NAVIGATION BAR -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
-
     </LinearLayout>
+
+    <!-- BOTTOM NAVIGATION BAR -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutMain"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/bottom_nav_menu" />
 
     <!-- CHAT FLOTANTE -->
     <include layout="@layout/chat_flotante"/>

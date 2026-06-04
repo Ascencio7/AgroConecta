@@ -114,7 +114,7 @@
         <item name="titleTextColor">@color/blanco</item>
         <item name="navigationIconTint">@color/blanco</item>
     </style>
-    <style name="Widget.App.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemIconTint">@color/bottom_nav_color</item>
         <item name="itemTextColor">@color/bottom_nav_color</item>
         <item name="itemIconSize">22dp</item>

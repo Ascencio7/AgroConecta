@@ -9,10 +9,12 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutEditarUsuario"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/crema">
+        android:background="@color/crema"
+        android:paddingBottom="72dp">
 
         <!-- HEADER -->
         <LinearLayout
@@ -57,7 +59,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="624dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -69,9 +71,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/blanco"
                     app:cardCornerRadius="24dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="@color/blanco">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -82,113 +84,120 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="EDITAR PERFIL"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/verde_primario"
+                            android:layout_marginBottom="20dp"
                             android:letterSpacing="0.05"
-                            android:layout_marginBottom="20dp"/>
+                            android:text="EDITAR PERFIL"
+                            android:textColor="@color/verde_primario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
 
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nombre completo"
                             android:layout_marginBottom="16dp"
-                            style="@style/TextInputOutlined">
+                            android:hint="Nombre completo">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etNombre"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textCapWords"
-                                android:textColor="@color/texto_primario"/>
+                                android:textColor="@color/texto_primario" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Correo electrónico"
                             android:layout_marginBottom="16dp"
-                            style="@style/TextInputOutlined">
+                            android:hint="Correo electrónico">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etCorreo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textEmailAddress"
-                                android:textColor="@color/texto_primario"/>
+                                android:textColor="@color/texto_primario" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Teléfono"
                             android:layout_marginBottom="20dp"
-                            style="@style/TextInputOutlined">
+                            android:hint="Teléfono">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etTelefono"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="phone"
-                                android:textColor="@color/texto_primario"/>
+                                android:textColor="@color/texto_primario" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
+                            android:layout_marginBottom="24dp"
                             android:gravity="center_vertical"
-                            android:layout_marginBottom="24dp">
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
+
                                 <TextView
                                     android:id="@+id/txtEstadoLabel"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Estado del usuario"
+                                    android:textColor="@color/texto_primario"
                                     android:textSize="14sp"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/texto_primario"/>
+                                    android:textStyle="bold" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Permitir acceso al sistema"
-                                    android:textSize="12sp"
-                                    android:textColor="@color/texto_tenue"/>
+                                    android:textColor="@color/texto_tenue"
+                                    android:textSize="12sp" />
                             </LinearLayout>
+
                             <com.google.android.material.materialswitch.MaterialSwitch
                                 android:id="@+id/switchEstado"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:thumbTint="@color/verde_primario"
-                                app:trackTint="@color/verde_tenue"/>
+                                app:trackTint="@color/verde_tenue" />
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#EEEEEE"
-                            android:layout_marginBottom="24dp"/>
+                            android:layout_marginBottom="24dp"
+                            android:background="#EEEEEE" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="8dp">
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnCancelar"
+                                style="@style/Widget.Material3.Button.TonalButton"
                                 android:layout_width="0dp"
                                 android:layout_height="54dp"
-                                android:layout_weight="1"
                                 android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
                                 android:text="CANCELAR"
                                 android:textColor="@color/texto_secundario"
                                 android:textSize="13sp"
                                 app:backgroundTint="@color/crema_medio"
-                                app:cornerRadius="14dp"
-                                style="@style/Widget.Material3.Button.TonalButton"/>
+                                app:cornerRadius="14dp" />
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnGuardar"
@@ -196,11 +205,11 @@
                                 android:layout_height="54dp"
                                 android:layout_weight="1"
                                 android:text="GUARDAR"
-                                android:textStyle="bold"
                                 android:textColor="@color/blanco"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
                                 app:backgroundTint="@color/verde_primario"
-                                app:cornerRadius="14dp"/>
+                                app:cornerRadius="14dp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -209,17 +218,20 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/admin_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
-
     </LinearLayout>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavAdmin"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutEditarUsuario"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/admin_nav_menu" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

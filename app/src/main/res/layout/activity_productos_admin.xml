@@ -9,10 +9,12 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/linearLayoutProductosAdmin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/crema">
+        android:background="@color/crema"
+        android:paddingBottom="72dp">
 
         <!-- HEADER -->
         <LinearLayout
@@ -132,19 +134,9 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-        <!-- BARRA DE NAVEGACIÓN -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            android:background="@color/blanco"
-            android:elevation="16dp"
-            app:menu="@menu/admin_nav_menu"
-            app:labelVisibilityMode="labeled"
-            style="@style/Widget.App.BottomNavigationView"/>
-
     </LinearLayout>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregarProducto"
@@ -157,5 +149,19 @@
         app:backgroundTint="@color/verde_primario"
         app:tint="@color/blanco"
         android:contentDescription="Agregar producto"/>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavAdmin"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutProductosAdmin"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/admin_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

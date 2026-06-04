@@ -117,6 +117,7 @@ int id cbTarjeta 0x0
 int id cbTransferencia 0x0
 int id contenedorMensajes 0x0
 int id coordinatorAdmin 0x0
+int id coordinatorAgregarEditar 0x0
 int id coordinatorAgregarProducto 0x0
 int id coordinatorEditarUsuario 0x0
 int id coordinatorMain 0x0
@@ -164,6 +165,17 @@ int id layoutContact 0x0
 int id line1 0x0
 int id line2 0x0
 int id line3 0x0
+int id linearLayout2 0x0
+int id linearLayoutAddProductoVendedor 0x0
+int id linearLayoutAgregarEditar 0x0
+int id linearLayoutCrearUsuario 0x0
+int id linearLayoutEditarUsuario 0x0
+int id linearLayoutMain 0x0
+int id linearLayoutProductoDetalle 0x0
+int id linearLayoutProductosAdmin 0x0
+int id linearLayoutReportes 0x0
+int id linearLayoutUsuarios 0x0
+int id linearLayoutVendedor 0x0
 int id llCategorias 0x0
 int id llFincas 0x0
 int id mapFragment 0x0
