@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Panel de chat -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/panelChat"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="84dp"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="24dp"
+        app:cardBackgroundColor="@color/blanco">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/verde_primario"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="🤖"
+                    android:textSize="22sp"
+                    android:background="@drawable/bg_avatar_circle"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="Asistente AgroConecta"
+                    android:textColor="@color/blanco"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnCerrarChat"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Cerrar"
+                    app:tint="@color/blanco"/>
+            </LinearLayout>
+
+            <!-- Mensajes -->
+            <ScrollView
+                android:id="@+id/scrollChat"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/crema"
+                android:padding="16dp">
+                <LinearLayout
+                    android:id="@+id/contenedorMensajes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </ScrollView>
+
+            <!-- Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@color/blanco"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etMensaje"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Pregunta algo..."
+                    android:background="@drawable/bg_input"
+                    android:paddingHorizontal="16dp"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="text"
+                    android:importantForAutofill="no"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnEnviar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_send"
+                    app:fabSize="mini"
+                    app:backgroundTint="@color/verde_primario"
+                    app:tint="@color/blanco"
+                    android:contentDescription="Enviar"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- FAB Asistente Circular (Subido un poco más) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="320dp"
+        android:src="@android:drawable/ic_dialog_info"
+        app:backgroundTint="@color/dorado_medio"
+        app:tint="@color/carbon"
+        app:elevation="12dp"
+        android:contentDescription="Asistente IA"/>
+
+</FrameLayout>

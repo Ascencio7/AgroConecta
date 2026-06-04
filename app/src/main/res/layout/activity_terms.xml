@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2EDE4"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logoapp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Logo AgroConecta" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Términos y Condiciones"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#25632D"
+        android:layout_marginTop="16dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_style"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#1E293B"
+            android:textSize="14sp"
+            android:text="Bienvenido a AgroConecta. Al utilizar nuestra aplicación, usted acepta los siguientes términos:\n\n1. Uso de la cuenta: Usted es responsable de mantener la confidencialidad de sus credenciales.\n\n2. Privacidad: Sus datos personales serán tratados de acuerdo a nuestra política de privacidad para mejorar su experiencia comercial.\n\n3. Propósito: AgroConecta facilita el comercio justo entre agricultores y compradores.\n\n4. Responsabilidad: Nos reservamos el derecho de suspender cuentas que infrinjan las normas de respeto y legalidad.\n\n5. Actualizaciones: Estos términos pueden cambiar para adaptarse a nuevas regulaciones o funcionalidades." />
+    </androidx.core.widget.NestedScrollView>
+
+    <CheckBox
+        android:id="@+id/cbAcepto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acepto los términos y condiciones"
+        android:layout_marginTop="16dp"
+        android:textColor="#1E293B" />
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Siguiente"
+        android:enabled="false"
+        android:backgroundTint="#25632D"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

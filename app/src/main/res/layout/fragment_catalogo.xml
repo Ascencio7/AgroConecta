@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/crema">
+
+    <!-- Buscador Mejorado (Sin doble icono) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/blanco">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewCatalogo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            app:iconifiedByDefault="false"
+            app:queryHint="Buscar productos..."
+            app:searchIcon="@android:drawable/ic_menu_search"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Chips categorías -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="8dp">
+        <LinearLayout
+            android:id="@+id/llCategorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+    </HorizontalScrollView>
+
+    <!-- Header lista -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NUESTROS PRODUCTOS"
+            android:textSize="10sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold"
+            android:textColor="@color/texto_secundario"/>
+        <TextView
+            android:id="@+id/tvContador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/verde_primario"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCatalogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"/>
+
+        <TextView
+            android:id="@+id/tvNoResultados"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="PRODUCTO NO ENCONTRADO"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_tenue"
+            android:visibility="gone"
+            android:paddingBottom="100dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>

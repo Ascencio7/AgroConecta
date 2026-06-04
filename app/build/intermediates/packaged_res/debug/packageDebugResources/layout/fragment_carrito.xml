@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/crema">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI LISTA DE COMPRAS"
+        android:textSize="11sp"
+        android:letterSpacing="0.12"
+        android:textStyle="bold"
+        android:textColor="@color/texto_secundario"
+        android:layout_margin="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCarritoTab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="12dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"/>
+
+    <!-- RESUMEN DE PAGO MEJORADO -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="16dp"
+        android:layout_marginBottom="-16dp"
+        app:cardBackgroundColor="@color/blanco">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="40dp">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:background="@color/gris_borde"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Subtotal estimado" android:textSize="14sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:id="@+id/tvResumenSubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textSize="14sp" android:textColor="@color/texto_primario" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IVA (13%)" android:textSize="14sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:id="@+id/tvResumenIva" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textSize="14sp" android:textColor="@color/texto_primario" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gris_borde" android:layout_marginBottom="16dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TOTAL A PAGAR" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                <TextView android:id="@+id/tvResumenTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/verde_primario"/>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmarTab"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="CONFIRMAR PEDIDO"
+                android:textColor="@color/blanco"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="18dp"
+                app:backgroundTint="@color/verde_primario"
+                app:icon="@android:drawable/ic_input_add"
+                app:iconGravity="textStart"
+                app:iconTint="@color/blanco"
+                android:elevation="4dp"
+                style="@style/Widget.Material3.Button"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

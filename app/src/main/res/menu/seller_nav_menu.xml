@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_seller_products"
+        android:icon="@drawable/ic_nav_catalogo"
+        android:title="Productos"/>
+
+    <item
+        android:id="@+id/nav_seller_orders"
+        android:icon="@drawable/ic_nav_pedidos"
+        android:title="Pedidos"/>
+
+    <item
+        android:id="@+id/nav_seller_add"
+        android:icon="@drawable/ic_nav_publicar"
+        android:title="Publicar"/>
+
+</menu>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/crema">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/verde_primario"
+        android:paddingTop="44dp"
+        android:paddingBottom="14dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical"
+        android:elevation="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBackSeguimiento"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/blanco"
+            android:contentDescription="Volver"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Seguimiento del pedido"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/blanco"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Estado actual -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/verde_primario">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvEstadoActual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pedido recibido"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blanco"/>
+
+                    <TextView
+                        android:id="@+id/tvFechaEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="#AAFFCC"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/tvMensajeEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tu pedido fue recibido."
+                        android:textSize="14sp"
+                        android:textColor="@color/blanco"
+                        android:lineSpacingMultiplier="1.5"
+                        android:layout_marginTop="10dp"
+                        android:alpha="0.85"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Timeline de pasos -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/blanco">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PROGRESO DEL PEDIDO"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.08"
+                        android:textStyle="bold"
+                        android:textColor="@color/verde_primario"
+                        android:layout_marginBottom="20dp"/>
+
+                    <!-- Paso 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="0dp">
+                        <View android:id="@+id/step1" android:layout_width="20dp" android:layout_height="20dp" android:background="@color/verde_primario"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pedido recibido" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="El vendedor recibio tu orden" android:textSize="12sp" android:textColor="@color/texto_tenue"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:id="@+id/line1" android:layout_width="2dp" android:layout_height="32dp" android:background="@color/gris_borde" android:layout_marginStart="9dp"/>
+
+                    <!-- Paso 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <View android:id="@+id/step2" android:layout_width="20dp" android:layout_height="20dp" android:background="@color/gris_borde"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="En preparacion" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Preparando tu pedido" android:textSize="12sp" android:textColor="@color/texto_tenue"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:id="@+id/line2" android:layout_width="2dp" android:layout_height="32dp" android:background="@color/gris_borde" android:layout_marginStart="9dp"/>
+
+                    <!-- Paso 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <View android:id="@+id/step3" android:layout_width="20dp" android:layout_height="20dp" android:background="@color/gris_borde"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="En camino" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tu pedido va en camino" android:textSize="12sp" android:textColor="@color/texto_tenue"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:id="@+id/line3" android:layout_width="2dp" android:layout_height="32dp" android:background="@color/gris_borde" android:layout_marginStart="9dp"/>
+
+                    <!-- Paso 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <View android:id="@+id/step4" android:layout_width="20dp" android:layout_height="20dp" android:background="@color/gris_borde"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Entregado" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pedido entregado exitosamente" android:textSize="12sp" android:textColor="@color/texto_tenue"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

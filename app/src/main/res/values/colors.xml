@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta principal -->
+    <color name="verde_primario">#25632D</color>
+    <color name="verde_oscuro">#1A5C2A</color>
+    <color name="verde_medio">#2D7A38</color>
+    <color name="verde_claro">#3A9147</color>
+    <color name="verde_superficial">#E8F5E9</color>
+    <color name="verde_tenue">#C8E6C9</color>
+
+    <!-- Dorado / acento -->
+    <color name="dorado">#C8861A</color>
+    <color name="dorado_medio">#E8A020</color>
+    <color name="dorado_claro">#F5B942</color>
+    <color name="dorado_tenue">#FFF3E0</color>
+
+    <!-- Fondos naturales -->
+    <color name="crema">#F7F2E8</color>
+    <color name="crema_medio">#EDE6D6</color>
+    <color name="crema_oscuro">#E2D8C4</color>
+
+    <!-- Texto -->
+    <color name="texto_primario">#1A1A18</color>
+    <color name="texto_secundario">#5A5A50</color>
+    <color name="texto_tenue">#888878</color>
+
+    <!-- Semánticos -->
+    <color name="rojo_error">#C0392B</color>
+    <color name="rojo_tenue">#FADBD8</color>
+    <color name="amber_warn">#F5B942</color>
+    <color name="amber_tenue">#FEF9E7</color>
+    <color name="exito">#27AE60</color>
+    <color name="exito_tenue">#D5F5E3</color>
+
+    <!-- Misc -->
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
+    <color name="carbon">#1E293B</color>
+    <color name="gris_borde">#E0DDD5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="overlay_scrim">#80000000</color>
+</resources>

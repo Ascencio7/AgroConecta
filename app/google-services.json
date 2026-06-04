@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1060116256720",
+    "project_id": "agroconecta-3d352",
+    "storage_bucket": "agroconecta-3d352.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060116256720:android:634066a2de0d9858334bd5",
+        "android_client_info": {
+          "package_name": "sv.edu.agroconecta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

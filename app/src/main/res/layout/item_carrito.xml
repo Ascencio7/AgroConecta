@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="6dp"
+    card_view:cardBackgroundColor="#2C1F14">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
+
+        <!-- Imagen -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="12dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="0dp"
+            card_view:cardBackgroundColor="#1A1208">
+
+            <ImageView
+                android:id="@+id/ivImagenCarrito"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/tvNombreCarrito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#F5ECD7"
+                android:text="Nombre"
+                android:layout_marginBottom="4dp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <!-- Precio unitario -->
+            <TextView
+                android:id="@+id/tvPrecioCarrito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E8A020"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="$0.00"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Controles cantidad + subtotal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#1A1208"
+                android:padding="6dp">
+
+                <!-- Botón menos -->
+                <TextView
+                    android:id="@+id/btnMenos"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:text="−"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#E8A020"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvCantidadCarrito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#F5ECD7"
+                    android:text="1"/>
+
+                <!-- Botón más -->
+                <TextView
+                    android:id="@+id/btnMas"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#E8A020"
+                    android:gravity="center"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="18dp"
+                    android:background="#5C4A30"
+                    android:layout_marginHorizontal="6dp"/>
+
+                <!-- Contenedor Subtotal para evitar desorden -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="end|center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUBTOTAL"
+                        android:textSize="8sp"
+                        android:letterSpacing="0.05"
+                        android:textColor="#D4B896"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:id="@+id/tvSubtotalCarrito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#E8A020"
+                        android:text="$0.00"
+                        android:maxLines="1"
+                        android:ellipsize="none"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Botón eliminar -->
+        <ImageButton
+            android:id="@+id/btnEliminarCarrito"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="#1A1208"
+            android:padding="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="top"
+            android:contentDescription="Eliminar"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

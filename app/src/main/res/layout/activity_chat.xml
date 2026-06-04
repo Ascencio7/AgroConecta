@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/crema">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/verde_primario"
+        android:paddingTop="44dp"
+        android:paddingBottom="14dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical"
+        android:elevation="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBackChat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Volver"
+            app:tint="@color/blanco"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/tvAvatarChat"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="V"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/carbon"
+            android:background="@drawable/bg_avatar_circle"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvChatTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vendedor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"/>
+
+            <TextView
+                android:id="@+id/tvChatSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En línea"
+                android:textSize="12sp"
+                android:textColor="#AAFFCC"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Mensajes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        android:background="@color/crema"/>
+
+    <!-- Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:elevation="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            style="@style/TextInputOutlined">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMensajeChat"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Escribe un mensaje…"
+                android:imeOptions="actionSend"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/btnEnviarChat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="@drawable/bg_boton_verde"
+            android:contentDescription="Enviar"
+            android:padding="12dp"
+            app:tint="@color/blanco"/>
+    </LinearLayout>
+</LinearLayout>
