@@ -3,8 +3,10 @@ package sv.edu.agroconecta.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -53,7 +55,7 @@ public class ProductosAdminActivity extends AppCompatActivity {
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
-        tvAvatarAdmin.setOnClickListener(v -> confirmarLogout());
+        tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
 
         findViewById(R.id.fabAgregarProducto).setOnClickListener(v -> {
             Intent intent = new Intent(this, AgregarEditarProductoActivity.class);
@@ -86,6 +88,25 @@ public class ProductosAdminActivity extends AppCompatActivity {
             }
             return id == R.id.nav_admin_products;
         });
+    }
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void confirmarLogout() {

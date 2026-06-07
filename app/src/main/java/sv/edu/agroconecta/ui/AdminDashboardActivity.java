@@ -2,7 +2,9 @@ package sv.edu.agroconecta.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.view.View;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +43,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
             tvWelcomeAdmin.setText("¡Hola, " + nombre + "! 👋");
             txtTitulo.setText("Panel de Control ⚙️");
         }
-        tvAvatarAdmin.setOnClickListener(v -> confirmarLogout());
+        tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
 
         // Dashboard Cards
         cardUsuarios.setOnClickListener(v -> startActivity(new Intent(this, UsuarioActivity.class)));
@@ -49,6 +51,25 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cardReportes.setOnClickListener(v -> startActivity(new Intent(this, ReportesActivity.class)));
 
         setupBottomNav();
+    }
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void setupBottomNav() {

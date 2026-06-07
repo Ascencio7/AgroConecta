@@ -106,6 +106,12 @@
             android:exported="false"
             android:label="Admin" />
 
+        <!-- Perfil del Administrador Activity -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.PerfilAdminActivity"
+            android:exported="false"
+            android:label="Mi Perfil" />
+
         <!-- Gestión de Productos para Admin -->
         <activity
             android:name="sv.edu.agroconecta.ui.ProductosAdminActivity"
@@ -133,6 +139,12 @@
             android:name="sv.edu.agroconecta.ui.RegisterActivity"
             android:exported="false"
             android:label="Registrarse" />
+
+        <!-- Restablecer Contraseña Activity -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.ForgotPasswordActivity"
+            android:exported="false"
+            android:label="Restablecer Contraseña" />
 
         <!-- Editar Usuario Activity -->
         <activity

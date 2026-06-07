@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:9-165:20
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:167:9-175:20
 	android:grantUriPermissions
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:13-47
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:13-47
 	android:authorities
 		INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:159:13-64
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:169:13-64
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:170:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:158:13-62
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:13-62
 manifest
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-186:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-186:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-186:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-186:12
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\31dfa89dcc1fdc624ef6a8af618cbddc\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\8ca9a4c9e3c61d3afab78cac65c1a47d\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -203,8 +203,8 @@ ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:27:21-69
 application
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-184:15
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-184:15
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-194:15
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-194:15
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\31dfa89dcc1fdc624ef6a8af618cbddc\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -331,174 +331,190 @@ ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\Androi
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:62:13-37
 	android:name
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:61:19-60
-activity#sv.edu.agroconecta.ui.ProductosAdminActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:9-68:52
+activity#sv.edu.agroconecta.ui.PerfilAdminActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:9-68:41
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:68:13-49
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:68:13-38
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:67:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:19-60
-activity#sv.edu.agroconecta.ui.AgregarEditarProductoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:70:9-72:40
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:19-57
+activity#sv.edu.agroconecta.ui.ProductosAdminActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:9-73:52
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:72:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:73:13-49
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:70:19-67
-activity#sv.edu.agroconecta.ui.ReportesActivity
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:19-60
+activity#sv.edu.agroconecta.ui.AgregarEditarProductoActivity
 ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:75:9-77:40
 	android:label
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:77:13-37
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:76:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:75:19-54
-activity#sv.edu.agroconecta.ui.TermsActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-82:54
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:75:19-67
+activity#sv.edu.agroconecta.ui.ReportesActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-82:40
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:82:13-51
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:82:13-37
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:81:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:19-51
-activity#sv.edu.agroconecta.ui.RegisterActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:9-87:42
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:19-54
+activity#sv.edu.agroconecta.ui.TermsActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:9-87:54
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-40
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-51
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:86:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:19-54
-activity#sv.edu.agroconecta.ui.EditarUsuarioActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:9-92:37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:19-51
+activity#sv.edu.agroconecta.ui.RegisterActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:9-92:42
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-35
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-40
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:91:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:19-59
-activity#sv.edu.agroconecta.ui.CrearUsuarioActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:9-97:36
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:19-54
+activity#sv.edu.agroconecta.ui.ForgotPasswordActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:9-97:53
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-34
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-51
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:96:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:19-58
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:19-60
+activity#sv.edu.agroconecta.ui.EditarUsuarioActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:9-102:37
+	android:label
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-35
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:19-59
+activity#sv.edu.agroconecta.ui.CrearUsuarioActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:9-107:36
+	android:label
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-34
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:19-58
 activity#sv.edu.agroconecta.MainActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:9-102:39
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:110:9-112:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-36
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-36
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:13-41
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:13-41
 activity#sv.edu.agroconecta.ui.BuyerModuleActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:9-108:40
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:9-118:40
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-45
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:117:13-45
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:108:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:118:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:13-51
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:13-51
 activity#sv.edu.agroconecta.ui.MapaActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:9-114:45
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:121:9-124:45
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:114:13-43
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:13-43
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:113:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-44
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:122:13-44
 activity#sv.edu.agroconecta.ui.ProductoDetalleActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:117:9-120:47
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:9-130:47
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:120:13-45
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:119:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:118:13-55
-activity#sv.edu.agroconecta.ui.CarritoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:122:9-125:41
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:125:13-39
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:13-47
-activity#sv.edu.agroconecta.ui.MisPedidosActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:9-130:42
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:130:13-40
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:130:13-45
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:129:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:13-50
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:13-55
+activity#sv.edu.agroconecta.ui.CarritoActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:9-135:41
+	android:label
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:13-39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:134:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:13-47
+activity#sv.edu.agroconecta.ui.MisPedidosActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:9-140:42
+	android:label
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:13-40
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:138:13-50
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:9-134:70
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:9-144:70
 	android:value
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:134:13-68
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:13-68
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:13-58
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:143:13-58
 service#sv.edu.agroconecta.service.AgroConectaFirebaseService
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:136:9-142:19
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:9-152:19
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:138:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:13-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:147:13-63
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:13-141:29
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:149:13-151:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:17-77
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:17-77
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:25-75
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:25-75
 meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:9-146:46
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:9-156:46
 	android:value
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:13-44
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:156:13-44
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:145:13-89
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:13-89
 activity#sv.edu.agroconecta.ui.VendedorDashboardActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:9-151:39
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:9-161:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:151:13-36
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:13-36
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:19-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:19-63
 activity#sv.edu.agroconecta.ui.AgregarProductoVendedorActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:152:9-153:40
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:9-163:40
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:163:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:152:19-69
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:19-69
 activity#sv.edu.agroconecta.ui.ContactarVendedorActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:9-155:40
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:9-165:40
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:165:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:19-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:19-63
 activity#sv.edu.agroconecta.ui.ChatActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:9-77
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:9-77
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:51-75
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:51-75
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:19-50
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:19-50
 activity#sv.edu.agroconecta.ui.CalificacionActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:9-85
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:9-85
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:59-83
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:59-83
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:19-58
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:19-58
 activity#sv.edu.agroconecta.ui.SeguimientoPedidoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:9-90
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:9-90
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:64-88
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:64-88
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:19-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:19-63
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:13-164:53
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:172:13-174:53
 	android:resource
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:17-51
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:17-51
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:163:17-67
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:173:17-67
 uses-sdk
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml

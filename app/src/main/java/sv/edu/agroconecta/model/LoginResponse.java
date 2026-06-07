@@ -5,6 +5,7 @@ public class LoginResponse {
     private String message;
     private int usuario_id;
     private String nombre;
+    private String correo;
     private String rol;
 
     public boolean isSuccess() {
@@ -21,6 +22,10 @@ public class LoginResponse {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
     }
 
     public String getRol() {

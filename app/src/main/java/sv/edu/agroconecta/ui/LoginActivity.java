@@ -54,10 +54,16 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
 
         TextView txtRegister = findViewById(R.id.txtRegister);
+        TextView txtForgotPassword = findViewById(R.id.txtForgotPassword);
 
         // Enlace hacia la actividad de registro de los usuarios
         txtRegister.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        });
+
+        // Enlace hacia la actividad de restablecer contraseña
+        txtForgotPassword.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
         });
 
         // Mostrara el campo con el error y obtendra el mensaje para ser mostrado
@@ -159,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                     // Guardar la sesión para que se mantenga abierta
-                    sessionManager.createSession(user.getUsuarioId(), user.getNombre(), user.getRol());
+                    sessionManager.createSession(user.getUsuarioId(), user.getNombre(), user.getCorreo(), user.getRol());
 
                     // Se muestra la notificiacion en la Barra de notificacion del celular,
                     // muestra un mensaje de bienvenida con el nombre de Usuario y AgroConecta

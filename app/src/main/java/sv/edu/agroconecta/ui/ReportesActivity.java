@@ -78,7 +78,7 @@ public class ReportesActivity extends AppCompatActivity {
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
-        tvAvatarAdmin.setOnClickListener(v -> confirmarLogout());
+        tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
 
         btnReporteUsuarios.setOnClickListener(v -> showUserReportMenu(v));
         btnReporteProductos.setOnClickListener(v -> showProductReportMenu(v));
@@ -103,6 +103,25 @@ public class ReportesActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    private void showProfileMenu(android.view.View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void confirmarLogout() {

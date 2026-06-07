@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import sv.edu.agroconecta.ChatManager;
 import sv.edu.agroconecta.R;
+import sv.edu.agroconecta.ui.PerfilAdminActivity;
 import sv.edu.agroconecta.modelo.Pedido;
 import sv.edu.agroconecta.modelo.Product;
 import sv.edu.agroconecta.network.ApiClient;
@@ -103,7 +106,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
                 tvAvatar.setText(String.valueOf(nom.charAt(0)).toUpperCase());
             }
         }
-        tvAvatar.setOnClickListener(v -> confirmarLogout());
+        tvAvatar.setOnClickListener(this::showProfileMenu);
 
         // ── AgroBot IA flotante para el vendedor ──────────────────────────
         // CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
@@ -177,6 +180,25 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Gestión de Pedidos 🛒");
             cargarPedidosVendedor();
         }
+    }
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void confirmarLogout() {

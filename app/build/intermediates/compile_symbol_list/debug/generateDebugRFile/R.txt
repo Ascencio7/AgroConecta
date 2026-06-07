@@ -64,6 +64,7 @@ int id btnAgregarCarrito 0x0
 int id btnBackCalificacion 0x0
 int id btnBackChat 0x0
 int id btnBackContactar 0x0
+int id btnBackProfile 0x0
 int id btnBackSeguimiento 0x0
 int id btnCalificar 0x0
 int id btnCancelar 0x0
@@ -90,6 +91,7 @@ int id btnHistorial 0x0
 int id btnInactivos 0x0
 int id btnLogin 0x0
 int id btnLogout 0x0
+int id btnLogoutProfile 0x0
 int id btnMas 0x0
 int id btnMasCantidad 0x0
 int id btnMenos 0x0
@@ -100,6 +102,7 @@ int id btnPublicarProducto 0x0
 int id btnRegistrar 0x0
 int id btnReporteProductos 0x0
 int id btnReporteUsuarios 0x0
+int id btnReset 0x0
 int id btnSeguimiento 0x0
 int id btnSiguiente 0x0
 int id btnTomarFoto 0x0
@@ -134,6 +137,7 @@ int id etExistencia 0x0
 int id etImagenUrl 0x0
 int id etMensaje 0x0
 int id etMensajeChat 0x0
+int id etNewPassword 0x0
 int id etNombre 0x0
 int id etPassword 0x0
 int id etPrecio 0x0
@@ -180,6 +184,7 @@ int id llCategorias 0x0
 int id llFincas 0x0
 int id mapFragment 0x0
 int id mapView 0x0
+int id menu_view_profile 0x0
 int id nav_admin_dashboard 0x0
 int id nav_admin_products 0x0
 int id nav_admin_users 0x0
@@ -238,6 +243,7 @@ int id tvAdminSubtitulo 0x0
 int id tvAvatar 0x0
 int id tvAvatarAdmin 0x0
 int id tvAvatarChat 0x0
+int id tvAvatarLarge 0x0
 int id tvAvatarVendedor 0x0
 int id tvAvatarVendedorAdd 0x0
 int id tvAvatarVendedorDetalle 0x0
@@ -292,6 +298,9 @@ int id tvProductoCalificar 0x0
 int id tvProductoContact 0x0
 int id tvProductosActivos 0x0
 int id tvProductosAgotados 0x0
+int id tvProfileEmail 0x0
+int id tvProfileName 0x0
+int id tvProfileRole 0x0
 int id tvResumenIva 0x0
 int id tvResumenSubtotal 0x0
 int id tvResumenTotal 0x0
@@ -308,9 +317,11 @@ int id tvWelcome 0x0
 int id tvWelcomeAdmin 0x0
 int id tvWelcomeVendedor 0x0
 int id txtAvatar 0x0
+int id txtBackToLogin 0x0
 int id txtCorreo 0x0
 int id txtEstado 0x0
 int id txtEstadoLabel 0x0
+int id txtForgotPassword 0x0
 int id txtNombre 0x0
 int id txtNombreProducto 0x0
 int id txtPrecioProducto 0x0
@@ -330,10 +341,12 @@ int layout activity_chat 0x0
 int layout activity_contactar_vendedor 0x0
 int layout activity_crear_usuario 0x0
 int layout activity_editar_usuario 0x0
+int layout activity_forgot_password 0x0
 int layout activity_login 0x0
 int layout activity_main 0x0
 int layout activity_mapa 0x0
 int layout activity_mis_pedidos 0x0
+int layout activity_perfil_admin 0x0
 int layout activity_producto_detalle 0x0
 int layout activity_productos_admin 0x0
 int layout activity_register 0x0
@@ -358,6 +371,7 @@ int layout item_producto_vendedor 0x0
 int layout item_usuario 0x0
 int menu admin_nav_menu 0x0
 int menu bottom_nav_menu 0x0
+int menu profile_menu 0x0
 int menu seller_nav_menu 0x0
 int mipmap ic_launcher 0x0
 int mipmap ic_launcher_foreground 0x0

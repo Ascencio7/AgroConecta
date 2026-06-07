@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -97,7 +98,7 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
                 tvAvatar.setText(String.valueOf(nom.charAt(0)).toUpperCase());
             }
         }
-        tvAvatar.setOnClickListener(v -> confirmarLogout());
+        tvAvatar.setOnClickListener(this::showProfileMenu);
 
         btnUsarUbicacion.setOnClickListener(v -> obtenerUbicacion());
         btnPublicar.setOnClickListener(v -> publicarProducto());
@@ -152,6 +153,25 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         // Si quieres mostrar el badge en el icono de carrito del header:
         // Pero el vendedor no tiene carrito en su header segun la imagen.
         // Solo tiene el avatar.
+    }
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void confirmarLogout() {

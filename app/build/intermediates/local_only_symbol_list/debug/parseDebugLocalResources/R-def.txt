@@ -66,6 +66,7 @@ id btnAgregarCarrito
 id btnBackCalificacion
 id btnBackChat
 id btnBackContactar
+id btnBackProfile
 id btnBackSeguimiento
 id btnCalificar
 id btnCancelar
@@ -92,6 +93,7 @@ id btnHistorial
 id btnInactivos
 id btnLogin
 id btnLogout
+id btnLogoutProfile
 id btnMas
 id btnMasCantidad
 id btnMenos
@@ -102,6 +104,7 @@ id btnPublicarProducto
 id btnRegistrar
 id btnReporteProductos
 id btnReporteUsuarios
+id btnReset
 id btnSeguimiento
 id btnSiguiente
 id btnTomarFoto
@@ -136,6 +139,7 @@ id etExistencia
 id etImagenUrl
 id etMensaje
 id etMensajeChat
+id etNewPassword
 id etNombre
 id etPassword
 id etPrecio
@@ -182,6 +186,7 @@ id llCategorias
 id llFincas
 id mapFragment
 id mapView
+id menu_view_profile
 id nav_admin_dashboard
 id nav_admin_products
 id nav_admin_users
@@ -240,6 +245,7 @@ id tvAdminSubtitulo
 id tvAvatar
 id tvAvatarAdmin
 id tvAvatarChat
+id tvAvatarLarge
 id tvAvatarVendedor
 id tvAvatarVendedorAdd
 id tvAvatarVendedorDetalle
@@ -294,6 +300,9 @@ id tvProductoCalificar
 id tvProductoContact
 id tvProductosActivos
 id tvProductosAgotados
+id tvProfileEmail
+id tvProfileName
+id tvProfileRole
 id tvResumenIva
 id tvResumenSubtotal
 id tvResumenTotal
@@ -310,9 +319,11 @@ id tvWelcome
 id tvWelcomeAdmin
 id tvWelcomeVendedor
 id txtAvatar
+id txtBackToLogin
 id txtCorreo
 id txtEstado
 id txtEstadoLabel
+id txtForgotPassword
 id txtNombre
 id txtNombreProducto
 id txtPrecioProducto
@@ -332,10 +343,12 @@ layout activity_chat
 layout activity_contactar_vendedor
 layout activity_crear_usuario
 layout activity_editar_usuario
+layout activity_forgot_password
 layout activity_login
 layout activity_main
 layout activity_mapa
 layout activity_mis_pedidos
+layout activity_perfil_admin
 layout activity_producto_detalle
 layout activity_productos_admin
 layout activity_register
@@ -360,6 +373,7 @@ layout item_producto_vendedor
 layout item_usuario
 menu admin_nav_menu
 menu bottom_nav_menu
+menu profile_menu
 menu seller_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground

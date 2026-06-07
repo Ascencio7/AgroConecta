@@ -124,6 +124,18 @@
                     android:layout_marginTop="20dp"
                     style="@style/BtnPrimario"/>
 
+                <!-- LINK RESTABLECER CONTRASEÑA -->
+                <TextView
+                    android:id="@+id/txtForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Olvidaste tu contraseña?"
+                    android:textColor="@color/verde_primario"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:padding="8dp"/>
+
                 <!-- LINK REGISTRO -->
                 <TextView
                     android:id="@+id/txtRegister"
@@ -133,7 +145,7 @@
                     android:textColor="@color/verde_primario"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="4dp"
                     android:layout_gravity="center"
                     android:padding="8dp"/>
 

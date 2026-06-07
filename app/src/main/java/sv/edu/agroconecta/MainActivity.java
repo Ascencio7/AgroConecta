@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -48,6 +50,7 @@ import sv.edu.agroconecta.modelo.Product;
 import sv.edu.agroconecta.network.ApiClient;
 import sv.edu.agroconecta.repository.PedidoRepository;
 import sv.edu.agroconecta.ui.LoginActivity;
+import sv.edu.agroconecta.ui.PerfilAdminActivity;
 import sv.edu.agroconecta.ui.ProductoDetalleActivity;
 import sv.edu.agroconecta.utils.CarritoManager;
 import sv.edu.agroconecta.utils.FCMHelper;
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             tvWelcome.setText("¡Hola, " + nombreUsuario + "! 👋");
         }
 
-        tvAvatar.setOnClickListener(v -> confirmarLogout());
+        tvAvatar.setOnClickListener(this::showProfileMenu);
         findViewById(R.id.btnHeaderCarrito).setOnClickListener(v ->
                 bottomNav.setSelectedItemId(R.id.nav_carrito));
 
@@ -694,6 +697,25 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
+    }
 
     // ── LOGOUT ───────────────────────────────────────────
     private void confirmarLogout() {

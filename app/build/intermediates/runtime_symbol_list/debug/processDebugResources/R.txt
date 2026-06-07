@@ -3884,6 +3884,7 @@ int id btnAgregarCarrito 0x7f080070
 int id btnBackCalificacion 0x7f080071
 int id btnBackChat 0x7f080072
 int id btnBackContactar 0x7f080073
+int id btnBackProfile 0x7f080325
 int id btnBackSeguimiento 0x7f080074
 int id btnCalificar 0x7f080075
 int id btnCancelar 0x7f080076
@@ -3910,6 +3911,7 @@ int id btnHistorial 0x7f08008a
 int id btnInactivos 0x7f08008b
 int id btnLogin 0x7f08008c
 int id btnLogout 0x7f08008d
+int id btnLogoutProfile 0x7f080326
 int id btnMas 0x7f08008e
 int id btnMasCantidad 0x7f08008f
 int id btnMenos 0x7f080090
@@ -3920,6 +3922,7 @@ int id btnPublicarProducto 0x7f080094
 int id btnRegistrar 0x7f080095
 int id btnReporteProductos 0x7f080096
 int id btnReporteUsuarios 0x7f080097
+int id btnReset 0x7f08031f
 int id btnSeguimiento 0x7f080098
 int id btnSiguiente 0x7f080099
 int id btnTomarFoto 0x7f08009a
@@ -4038,6 +4041,7 @@ int id etExistencia 0x7f080109
 int id etImagenUrl 0x7f08010a
 int id etMensaje 0x7f08010b
 int id etMensajeChat 0x7f08010c
+int id etNewPassword 0x7f080322
 int id etNombre 0x7f08010d
 int id etPassword 0x7f08010e
 int id etPrecio 0x7f08010f
@@ -4177,6 +4181,7 @@ int id material_timepicker_ok_button 0x7f080189
 int id material_timepicker_view 0x7f08018a
 int id material_value_index 0x7f08018b
 int id matrix 0x7f08018c
+int id menu_view_profile 0x7f080324
 int id message 0x7f08018d
 int id middle 0x7f08018e
 int id mini 0x7f08018f
@@ -4457,6 +4462,7 @@ int id tvAdminSubtitulo 0x7f0802a1
 int id tvAvatar 0x7f0802a2
 int id tvAvatarAdmin 0x7f0802a3
 int id tvAvatarChat 0x7f0802a4
+int id tvAvatarLarge 0x7f080327
 int id tvAvatarVendedor 0x7f0802a5
 int id tvAvatarVendedorAdd 0x7f0802a6
 int id tvAvatarVendedorDetalle 0x7f0802a7
@@ -4511,6 +4517,9 @@ int id tvProductoCalificar 0x7f0802d7
 int id tvProductoContact 0x7f0802d8
 int id tvProductosActivos 0x7f0802d9
 int id tvProductosAgotados 0x7f0802da
+int id tvProfileEmail 0x7f08032b
+int id tvProfileName 0x7f080329
+int id tvProfileRole 0x7f08032a
 int id tvResumenIva 0x7f0802db
 int id tvResumenSubtotal 0x7f0802dc
 int id tvResumenTotal 0x7f0802dd
@@ -4527,9 +4536,11 @@ int id tvWelcome 0x7f0802e7
 int id tvWelcomeAdmin 0x7f0802e8
 int id tvWelcomeVendedor 0x7f0802e9
 int id txtAvatar 0x7f0802ea
+int id txtBackToLogin 0x7f080320
 int id txtCorreo 0x7f0802eb
 int id txtEstado 0x7f0802ec
 int id txtEstadoLabel 0x7f0802ed
+int id txtForgotPassword 0x7f080321
 int id txtNombre 0x7f0802ee
 int id txtNombreProducto 0x7f0802ef
 int id txtPrecioProducto 0x7f0802f0
@@ -4694,10 +4705,12 @@ int layout activity_chat 0x7f0b0022
 int layout activity_contactar_vendedor 0x7f0b0023
 int layout activity_crear_usuario 0x7f0b0024
 int layout activity_editar_usuario 0x7f0b0025
+int layout activity_forgot_password 0x7f0b0091
 int layout activity_login 0x7f0b0026
 int layout activity_main 0x7f0b0027
 int layout activity_mapa 0x7f0b0028
 int layout activity_mis_pedidos 0x7f0b0029
+int layout activity_perfil_admin 0x7f0b0092
 int layout activity_producto_detalle 0x7f0b002a
 int layout activity_productos_admin 0x7f0b002b
 int layout activity_register 0x7f0b002c
@@ -4803,6 +4816,7 @@ int layout select_dialog_singlechoice_material 0x7f0b008f
 int layout support_simple_spinner_dropdown_item 0x7f0b0090
 int menu admin_nav_menu 0x7f0d0000
 int menu bottom_nav_menu 0x7f0d0001
+int menu profile_menu 0x7f0d0003
 int menu seller_nav_menu 0x7f0d0002
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_foreground 0x7f0e0001

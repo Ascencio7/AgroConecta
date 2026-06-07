@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 import com.google.android.material.button.MaterialButton;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
@@ -67,7 +69,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
                 tvAvatar.setText(String.valueOf(nombreU.charAt(0)).toUpperCase());
             }
         }
-        tvAvatar.setOnClickListener(v -> confirmarLogout());
+        tvAvatar.setOnClickListener(this::showProfileMenu);
         
         findViewById(R.id.btnHeaderCarrito).setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
@@ -208,6 +210,25 @@ public class ProductoDetalleActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         actualizarBadge(findViewById(R.id.tvCarritoBadge));
+    }
+
+    private void showProfileMenu(View v) {
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_view_profile) {
+                mostrarPerfil();
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
+    }
+
+    private void mostrarPerfil() {
+        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        startActivity(intent);
     }
 
     private void confirmarLogout() {

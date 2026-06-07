@@ -8,6 +8,7 @@ public class SessionManager {
     private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
     private static final String KEY_USER_ID = "usuario_id";
     private static final String KEY_NOMBRE = "nombre";
+    private static final String KEY_CORREO = "correo";
     private static final String KEY_ROL = "rol";
     private static final String KEY_HIDE_TERMS = "hideTerms";
 
@@ -21,10 +22,11 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-    public void createSession(int userId, String nombre, String rol) {
+    public void createSession(int userId, String nombre, String correo, String rol) {
         editor.putBoolean(KEY_IS_LOGGED_IN, true);
         editor.putInt(KEY_USER_ID, userId);
         editor.putString(KEY_NOMBRE, nombre);
+        editor.putString(KEY_CORREO, correo);
         editor.putString(KEY_ROL, rol);
         editor.apply();
     }
@@ -55,12 +57,17 @@ public class SessionManager {
         return pref.getString(KEY_ROL, "");
     }
 
+    public String getCorreo() {
+        return pref.getString(KEY_CORREO, "");
+    }
+
     public void logout() {
         // Limpiar carrito en memoria antes de cerrar sesión
         sv.edu.agroconecta.utils.CarritoManager.getInstance().limpiar();
         editor.remove(KEY_IS_LOGGED_IN);
         editor.remove(KEY_USER_ID);
         editor.remove(KEY_NOMBRE);
+        editor.remove(KEY_CORREO);
         editor.remove(KEY_ROL);
         editor.apply();
     }
