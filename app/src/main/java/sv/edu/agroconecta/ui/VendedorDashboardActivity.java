@@ -17,6 +17,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +32,9 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import sv.edu.agroconecta.ChatManager;
 import sv.edu.agroconecta.R;
+import sv.edu.agroconecta.ui.SoporteActivity;
 import sv.edu.agroconecta.ui.PerfilAdminActivity;
+import sv.edu.agroconecta.ui.PerfilVendedorActivity;
 import sv.edu.agroconecta.modelo.Pedido;
 import sv.edu.agroconecta.modelo.Product;
 import sv.edu.agroconecta.network.ApiClient;
@@ -57,6 +60,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     private List<Pedido> misPedidos = new ArrayList<>();
     private RecyclerView rvMisProductos, rvPedidosVendedor;
     private TextView tvTotalProd, tvActivos, tvAgotados, tvAvatar, tvWelcomeVendedor;
+    private android.widget.ImageView ivAvatarFoto;
     private LinearLayout panelProductos, panelPedidos;
     private BottomNavigationView bottomNav;
     private androidx.appcompat.widget.SearchView searchView;
@@ -90,6 +94,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         rvMisProductos = findViewById(R.id.rvMisProductos);
         rvPedidosVendedor = findViewById(R.id.rvPedidosVendedor);
         tvAvatar       = findViewById(R.id.tvAvatarVendedor);
+        ivAvatarFoto   = findViewById(R.id.ivAvatarFotoVendedor);
         bottomNav      = findViewById(R.id.bottomNavVendedor);
         progressProductos = findViewById(R.id.progressProductosVendedor);
         progressPedidos   = findViewById(R.id.progressPedidosVendedor);
@@ -106,11 +111,20 @@ public class VendedorDashboardActivity extends AppCompatActivity {
                 tvAvatar.setText(String.valueOf(nom.charAt(0)).toUpperCase());
             }
         }
+        // Foto de perfil en header
+        String fotoPerfil = sessionManager.getFotoPerfil();
+        if (fotoPerfil != null && !fotoPerfil.isEmpty() && ivAvatarFoto != null) {
+            Glide.with(this).load(fotoPerfil).transform(new CircleCrop()).into(ivAvatarFoto);
+            ivAvatarFoto.setVisibility(android.view.View.VISIBLE);
+            tvAvatar.setVisibility(android.view.View.GONE);
+        }
         tvAvatar.setOnClickListener(this::showProfileMenu);
+        if (ivAvatarFoto != null) ivAvatarFoto.setOnClickListener(this::showProfileMenu);
 
         // ── AgroBot IA flotante para el vendedor ──────────────────────────
-        // CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
-        // new ChatManager(this, root);
+        
+        CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
+        new ChatManager(this, root);
         // ──────────────────────────────────────────────────────────────────
 
         searchView = findViewById(R.id.searchMisProductos);
@@ -182,32 +196,45 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cargarMisProductos(); // Recargar al volver de editar
+        String fp = sessionManager.getFotoPerfil();
+        if (fp != null && !fp.isEmpty() && ivAvatarFoto != null) {
+            Glide.with(this).load(fp).transform(new CircleCrop()).into(ivAvatarFoto);
+            ivAvatarFoto.setVisibility(android.view.View.VISIBLE);
+            tvAvatar.setVisibility(android.view.View.GONE);
+        }
+    }
+
     private void showProfileMenu(View v) {
-        PopupMenu popupMenu = new PopupMenu(this, v);
-        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
+        PopupMenu popupMenu = new PopupMenu(VendedorDashboardActivity.this, v);
+        popupMenu.getMenu().add(0, 1, 0, "👤 Mi Perfil");
+        popupMenu.getMenu().add(0, 2, 1, "🛠️ Soporte técnico");
+        popupMenu.getMenu().add(0, 3, 2, "🚪 Cerrar Sesión");
         popupMenu.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
-            if (id == R.id.menu_view_profile) {
-                mostrarPerfil();
-                return true;
-            }
+            if (id == 1) { mostrarPerfil(); return true; }
+            if (id == 2) { startActivity(new Intent(VendedorDashboardActivity.this, SoporteActivity.class)); return true; }
+            if (id == 3) { confirmarLogout(); return true; }
             return false;
         });
         popupMenu.show();
     }
 
     private void mostrarPerfil() {
-        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        Intent intent = new Intent(this, PerfilVendedorActivity.class);
         startActivity(intent);
     }
 
     private void confirmarLogout() {
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(VendedorDashboardActivity.this)
                 .setTitle("Cerrar sesión")
                 .setMessage("¿Seguro que quieres salir?")
                 .setPositiveButton("Sí", (d, w) -> {
                     sessionManager.logout();
-                    Intent i = new Intent(this, LoginActivity.class);
+                    Intent i = new Intent(VendedorDashboardActivity.this, LoginActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                     finish();
@@ -379,7 +406,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         @NonNull @Override
         public VH onCreateViewHolder(@NonNull ViewGroup p, int t) {
             return new VH(LayoutInflater.from(p.getContext())
-                    .inflate(R.layout.item_pedido, p, false));
+                    .inflate(R.layout.item_pedido_vendedor, p, false));
         }
 
         @Override
@@ -424,15 +451,41 @@ public class VendedorDashboardActivity extends AppCompatActivity {
                     tvEstado.setBackgroundResource(R.drawable.bg_badge_amber); break;
             }
 
+            // ── Cliente info ─────────────────────────────────────────
+            android.widget.TextView tvAvatarC = h.itemView.findViewById(R.id.tvAvatarCliente);
+            android.widget.ImageView ivFotoC  = h.itemView.findViewById(R.id.ivFotoCliente);
+            android.widget.TextView tvNombreC = h.itemView.findViewById(R.id.tvNombreCliente);
+            com.google.android.material.button.MaterialButton btnWAC = h.itemView.findViewById(R.id.btnWhatsAppCliente);
+
+            String nombreC = p.getNombreCliente();
+            if (nombreC != null && !nombreC.isEmpty()) {
+                if (tvNombreC != null) tvNombreC.setText(nombreC);
+                if (tvAvatarC != null) tvAvatarC.setText(String.valueOf(nombreC.charAt(0)).toUpperCase());
+            }
+            String fotoC = p.getFotoCliente();
+            if (fotoC != null && !fotoC.isEmpty() && ivFotoC != null) {
+                com.bumptech.glide.Glide.with(VendedorDashboardActivity.this)
+                    .load(fotoC).transform(new com.bumptech.glide.load.resource.bitmap.CircleCrop()).into(ivFotoC);
+                ivFotoC.setVisibility(android.view.View.VISIBLE);
+                if (tvAvatarC != null) tvAvatarC.setVisibility(android.view.View.GONE);
+            }
+            String telC = p.getTelefonoCliente();
+            if (btnWAC != null && telC != null && !telC.isEmpty()) {
+                btnWAC.setVisibility(android.view.View.VISIBLE);
+                btnWAC.setOnClickListener(v -> {
+                    String num = telC.replaceAll("[^0-9]", "");
+                    String msg = android.net.Uri.encode("Hola! Soy el vendedor de AgroConecta. Tu pedido #" + p.getPedidoId() + " está siendo procesado.");
+                    android.content.Intent waIntent = new android.content.Intent(android.content.Intent.ACTION_VIEW,
+                        android.net.Uri.parse("https://wa.me/503" + num + "?text=" + msg));
+                    try { startActivity(waIntent); } catch (Exception e) { }
+                });
+            }
+
             // Botón cambiar estado del pedido
-            android.view.View btnSeg = h.itemView.findViewById(R.id.btnSeguimiento);
+            android.view.View btnSeg = h.itemView.findViewById(R.id.btnSeg);
             if (btnSeg != null) {
                 btnSeg.setOnClickListener(v -> mostrarDialogoCambioEstado(p, pos));
             }
-
-            // Ocultar botón calificar en panel vendedor
-            android.view.View btnCal = h.itemView.findViewById(R.id.btnCalificar);
-            if (btnCal != null) btnCal.setVisibility(android.view.View.GONE);
         }
 
         @Override public int getItemCount() { return misPedidos.size(); }
@@ -534,12 +587,18 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             @Override public void onResponse(Call<Void> c, Response<Void> r) {
                 if (r.isSuccessful()) {
                     Toast.makeText(VendedorDashboardActivity.this,
-                            "Producto eliminado", Toast.LENGTH_SHORT).show();
+                            "✅ Producto eliminado", Toast.LENGTH_SHORT).show();
                     cargarMisProductos();
+                } else {
+                    Toast.makeText(VendedorDashboardActivity.this,
+                            "❌ Error al eliminar (código " + r.code() + ")", Toast.LENGTH_LONG).show();
+                    android.util.Log.e("DELETE_PRODUCTO", "Error HTTP: " + r.code() + " id=" + p.getProductoId());
                 }
             }
             @Override public void onFailure(Call<Void> c, Throwable t) {
-                Toast.makeText(VendedorDashboardActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VendedorDashboardActivity.this,
+                        "❌ Sin conexión: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                android.util.Log.e("DELETE_PRODUCTO", "Fallo: " + t.getMessage());
             }
         });
     }

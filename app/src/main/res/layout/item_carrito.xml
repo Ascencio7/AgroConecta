@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="20dp"
-    card_view:cardElevation="6dp"
-    card_view:cardBackgroundColor="#2C1F14">
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/blanco">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="14dp"
+        android:padding="12dp"
         android:gravity="center_vertical">
 
         <!-- Imagen -->
         <androidx.cardview.widget.CardView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
             android:layout_marginEnd="12dp"
-            card_view:cardCornerRadius="12dp"
-            card_view:cardElevation="0dp"
-            card_view:cardBackgroundColor="#1A1208">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/crema_medio">
 
             <ImageView
                 android:id="@+id/ivImagenCarrito"
@@ -31,7 +32,6 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"/>
-
         </androidx.cardview.widget.CardView>
 
         <!-- Info -->
@@ -41,105 +41,85 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <!-- Nombre -->
             <TextView
                 android:id="@+id/tvNombreCarrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:textColor="#F5ECD7"
+                android:textColor="@color/texto_primario"
                 android:text="Nombre"
-                android:layout_marginBottom="4dp"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:layout_marginBottom="2dp"/>
 
-            <!-- Precio unitario -->
             <TextView
                 android:id="@+id/tvPrecioCarrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#E8A020"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:text="$0.00"
+                android:textColor="@color/texto_tenue"
+                android:textSize="12sp"
+                android:text="$0.00 c/u"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Controles cantidad + subtotal -->
+            <!-- Controles cantidad -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="#1A1208"
-                android:padding="6dp">
+                android:gravity="center_vertical">
 
-                <!-- Botón menos -->
-                <TextView
-                    android:id="@+id/btnMenos"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:text="−"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#E8A020"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:id="@+id/tvCantidadCarrito"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="8dp"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#F5ECD7"
-                    android:text="1"/>
-
-                <!-- Botón más -->
-                <TextView
-                    android:id="@+id/btnMas"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:text="+"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#E8A020"
-                    android:gravity="center"/>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="18dp"
-                    android:background="#5C4A30"
-                    android:layout_marginHorizontal="6dp"/>
-
-                <!-- Contenedor Subtotal para evitar desorden -->
+                <!-- Selector cantidad con fondo verde suave -->
                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="#E8F5E9"
+                    android:paddingHorizontal="4dp">
+
+                    <TextView
+                        android:id="@+id/btnMenos"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="−"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/verde_primario"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tvCantidadCarrito"
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_primario"
+                        android:gravity="center"
+                        android:text="1"/>
+
+                    <TextView
+                        android:id="@+id/btnMas"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="+"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/verde_primario"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <!-- Subtotal -->
+                <TextView
+                    android:id="@+id/tvSubtotalCarrito"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="end|center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="SUBTOTAL"
-                        android:textSize="8sp"
-                        android:letterSpacing="0.05"
-                        android:textColor="#D4B896"
-                        android:layout_marginEnd="4dp"/>
-
-                    <TextView
-                        android:id="@+id/tvSubtotalCarrito"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:textColor="#E8A020"
-                        android:text="$0.00"
-                        android:maxLines="1"
-                        android:ellipsize="none"/>
-                </LinearLayout>
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/verde_primario"
+                    android:text="$0.00"
+                    android:gravity="end"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -150,8 +130,8 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@android:drawable/ic_menu_delete"
-            android:background="#1A1208"
-            android:padding="6dp"
+            android:background="@color/rojo_tenue"
+            android:padding="7dp"
             android:layout_marginStart="8dp"
             android:layout_gravity="top"
             android:contentDescription="Eliminar"/>

@@ -92,18 +92,32 @@
                     android:visibility="gone"/>
             </FrameLayout>
 
-            <!-- Avatar -->
-            <TextView
-                android:id="@+id/tvAvatar"
+            <!-- Avatar (FrameLayout para superponer foto e inicial) -->
+            <FrameLayout
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:gravity="center"
-                android:text="U"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/carbon"
-                android:background="@drawable/bg_avatar_circle"/>
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/tvAvatar"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="U"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/carbon"
+                    android:background="@drawable/bg_avatar_circle"/>
+
+                <ImageView
+                    android:id="@+id/ivAvatarFoto"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto de perfil"/>
+            </FrameLayout>
         </LinearLayout>
 
         <!-- ÁREA DE CONTENIDO -->

@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:167:9-175:20
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:195:9-203:20
 	android:grantUriPermissions
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:13-47
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:199:13-47
 	android:authorities
 		INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:169:13-64
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:197:13-64
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:170:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:198:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:13-62
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:196:13-62
 manifest
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-196:12
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-207:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-207:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-207:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-207:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\31dfa89dcc1fdc624ef6a8af618cbddc\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\8ca9a4c9e3c61d3afab78cac65c1a47d\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -22,32 +22,39 @@ MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\Vladimir Ascencio\.gra
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\138b5312139db8dec87e2067c29e8fe6\workspace\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\de4fdfd84fea3fcfb455e7892f487214\workspace\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.android.gms:play-services-location:21.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d90b2efa0f9982b753a648ae87e3ae93\workspace\transformed\play-services-location-21.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:17:1-66:12
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:17:1-75:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fc2ae0e68dfea8e77d09aef286777af9\workspace\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\923173c0dc2d42fdfe0e382d1b8d9af4\workspace\transformed\play-services-auth-base-18.0.10\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7816df7ed8b0037418fdd0c7a6581476\workspace\transformed\play-services-fido-20.0.1\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\01148adbd7398dbcfa4d211fc1c2fbc1\workspace\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\511537fbbf3788505fc5da4739669ba6\workspace\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\682dc5a8549b6365f25e4a4637d86d88\workspace\transformed\firebase-analytics-21.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:17:1-43:12
-MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\481a9e10e6b874cc313596e4fc10414f\workspace\transformed\integrity-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:15:1-41:12
-MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\05b49f7592771838dc5399a51f3d2cf4\workspace\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
 MERGED from [com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a4e9ec07bbf095b9265ae533b8a5a9ff\workspace\transformed\generativeai-0.9.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.ai.client.generativeai:common:0.8.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7b60b10ac5252af3f45b245e6dd893da\workspace\transformed\common-0.8.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\db565f4dbcb1abb95d30af92d2089587\workspace\transformed\navigationevent\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:17:1-46:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a5f581962e8b472be42207470e28f4e9\workspace\transformed\play-services-measurement-sdk-21.5.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\eb3ef1f4db17bc90de80d4db8a9940c8\workspace\transformed\play-services-measurement-impl-21.5.0\AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ca348cc353e9d1d96e632d5a4141c5b0\workspace\transformed\play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\649c3a04fbd9b650cb031bc24816ce38\workspace\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\e501edda467cc717cb448044f5e716c2\workspace\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\30c79c1b9fbb03a66b03030dc7c623ef\workspace\transformed\loader-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\df186e784d43797d33f7ed738958c518\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70379faa1fa0a5104640d58bd7e9352e\workspace\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\4f4ccc3baf50cb65d64342ce825c7131\workspace\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
@@ -61,8 +68,8 @@ MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\V
 MERGED from [androidx.core:core-ktx:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\b92073fac5004dc57ab8711d40fe5adb\workspace\transformed\core-ktx-1.18.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d70a2c90595d73f0ea5f8eb8ca808a31\workspace\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2d0628ea406cc919e64f5100de552551\workspace\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a70cb5a99b4e4c1dceb41356573ef1af\workspace\transformed\browser-1.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c9f73355bb0a493f5772157240a91063\workspace\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ad7a452dfaba63cab321f4166d944ea6\workspace\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ed499c92e280cc4ca9ec0981af307509\workspace\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:17:1-35:12
@@ -76,7 +83,7 @@ MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\User
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5b9bba5a612e96e37ff46573a03e1edf\workspace\transformed\play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:17:1-30:12
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3859c28cef8eaee1eedce3b884cfa2d3\workspace\transformed\play-services-measurement-base-21.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9d4533eac2e27a471637a9fdb87ead8a\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a73a05ae2bbb70f05342fc7dd3fcc95a\workspace\transformed\fragment-1.5.7\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c2ff0faab8c3fb58889da95562659fb1\workspace\transformed\activity-1.13.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\937fbf8a207afc5dbdcea74f8c904a91\workspace\transformed\core-viewtree-1.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\52e08f71eb50dadfaa7bbff6439eaa52\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
@@ -88,16 +95,16 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Vladimir Asce
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3929b30a5c1176728ba6116705087f78\workspace\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\72b6ac2b2a3f3bc745532b92d307a939\workspace\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:15:1-33:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\53c50c84ece4b814d4355ce6fad16cd7\workspace\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3da99a5601c89b9046123276c4acc57f\workspace\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\b6d736e481a0947c81224442ee5b2697\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f1f718c255384d0b75614050e75440a6\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a052bcc4a4ea7a217c8520017d6067fe\workspace\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b8581f5c6f6aeea99391316c333a107\workspace\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\83461a797a365520ffbcc5235a3b0adb\workspace\transformed\runtime-annotation\AndroidManifest.xml:2:1-7:12
 	package
@@ -111,43 +118,47 @@ MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users
 	xmlns:android
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:6:9-68
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:5:5-64
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:6:26-66
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:5:22-62
 uses-feature#android.hardware.camera
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:8:5-84
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:6:5-84
 	android:required
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:8:58-82
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:6:58-82
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:8:19-57
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:6:19-57
 uses-feature#android.hardware.camera.front
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:5-90
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:7:5-90
 	android:required
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:64-88
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:7:64-88
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:19-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:7:19-63
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:10:5-75
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:8:5-75
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:10:22-73
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:8:22-73
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:11:5-106
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:5-106
 	android:maxSdkVersion
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:11:78-104
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:78-104
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:11:22-77
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:9:22-77
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:12:5-66
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:10:5-66
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:7:5-67
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
 MERGED from [com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a4e9ec07bbf095b9265ae533b8a5a9ff\workspace\transformed\generativeai-0.9.0\AndroidManifest.xml:22:5-67
 MERGED from [com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a4e9ec07bbf095b9265ae533b8a5a9ff\workspace\transformed\generativeai-0.9.0\AndroidManifest.xml:22:5-67
 MERGED from [com.google.ai.client.generativeai:common:0.8.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7b60b10ac5252af3f45b245e6dd893da\workspace\transformed\common-0.8.0\AndroidManifest.xml:22:5-67
@@ -161,62 +172,68 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:13:5-78
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:13:22-76
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:11:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:14:5-80
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:14:22-78
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:15:5-76
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:13:5-76
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:23:5-77
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:23:5-77
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:15:22-74
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:13:22-74
 queries
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:18:5-30:15
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:15:5-27:15
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:19:9-21:18
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:16:9-18:18
 action#android.media.action.IMAGE_CAPTURE
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:20:13-72
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:17:13-72
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:20:21-70
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:17:21-70
 intent#action:name:android.intent.action.PICK+data:mimeType:image/*
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:22:9-25:18
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:19:9-22:18
 action#android.intent.action.PICK
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:23:13-64
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:20:13-64
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:23:21-62
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:20:21-62
 data
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:24:13-47
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:13-47
 	android:mimeType
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:24:19-45
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:19-45
 intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:image/*
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:26:9-29:18
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:23:9-26:18
 action#android.intent.action.GET_CONTENT
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:27:13-71
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:24:13-71
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:27:21-69
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:24:21-69
 application
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-194:15
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:5-194:15
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-205:19
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-205:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5c64892acfd7bcc7fe21a6d53cb1a44\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\31dfa89dcc1fdc624ef6a8af618cbddc\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\31dfa89dcc1fdc624ef6a8af618cbddc\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-location:21.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d90b2efa0f9982b753a648ae87e3ae93\workspace\transformed\play-services-location-21.2.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:21.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d90b2efa0f9982b753a648ae87e3ae93\workspace\transformed\play-services-location-21.2.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:28:5-64:19
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:28:5-64:19
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:25:5-36:19
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7816df7ed8b0037418fdd0c7a6581476\workspace\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7816df7ed8b0037418fdd0c7a6581476\workspace\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\01148adbd7398dbcfa4d211fc1c2fbc1\workspace\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\01148adbd7398dbcfa4d211fc1c2fbc1\workspace\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
@@ -225,18 +242,18 @@ MERGED from [com.google.firebase:firebase-analytics:21.5.0] C:\Users\Vladimir As
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\682dc5a8549b6365f25e4a4637d86d88\workspace\transformed\firebase-analytics-21.5.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:29:5-41:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:29:5-41:19
-MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\481a9e10e6b874cc313596e4fc10414f\workspace\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\481a9e10e6b874cc313596e4fc10414f\workspace\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
-MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a5f581962e8b472be42207470e28f4e9\workspace\transformed\play-services-measurement-sdk-21.5.0\AndroidManifest.xml:22:5-23:19
@@ -245,6 +262,8 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\eb3ef1f4db17bc90de80d4db8a9940c8\workspace\transformed\play-services-measurement-impl-21.5.0\AndroidManifest.xml:29:5-30:19
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ca348cc353e9d1d96e632d5a4141c5b0\workspace\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ca348cc353e9d1d96e632d5a4141c5b0\workspace\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:5-89
@@ -278,243 +297,267 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:40:9-35
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:37:9-35
 	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:38:9-41
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:35:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:36:9-54
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:33:9-54
 	android:roundIcon
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:39:9-54
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:36:9-54
 	android:icon
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:37:9-43
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:34:9-43
 	android:allowBackup
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:33:9-35
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:30:9-35
 	android:theme
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:41:9-49
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:38:9-49
 	android:networkSecurityConfig
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:42:9-69
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:39:9-69
 	android:dataExtractionRules
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:35:9-65
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:9-65
 	android:usesCleartextTraffic
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:34:9-44
-activity#sv.edu.agroconecta.ui.LoginActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:45:9-53:20
-	android:windowSoftInputMode
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:48:13-52
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:31:9-44
+activity#sv.edu.agroconecta.ui.SplashActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:42:9-51:20
+	android:screenOrientation
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:46:13-49
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:47:13-36
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:44:13-36
+	android:theme
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:45:13-53
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:46:13-45
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:43:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:49:13-52:29
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:50:17-69
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:50:25-66
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:51:17-77
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:51:27-74
-activity#sv.edu.agroconecta.ui.UsuarioActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:56:9-58:40
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:58:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:49:27-74
+activity#sv.edu.agroconecta.ui.OnboardingActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:54:9-57:51
+	android:screenOrientation
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:57:13-49
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:57:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:56:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:56:19-53
-activity#sv.edu.agroconecta.ui.AdminDashboardActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:61:9-63:37
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:63:13-34
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:55:13-50
+activity#sv.edu.agroconecta.ui.LoginActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:60:9-63:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:63:13-55
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:62:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:61:19-60
-activity#sv.edu.agroconecta.ui.PerfilAdminActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:9-68:41
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:68:13-38
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:61:13-45
+activity#sv.edu.agroconecta.ui.RegisterActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:9-68:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:68:13-55
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:67:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:19-57
-activity#sv.edu.agroconecta.ui.ProductosAdminActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:9-73:52
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:73:13-49
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:66:19-54
+activity#sv.edu.agroconecta.ui.ForgotPasswordActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:9-73:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:73:13-55
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:72:13-37
 	android:name
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:71:19-60
-activity#sv.edu.agroconecta.ui.AgregarEditarProductoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:75:9-77:40
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:77:13-37
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:76:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:75:19-67
-activity#sv.edu.agroconecta.ui.ReportesActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-82:40
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:82:13-37
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:81:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:19-54
 activity#sv.edu.agroconecta.ui.TermsActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:9-87:54
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-51
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:76:9-77:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:86:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:77:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:19-51
-activity#sv.edu.agroconecta.ui.RegisterActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:9-92:42
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-40
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:76:19-51
+activity#sv.edu.agroconecta.MainActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-82:38
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:91:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:82:13-36
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:19-54
-activity#sv.edu.agroconecta.ui.ForgotPasswordActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:9-97:53
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-51
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:81:13-41
+activity#sv.edu.agroconecta.ui.BuyerModuleActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:9-87:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:96:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:19-60
-activity#sv.edu.agroconecta.ui.EditarUsuarioActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:9-102:37
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-35
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:86:13-51
+activity#sv.edu.agroconecta.ui.ProductoDetalleActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:9-92:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:19-59
-activity#sv.edu.agroconecta.ui.CrearUsuarioActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:9-107:36
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-34
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:91:13-55
+activity#sv.edu.agroconecta.ui.CarritoActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:9-97:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:96:13-47
+activity#sv.edu.agroconecta.ui.MisPedidosActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:9-102:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:13-50
+activity#sv.edu.agroconecta.ui.PerfilClienteActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:9-107:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-55
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:19-58
-activity#sv.edu.agroconecta.MainActivity
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:19-59
+activity#sv.edu.agroconecta.ui.MapaActivity
 ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:110:9-112:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-36
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:13-41
-activity#sv.edu.agroconecta.ui.BuyerModuleActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:9-118:40
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:117:13-45
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:13-44
+activity#sv.edu.agroconecta.ui.CalificacionActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:9-116:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:118:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:13-51
-activity#sv.edu.agroconecta.ui.MapaActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:121:9-124:45
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:13-43
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:19-58
+activity#sv.edu.agroconecta.ui.SeguimientoPedidoActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:119:9-120:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:122:13-44
-activity#sv.edu.agroconecta.ui.ProductoDetalleActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:9-130:47
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:130:13-45
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:119:19-63
+activity#sv.edu.agroconecta.ui.ChatActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:9-124:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:129:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:13-55
-activity#sv.edu.agroconecta.ui.CarritoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:9-135:41
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:13-39
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:134:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:13-47
-activity#sv.edu.agroconecta.ui.MisPedidosActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:9-140:42
-	android:label
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:13-40
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:138:13-50
-meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:9-144:70
-	android:value
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:13-68
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:143:13-58
-service#sv.edu.agroconecta.service.AgroConectaFirebaseService
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:9-152:19
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:147:13-63
-intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:149:13-151:29
-action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:17-77
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:25-75
-meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:9-156:46
-	android:value
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:156:13-44
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:13-89
-activity#sv.edu.agroconecta.ui.VendedorDashboardActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:9-161:39
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:13-36
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:19-63
-activity#sv.edu.agroconecta.ui.AgregarProductoVendedorActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:9-163:40
-	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:163:13-37
-	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:19-69
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:19-50
 activity#sv.edu.agroconecta.ui.ContactarVendedorActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:9-165:40
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:9-129:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:129:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:19-63
+activity#sv.edu.agroconecta.ui.AdminDashboardActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:9-133:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:19-60
+activity#sv.edu.agroconecta.ui.PerfilAdminActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:9-137:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:136:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:19-57
+activity#sv.edu.agroconecta.ui.UsuarioActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:9-140:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:19-53
+activity#sv.edu.agroconecta.ui.CrearUsuarioActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:9-144:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:143:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:19-58
+activity#sv.edu.agroconecta.ui.EditarUsuarioActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:9-148:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:147:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:19-59
+activity#sv.edu.agroconecta.ui.ProductosAdminActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:9-151:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:151:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:19-60
+activity#sv.edu.agroconecta.ui.AgregarEditarProductoActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:9-155:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:19-67
+activity#sv.edu.agroconecta.ui.ReportesActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:9-158:39
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:158:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:19-54
+activity#sv.edu.agroconecta.ui.VendedorDashboardActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:9-162:38
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:13-36
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:19-63
+activity#sv.edu.agroconecta.ui.PerfilVendedorActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:9-166:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:166:13-55
 	android:exported
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:165:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:19-63
-activity#sv.edu.agroconecta.ui.ChatActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:9-77
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:19-60
+activity#sv.edu.agroconecta.ui.AgregarProductoVendedorActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:9-170:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:170:13-55
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:51-75
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:169:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:19-50
-activity#sv.edu.agroconecta.ui.CalificacionActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:9-85
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:19-69
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:173:9-175:70
+	android:value
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:175:13-68
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:13-58
+meta-data#com.google.firebase.messaging.default_notification_channel_id
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:9-180:46
+	android:value
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:180:13-44
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:179:13-89
+service#sv.edu.agroconecta.service.AgroConectaFirebaseService
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:182:9-188:19
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:59-83
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:19-58
-activity#sv.edu.agroconecta.ui.SeguimientoPedidoActivity
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:9-90
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:183:13-63
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:185:13-187:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:17-77
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:25-75
+activity#sv.edu.agroconecta.ui.SoporteActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:191:9-192:39
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:64-88
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:192:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:19-63
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:191:19-53
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:172:13-174:53
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:200:13-202:53
 	android:resource
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:17-51
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:202:17-51
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:173:17-67
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:201:17-67
 uses-sdk
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml
@@ -533,12 +576,22 @@ MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Vladimir Ascencio\
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\138b5312139db8dec87e2067c29e8fe6\workspace\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\de4fdfd84fea3fcfb455e7892f487214\workspace\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\de4fdfd84fea3fcfb455e7892f487214\workspace\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-location:21.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d90b2efa0f9982b753a648ae87e3ae93\workspace\transformed\play-services-location-21.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:21.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d90b2efa0f9982b753a648ae87e3ae93\workspace\transformed\play-services-location-21.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:21:5-23:64
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:21:5-23:64
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fc2ae0e68dfea8e77d09aef286777af9\workspace\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fc2ae0e68dfea8e77d09aef286777af9\workspace\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\923173c0dc2d42fdfe0e382d1b8d9af4\workspace\transformed\play-services-auth-base-18.0.10\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\923173c0dc2d42fdfe0e382d1b8d9af4\workspace\transformed\play-services-auth-base-18.0.10\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7816df7ed8b0037418fdd0c7a6581476\workspace\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7816df7ed8b0037418fdd0c7a6581476\workspace\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\01148adbd7398dbcfa4d211fc1c2fbc1\workspace\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\01148adbd7398dbcfa4d211fc1c2fbc1\workspace\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\511537fbbf3788505fc5da4739669ba6\workspace\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
@@ -549,18 +602,22 @@ MERGED from [com.google.firebase:firebase-analytics:21.5.0] C:\Users\Vladimir As
 MERGED from [com.google.firebase:firebase-analytics:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\682dc5a8549b6365f25e4a4637d86d88\workspace\transformed\firebase-analytics-21.5.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\481a9e10e6b874cc313596e4fc10414f\workspace\transformed\integrity-1.1.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\481a9e10e6b874cc313596e4fc10414f\workspace\transformed\integrity-1.1.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5d8c541a6488acebfcba40bc0b5ba2f7\workspace\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ef94b51812cbaf4211425759b4de036\workspace\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\05b49f7592771838dc5399a51f3d2cf4\workspace\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\05b49f7592771838dc5399a51f3d2cf4\workspace\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a4e9ec07bbf095b9265ae533b8a5a9ff\workspace\transformed\generativeai-0.9.0\AndroidManifest.xml:20:5-44
@@ -569,10 +626,6 @@ MERGED from [com.google.ai.client.generativeai:common:0.8.0] C:\Users\Vladimir A
 MERGED from [com.google.ai.client.generativeai:common:0.8.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7b60b10ac5252af3f45b245e6dd893da\workspace\transformed\common-0.8.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\db565f4dbcb1abb95d30af92d2089587\workspace\transformed\navigationevent\AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\db565f4dbcb1abb95d30af92d2089587\workspace\transformed\navigationevent\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a5f581962e8b472be42207470e28f4e9\workspace\transformed\play-services-measurement-sdk-21.5.0\AndroidManifest.xml:20:5-44
@@ -583,8 +636,12 @@ MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Vladimi
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ca348cc353e9d1d96e632d5a4141c5b0\workspace\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\649c3a04fbd9b650cb031bc24816ce38\workspace\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\649c3a04fbd9b650cb031bc24816ce38\workspace\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\e501edda467cc717cb448044f5e716c2\workspace\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\e501edda467cc717cb448044f5e716c2\workspace\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\30c79c1b9fbb03a66b03030dc7c623ef\workspace\transformed\loader-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\30c79c1b9fbb03a66b03030dc7c623ef\workspace\transformed\loader-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\33e10fe0b779bab06aee0cf1dd1c88d6\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\df186e784d43797d33f7ed738958c518\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\df186e784d43797d33f7ed738958c518\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70379faa1fa0a5104640d58bd7e9352e\workspace\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -611,10 +668,10 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vladimir Ascencio\.gra
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d70a2c90595d73f0ea5f8eb8ca808a31\workspace\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2d0628ea406cc919e64f5100de552551\workspace\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2d0628ea406cc919e64f5100de552551\workspace\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a70cb5a99b4e4c1dceb41356573ef1af\workspace\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a70cb5a99b4e4c1dceb41356573ef1af\workspace\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c9f73355bb0a493f5772157240a91063\workspace\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c9f73355bb0a493f5772157240a91063\workspace\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ad7a452dfaba63cab321f4166d944ea6\workspace\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ad7a452dfaba63cab321f4166d944ea6\workspace\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ed499c92e280cc4ca9ec0981af307509\workspace\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
@@ -641,8 +698,8 @@ MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3859c28cef8eaee1eedce3b884cfa2d3\workspace\transformed\play-services-measurement-base-21.5.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9d4533eac2e27a471637a9fdb87ead8a\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9d4533eac2e27a471637a9fdb87ead8a\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a73a05ae2bbb70f05342fc7dd3fcc95a\workspace\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a73a05ae2bbb70f05342fc7dd3fcc95a\workspace\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c2ff0faab8c3fb58889da95562659fb1\workspace\transformed\activity-1.13.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c2ff0faab8c3fb58889da95562659fb1\workspace\transformed\activity-1.13.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\937fbf8a207afc5dbdcea74f8c904a91\workspace\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
@@ -665,6 +722,10 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vladimir Ascenci
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\72b6ac2b2a3f3bc745532b92d307a939\workspace\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
@@ -677,18 +738,16 @@ MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Vladimi
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3da99a5601c89b9046123276c4acc57f\workspace\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\b6d736e481a0947c81224442ee5b2697\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\b6d736e481a0947c81224442ee5b2697\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
-MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d4831b1ee40c295835ef3e2bd4afc926\workspace\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f1f718c255384d0b75614050e75440a6\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f1f718c255384d0b75614050e75440a6\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a052bcc4a4ea7a217c8520017d6067fe\workspace\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a052bcc4a4ea7a217c8520017d6067fe\workspace\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\da177f8b0ebc8ee1d7d98b51683991be\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b8581f5c6f6aeea99391316c333a107\workspace\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b8581f5c6f6aeea99391316c333a107\workspace\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\83461a797a365520ffbcc5235a3b0adb\workspace\transformed\runtime-annotation\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\83461a797a365520ffbcc5235a3b0adb\workspace\transformed\runtime-annotation\AndroidManifest.xml:5:5-44
+	tools:overrideLibrary
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
 		INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
@@ -699,12 +758,16 @@ MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir As
 MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5577fcc3f04024237be6603a4a2b9815\workspace\transformed\recaptcha-18.1.2\AndroidManifest.xml:8:5-79
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c319c21998188d9daf14a017d38312f7\workspace\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\eb3ef1f4db17bc90de80d4db8a9940c8\workspace\transformed\play-services-measurement-impl-21.5.0\AndroidManifest.xml:24:5-79
@@ -733,6 +796,26 @@ ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir 
 		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:34:13-89
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:24:5-68
@@ -785,6 +868,8 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:54:9-63:19
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:26:9-35:19
 MERGED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:34:9-40:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:34:9-40:19
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:12:9-21:19
@@ -827,6 +912,52 @@ ADDED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Asce
 		ADDED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:34:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:33:17-109
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:29:9-46:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:31:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:33:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:30:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:35:13-45:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:27-75
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:47:9-64:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:49:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:51:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:48:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:53:13-63:29
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:69:13-71:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:71:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:70:17-109
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
 	android:exported
@@ -905,28 +1036,6 @@ ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascenc
 		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
-provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
-	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-meta-data#androidx.emoji2.text.EmojiCompatInitializer
-ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-	android:value
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:26:5-110
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\eb3ef1f4db17bc90de80d4db8a9940c8\workspace\transformed\play-services-measurement-impl-21.5.0\AndroidManifest.xml:26:5-110
@@ -959,6 +1068,28 @@ ADDED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vl
 		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:43:13-69
 	android:name
 		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:40:13-87
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9f63cf09fb9ab205817bda70942c2d76\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 uses-library#android.ext.adservices
 ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
 	android:required

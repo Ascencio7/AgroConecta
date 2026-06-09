@@ -7,6 +7,7 @@ public class LoginResponse {
     private String nombre;
     private String correo;
     private String rol;
+    private String foto_perfil;
 
     public boolean isSuccess() {
         return success;
@@ -30,6 +31,10 @@ public class LoginResponse {
 
     public String getRol() {
         return rol;
+    }
+
+    public String getFotoPerfil() {
+        return foto_perfil;
     }
 
     // NO BORRAR SE USA PARA RENDER

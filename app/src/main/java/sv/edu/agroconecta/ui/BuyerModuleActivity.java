@@ -166,13 +166,21 @@ public class BuyerModuleActivity extends AppCompatActivity {
 
     private void agregarAlCarrito(Product product) {
         Intent intent = new Intent(this, ProductoDetalleActivity.class);
-        intent.putExtra("producto_id", product.getProductoId());
-        intent.putExtra("nombre", product.getNombre());
-        intent.putExtra("descripcion", product.getDescripcion());
-        intent.putExtra("precio", product.getPrecio());
-        intent.putExtra("imagen", product.getImagen());
-        intent.putExtra("categoria", product.getCategoria());
-        intent.putExtra("existencia", product.getExistencia());
+        intent.putExtra("producto_id",          product.getProductoId());
+        intent.putExtra("nombre",               product.getNombre());
+        intent.putExtra("descripcion",          product.getDescripcion());
+        intent.putExtra("precio",               product.getPrecio());
+        intent.putExtra("imagen",               product.getImagen());
+        intent.putExtra("categoria",            product.getCategoria());
+        intent.putExtra("existencia",           product.getExistencia());
+        intent.putExtra("usuario_id",           product.getUsuarioId() != null ? product.getUsuarioId() : -1);
+        intent.putExtra("nombre_vendedor",      product.getNombreVendedor());
+        intent.putExtra("telefono_vendedor",    product.getTelefonoVendedor());
+        intent.putExtra("foto_perfil_vendedor", product.getFotoPerfilVendedor());
+        intent.putExtra("metodos_pago",         product.getMetodosPagoTexto());
+        intent.putExtra("direccion",            product.getDireccion());
+        intent.putExtra("latitud",              product.getLatitud()  != null ? product.getLatitud()  : 0.0);
+        intent.putExtra("longitud",             product.getLongitud() != null ? product.getLongitud() : 0.0);
         startActivity(intent);
     }
 

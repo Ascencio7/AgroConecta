@@ -1,6 +1,9 @@
 package sv.edu.agroconecta.adapter;
 
 import android.app.AlertDialog;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,6 +54,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNombre, txtCorreo, txtTelefono, txtEstado, txtAvatar, txtRol;
         View btnEditar, btnEliminar;
+        ImageView ivFotoUsuario;
 
         public ViewHolder(View view) {
             super(view);
@@ -62,6 +66,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
             txtRol = view.findViewById(R.id.txtRol);
             btnEditar = view.findViewById(R.id.btnEditar);
             btnEliminar = view.findViewById(R.id.btnEliminar);
+            ivFotoUsuario = view.findViewById(R.id.ivFotoUsuario);
         }
     }
 
@@ -78,6 +83,19 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         Usuario u = lista.get(position);
         holder.txtNombre.setText(u.getNombre());
         holder.txtAvatar.setText(obtenerIniciales(u.getNombre()));
+
+        // Foto de perfil
+        holder.ivFotoUsuario.setVisibility(android.view.View.GONE);
+        holder.txtAvatar.setVisibility(android.view.View.VISIBLE);
+        String foto = u.getFotoPerfil();
+        if (foto != null && !foto.isEmpty() && holder.ivFotoUsuario != null) {
+            Glide.with(context)
+                .load(foto)
+                .transform(new CircleCrop())
+                .into(holder.ivFotoUsuario);
+            holder.ivFotoUsuario.setVisibility(android.view.View.VISIBLE);
+            holder.txtAvatar.setVisibility(android.view.View.GONE);
+        }
         holder.txtCorreo.setText(u.getCorreo());
         holder.txtTelefono.setText(u.getTelefono());
         if (holder.txtRol != null) holder.txtRol.setText(u.getRol() != null ? u.getRol() : "Usuario");

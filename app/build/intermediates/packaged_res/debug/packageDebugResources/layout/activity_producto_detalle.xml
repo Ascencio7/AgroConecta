@@ -315,17 +315,29 @@
                             android:orientation="horizontal"
                             android:gravity="center_vertical"
                             android:layout_marginBottom="16dp">
-                            <TextView
-                                android:id="@+id/tvAvatarVendedorDetalle"
+                            <FrameLayout
                                 android:layout_width="54dp"
                                 android:layout_height="54dp"
-                                android:gravity="center"
-                                android:text="V"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/carbon"
-                                android:background="@drawable/bg_avatar_circle"
-                                android:layout_marginEnd="16dp"/>
+                                android:layout_marginEnd="16dp">
+                                <TextView
+                                    android:id="@+id/tvAvatarVendedorDetalle"
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:gravity="center"
+                                    android:text="V"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/carbon"
+                                    android:background="@drawable/bg_avatar_circle"/>
+                                <ImageView
+                                    android:id="@+id/ivFotoVendedorDetalle"
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@drawable/bg_avatar_circle"
+                                    android:visibility="gone"
+                                    android:contentDescription="Foto vendedor"/>
+                            </FrameLayout>
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"

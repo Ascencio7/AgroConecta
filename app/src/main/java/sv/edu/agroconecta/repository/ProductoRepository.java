@@ -1,6 +1,7 @@
 package sv.edu.agroconecta.repository;
 
 import java.util.List;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import sv.edu.agroconecta.modelo.Product;
 import sv.edu.agroconecta.network.ApiClient;
@@ -25,7 +26,7 @@ public class ProductoRepository {
         return api.crearProducto(product);
     }
 
-    public Call<Product> actualizarProducto(int id, Product product) {
+    public Call<ResponseBody> actualizarProducto(int id, Product product) {
         return api.actualizarProducto(id, product);
     }
 

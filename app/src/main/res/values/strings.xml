@@ -3,4 +3,6 @@
     <string name="bienvenido_a">Bienvenido/a</string>
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="nombre_completo">Nombre completo</string>
+    <!-- Google Sign-In Web Client ID  -->
+    <string name="default_web_client_id">1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com</string>
 </resources>

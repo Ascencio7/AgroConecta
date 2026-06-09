@@ -26,6 +26,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import retrofit2.Call;
+import okhttp3.ResponseBody;
 import retrofit2.Callback;
 import retrofit2.Response;
 import sv.edu.agroconecta.R;
@@ -269,8 +270,8 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         Toast.makeText(this, "⬆️ Subiendo foto...", Toast.LENGTH_SHORT).show();
 
         new Thread(() -> {
-            try {
-                InputStream is = getContentResolver().openInputStream(imageUri);
+            try (InputStream is = getContentResolver().openInputStream(imageUri)) {
+                if (is == null) return;
                 byte[] bytes = leerBytes(is);
 
                 SupabaseImageHelper.subirImagen(bytes, new SupabaseImageHelper.UploadCallback() {
@@ -420,9 +421,32 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         p.setEstado(true);
         p.setUsuarioId(sessionManager.getUserId());
         p.setCategoriaId(categorias.get(spCategoria.getSelectedItemPosition()).getCategoriaId());
-        p.setTelefonoVendedor(etTelefono.getText().toString().trim());
+        String telVendedor = etTelefono.getText().toString().trim();
+        if (!telVendedor.isEmpty()) {
+            String soloDigVend = telVendedor.replaceAll("[^0-9]", "");
+            if (soloDigVend.length() != 8 || !soloDigVend.matches("^[2678]\\d{7}$")) {
+                etTelefono.setError("Teléfono inválido (8 dígitos, empieza en 2,6,7 u 8)");
+                etTelefono.requestFocus();
+                btnPublicar.setEnabled(true);
+                btnPublicar.setText("🌿  Publicar producto");
+                return;
+            }
+        }
+        p.setTelefonoVendedor(telVendedor);
         p.setDireccion(etDireccion.getText().toString().trim());
-        if (latSeleccionada != 0) {
+        // Leer latitud/longitud desde los campos de texto (por si ya venían de edición previa)
+        String latStr = etLatitud.getText().toString().trim();
+        String lonStr = etLongitud.getText().toString().trim();
+        if (!latStr.isEmpty() && !lonStr.isEmpty()) {
+            try {
+                double latFinal = Double.parseDouble(latStr);
+                double lonFinal = Double.parseDouble(lonStr);
+                if (latFinal != 0) {
+                    p.setLatitud(latFinal);
+                    p.setLongitud(lonFinal);
+                }
+            } catch (NumberFormatException ignored) {}
+        } else if (latSeleccionada != 0) {
             p.setLatitud(latSeleccionada);
             p.setLongitud(lonSeleccionada);
         }
@@ -433,41 +457,59 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         // Imagen subida a Supabase Storage — URL pública
         if (imagenUrl != null && imagenUrl.startsWith("https://")) p.setImagen(imagenUrl);
 
-        Callback<Product> cb = new Callback<Product>() {
-            @Override
-            public void onResponse(Call<Product> c, Response<Product> r) {
-                if (r.isSuccessful() && r.body() != null) {
-                    int nuevoProductoId = r.body().getProductoId();
-
-                    if (productoId == -1)
+        if (productoId == -1) {
+            // CREAR - devuelve Product completo
+            productApi.crearProducto(p).enqueue(new Callback<Product>() {
+                @Override
+                public void onResponse(Call<Product> c, Response<Product> r) {
+                    btnPublicar.setEnabled(true);
+                    btnPublicar.setText("🌿  Publicar producto");
+                    if (r.isSuccessful() && r.body() != null) {
                         NotificacionNuevoProductoService.enviarNotificacion(
                                 AgregarProductoVendedorActivity.this, nombre);
-
-                    btnPublicar.setEnabled(true);
-                    btnPublicar.setText("🌿  Publicar producto");
-                    Toast.makeText(AgregarProductoVendedorActivity.this,
-                            productoId == -1 ? "✅ Producto publicado" : "✅ Producto actualizado",
-                            Toast.LENGTH_LONG).show();
-                    setResult(RESULT_OK);
-                    finish();
-                } else {
-                    btnPublicar.setEnabled(true);
-                    btnPublicar.setText("🌿  Publicar producto");
-                    Toast.makeText(AgregarProductoVendedorActivity.this,
-                            "Error al publicar. Intenta de nuevo.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AgregarProductoVendedorActivity.this,
+                                "✅ Producto publicado", Toast.LENGTH_LONG).show();
+                        setResult(RESULT_OK);
+                        finish();
+                    } else {
+                        Toast.makeText(AgregarProductoVendedorActivity.this,
+                                "Error al publicar. Intenta de nuevo.", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-            @Override
-            public void onFailure(Call<Product> c, Throwable t) {
-                btnPublicar.setEnabled(true);
-                btnPublicar.setText("🌿  Publicar producto");
-                Toast.makeText(AgregarProductoVendedorActivity.this,
-                        "Sin conexión", Toast.LENGTH_SHORT).show();
-            }
-        };
-
-        if (productoId == -1) productApi.crearProducto(p).enqueue(cb);
-        else                  productApi.actualizarProducto(productoId, p).enqueue(cb);
+                @Override
+                public void onFailure(Call<Product> c, Throwable t) {
+                    btnPublicar.setEnabled(true);
+                    btnPublicar.setText("🌿  Publicar producto");
+                    Toast.makeText(AgregarProductoVendedorActivity.this,
+                            "Sin conexión", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            // ACTUALIZAR - devuelve {success: true, message: "..."}
+            productApi.actualizarProducto(productoId, p).enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> c, Response<ResponseBody> r) {
+                    btnPublicar.setEnabled(true);
+                    btnPublicar.setText("🌿  Publicar producto");
+                    if (r.isSuccessful()) {
+                        Toast.makeText(AgregarProductoVendedorActivity.this,
+                                "✅ Producto actualizado", Toast.LENGTH_LONG).show();
+                        setResult(RESULT_OK);
+                        finish();
+                    } else {
+                        Toast.makeText(AgregarProductoVendedorActivity.this,
+                                "Error al actualizar (código " + r.code() + ")", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<ResponseBody> c, Throwable t) {
+                    btnPublicar.setEnabled(true);
+                    btnPublicar.setText("🌿  Publicar producto");
+                    Toast.makeText(AgregarProductoVendedorActivity.this,
+                            "Sin conexión", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override

@@ -24,6 +24,16 @@ import sv.edu.agroconecta.network.ApiClient;
 import sv.edu.agroconecta.network.AuthApi;
 // Import para el admin de las sesiones
 import sv.edu.agroconecta.utils.SessionManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.messaging.FirebaseMessaging;
 import sv.edu.agroconecta.utils.FCMHelper;
 
@@ -33,6 +43,9 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     AuthApi authApi;
     SessionManager sessionManager;
+    GoogleSignInClient googleSignInClient;
+    FirebaseAuth firebaseAuth;
+    private static final int RC_SIGN_IN = 9001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +90,19 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         authApi = ApiClient.getClient().create(AuthApi.class);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        // Google Sign-In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .requestProfile()
+                .build();
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        // Buscar botón de Google en el layout
+        android.view.View btnGoogle = findViewById(R.id.btnGoogleSignIn);
+        if (btnGoogle != null) btnGoogle.setOnClickListener(v -> iniciarGoogleSignIn());
 
         btnLogin.setOnClickListener(v -> loginUser());
 
@@ -94,6 +120,159 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("FCM_TOKEN", "Token: " + token);
                     }
                 });
+    }
+
+    private void iniciarGoogleSignIn() {
+        // Cerrar sesión de Google primero para que siempre aparezca el selector de cuentas
+        googleSignInClient.signOut().addOnCompleteListener(this, task -> {
+            Intent signInIntent = googleSignInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken(), account);
+            } catch (ApiException e) {
+                Toast.makeText(this, "Google Sign-In cancelado", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken, GoogleSignInAccount account) {
+        btnLogin.setEnabled(false);
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, task -> {
+            if (task.isSuccessful()) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    String nombre = account.getDisplayName() != null ? account.getDisplayName() : user.getEmail();
+                    String correo = user.getEmail();
+                    String foto   = account.getPhotoUrl() != null ? account.getPhotoUrl().toString() : null;
+                    final String fotoFinal = foto;
+                    // Buscar o crear usuario en la BD
+                    buscarOCrearUsuarioGoogle(nombre, correo, fotoFinal);
+                }
+            } else {
+                btnLogin.setEnabled(true);
+                Toast.makeText(this, "Error con Google Sign-In", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void buscarOCrearUsuarioGoogle(String nombre, String correo, String foto) {
+        sv.edu.agroconecta.network.UsuarioApi usuarioApi =
+            sv.edu.agroconecta.network.ApiClient.getClient()
+                .create(sv.edu.agroconecta.network.UsuarioApi.class);
+
+        // Buscar si ya existe en la BD
+        usuarioApi.getUsuarios().enqueue(new Callback<java.util.List<sv.edu.agroconecta.model.Usuario>>() {
+            @Override
+            public void onResponse(retrofit2.Call<java.util.List<sv.edu.agroconecta.model.Usuario>> call,
+                                   retrofit2.Response<java.util.List<sv.edu.agroconecta.model.Usuario>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    for (sv.edu.agroconecta.model.Usuario u : response.body()) {
+                        if (correo.equalsIgnoreCase(u.getCorreo())) {
+                            // Usuario ya existe — iniciar sesión
+                            runOnUiThread(() -> {
+                                String rolBackend = (u.getRol() != null) ? u.getRol() : "CLIENTE";
+                                sessionManager.createSession(u.getUsuarioId(), nombre, correo, rolBackend);
+                                if (foto != null) sessionManager.setFotoPerfil(foto);
+                                showWelcomeNotification(nombre);
+                                navigateToDashboard(rolBackend, nombre, u.getUsuarioId());
+                                finish();
+                            });
+                            return;
+                        }
+                    }
+                }
+                // No existe — crear usuario nuevo con rol CLIENTE (3)
+                crearUsuarioGoogle(nombre, correo, foto, usuarioApi);
+            }
+            @Override
+            public void onFailure(retrofit2.Call<java.util.List<sv.edu.agroconecta.model.Usuario>> call, Throwable t) {
+                runOnUiThread(() -> {
+                    btnLogin.setEnabled(true);
+                    Toast.makeText(LoginActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
+    }
+
+    private void crearUsuarioGoogle(String nombre, String correo, String foto,
+                                     sv.edu.agroconecta.network.UsuarioApi usuarioApi) {
+        // Preguntar qué rol quiere antes de crear
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("¿Cómo quieres usar AgroConecta?")
+            .setMessage("Selecciona tu rol para continuar")
+            .setCancelable(false)
+            .setPositiveButton("🛒 Soy Comprador", (d, w) ->
+                registrarConGoogle(nombre, correo, foto, usuarioApi, 3))
+            .setNegativeButton("🌾 Soy Vendedor", (d, w) ->
+                registrarConGoogle(nombre, correo, foto, usuarioApi, 2))
+            .show();
+    }
+
+    private void registrarConGoogle(String nombre, String correo, String foto,
+                                     sv.edu.agroconecta.network.UsuarioApi usuarioApi, int rolId) {
+        sv.edu.agroconecta.model.Usuario nuevoUsuario = new sv.edu.agroconecta.model.Usuario();
+        nuevoUsuario.setNombre(nombre);
+        nuevoUsuario.setCorreo(correo);
+        nuevoUsuario.setPassword("google_" + System.currentTimeMillis());
+        nuevoUsuario.setRolId(rolId);
+
+        usuarioApi.createUsuario(nuevoUsuario).enqueue(new Callback<sv.edu.agroconecta.model.Usuario>() {
+            @Override
+            public void onResponse(retrofit2.Call<sv.edu.agroconecta.model.Usuario> call,
+                                   retrofit2.Response<sv.edu.agroconecta.model.Usuario> response) {
+                // Buscar el ID del usuario recién creado
+                usuarioApi.getUsuarios().enqueue(new Callback<java.util.List<sv.edu.agroconecta.model.Usuario>>() {
+                    @Override
+                    public void onResponse(retrofit2.Call<java.util.List<sv.edu.agroconecta.model.Usuario>> c2,
+                                           retrofit2.Response<java.util.List<sv.edu.agroconecta.model.Usuario>> r2) {
+                        int userId = -1;
+                        if (r2.isSuccessful() && r2.body() != null) {
+                            for (sv.edu.agroconecta.model.Usuario u : r2.body()) {
+                                if (correo.equalsIgnoreCase(u.getCorreo())) {
+                                    userId = u.getUsuarioId();
+                                    break;
+                                }
+                            }
+                        }
+                        final int uid = userId;
+                        runOnUiThread(() -> {
+                            if (uid > 0) {
+                                String rolStr = (rolId == 2) ? "VENDEDOR" : "CLIENTE";
+                                sessionManager.createSession(uid, nombre, correo, rolStr);
+                                if (foto != null) sessionManager.setFotoPerfil(foto);
+                                showWelcomeNotification(nombre);
+                                navigateToDashboard(rolStr, nombre, uid);
+                                finish();
+                            } else {
+                                btnLogin.setEnabled(true);
+                                Toast.makeText(LoginActivity.this,
+                                    "Error al crear cuenta Google", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    @Override public void onFailure(retrofit2.Call<java.util.List<sv.edu.agroconecta.model.Usuario>> c2, Throwable t) {
+                        runOnUiThread(() -> { btnLogin.setEnabled(true); });
+                    }
+                });
+            }
+            @Override
+            public void onFailure(retrofit2.Call<sv.edu.agroconecta.model.Usuario> call, Throwable t) {
+                runOnUiThread(() -> {
+                    btnLogin.setEnabled(true);
+                    Toast.makeText(LoginActivity.this, "Error al registrar con Google", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
     }
 
     private void loginUser() {
@@ -166,6 +345,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Guardar la sesión para que se mantenga abierta
                     sessionManager.createSession(user.getUsuarioId(), user.getNombre(), user.getCorreo(), user.getRol());
+                    // Guardar foto de perfil si el backend la devuelve
+                    if (user.getFotoPerfil() != null && !user.getFotoPerfil().isEmpty()) {
+                        sessionManager.setFotoPerfil(user.getFotoPerfil());
+                    }
 
                     // Se muestra la notificiacion en la Barra de notificacion del celular,
                     // muestra un mensaje de bienvenida con el nombre de Usuario y AgroConecta

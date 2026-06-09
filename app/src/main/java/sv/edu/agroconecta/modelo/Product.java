@@ -44,6 +44,9 @@ public class Product {
     @SerializedName("nombre_vendedor")
     private String nombreVendedor;
 
+    @SerializedName("foto_perfil_vendedor")
+    private String fotoPerfiltVendedor;
+
     private float userRating;
 
     // Getters / Setters estándar
@@ -88,6 +91,8 @@ public class Product {
     public void setAceptaTarjeta(Boolean v) { aceptaTarjeta = v; }
     public String getNombreVendedor() { return nombreVendedor; }
     public void setNombreVendedor(String v) { nombreVendedor = v; }
+    public String getFotoPerfilVendedor() { return fotoPerfiltVendedor; }
+    public void setFotoPerfilVendedor(String v) { fotoPerfiltVendedor = v; }
 
     // Compatibilidad adaptadores
     public String getName()        { return nombre; }

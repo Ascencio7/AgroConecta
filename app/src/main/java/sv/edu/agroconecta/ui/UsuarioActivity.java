@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -260,8 +259,9 @@ public class UsuarioActivity extends AppCompatActivity {
         List<Usuario> filteredList = new ArrayList<>();
         String query = text.toLowerCase().trim();
         for (Usuario item : currentFullList) {
-            if (item.getNombre().toLowerCase().contains(query) ||
-                    item.getCorreo().toLowerCase().contains(query)) {
+            String n = item.getNombre() != null ? item.getNombre().toLowerCase() : "";
+            String e = item.getCorreo() != null ? item.getCorreo().toLowerCase() : "";
+            if (n.contains(query) || e.contains(query)) {
                 filteredList.add(item);
             }
         }

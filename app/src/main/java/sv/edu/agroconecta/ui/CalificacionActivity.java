@@ -18,26 +18,39 @@ import retrofit2.Response;
 import sv.edu.agroconecta.R;
 import sv.edu.agroconecta.network.ApiClient;
 import sv.edu.agroconecta.network.PedidoApi;
+import sv.edu.agroconecta.utils.SessionManager;
 
 public class CalificacionActivity extends AppCompatActivity {
 
     private RatingBar ratingBar;
     private EditText  etComentario;
     private Button    btnEnviar;
-    private int       pedidoId, productoId;
+    private int       pedidoId;
+    private int       productoId;   // requerido por el backend
+    private int       vendedorId;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calificacion);
 
-        pedidoId   = getIntent().getIntExtra("pedido_id", 0);
-        productoId = getIntent().getIntExtra("producto_id", 0);
-        String nombreProducto = getIntent().getStringExtra("nombre_producto");
+        sessionManager = new SessionManager(this);
+
+        pedidoId   = getIntent().getIntExtra("pedido_id",   0);
+        productoId = getIntent().getIntExtra("producto_id", 0);  // primer producto del pedido
+        vendedorId = getIntent().getIntExtra("vendedor_id", 0);
+
+        String nombreVendedor = getIntent().getStringExtra("vendedor_nombre");
 
         TextView tvProducto = findViewById(R.id.tvProductoCalificar);
-        if (tvProducto != null && nombreProducto != null)
-            tvProducto.setText("Califica: " + nombreProducto);
+        if (tvProducto != null) {
+            if (nombreVendedor != null && !nombreVendedor.isEmpty()) {
+                tvProducto.setText("Califica tu compra con " + nombreVendedor);
+            } else {
+                tvProducto.setText("Califica tu compra");
+            }
+        }
 
         ratingBar    = findViewById(R.id.ratingBarCalificacion);
         etComentario = findViewById(R.id.etComentarioCalificacion);
@@ -56,14 +69,22 @@ public class CalificacionActivity extends AppCompatActivity {
             return;
         }
 
+        // El backend exige: pedido_id, producto_id, puntuacion
+        if (pedidoId == 0 || productoId == 0) {
+            Toast.makeText(this, "Error: datos del pedido incompletos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         btnEnviar.setEnabled(false);
         btnEnviar.setText("Enviando...");
 
         Map<String, Object> data = new HashMap<>();
-        data.put("pedido_id", pedidoId);
+        data.put("pedido_id",  pedidoId);
         data.put("producto_id", productoId);
         data.put("puntuacion", puntuacion);
-        data.put("comentario", comentario);
+        if (!comentario.isEmpty()) {
+            data.put("comentario", comentario);
+        }
 
         ApiClient.getClient().create(PedidoApi.class).calificar(data).enqueue(new Callback<Void>() {
             @Override
@@ -79,9 +100,8 @@ public class CalificacionActivity extends AppCompatActivity {
                 } else {
                     String error = "Error " + response.code();
                     try {
-                        if (response.errorBody() != null) {
+                        if (response.errorBody() != null)
                             error += ": " + response.errorBody().string();
-                        }
                     } catch (Exception ignored) {}
                     Toast.makeText(CalificacionActivity.this, error, Toast.LENGTH_LONG).show();
                 }

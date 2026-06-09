@@ -4,6 +4,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import okhttp3.ResponseBody;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.DELETE;
@@ -21,7 +22,7 @@ public interface ProductApi {
     Call<Product> crearProducto(@Body Product product);
 
     @PUT("productos/{id}")
-    Call<Product> actualizarProducto(@Path("id") int id, @Body Product product);
+    Call<ResponseBody> actualizarProducto(@Path("id") int id, @Body Product product);
 
     @DELETE("productos/{id}")
     Call<Void> eliminarProducto(@Path("id") int id);

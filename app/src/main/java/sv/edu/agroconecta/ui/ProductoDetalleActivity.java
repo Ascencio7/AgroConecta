@@ -5,6 +5,7 @@ import sv.edu.agroconecta.MainActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,10 +27,8 @@ import sv.edu.agroconecta.modelo.DetallePedido;
 import sv.edu.agroconecta.network.ApiClient;
 import sv.edu.agroconecta.network.UsuarioApi;
 import sv.edu.agroconecta.utils.CarritoManager;
-
 import sv.edu.agroconecta.utils.SessionManager;
 import androidx.appcompat.app.AlertDialog;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProductoDetalleActivity extends AppCompatActivity {
@@ -118,6 +117,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         final String dir  = getIntent().getStringExtra("direccion");
         final double lat  = getIntent().getDoubleExtra("latitud", 0);
         final double lon  = getIntent().getDoubleExtra("longitud", 0);
+        final String fotoVendedor = getIntent().getStringExtra("foto_perfil_vendedor");
 
         // Producto
         if (tvNombre   != null) tvNombre.setText(nombre != null ? nombre : "");
@@ -174,6 +174,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         //if (btnBack != null) btnBack.setOnClickListener(v -> finish());
 
         // ── Sección vendedor (IDs opcionales — solo si existen en el XML) ──
+        ImageView    ivFotoV    = findViewById(R.id.ivFotoVendedorDetalle);
         TextView     tvAvatarV  = findViewById(R.id.tvAvatarVendedorDetalle);
         TextView     tvNombreV  = findViewById(R.id.tvNombreVendedorDetalle);
         TextView     tvTelV     = findViewById(R.id.tvTelefonoVendedorDetalle);
@@ -198,6 +199,18 @@ public class ProductoDetalleActivity extends AppCompatActivity {
                 if (tvDirV != null) tvDirV.setText(dir);
             }
             configurarBotonesVendedor(btnWA, btnMapaBtn, tel, lat, lon, nv);
+            // Intentar cargar foto del vendedor guardada localmente
+            // Si el intent trae la foto del vendedor directamente (desde backend), usarla
+            if (fotoVendedor != null && !fotoVendedor.isEmpty() && ivFotoV != null) {
+                Glide.with(this).load(fotoVendedor)
+                        .transform(new CircleCrop())
+                        .placeholder(android.R.color.transparent)
+                        .into(ivFotoV);
+                ivFotoV.setVisibility(android.view.View.VISIBLE);
+                if (tvAvatarV != null) tvAvatarV.setVisibility(android.view.View.GONE);
+            } else {
+                cargarFotoVendedor(ivFotoV, tvAvatarV, usuarioId);
+            }
         }
 
         // Buscar datos del vendedor por usuarioId si no vinieron en el intent
@@ -227,7 +240,13 @@ public class ProductoDetalleActivity extends AppCompatActivity {
     }
 
     private void mostrarPerfil() {
-        Intent intent = new Intent(this, PerfilAdminActivity.class);
+        String rol = sessionManager.getRol();
+        Intent intent;
+        if ("VENDEDOR".equalsIgnoreCase(rol)) {
+            intent = new Intent(this, PerfilVendedorActivity.class);
+        } else {
+            intent = new Intent(this, PerfilAdminActivity.class);
+        }
         startActivity(intent);
     }
 
@@ -281,14 +300,37 @@ public class ProductoDetalleActivity extends AppCompatActivity {
                 btnMapa.setEnabled(true); btnMapa.setAlpha(1f);
                 final double la = lat, lo = lon; final String nFin = nv;
                 btnMapa.setOnClickListener(v -> {
-                    try { startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("geo:" + la + "," + lo + "?q=" + la + "," + lo +
-                                    "(" + Uri.encode(nFin) + ")")));
-                    } catch (Exception e) {
-                        Toast.makeText(this, "No hay app de mapas", Toast.LENGTH_SHORT).show();
+                    // Intentar geo: primero, fallback a Google Maps en navegador
+                    Uri geoUri = Uri.parse("geo:" + la + "," + lo + "?q=" + la + "," + lo +
+                            "(" + Uri.encode(nFin) + ")");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, geoUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                        startActivity(mapIntent);
+                    } else {
+                        // Fallback: abrir en navegador
+                        String url = "https://www.google.com/maps/search/?api=1&query=" + la + "," + lo;
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                     }
                 });
             } else { btnMapa.setEnabled(false); btnMapa.setAlpha(0.4f); }
+        }
+    }
+
+
+    private void cargarFotoVendedor(ImageView ivFoto, TextView tvAvatar, int usuarioId) {
+        if (ivFoto == null || usuarioId <= 0) return;
+        // Buscar foto guardada en SharedPreferences con key foto_perfil_<userId>
+        android.content.SharedPreferences prefs = getSharedPreferences("AgroConectaSession",
+                android.content.Context.MODE_PRIVATE);
+        String fotoUrl = prefs.getString("foto_perfil_" + usuarioId, null);
+        if (fotoUrl != null && !fotoUrl.isEmpty()) {
+            Glide.with(this).load(fotoUrl)
+                    .transform(new CircleCrop())
+                    .placeholder(android.R.color.transparent)
+                    .into(ivFoto);
+            ivFoto.setVisibility(android.view.View.VISIBLE);
+            if (tvAvatar != null) tvAvatar.setVisibility(android.view.View.GONE);
         }
     }
 
@@ -309,6 +351,15 @@ public class ProductoDetalleActivity extends AppCompatActivity {
                                         tvAvatar.setText(String.valueOf(nv.charAt(0)).toUpperCase());
                                     if (tvTel != null)
                                         tvTel.setText(!tel.isEmpty() ? "📞 " + tel : "📞 No disponible");
+                                    // Cargar foto del vendedor si tiene
+                                    String fotoU = u.getFotoPerfil();
+                                    ImageView ivFotoDetalle = findViewById(R.id.ivFotoVendedorDetalle);
+                                    if (fotoU != null && !fotoU.isEmpty() && ivFotoDetalle != null) {
+                                        Glide.with(ProductoDetalleActivity.this).load(fotoU)
+                                                .transform(new CircleCrop()).into(ivFotoDetalle);
+                                        ivFotoDetalle.setVisibility(android.view.View.VISIBLE);
+                                        if (tvAvatar != null) tvAvatar.setVisibility(android.view.View.GONE);
+                                    }
                                     if (btnWA != null && !tel.isEmpty()) {
                                         btnWA.setEnabled(true); btnWA.setAlpha(1f);
                                         btnWA.setOnClickListener(v -> {

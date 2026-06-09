@@ -49,19 +49,47 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- AVATAR GRANDE -->
-            <TextView
-                android:id="@+id/tvAvatarLarge"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_avatar_circle"
-                android:gravity="center"
-                android:text="A"
-                android:textColor="@color/carbon"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:elevation="4dp"
-                android:layout_marginBottom="24dp"/>
+            <!-- FOTO DE PERFIL -->
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/ivFotoPerfilAdmin"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto de perfil"/>
+
+                <TextView
+                    android:id="@+id/tvAvatarLarge"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="@color/carbon"
+                    android:textSize="44sp"
+                    android:textStyle="bold"
+                    android:elevation="4dp"/>
+
+                <TextView
+                    android:id="@+id/btnCambiarFotoAdmin"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_boton_verde"
+                    android:gravity="center"
+                    android:text="📷"
+                    android:textSize="16sp"
+                    android:elevation="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Cambiar foto"/>
+            </FrameLayout>
 
             <!-- INFO CARD -->
             <androidx.cardview.widget.CardView
@@ -92,7 +120,6 @@
                         android:background="#EEEEEE"
                         android:layout_marginBottom="16dp"/>
 
-                    <!-- NOMBRE -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -104,13 +131,12 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Vladimir Ascencio"
+                        android:text="—"
                         android:textColor="@color/texto_primario"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="16dp"/>
 
-                    <!-- ROL -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -128,7 +154,6 @@
                         android:textStyle="bold"
                         android:layout_marginBottom="16dp"/>
 
-                    <!-- CORREO -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -140,12 +165,11 @@
                         android:id="@+id/tvProfileEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="correo@ejemplo.com"
+                        android:text="—"
                         android:textColor="@color/texto_primario"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

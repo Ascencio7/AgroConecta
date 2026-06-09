@@ -32,6 +32,9 @@ public class Usuario {
     @SerializedName("password")
     private String password;
 
+    @SerializedName("foto_perfil")
+    private String fotoPerfil;
+
     public int getUsuarioId() { return usuarioId; }
     public String getNombre() { return nombre; }
     public String getCorreo() { return correo; }
@@ -41,6 +44,8 @@ public class Usuario {
     public int getRolId() { return rolId; }
     public String getRol() { return rol; }
     public String getPassword() { return password; }
+    public String getFotoPerfil() { return fotoPerfil; }
+    public void setFotoPerfil(String v) { fotoPerfil = v; }
 
     public boolean isActivo() {
         return Boolean.TRUE.equals(estado);

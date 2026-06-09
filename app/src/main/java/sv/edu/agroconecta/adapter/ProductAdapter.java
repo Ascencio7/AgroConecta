@@ -1,6 +1,8 @@
 package sv.edu.agroconecta.adapter;
 
 import android.content.Context;
+import android.view.animation.AnimationUtils;
+import android.view.animation.AnimationUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +51,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.item_fade_in));
         Product product = products.get(position);
 
         holder.tvName.setText(product.getName());

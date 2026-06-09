@@ -133,8 +133,15 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        if(telefono.length() < 8){
-            etTelefono.setError("Teléfono inválido");
+        String soloDigitosReg = telefono.replaceAll("[^0-9]", "");
+        if (soloDigitosReg.length() != 8) {
+            etTelefono.setError("Debe tener 8 dígitos");
+            etTelefono.requestFocus();
+            return;
+        }
+        if (!soloDigitosReg.matches("^[2678]\\d{7}$")) {
+            etTelefono.setError("Número salvadoreño inválido (empieza en 2,6,7 u 8)");
+            etTelefono.requestFocus();
             return;
         }
 

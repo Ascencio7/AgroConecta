@@ -328,7 +328,7 @@ public class ReportesActivity extends AppCompatActivity {
         startY += 30;
         
         for (Usuario u : filtrados) {
-            if (startY > 780) break; 
+            if (startY > 780) { Toast.makeText(this, "Reporte truncado - demasiados registros", Toast.LENGTH_SHORT).show(); break; }
             
             String rolTexto = "N/A";
             if (u.getRol() != null && !u.getRol().isEmpty()) {
@@ -454,7 +454,7 @@ public class ReportesActivity extends AppCompatActivity {
         startY += 30;
         
         for (Product p : filtrados) {
-            if (startY > 780) break;
+            if (startY > 780) { Toast.makeText(this, "Reporte truncado - demasiados registros", Toast.LENGTH_SHORT).show(); break; }
             drawTableRow(canvas, paint, 
                     String.valueOf(p.getProductoId()), 
                     p.getName(), 

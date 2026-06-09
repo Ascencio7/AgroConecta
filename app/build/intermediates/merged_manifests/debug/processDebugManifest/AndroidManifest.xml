@@ -8,9 +8,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="36" />
 
-    <!-- Permiso de internet -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!-- Declara la camara como opcional para que funcione en emuladores -->
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -27,7 +26,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
-    <!-- Android 11+ necesita declarar los intents que va a resolver -->
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
@@ -82,11 +80,12 @@
         android:theme="@style/Theme.AgroConecta"
         android:usesCleartextTraffic="true" >
 
-        <!-- Login como pantalla inicial -->
+        <!-- Splash -->
         <activity
-            android:name="sv.edu.agroconecta.ui.LoginActivity"
+            android:name="sv.edu.agroconecta.ui.SplashActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgroConecta" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -94,104 +93,144 @@
             </intent-filter>
         </activity>
 
-        <!-- Usuarios Activity -->
+        <!-- Onboarding -->
         <activity
-            android:name="sv.edu.agroconecta.ui.UsuarioActivity"
+            android:name="sv.edu.agroconecta.ui.OnboardingActivity"
             android:exported="false"
-            android:label="Usuarios" />
+            android:screenOrientation="portrait" />
 
-        <!-- Panel de vistas del Administrador Activity -->
+        <!-- Login -->
         <activity
-            android:name="sv.edu.agroconecta.ui.AdminDashboardActivity"
-            android:exported="false"
-            android:label="Admin" />
+            android:name="sv.edu.agroconecta.ui.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
 
-        <!-- Perfil del Administrador Activity -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.PerfilAdminActivity"
-            android:exported="false"
-            android:label="Mi Perfil" />
-
-        <!-- Gestión de Productos para Admin -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.ProductosAdminActivity"
-            android:exported="false"
-            android:label="Gestión de Productos" />
-        <activity
-            android:name="sv.edu.agroconecta.ui.AgregarEditarProductoActivity"
-            android:exported="false"
-            android:label="Producto" />
-
-        <!-- Reportes Activity -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.ReportesActivity"
-            android:exported="false"
-            android:label="Reportes" />
-
-        <!-- Términos y Condiciones Activity -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.TermsActivity"
-            android:exported="false"
-            android:label="Términos y Condiciones" />
-
-        <!-- Registro de Usuarios Activity -->
+        <!-- Register -->
         <activity
             android:name="sv.edu.agroconecta.ui.RegisterActivity"
             android:exported="false"
-            android:label="Registrarse" />
+            android:windowSoftInputMode="adjustResize" />
 
-        <!-- Restablecer Contraseña Activity -->
+        <!-- Forgot Password -->
         <activity
             android:name="sv.edu.agroconecta.ui.ForgotPasswordActivity"
             android:exported="false"
-            android:label="Restablecer Contraseña" />
+            android:windowSoftInputMode="adjustResize" />
 
-        <!-- Editar Usuario Activity -->
+        <!-- Terms -->
         <activity
-            android:name="sv.edu.agroconecta.ui.EditarUsuarioActivity"
-            android:exported="false"
-            android:label="Editar" />
+            android:name="sv.edu.agroconecta.ui.TermsActivity"
+            android:exported="false" />
 
-        <!-- Crear Usuario Activity -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.CrearUsuarioActivity"
-            android:exported="false"
-            android:label="Crear" />
-
-        <!-- Main Activity -->
+        <!-- Main (Comprador) -->
         <activity
             android:name="sv.edu.agroconecta.MainActivity"
             android:exported="true" />
 
-        <!-- Buyer Module Activity -->
+        <!-- Buyer Module -->
         <activity
             android:name="sv.edu.agroconecta.ui.BuyerModuleActivity"
-            android:exported="false"
-            android:label="Módulo Comprador" />
+            android:exported="false" />
 
-        <!-- Mapa Activity -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.MapaActivity"
-            android:exported="false"
-            android:label="Mapa de Fincas" />
-
-        <!-- Módulo Comprador - CRUD -->
+        <!-- Producto Detalle -->
         <activity
             android:name="sv.edu.agroconecta.ui.ProductoDetalleActivity"
-            android:exported="false"
-            android:label="Detalle Producto" />
+            android:exported="false" />
+
+        <!-- Carrito -->
         <activity
             android:name="sv.edu.agroconecta.ui.CarritoActivity"
-            android:exported="false"
-            android:label="Mi Carrito" />
+            android:exported="false" />
+
+        <!-- Mis Pedidos -->
         <activity
             android:name="sv.edu.agroconecta.ui.MisPedidosActivity"
-            android:exported="false"
-            android:label="Mis Pedidos" />
+            android:exported="false" />
 
+        <!-- Perfil Cliente -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.PerfilClienteActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Mapa -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.MapaActivity"
+            android:exported="false" />
+
+        <!-- Calificacion -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.CalificacionActivity"
+            android:exported="false" />
+
+        <!-- Seguimiento -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.SeguimientoPedidoActivity"
+            android:exported="false" />
+
+        <!-- Chat -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.ChatActivity"
+            android:exported="false" />
+
+        <!-- Contactar Vendedor -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.ContactarVendedorActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ── ADMIN ── -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.PerfilAdminActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.UsuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.CrearUsuarioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.EditarUsuarioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.ProductosAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.AgregarEditarProductoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.ReportesActivity"
+            android:exported="false" />
+
+        <!-- ── VENDEDOR ── -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.VendedorDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.PerfilVendedorActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="sv.edu.agroconecta.ui.AgregarProductoVendedorActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkKvBXZo39gk1fqnxVJ7PCd0UVECRT7kI" />
+
+        <!-- FCM -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="canal_productos" />
 
         <service
             android:name="sv.edu.agroconecta.service.AgroConectaFirebaseService"
@@ -201,21 +240,12 @@
             </intent-filter>
         </service>
 
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="canal_productos" />
-
-        <!-- Vendedor -->
+        <!-- Soporte Técnico -->
         <activity
-            android:name="sv.edu.agroconecta.ui.VendedorDashboardActivity"
-            android:exported="true" />
-        <activity
-            android:name="sv.edu.agroconecta.ui.AgregarProductoVendedorActivity"
-            android:exported="false" />
-        <activity
-            android:name="sv.edu.agroconecta.ui.ContactarVendedorActivity"
+            android:name="sv.edu.agroconecta.ui.SoporteActivity"
             android:exported="false" />
 
+        <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="sv.edu.agroconecta.fileprovider"
@@ -226,33 +256,25 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <!-- Chat en tiempo real -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.ChatActivity"
-            android:exported="false" />
-
-        <!-- Calificaciones -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.CalificacionActivity"
-            android:exported="false" />
-
-        <!-- Seguimiento de pedido -->
-        <activity
-            android:name="sv.edu.agroconecta.ui.SeguimientoPedidoActivity"
-            android:exported="false" />
-
-        <!-- FCM Service -->
-        <service
-            android:name="sv.edu.agroconecta.service.AgroConectaFirebaseService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -295,6 +317,9 @@
                 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -315,6 +340,42 @@
         </service>
 
         <activity
+            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="genericidp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="recaptcha" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
@@ -329,20 +390,6 @@
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="sv.edu.agroconecta.androidx-startup"
-            android:exported="false" >
-            <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-                android:value="androidx.startup" />
-        </provider>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
@@ -359,6 +406,21 @@
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="sv.edu.agroconecta.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
 
         <uses-library
             android:name="android.ext.adservices"

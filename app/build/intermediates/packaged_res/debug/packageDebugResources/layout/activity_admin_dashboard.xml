@@ -68,17 +68,29 @@
                 </LinearLayout>
 
                 <!-- Avatar Logout -->
-                <TextView
-                    android:id="@+id/tvAvatarAdmin"
+                <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_avatar_circle"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="@color/carbon"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_marginStart="8dp">
+                    <TextView
+                        android:id="@+id/tvAvatarAdmin"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/carbon"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <ImageView
+                        android:id="@+id/ivAvatarFotoAdmin"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:visibility="gone"
+                        android:contentDescription="Foto de perfil"/>
+                </FrameLayout>
             </LinearLayout>
         </LinearLayout>
 

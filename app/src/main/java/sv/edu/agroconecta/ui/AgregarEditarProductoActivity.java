@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
+import okhttp3.ResponseBody;
 import retrofit2.Callback;
 import retrofit2.Response;
 import sv.edu.agroconecta.R;
@@ -186,9 +187,9 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         } else {
             product.setProductoId(productoId);
             Log.d("API_SAVE", "Actualizando producto ID: " + productoId);
-            productApi.actualizarProducto(productoId, product).enqueue(new Callback<Product>() {
+            productApi.actualizarProducto(productoId, product).enqueue(new Callback<ResponseBody>() {
                 @Override
-                public void onResponse(Call<Product> call, Response<Product> response) {
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     if (response.isSuccessful()) {
                         Toast.makeText(AgregarEditarProductoActivity.this, "Producto actualizado", Toast.LENGTH_SHORT).show();
                         finish();
@@ -198,7 +199,7 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<Product> call, Throwable t) {
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
                     Toast.makeText(AgregarEditarProductoActivity.this, "Error de red", Toast.LENGTH_SHORT).show();
                 }
             });

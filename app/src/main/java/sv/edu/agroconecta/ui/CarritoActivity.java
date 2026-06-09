@@ -124,6 +124,7 @@ public class CarritoActivity extends AppCompatActivity implements CarritoAdapter
                     // ───────────────────────────────────────────────────────────
 
                     CarritoManager.getInstance().limpiar();
+                    actualizarResumen(); // badge a 0
                     Toast.makeText(CarritoActivity.this,
                             "🎉 ¡Pedido confirmado! Total: " + String.format("$%.2f", total),
                             Toast.LENGTH_LONG).show();

@@ -13,11 +13,14 @@ public interface PedidoApi {
     @GET("pedidos")
     Call<List<Pedido>> getPedidos();
 
-    @GET("pedidos/{id}")
-    Call<Pedido> getPedidoPorId(@Path("id") int id);
-
     @GET("pedidos/usuario/{usuario_id}")
     Call<List<Pedido>> getPedidosPorUsuario(@Path("usuario_id") int usuarioId);
+
+    @GET("pedidos/vendedor/{vendedor_id}")
+    Call<List<Pedido>> getPedidosPorVendedor(@Path("vendedor_id") int vendedorId);
+
+    @GET("pedidos/{id}")
+    Call<Pedido> getPedidoPorId(@Path("id") int id);
 
     @POST("pedidos")
     Call<Pedido> crearPedido(@Body Pedido pedido);

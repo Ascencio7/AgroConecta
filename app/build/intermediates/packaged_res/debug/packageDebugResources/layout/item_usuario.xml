@@ -10,162 +10,168 @@
     app:cardElevation="3dp"
     app:cardBackgroundColor="@color/blanco">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Avatar -->
-        <TextView
-            android:id="@+id/txtAvatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="U"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/carbon"
-            android:background="@drawable/bg_avatar_circle"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <!-- Info principal -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toTopOf="@id/txtAvatar"
-            app:layout_constraintBottom_toBottomOf="@id/txtAvatar"
-            app:layout_constraintStart_toEndOf="@id/txtAvatar"
-            app:layout_constraintEnd_toStartOf="@id/txtEstado">
-
-            <TextView
-                android:id="@+id/txtNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre del Usuario"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/texto_primario"
-                android:maxLines="1"
-                android:ellipsize="end"/>
-
-            <TextView
-                android:id="@+id/txtRol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rol del Usuario"
-                android:textSize="12sp"
-                android:textColor="@color/texto_tenue"
-                android:layout_marginTop="2dp"/>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtEstado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACTIVO"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="5dp"
-            android:textColor="@color/verde_primario"
-            android:background="@drawable/bg_badge_verde"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EEEEEE"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/txtAvatar"/>
-
-        <!-- Datos contacto -->
-        <LinearLayout
-            android:id="@+id/layoutContact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/divider">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CORREO"
-                android:textSize="9sp"
-                android:textStyle="bold"
-                android:textColor="@color/texto_tenue"
-                android:letterSpacing="0.05"/>
-            <TextView
-                android:id="@+id/txtCorreo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="correo@ejemplo.com"
-                android:textSize="14sp"
-                android:textColor="@color/texto_primario"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TELÉFONO"
-                android:textSize="9sp"
-                android:textStyle="bold"
-                android:textColor="@color/texto_tenue"
-                android:letterSpacing="0.05"/>
-            <TextView
-                android:id="@+id/txtTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="7777-8888"
-                android:textSize="14sp"
-                android:textColor="@color/texto_primario"/>
-        </LinearLayout>
-
-        <!-- Botones -->
+        <!-- FILA 1: Avatar + Nombre + Estado -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/layoutContact">
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <!-- Avatar (foto o iniciales) -->
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="12dp">
+
+                <TextView
+                    android:id="@+id/txtAvatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:text="U"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/carbon"
+                    android:background="@drawable/bg_avatar_circle"/>
+
+                <ImageView
+                    android:id="@+id/ivFotoUsuario"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto de perfil"/>
+            </FrameLayout>
+
+            <!-- Nombre + Rol -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/texto_primario"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/txtRol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Usuario"
+                    android:textSize="12sp"
+                    android:textColor="@color/texto_tenue"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Badge estado -->
+            <TextView
+                android:id="@+id/txtEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVO"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="@color/verde_primario"
+                android:background="@drawable/bg_badge_verde"/>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gris_borde"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- FILA 2: Correo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CORREO"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_tenue"
+            android:letterSpacing="0.05"/>
+        <TextView
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="correo@ejemplo.com"
+            android:textSize="14sp"
+            android:textColor="@color/texto_primario"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- FILA 3: Teléfono -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TELÉFONO"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_tenue"
+            android:letterSpacing="0.05"/>
+        <TextView
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7777-8888"
+            android:textSize="14sp"
+            android:textColor="@color/texto_primario"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- FILA 4: Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEditar"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:layout_weight="1"
+                android:layout_marginEnd="6dp"
                 android:text="Editar"
                 android:textSize="13sp"
-                android:layout_marginEnd="6dp"
                 android:textColor="@color/verde_primario"
                 app:backgroundTint="@color/verde_superficial"
                 app:cornerRadius="12dp"
                 app:icon="@android:drawable/ic_menu_edit"
                 app:iconTint="@color/verde_primario"
-                app:iconSize="16dp"
                 style="@style/Widget.Material3.Button.TonalButton"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEliminar"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:layout_weight="1"
+                android:layout_marginStart="6dp"
                 android:text="Eliminar"
                 android:textSize="13sp"
-                android:layout_marginStart="6dp"
                 android:textColor="@color/rojo_error"
                 app:backgroundTint="#FFF1F0"
                 app:cornerRadius="12dp"
                 app:icon="@android:drawable/ic_menu_delete"
                 app:iconTint="@color/rojo_error"
-                app:iconSize="16dp"
                 style="@style/Widget.Material3.Button.TonalButton"/>
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -73,6 +73,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             etNewPassword.requestFocus();
             return;
         }
+        if (newPassword.equals(email)) {
+            etNewPassword.setError("La contraseña no puede ser tu correo");
+            etNewPassword.requestFocus();
+            return;
+        }
 
         btnReset.setEnabled(false);
         btnReset.setText("Actualizando...");

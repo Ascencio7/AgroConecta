@@ -8,9 +8,7 @@
     android:layout_marginVertical="6dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp"
-    app:cardBackgroundColor="@color/blanco"
-    app:strokeWidth="1dp"
-    app:strokeColor="@color/gris_borde">
+    app:cardBackgroundColor="@color/blanco">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="12dp">
 
             <TextView
                 android:id="@+id/tvPedidoId"
@@ -49,7 +47,82 @@
                 android:paddingVertical="4dp"/>
         </LinearLayout>
 
-        <!-- Fila 2: Productos -->
+        <!-- Fila 2: Info del vendedor -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/verde_superficial"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp">
+
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp">
+
+                <TextView
+                    android:id="@+id/tvAvatarVendedor"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:gravity="center"
+                    android:text="V"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/carbon"/>
+
+                <ImageView
+                    android:id="@+id/ivFotoVendedor"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto vendedor"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VENDEDOR"
+                    android:textSize="10sp"
+                    android:textColor="@color/verde_primario"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvNombreVendedor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/texto_primario"/>
+            </LinearLayout>
+
+            <!-- WhatsApp vendedor -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWhatsAppVendedor"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="WhatsApp"
+                android:textSize="11sp"
+                android:textColor="@color/blanco"
+                android:backgroundTint="#25D366"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+
+        <!-- Fila 3: Productos -->
         <TextView
             android:id="@+id/tvPedidoItems"
             android:layout_width="match_parent"
@@ -60,7 +133,7 @@
             android:layout_marginBottom="10dp"
             android:lineSpacingMultiplier="1.4"/>
 
-        <!-- Fila 3: Total + Fecha -->
+        <!-- Fila 4: Total + Fecha -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +160,7 @@
                 android:textColor="@color/texto_tenue"/>
         </LinearLayout>
 
-        <!-- Fila 4: Botones centrados -->
+        <!-- Fila 5: Botones -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,11 +177,11 @@
                 android:textSize="12sp"
                 android:textColor="@color/verde_primario"
                 android:backgroundTint="@color/verde_superficial"
-                android:strokeColor="@color/verde_primario"
-                android:strokeWidth="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:stateListAnimator="@null"/>
+                android:stateListAnimator="@null"
+                app:strokeColor="@color/verde_primario"
+                app:strokeWidth="1dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCalificar"
@@ -117,8 +190,8 @@
                 android:layout_weight="1"
                 android:text="⭐ Calificar"
                 android:textSize="12sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#C8861A"
+                android:textColor="@color/blanco"
+                android:backgroundTint="@color/dorado_medio"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:stateListAnimator="@null"/>

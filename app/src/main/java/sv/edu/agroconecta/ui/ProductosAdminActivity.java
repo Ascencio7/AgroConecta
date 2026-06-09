@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+import okhttp3.ResponseBody;
 import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -149,7 +150,8 @@ public class ProductosAdminActivity extends AppCompatActivity {
         productApi.getProductos().enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if (progressProductos != null) progressProductos.setVisibility(android.view.View.GONE);
+                if (progressProductos != null)
+                    progressProductos.setVisibility(android.view.View.GONE);
                 if (response.isSuccessful() && response.body() != null) {
                     allProducts.clear();
                     for (Product p : response.body()) {
@@ -165,7 +167,8 @@ public class ProductosAdminActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
-                if (progressProductos != null) progressProductos.setVisibility(android.view.View.GONE);
+                if (progressProductos != null)
+                    progressProductos.setVisibility(android.view.View.GONE);
                 tvEmpty.setText("Sin conexión. Intenta de nuevo.");
                 tvEmpty.setVisibility(android.view.View.VISIBLE);
                 Toast.makeText(ProductosAdminActivity.this, "Error cargando productos", Toast.LENGTH_SHORT).show();
@@ -176,7 +179,9 @@ public class ProductosAdminActivity extends AppCompatActivity {
     private void setupSearch() {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) { return false; }
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
             @Override
             public boolean onQueryTextChange(String newText) {
@@ -192,13 +197,13 @@ public class ProductosAdminActivity extends AppCompatActivity {
         for (Product p : allProducts) {
             String name = p.getName() != null ? p.getName().toLowerCase() : "";
             String price = String.valueOf(p.getPrice());
-            
+
             if (name.contains(lowerQuery) || price.contains(lowerQuery)) {
                 filteredProducts.add(p);
             }
         }
         adapter.notifyDataSetChanged();
-        
+
         if (filteredProducts.isEmpty()) {
             tvEmpty.setText("SIN RESULTADOS");
             tvEmpty.setVisibility(View.VISIBLE);
@@ -220,9 +225,9 @@ public class ProductosAdminActivity extends AppCompatActivity {
 
     private void logicalDelete(Product product) {
         product.setEstado(false);
-        productApi.actualizarProducto(product.getProductoId(), product).enqueue(new Callback<Product>() {
+        productApi.actualizarProducto(product.getProductoId(), product).enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<Product> call, Response<Product> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ProductosAdminActivity.this, "Producto eliminado", Toast.LENGTH_SHORT).show();
                     loadProducts();
@@ -230,15 +235,9 @@ public class ProductosAdminActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Product> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(ProductosAdminActivity.this, "Error al eliminar", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadProducts();
     }
 }

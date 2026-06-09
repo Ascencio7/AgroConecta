@@ -78,9 +78,12 @@ public class ContactarVendedorActivity extends AppCompatActivity {
                 Uri geoUri = Uri.parse("geo:" + lat + "," + lon +
                         "?q=" + lat + "," + lon + "(" + Uri.encode(nombreV) + ")");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, geoUri);
-                try { startActivity(mapIntent); }
-                catch (Exception e) {
-                    Toast.makeText(this, "No hay app de mapas instalada", Toast.LENGTH_SHORT).show();
+                mapIntent.setPackage("com.google.android.apps.maps");
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                } else {
+                    String url = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lon;
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                 }
             });
         }

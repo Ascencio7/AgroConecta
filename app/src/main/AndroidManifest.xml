@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permiso de internet -->
-        <uses-permission android:name="android.permission.CAMERA"/>
-    <!-- Declara la camara como opcional para que funcione en emuladores -->
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
@@ -14,7 +12,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
-    <!-- Android 11+ necesita declarar los intents que va a resolver -->
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE"/>
@@ -41,107 +38,146 @@
         android:theme="@style/Theme.AgroConecta"
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <!-- Login como pantalla inicial -->
+        <!-- Splash -->
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:theme="@style/Theme.AgroConecta"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Usuarios Activity -->
-        <activity android:name=".ui.UsuarioActivity"
+        <!-- Onboarding -->
+        <activity
+            android:name=".ui.OnboardingActivity"
             android:exported="false"
-            android:label="Usuarios" />
+            android:screenOrientation="portrait"/>
 
-        <!-- Panel de vistas del Administrador Activity -->
+        <!-- Login -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- Register -->
+        <activity android:name=".ui.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- Forgot Password -->
+        <activity android:name=".ui.ForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- Terms -->
+        <activity android:name=".ui.TermsActivity"
+            android:exported="false"/>
+
+        <!-- Main (Comprador) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
+
+        <!-- Buyer Module -->
+        <activity
+            android:name=".ui.BuyerModuleActivity"
+            android:exported="false"/>
+
+        <!-- Producto Detalle -->
+        <activity
+            android:name=".ui.ProductoDetalleActivity"
+            android:exported="false"/>
+
+        <!-- Carrito -->
+        <activity
+            android:name=".ui.CarritoActivity"
+            android:exported="false"/>
+
+        <!-- Mis Pedidos -->
+        <activity
+            android:name=".ui.MisPedidosActivity"
+            android:exported="false"/>
+
+        <!-- Perfil Cliente -->
+        <activity android:name=".ui.PerfilClienteActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- Mapa -->
+        <activity
+            android:name=".ui.MapaActivity"
+            android:exported="false"/>
+
+        <!-- Calificacion -->
+        <activity android:name=".ui.CalificacionActivity"
+            android:exported="false"/>
+
+        <!-- Seguimiento -->
+        <activity android:name=".ui.SeguimientoPedidoActivity"
+            android:exported="false"/>
+
+        <!-- Chat -->
+        <activity android:name=".ui.ChatActivity"
+            android:exported="false"/>
+
+        <!-- Contactar Vendedor -->
+        <activity android:name=".ui.ContactarVendedorActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- ── ADMIN ── -->
         <activity android:name=".ui.AdminDashboardActivity"
-            android:exported="false"
-            android:label="Admin" />
+            android:exported="false"/>
 
-        <!-- Perfil del Administrador Activity -->
         <activity android:name=".ui.PerfilAdminActivity"
             android:exported="false"
-            android:label="Mi Perfil" />
+            android:windowSoftInputMode="adjustResize"/>
 
-        <!-- Gestión de Productos para Admin -->
-        <activity android:name=".ui.ProductosAdminActivity"
+        <activity android:name=".ui.UsuarioActivity"
+            android:exported="false"/>
+
+        <activity android:name=".ui.CrearUsuarioActivity"
             android:exported="false"
-            android:label="Gestión de Productos" />
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".ui.EditarUsuarioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".ui.ProductosAdminActivity"
+            android:exported="false"/>
 
         <activity android:name=".ui.AgregarEditarProductoActivity"
             android:exported="false"
-            android:label="Producto" />
+            android:windowSoftInputMode="adjustResize"/>
 
-        <!-- Reportes Activity -->
         <activity android:name=".ui.ReportesActivity"
+            android:exported="false"/>
+
+        <!-- ── VENDEDOR ── -->
+        <activity android:name=".ui.VendedorDashboardActivity"
+            android:exported="true"/>
+
+        <activity android:name=".ui.PerfilVendedorActivity"
             android:exported="false"
-            android:label="Reportes" />
+            android:windowSoftInputMode="adjustResize"/>
 
-        <!-- Términos y Condiciones Activity -->
-        <activity android:name=".ui.TermsActivity"
+        <activity android:name=".ui.AgregarProductoVendedorActivity"
             android:exported="false"
-            android:label="Términos y Condiciones" />
+            android:windowSoftInputMode="adjustResize"/>
 
-        <!-- Registro de Usuarios Activity -->
-        <activity android:name=".ui.RegisterActivity"
-            android:exported="false"
-            android:label="Registrarse"/>
-
-        <!-- Restablecer Contraseña Activity -->
-        <activity android:name=".ui.ForgotPasswordActivity"
-            android:exported="false"
-            android:label="Restablecer Contraseña"/>
-
-        <!-- Editar Usuario Activity -->
-        <activity android:name=".ui.EditarUsuarioActivity"
-            android:exported="false"
-            android:label="Editar"/>
-
-        <!-- Crear Usuario Activity -->
-        <activity android:name=".ui.CrearUsuarioActivity"
-            android:exported="false"
-            android:label="Crear"/>
-
-        <!-- Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-
-        <!-- Buyer Module Activity -->
-        <activity
-            android:name=".ui.BuyerModuleActivity"
-            android:label="Módulo Comprador"
-            android:exported="false" />
-
-        <!-- Mapa Activity -->
-        <activity
-            android:name=".ui.MapaActivity"
-            android:exported="false"
-            android:label="Mapa de Fincas"/>
-
-        <!-- Módulo Comprador - CRUD -->
-        <activity
-            android:name=".ui.ProductoDetalleActivity"
-            android:exported="false"
-            android:label="Detalle Producto"/>
-
-        <activity
-            android:name=".ui.CarritoActivity"
-            android:exported="false"
-            android:label="Mi Carrito"/>
-
-        <activity
-            android:name=".ui.MisPedidosActivity"
-            android:exported="false"
-            android:label="Mis Pedidos"/>
-
+        <!-- Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkKvBXZo39gk1fqnxVJ7PCd0UVECRT7kI"/>
+
+        <!-- FCM -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="canal_productos"/>
 
         <service
             android:name=".service.AgroConectaFirebaseService"
@@ -151,19 +187,11 @@
             </intent-filter>
         </service>
 
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="canal_productos"/>
+        <!-- Soporte Técnico -->
+        <activity android:name=".ui.SoporteActivity"
+            android:exported="false"/>
 
-    
-        <!-- Vendedor -->
-        <activity android:name=".ui.VendedorDashboardActivity"
-            android:exported="true" />
-        <activity android:name=".ui.AgregarProductoVendedorActivity"
-            android:exported="false" />
-        <activity android:name=".ui.ContactarVendedorActivity"
-            android:exported="false" />
-
+        <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -174,23 +202,6 @@
                 android:resource="@xml/file_paths"/>
         </provider>
 
-        <!-- Chat en tiempo real -->
-        <activity android:name=".ui.ChatActivity" android:exported="false"/>
-
-        <!-- Calificaciones -->
-        <activity android:name=".ui.CalificacionActivity" android:exported="false"/>
-
-        <!-- Seguimiento de pedido -->
-        <activity android:name=".ui.SeguimientoPedidoActivity" android:exported="false"/>
-
-        <!-- FCM Service -->
-        <service
-            android:name=".service.AgroConectaFirebaseService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
-</application>
+    </application>
 
 </manifest>
