@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/blanco">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Fila 1: ID + Estado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvPedidoId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pedido #0000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto_primario"/>
+
+            <TextView
+                android:id="@+id/tvPedidoEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendiente"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/exito"
+                android:background="@drawable/bg_badge_verde"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"/>
+        </LinearLayout>
+
+        <!-- Fila 2: Info del cliente -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/verde_superficial"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp">
+
+            <!-- Avatar cliente -->
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp">
+
+                <TextView
+                    android:id="@+id/tvAvatarCliente"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:gravity="center"
+                    android:text="C"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/carbon"/>
+
+                <ImageView
+                    android:id="@+id/ivFotoCliente"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto cliente"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLIENTE"
+                    android:textSize="10sp"
+                    android:textColor="@color/verde_primario"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvNombreCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/texto_primario"/>
+            </LinearLayout>
+
+            <!-- Botón WhatsApp cliente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWhatsAppCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="WhatsApp"
+                android:textSize="11sp"
+                android:textColor="@color/blanco"
+                android:backgroundTint="#25D366"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+
+        <!-- Fila 3: Productos -->
+        <TextView
+            android:id="@+id/tvPedidoItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Productos del pedido"
+            android:textSize="13sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingMultiplier="1.4"/>
+
+        <!-- Fila 4: Total + Fecha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvPedidoTotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$0.00"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/verde_primario"/>
+
+            <TextView
+                android:id="@+id/tvPedidoFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 Hoy"
+                android:textSize="12sp"
+                android:textColor="@color/texto_tenue"/>
+        </LinearLayout>
+
+        <!-- Fila 5: Botón cambiar estado -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeg"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="📦 Cambiar estado"
+            android:textSize="13sp"
+            android:textColor="@color/verde_primario"
+            android:backgroundTint="@color/verde_superficial"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:stateListAnimator="@null"
+            app:strokeColor="@color/verde_primario"
+            app:strokeWidth="1dp"
+            app:cornerRadius="8dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

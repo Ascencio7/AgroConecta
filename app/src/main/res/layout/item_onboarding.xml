@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <!-- Emoji / icono grande -->
+    <TextView
+        android:id="@+id/tvOnboardingEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="90sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvOnboardingTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#25632D"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvOnboardingDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5A5A50"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.4"/>
+
+</LinearLayout>

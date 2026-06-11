@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/crema"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_primario"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="28dp"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBackPerfilCliente"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Volver"
+            app:tint="@color/blanco"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Mi Perfil"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="250dp">
+
+            <!-- FOTO -->
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/ivFotoPerfilCliente"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto de perfil"/>
+
+                <TextView
+                    android:id="@+id/tvAvatarClientePerfil"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:gravity="center"
+                    android:text="C"
+                    android:textColor="@color/carbon"
+                    android:textSize="44sp"
+                    android:textStyle="bold"
+                    android:elevation="4dp"/>
+
+                <TextView
+                    android:id="@+id/btnCambiarFotoCliente"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_boton_verde"
+                    android:gravity="center"
+                    android:text="📷"
+                    android:textSize="16sp"
+                    android:elevation="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Cambiar foto"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvRolClientePerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CLIENTE"
+                android:textColor="@color/verde_primario"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- CARD INFO -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/blanco">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información Personal"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#EEEEEE" android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nombre completo" style="@style/TextInputOutlined" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombreClientePerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPersonName" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Correo electrónico" style="@style/TextInputOutlined" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCorreoClientePerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textEmailAddress" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Teléfono" style="@style/TextInputOutlined" android:layout_marginBottom="20dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTelefonoClientePerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="phone" android:imeOptions="actionDone"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnGuardarPerfilCliente"
+                        android:layout_width="match_parent" android:layout_height="54dp"
+                        android:text="ACTUALIZAR"
+                        android:backgroundTint="@color/verde_primario"
+                        android:textColor="@color/blanco" android:textStyle="bold"
+                        style="@style/BtnPrimario"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CARD CONTRASEÑA -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/blanco" android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="24dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Cambiar Contraseña" android:textColor="@color/texto_primario"
+                        android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#EEEEEE" android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nueva contraseña" style="@style/TextInputOutlined"
+                        app:endIconMode="password_toggle" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNuevaPasswordCliente"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPassword" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Confirmar contraseña" style="@style/TextInputOutlined"
+                        app:endIconMode="password_toggle" android:layout_marginBottom="16dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etConfirmarPasswordCliente"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPassword" android:imeOptions="actionDone"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnCambiarPasswordCliente"
+                        android:layout_width="match_parent" android:layout_height="54dp"
+                        android:text="🔒 Cambiar contraseña"
+                        android:backgroundTint="@color/dorado_medio"
+                        android:textColor="@color/carbon" android:textStyle="bold"
+                        style="@style/BtnPrimario"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnLogoutCliente"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:layout_marginTop="24dp" android:text="Cerrar Sesión"
+                android:backgroundTint="@color/rojo_error"
+                android:textColor="@color/blanco" android:textStyle="bold"
+                style="@style/BtnPrimario"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

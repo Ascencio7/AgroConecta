@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_primario">
+
+    <!-- Logo central -->
+    <ImageView
+        android:id="@+id/ivSplashLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/logoapp"
+        android:scaleType="fitCenter"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvSplashNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:contentDescription="Logo AgroConecta"/>
+
+    <TextView
+        android:id="@+id/tvSplashNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AgroConecta"
+        android:textColor="@color/blanco"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:alpha="0"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivSplashLogo"
+        app:layout_constraintBottom_toTopOf="@+id/tvSplashSlogan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvSplashSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Del campo a tu mesa 🌿"
+        android:textColor="#B2DFDB"
+        android:textSize="16sp"
+        android:alpha="0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplashNombre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Loading bottom -->
+    <ProgressBar
+        android:id="@+id/progressSplash"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:indeterminateTint="@color/dorado_claro"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="64dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0 — ITCA-FEPADE"
+        android:textColor="#80FFFFFF"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
