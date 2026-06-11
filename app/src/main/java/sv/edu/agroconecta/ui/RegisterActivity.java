@@ -65,6 +65,28 @@ public class RegisterActivity extends AppCompatActivity {
                     .show();
         });
 
+        setupPhoneFormatting();
+    }
+
+    private void setupPhoneFormatting() {
+        if (etTelefono == null) return;
+        etTelefono.addTextChangedListener(new android.text.TextWatcher() {
+            private boolean isUpdating = false;
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(android.text.Editable s) {
+                if (isUpdating) return;
+                isUpdating = true;
+                String str = s.toString().replaceAll("[^0-9]", "");
+                StringBuilder formatted = new StringBuilder();
+                for (int i = 0; i < str.length() && i < 8; i++) {
+                    formatted.append(str.charAt(i));
+                    if (i == 3 && str.length() > 4) formatted.append("-");
+                }
+                s.replace(0, s.length(), formatted.toString());
+                isUpdating = false;
+            }
+        });
     }
 
     // Metodo para limpiar los errores y validar los campos en tiempo real
@@ -97,8 +119,8 @@ public class RegisterActivity extends AppCompatActivity {
                         break;
 
                     case "telefono":
-                        if(!valor.isEmpty() && valor.length() < 8){
-                            campo.setError("Teléfono inválido");
+                        if(!valor.isEmpty() && valor.length() < 9){
+                            campo.setError("Formato: XXXX-XXXX");
                         } else {
                             campo.setError(null);
                         }
@@ -135,12 +157,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         String soloDigitosReg = telefono.replaceAll("[^0-9]", "");
         if (soloDigitosReg.length() != 8) {
-            etTelefono.setError("Debe tener 8 dígitos");
+            etTelefono.setError("Debe tener 8 dígitos (XXXX-XXXX)");
             etTelefono.requestFocus();
             return;
         }
         if (!soloDigitosReg.matches("^[2678]\\d{7}$")) {
-            etTelefono.setError("Número salvadoreño inválido (empieza en 2,6,7 u 8)");
+            etTelefono.setError("Número salvadoreño inválido");
             etTelefono.requestFocus();
             return;
         }

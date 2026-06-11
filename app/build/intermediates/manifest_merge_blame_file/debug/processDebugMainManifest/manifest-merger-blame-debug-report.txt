@@ -8,7 +8,7 @@
 7-->INJECTED
 8        android:minSdkVersion="24"
 8-->INJECTED
-9        android:targetSdkVersion="36" />
+9        android:targetSdkVersion="34" />
 9-->INJECTED
 10
 11    <uses-permission android:name="android.permission.CAMERA" />

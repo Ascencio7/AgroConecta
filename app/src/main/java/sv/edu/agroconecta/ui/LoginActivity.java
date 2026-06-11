@@ -123,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void iniciarGoogleSignIn() {
-        // Cerrar sesión de Google primero para que siempre aparezca el selector de cuentas
+        // Forzamos el cierre de sesión previo para limpiar el estado y que aparezca el selector
         googleSignInClient.signOut().addOnCompleteListener(this, task -> {
             Intent signInIntent = googleSignInClient.getSignInIntent();
             startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -134,12 +134,20 @@ public class LoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
+            Log.d("GOOGLE_AUTH", "Result Code: " + resultCode);
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account.getIdToken(), account);
             } catch (ApiException e) {
-                Toast.makeText(this, "Google Sign-In cancelado", Toast.LENGTH_SHORT).show();
+                int code = e.getStatusCode();
+                Log.e("GOOGLE_AUTH", "Error Técnico: " + code, e);
+                String msg = "Error: " + code;
+                if (code == 12501) msg = "Inicio de sesión cancelado.";
+                else if (code == 10) msg = "Error de Desarrollador (Verifica SHA-1).";
+                else if (code == 7) msg = "Error de red.";
+                
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
             }
         }
     }
