@@ -1,6 +1,7 @@
 package sv.edu.agroconecta.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,7 +130,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     }
 
     private void setupPedidosFilter() {
-        String[] estados = {"Todos", "Pendiente", "En preparacion", "En camino", "Entregado", "Pagado"};
+        String[] estados = {"Todos", "Pendiente", "En preparación", "En camino", "Entregado", "Pagado"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, estados);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spFiltroEstadoPedido.setAdapter(adapter);
@@ -309,7 +310,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     private void filtrarPedidos(String estado) {
         misPedidosFiltrados.clear();
         for (Pedido p : misPedidos) {
-            String estTxt = p.getEstado() != null ? p.getEstado() : p.getEstadoTexto();
+            String estTxt = p.getEstadoTexto();
             if (estado.equals("Todos") || (estTxt != null && estTxt.equalsIgnoreCase(estado))) {
                 misPedidosFiltrados.add(p);
             }
@@ -367,7 +368,10 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             ((TextView) h.itemView.findViewById(R.id.tvPedidoTotal)).setText(String.format("$%.2f", p.getTotal()));
             ((TextView) h.itemView.findViewById(R.id.tvPedidoFecha)).setText("📅 " + (p.getFecha() != null ? p.getFecha().substring(0, 10) : "Hoy"));
             TextView tvE = h.itemView.findViewById(R.id.tvPedidoEstado);
-            String est = p.getEstado() != null ? p.getEstado() : p.getEstadoTexto();
+            String est = p.getEstadoTexto();
+            if (p.getMetodoPago() != null && !p.getMetodoPago().isEmpty()) {
+                est += " [" + p.getMetodoPago() + "]";
+            }
             tvE.setText(est);
             
             if (p.getEstadoId() == 4) { // Entregado
@@ -403,13 +407,54 @@ public class VendedorDashboardActivity extends AppCompatActivity {
                 if (tvAvatarC != null) tvAvatarC.setVisibility(View.VISIBLE);
             }
 
+            // Mostrar items del pedido
+            TextView tvItems = h.itemView.findViewById(R.id.tvPedidoItems);
+            if (tvItems != null) {
+                if (p.getDetalles() != null && !p.getDetalles().isEmpty()) {
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < p.getDetalles().size(); i++) {
+                        if (i > 0) sb.append(", ");
+                        sb.append(p.getDetalles().get(i).getNombre());
+                        if (p.getDetalles().get(i).getCantidad() > 1) {
+                            sb.append(" (x").append(p.getDetalles().get(i).getCantidad()).append(")");
+                        }
+                    }
+                    tvItems.setText(sb.toString());
+                } else {
+                    tvItems.setText("Sin detalles de productos");
+                }
+            }
+
             h.itemView.findViewById(R.id.btnSeg).setOnClickListener(v -> mostrarDialogoCambioEstado(p, pos));
+
+            // Botón WhatsApp Cliente
+            h.itemView.findViewById(R.id.btnWhatsAppCliente).setOnClickListener(v -> {
+                String tel = p.getTelefonoCliente();
+                if (tel != null && !tel.isEmpty()) {
+                    // Limpiar el número de caracteres no numéricos
+                    String numLimpio = tel.replaceAll("[^0-9]", "");
+                    if (!numLimpio.startsWith("503") && numLimpio.length() == 8) {
+                        numLimpio = "503" + numLimpio;
+                    }
+                    
+                    String msg = "Hola " + p.getNombreCliente() + ", te contacto de AgroConecta por tu pedido #" + p.getPedidoId();
+                    String url = "https://wa.me/" + numLimpio + "?text=" + Uri.encode(msg);
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    try {
+                        v.getContext().startActivity(i);
+                    } catch (Exception e) {
+                        Toast.makeText(v.getContext(), "No se pudo abrir WhatsApp", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(v.getContext(), "El cliente no tiene teléfono registrado", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         @Override public int getItemCount() { return misPedidosFiltrados.size(); }
     }
 
     private void mostrarDialogoCambioEstado(Pedido pedido, int pos) {
-        String[] estados = {"Pendiente", "En preparacion", "En camino", "Entregado", "Pagado"};
+        String[] estados = {"Pendiente", "En preparación", "En camino", "Entregado", "Pagado"};
         int actual = pedido.getEstadoId() - 1;
         new AlertDialog.Builder(this).setTitle("Estado Pedido #" + pedido.getPedidoId()).setSingleChoiceItems(estados, actual >= 0 ? actual : 0, null)
             .setPositiveButton("Confirmar", (dialog, which) -> {
@@ -426,6 +471,26 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             @Override public void onResponse(Call<Void> c, Response<Void> r) {
                 if (r.isSuccessful()) {
                     pedido.setEstadoId(nuevoEstadoId);
+                    
+                    // Actualizar en Firebase para seguimiento en tiempo real
+                    Map<String, Object> fbData = new HashMap<>();
+                    fbData.put("estado_id", nuevoEstadoId);
+                    fbData.put("fecha", new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss", java.util.Locale.getDefault()).format(new java.util.Date()));
+                    
+                    com.google.firebase.database.FirebaseDatabase.getInstance()
+                        .getReference("pedidos_estado")
+                        .child(String.valueOf(pedido.getPedidoId()))
+                        .setValue(fbData);
+
+                    // Notificar al cliente sobre el cambio de estado
+                    String tit = "Actualización de Pedido #" + pedido.getPedidoId();
+                    String msg = "Tu pedido ahora está: " + (nuevoEstadoId == 1 ? "Pendiente" : 
+                                 nuevoEstadoId == 2 ? "En preparación" : 
+                                 nuevoEstadoId == 3 ? "En camino" : 
+                                 nuevoEstadoId == 4 ? "Entregado" : "Pagado");
+                    
+                    FCMHelper.notificarUsuario(String.valueOf(pedido.getUsuarioId()), tit, msg, "pedido");
+
                     cargarPedidosVendedor();
                 }
             }

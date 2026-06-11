@@ -78,6 +78,8 @@ id btnBackPerfilVendedor
 id btnBackProfile
 id btnBackSeguimiento
 id btnBackSoporte
+id btnBackTarjeta
+id btnBackTransferencia
 id btnCalificar
 id btnCambiarFotoAdmin
 id btnCambiarFotoCliente
@@ -90,6 +92,7 @@ id btnCancelarProductoV
 id btnCerrarChat
 id btnConfirmarPedido
 id btnConfirmarTab
+id btnConfirmarTransferencia
 id btnContactarLlamada
 id btnContactarVendedor
 id btnContactarWhatsApp
@@ -137,6 +140,7 @@ id btnSeguimiento
 id btnSiguiente
 id btnTomarFoto
 id btnUsarMiUbicacion
+id btnValidarTarjeta
 id btnVerEnMapa
 id btnVerEstadisticaProductos
 id btnVerEstadisticaUsuarios
@@ -165,6 +169,8 @@ id coordinatorVendedor
 id dot1
 id dot2
 id dot3
+id etBancoEmisor
+id etCVV
 id etComentarioCalificacion
 id etConfirmarPasswordAdmin
 id etConfirmarPasswordCliente
@@ -177,19 +183,24 @@ id etDescripcion
 id etDescripcionProblema
 id etEmail
 id etExistencia
+id etExpiracion
 id etImagenUrl
 id etMensaje
 id etMensajeChat
+id etMontoTransferencia
 id etNewPassword
 id etNombre
 id etNombreAdminPerfil
 id etNombreClientePerfil
+id etNombreTarjeta
 id etNombreVendedorPerfil
 id etNuevaPasswordAdmin
 id etNuevaPasswordCliente
 id etNuevaPasswordVendedor
+id etNumeroTarjeta
 id etPassword
 id etPrecio
+id etReferencia
 id etTelefono
 id etTelefonoAdminPerfil
 id etTelefonoClientePerfil
@@ -435,6 +446,8 @@ layout activity_main
 layout activity_mapa
 layout activity_mis_pedidos
 layout activity_onboarding
+layout activity_pago_tarjeta
+layout activity_pago_transferencia
 layout activity_perfil_admin
 layout activity_perfil_cliente
 layout activity_perfil_vendedor
@@ -475,6 +488,7 @@ string app_name
 string bienvenido_a
 string crear_cuenta
 string default_web_client_id
+string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

@@ -80,7 +80,7 @@ public class ReportesActivity extends AppCompatActivity {
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
-        
+
         // Cargar foto de perfil
         String fotoAdmin = sessionManager.getFotoPerfil();
         if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {

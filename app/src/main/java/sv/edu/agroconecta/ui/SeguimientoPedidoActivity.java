@@ -58,61 +58,68 @@ public class SeguimientoPedidoActivity extends AppCompatActivity {
     }
 
     private void actualizarUI(int estadoId, String fecha) {
-        int colorActivo   = 0xFF25632D;
-        int colorInactivo = 0xFFCCCCCC;
+        // Colores de los estados
+        int colorActivo   = 0xFF25632D; // Verde primario
+        int colorInactivo = 0xFFCCCCCC; // Gris claro
 
-        // Resetear todo
-        step1.setBackgroundColor(colorInactivo);
-        step2.setBackgroundColor(colorInactivo);
-        step3.setBackgroundColor(colorInactivo);
-        step4.setBackgroundColor(colorInactivo);
-        line1.setBackgroundColor(colorInactivo);
-        line2.setBackgroundColor(colorInactivo);
-        line3.setBackgroundColor(colorInactivo);
+        // Resetear todos los pasos a inactivo
+        if (step1 != null) step1.setBackgroundColor(colorInactivo);
+        if (step2 != null) step2.setBackgroundColor(colorInactivo);
+        if (step3 != null) step3.setBackgroundColor(colorInactivo);
+        if (step4 != null) step4.setBackgroundColor(colorInactivo);
+        if (line1 != null) line1.setBackgroundColor(colorInactivo);
+        if (line2 != null) line2.setBackgroundColor(colorInactivo);
+        if (line3 != null) line3.setBackgroundColor(colorInactivo);
 
-        String estado, mensaje;
-        switch (estadoId) {
-            case 1:
-                estado  = "Pedido recibido";
-                mensaje = "Tu pedido fue recibido y está siendo revisado por el vendedor.";
-                step1.setBackgroundColor(colorActivo);
-                break;
-            case 2:
-                estado  = "En preparacion";
-                mensaje = "El vendedor está preparando tu pedido para el envío.";
-                step1.setBackgroundColor(colorActivo);
-                step2.setBackgroundColor(colorActivo);
-                line1.setBackgroundColor(colorActivo);
-                break;
-            case 3:
-                estado  = "En camino";
-                mensaje = "Tu pedido está en camino. Pronto llegará a tu destino.";
-                step1.setBackgroundColor(colorActivo);
-                step2.setBackgroundColor(colorActivo);
-                step3.setBackgroundColor(colorActivo);
-                line1.setBackgroundColor(colorActivo);
-                line2.setBackgroundColor(colorActivo);
-                break;
-            case 4:
-                estado  = "Entregado";
-                mensaje = "¡Tu pedido fue entregado exitosamente. Gracias por comprar en AgroConecta!";
-                step1.setBackgroundColor(colorActivo);
-                step2.setBackgroundColor(colorActivo);
-                step3.setBackgroundColor(colorActivo);
-                step4.setBackgroundColor(colorActivo);
-                line1.setBackgroundColor(colorActivo);
-                line2.setBackgroundColor(colorActivo);
-                line3.setBackgroundColor(colorActivo);
-                break;
-            default:
-                estado  = "Pendiente";
-                mensaje = "Tu pedido está pendiente de confirmación.";
-                step1.setBackgroundColor(colorActivo);
+        String estado = "Pendiente";
+        String mensaje = "Tu pedido está siendo procesado.";
+
+        // Lógica de progreso acumulativo
+        if (estadoId >= 1) {
+            estado  = "Pedido recibido";
+            mensaje = "Tu pedido fue recibido y está siendo revisado por el vendedor.";
+            if (step1 != null) step1.setBackgroundColor(colorActivo);
+        }
+        
+        if (estadoId >= 2) {
+            estado  = "En preparación";
+            mensaje = "El vendedor está preparando tu pedido para el envío.";
+            if (step2 != null) step2.setBackgroundColor(colorActivo);
+            if (line1 != null) line1.setBackgroundColor(colorActivo);
+        }
+        
+        if (estadoId >= 3) {
+            estado  = "En camino";
+            mensaje = "Tu pedido está en camino. Pronto llegará a tu destino.";
+            if (step3 != null) step3.setBackgroundColor(colorActivo);
+            if (line2 != null) line2.setBackgroundColor(colorActivo);
+        }
+        
+        if (estadoId >= 4) {
+            estado  = "Entregado";
+            mensaje = "¡Tu pedido fue entregado exitosamente. Gracias por comprar en AgroConecta!";
+            if (step4 != null) step4.setBackgroundColor(colorActivo);
+            if (line3 != null) line3.setBackgroundColor(colorActivo);
         }
 
-        tvEstadoActual.setText(estado);
-        tvMensajeEstado.setText(mensaje);
-        if (fecha != null && tvFechaEstado != null)
-            tvFechaEstado.setText("Actualizado: " + fecha.substring(0, 10));
+        if (estadoId >= 5) {
+            estado  = "Pagado";
+            mensaje = "Tu pedido ha sido pagado y entregado. ¡Gracias por tu preferencia!";
+            // El estado 5 (Pagado) mantiene el paso 4 (Entregado) iluminado
+        }
+
+        if (tvEstadoActual != null) tvEstadoActual.setText(estado);
+        if (tvMensajeEstado != null) tvMensajeEstado.setText(mensaje);
+        
+        if (fecha != null && !fecha.isEmpty() && tvFechaEstado != null) {
+            try {
+                String fechaCorta = fecha.length() >= 10 ? fecha.substring(0, 10) : fecha;
+                tvFechaEstado.setText("Actualizado: " + fechaCorta);
+            } catch (Exception e) {
+                tvFechaEstado.setText("Actualizado hoy");
+            }
+        } else if (tvFechaEstado != null) {
+            tvFechaEstado.setText("");
+        }
     }
 }

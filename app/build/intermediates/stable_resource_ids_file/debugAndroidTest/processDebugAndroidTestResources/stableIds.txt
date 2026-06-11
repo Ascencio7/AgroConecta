@@ -1,0 +1,2 @@
+sv.edu.agroconecta.test:style/WhiteBackgroundTheme = 0x7f010001
+sv.edu.agroconecta.test:style/WhiteBackgroundDialogTheme = 0x7f010000

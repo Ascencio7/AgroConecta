@@ -3908,6 +3908,8 @@ int id btnBackPerfilVendedor 0x7f08007d
 int id btnBackProfile 0x7f08007e
 int id btnBackSeguimiento 0x7f08007f
 int id btnBackSoporte 0x7f080080
+int id btnBackTarjeta 0x7f08037e
+int id btnBackTransferencia 0x7f08037f
 int id btnCalificar 0x7f080081
 int id btnCambiarFotoAdmin 0x7f080082
 int id btnCambiarFotoCliente 0x7f080083
@@ -3920,6 +3922,7 @@ int id btnCancelarProductoV 0x7f080089
 int id btnCerrarChat 0x7f08008a
 int id btnConfirmarPedido 0x7f08008b
 int id btnConfirmarTab 0x7f08008c
+int id btnConfirmarTransferencia 0x7f080380
 int id btnContactarLlamada 0x7f08008d
 int id btnContactarVendedor 0x7f08008e
 int id btnContactarWhatsApp 0x7f08008f
@@ -3967,6 +3970,7 @@ int id btnSeguimiento 0x7f0800b8
 int id btnSiguiente 0x7f0800b9
 int id btnTomarFoto 0x7f0800ba
 int id btnUsarMiUbicacion 0x7f0800bb
+int id btnValidarTarjeta 0x7f080381
 int id btnVerEnMapa 0x7f0800bc
 int id btnVerEstadisticaProductos 0x7f0800bd
 int id btnVerEstadisticaUsuarios 0x7f0800be
@@ -4079,6 +4083,8 @@ int id enterAlways 0x7f080128
 int id enterAlwaysCollapsed 0x7f080129
 int id entireSpace 0x7f08012a
 int id escape 0x7f08012b
+int id etBancoEmisor 0x7f080382
+int id etCVV 0x7f080383
 int id etComentarioCalificacion 0x7f08012c
 int id etConfirmarPasswordAdmin 0x7f08012d
 int id etConfirmarPasswordCliente 0x7f08012e
@@ -4091,19 +4097,24 @@ int id etDescripcion 0x7f080134
 int id etDescripcionProblema 0x7f080135
 int id etEmail 0x7f080136
 int id etExistencia 0x7f080137
+int id etExpiracion 0x7f080384
 int id etImagenUrl 0x7f080138
 int id etMensaje 0x7f080139
 int id etMensajeChat 0x7f08013a
+int id etMontoTransferencia 0x7f080385
 int id etNewPassword 0x7f08013b
 int id etNombre 0x7f08013c
 int id etNombreAdminPerfil 0x7f08013d
 int id etNombreClientePerfil 0x7f08013e
+int id etNombreTarjeta 0x7f080386
 int id etNombreVendedorPerfil 0x7f08013f
 int id etNuevaPasswordAdmin 0x7f080140
 int id etNuevaPasswordCliente 0x7f080141
 int id etNuevaPasswordVendedor 0x7f080142
+int id etNumeroTarjeta 0x7f080387
 int id etPassword 0x7f080143
 int id etPrecio 0x7f080144
+int id etReferencia 0x7f080388
 int id etTelefono 0x7f080145
 int id etTelefonoAdminPerfil 0x7f080146
 int id etTelefonoClientePerfil 0x7f080147
@@ -4809,6 +4820,8 @@ int layout activity_main 0x7f0b002a
 int layout activity_mapa 0x7f0b002b
 int layout activity_mis_pedidos 0x7f0b002c
 int layout activity_onboarding 0x7f0b002d
+int layout activity_pago_tarjeta 0x7f0b009e
+int layout activity_pago_transferencia 0x7f0b009f
 int layout activity_perfil_admin 0x7f0b002e
 int layout activity_perfil_cliente 0x7f0b002f
 int layout activity_perfil_vendedor 0x7f0b0030
@@ -5007,6 +5020,7 @@ int string fallback_menu_item_copy_link 0x7f110049
 int string fallback_menu_item_open_in_browser 0x7f11004a
 int string fallback_menu_item_share_link 0x7f11004b
 int string fcm_fallback_notification_channel_label 0x7f11004c
+int string firebase_database_url 0x7f1100ce
 int string gcm_defaultSenderId 0x7f11004d
 int string google_api_key 0x7f11004e
 int string google_app_id 0x7f11004f

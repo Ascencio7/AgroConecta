@@ -76,9 +76,6 @@
                 android:textStyle="bold"
                 app:cornerRadius="18dp"
                 app:backgroundTint="@color/verde_primario"
-                app:icon="@android:drawable/ic_input_add"
-                app:iconGravity="textStart"
-                app:iconTint="@color/blanco"
                 android:elevation="4dp"
                 style="@style/Widget.Material3.Button"/>
 

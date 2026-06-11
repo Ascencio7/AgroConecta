@@ -53,7 +53,7 @@ public class MisPedidosActivity extends AppCompatActivity {
     }
 
     private void configurarFiltro() {
-        String[] opciones = {"Todos", "Pendiente", "En preparacion", "En camino", "Entregado"};
+        String[] opciones = {"Todos", "Pendiente", "En preparación", "En camino", "Entregado", "Pagado"};
         ArrayAdapter<String> adapterF = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, opciones);
         adapterF.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

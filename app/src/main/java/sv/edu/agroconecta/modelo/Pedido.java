@@ -47,6 +47,9 @@ public class Pedido {
     @SerializedName("detalles")
     private List<DetallePedido> detalles;
 
+    @SerializedName("metodo_pago")
+    private String metodoPago;
+
     public int getPedidoId()   { return pedidoId; }
     public int getUsuarioId()  { return usuarioId; }
     public String getFecha()   { return fecha; }
@@ -54,6 +57,8 @@ public class Pedido {
     public int getEstadoId()   { return estadoId; }
     public String getEstado()  { return estado != null ? estado : getEstadoTexto(); }
     public double getTotal()   { return total; }
+    public String getMetodoPago() { return metodoPago; }
+    public void setMetodoPago(String v) { metodoPago = v; }
     public String getNombreCliente()   { return nombreCliente; }
     public String getFotoCliente()     { return fotoCliente; }
     public String getTelefonoCliente() { return telefonoCliente; }
@@ -82,9 +87,10 @@ public class Pedido {
     public String getEstadoTexto() {
         switch (estadoId) {
             case 1: return "Pendiente";
-            case 2: return "En preparacion";
+            case 2: return "En preparación";
             case 3: return "En camino";
             case 4: return "Entregado";
+            case 5: return "Pagado";
             default: return "Pendiente";
         }
     }

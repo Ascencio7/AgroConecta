@@ -77,6 +77,8 @@ int id btnBackPerfilVendedor 0x0
 int id btnBackProfile 0x0
 int id btnBackSeguimiento 0x0
 int id btnBackSoporte 0x0
+int id btnBackTarjeta 0x0
+int id btnBackTransferencia 0x0
 int id btnCalificar 0x0
 int id btnCambiarFotoAdmin 0x0
 int id btnCambiarFotoCliente 0x0
@@ -89,6 +91,7 @@ int id btnCancelarProductoV 0x0
 int id btnCerrarChat 0x0
 int id btnConfirmarPedido 0x0
 int id btnConfirmarTab 0x0
+int id btnConfirmarTransferencia 0x0
 int id btnContactarLlamada 0x0
 int id btnContactarVendedor 0x0
 int id btnContactarWhatsApp 0x0
@@ -136,6 +139,7 @@ int id btnSeguimiento 0x0
 int id btnSiguiente 0x0
 int id btnTomarFoto 0x0
 int id btnUsarMiUbicacion 0x0
+int id btnValidarTarjeta 0x0
 int id btnVerEnMapa 0x0
 int id btnVerEstadisticaProductos 0x0
 int id btnVerEstadisticaUsuarios 0x0
@@ -164,6 +168,8 @@ int id coordinatorVendedor 0x0
 int id dot1 0x0
 int id dot2 0x0
 int id dot3 0x0
+int id etBancoEmisor 0x0
+int id etCVV 0x0
 int id etComentarioCalificacion 0x0
 int id etConfirmarPasswordAdmin 0x0
 int id etConfirmarPasswordCliente 0x0
@@ -176,19 +182,24 @@ int id etDescripcion 0x0
 int id etDescripcionProblema 0x0
 int id etEmail 0x0
 int id etExistencia 0x0
+int id etExpiracion 0x0
 int id etImagenUrl 0x0
 int id etMensaje 0x0
 int id etMensajeChat 0x0
+int id etMontoTransferencia 0x0
 int id etNewPassword 0x0
 int id etNombre 0x0
 int id etNombreAdminPerfil 0x0
 int id etNombreClientePerfil 0x0
+int id etNombreTarjeta 0x0
 int id etNombreVendedorPerfil 0x0
 int id etNuevaPasswordAdmin 0x0
 int id etNuevaPasswordCliente 0x0
 int id etNuevaPasswordVendedor 0x0
+int id etNumeroTarjeta 0x0
 int id etPassword 0x0
 int id etPrecio 0x0
+int id etReferencia 0x0
 int id etTelefono 0x0
 int id etTelefonoAdminPerfil 0x0
 int id etTelefonoClientePerfil 0x0
@@ -434,6 +445,8 @@ int layout activity_main 0x0
 int layout activity_mapa 0x0
 int layout activity_mis_pedidos 0x0
 int layout activity_onboarding 0x0
+int layout activity_pago_tarjeta 0x0
+int layout activity_pago_transferencia 0x0
 int layout activity_perfil_admin 0x0
 int layout activity_perfil_cliente 0x0
 int layout activity_perfil_vendedor 0x0
@@ -474,6 +487,7 @@ int string app_name 0x0
 int string bienvenido_a 0x0
 int string crear_cuenta 0x0
 int string default_web_client_id 0x0
+int string firebase_database_url 0x0
 int string gcm_defaultSenderId 0x0
 int string google_api_key 0x0
 int string google_app_id 0x0

@@ -1,0 +1,4 @@
+sv.edu.agroconecta.test.app-updated_navigation_xml-0 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\updated_navigation_xml\debugAndroidTest
+sv.edu.agroconecta.test.app-packageDebugAndroidTestResources-1 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\incremental\debugAndroidTest\packageDebugAndroidTestResources\merged.dir
+sv.edu.agroconecta.test.app-packageDebugAndroidTestResources-2 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\incremental\debugAndroidTest\packageDebugAndroidTestResources\stripped.dir
+sv.edu.agroconecta.test.app-debugAndroidTest-3 C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

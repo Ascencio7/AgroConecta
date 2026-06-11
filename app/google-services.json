@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1060116256720",
+    "firebase_url": "https://agroconecta-3d352-default-rtdb.firebaseio.com",
     "project_id": "agroconecta-3d352",
     "storage_bucket": "agroconecta-3d352.firebasestorage.app"
   },
@@ -12,7 +13,28 @@
           "package_name": "sv.edu.agroconecta"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1060116256720-8jgdm2sc9h7ecbaabkrlvj8hfiah32h0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sv.edu.agroconecta",
+            "certificate_hash": "ca08b06a58771f55562ab9da7aee5ee0b5ccc26e"
+          }
+        },
+        {
+          "client_id": "1060116256720-gbtkonscemutna0pjnq8cgb2fpiavs81.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sv.edu.agroconecta",
+            "certificate_hash": "6a88293923f8cef8b826a7412711986ca126a9ad"
+          }
+        },
+        {
+          "client_id": "1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk"
@@ -20,7 +42,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

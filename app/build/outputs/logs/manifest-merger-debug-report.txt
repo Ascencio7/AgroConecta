@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:206:9-214:20
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:216:9-224:20
 	android:grantUriPermissions
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:210:13-47
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:220:13-47
 	android:authorities
 		INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:208:13-64
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:218:13-64
 	android:exported
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:209:13-37
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:219:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:207:13-62
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:217:13-62
 manifest
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-218:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-218:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-218:12
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-218:12
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-228:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-228:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-228:12
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:2:1-228:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\42710450fef60fc1869f028082695562\workspace\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\edc82addd1382b2096588b881d76635e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bba0d6cbbd3d1c5aeab3bd04cbd915ff\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -215,8 +215,8 @@ ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:24:21-69
 application
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-216:19
-INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-216:19
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-226:19
+INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-226:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\42710450fef60fc1869f028082695562\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\42710450fef60fc1869f028082695562\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\edc82addd1382b2096588b881d76635e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -575,12 +575,28 @@ ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\Androi
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:203:13-37
 	android:name
 		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:202:19-53
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:211:13-213:53
-	android:resource
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:213:17-51
+activity#sv.edu.agroconecta.ui.PagoTarjetaActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:206:9-208:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:208:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:207:13-37
 	android:name
-		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:212:17-67
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:206:19-57
+activity#sv.edu.agroconecta.ui.PagoTransferenciaActivity
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:211:9-213:57
+	android:windowSoftInputMode
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:213:13-55
+	android:exported
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:212:13-37
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:211:19-63
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:221:13-223:53
+	android:resource
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:223:17-51
+	android:name
+		ADDED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:222:17-67
 uses-sdk
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml

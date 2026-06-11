@@ -48,7 +48,12 @@ public class PedidoClienteAdapter extends RecyclerView.Adapter<PedidoClienteAdap
         h.tvId.setText("Pedido #" + p.getPedidoId());
         h.tvTotal.setText(String.format("$%.2f", p.getTotal()));
         h.tvFecha.setText("📅 " + (p.getFecha() != null ? p.getFecha().substring(0, 10) : "Hoy"));
-        h.tvEstado.setText(p.getEstadoTexto());
+        
+        String estadoYPago = p.getEstadoTexto();
+        if (p.getMetodoPago() != null && !p.getMetodoPago().isEmpty()) {
+            estadoYPago += " • " + p.getMetodoPago();
+        }
+        h.tvEstado.setText(estadoYPago);
 
         // Items del pedido
         if (h.tvItems != null) {
@@ -99,6 +104,7 @@ public class PedidoClienteAdapter extends RecyclerView.Adapter<PedidoClienteAdap
         h.btnSeg.setOnClickListener(v -> {
             Intent i = new Intent(context, SeguimientoPedidoActivity.class);
             i.putExtra("pedido_id", p.getPedidoId());
+            i.putExtra("estado_id", p.getEstadoId());
             context.startActivity(i);
         });
 

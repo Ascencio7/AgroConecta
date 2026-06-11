@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         spFiltroPedidos = viewPedidos.findViewById(R.id.spFiltroEstadoPedidos);
         if (spFiltroPedidos != null) {
-            String[] opciones = {"Todos", "Pendiente", "En preparacion", "En camino", "Entregado"};
+            String[] opciones = {"Todos", "Pendiente", "En preparación", "En camino", "Entregado", "Pagado"};
             android.widget.ArrayAdapter<String> adapterF = new android.widget.ArrayAdapter<>(this,
                     android.R.layout.simple_spinner_item, opciones);
             adapterF.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -597,15 +597,33 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         double subtotal = CarritoManager.getInstance().getTotal();
         double total    = subtotal * (1 + IVA);
 
+        String[] metodos = {"Efectivo", "Tarjeta de Crédito/Débito", "Transferencia Bancaria"};
+
         new AlertDialog.Builder(this)
-            .setTitle("Confirmar pedido")
-            .setMessage(String.format("¿Confirmar pedido por $%.2f (incluye IVA 13%%)?", total))
-            .setPositiveButton("✅ Confirmar", (d, w) -> enviarPedido(new ArrayList<>(items), total))
+            .setTitle("Selecciona tu forma de pago")
+            .setItems(metodos, (dialog, which) -> {
+                if (which == 0) { // Efectivo
+                    new AlertDialog.Builder(this)
+                        .setTitle("Confirmar pedido")
+                        .setMessage(String.format("¿Confirmar pedido por $%.2f con pago en Efectivo?", total))
+                        .setPositiveButton("✅ Confirmar", (d, w) -> enviarPedido(new ArrayList<>(items), total, "Efectivo"))
+                        .setNegativeButton("Cancelar", null)
+                        .show();
+                } else if (which == 1) { // Tarjeta
+                    Intent intent = new Intent(this, sv.edu.agroconecta.ui.PagoTarjetaActivity.class);
+                    intent.putExtra("total", total);
+                    startActivityForResult(intent, 200);
+                } else if (which == 2) { // Transferencia
+                    Intent intent = new Intent(this, sv.edu.agroconecta.ui.PagoTransferenciaActivity.class);
+                    intent.putExtra("total", total);
+                    startActivityForResult(intent, 200);
+                }
+            })
             .setNegativeButton("Cancelar", null)
             .show();
     }
 
-    private void enviarPedido(List<DetallePedido> items, double total) {
+    private void enviarPedido(List<DetallePedido> items, double total, String metodoPago) {
         MaterialButton btnConfirmar = viewCarrito.findViewById(R.id.btnConfirmarTab);
         if (btnConfirmar != null) { btnConfirmar.setEnabled(false); btnConfirmar.setText("Enviando…"); }
 
@@ -614,6 +632,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         pedido.setTotal(total);
         pedido.setEstadoId(1);
         pedido.setUsuarioId(sessionManager.getUserId());
+        pedido.setMetodoPago(metodoPago);
 
         new PedidoRepository().crearPedido(pedido).enqueue(new Callback<Pedido>() {
             @Override
@@ -641,20 +660,30 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Toast.LENGTH_LONG).show();
 
                     if (btnConfirmar != null) {
-                        btnConfirmar.setEnabled(false);
-                        btnConfirmar.setText("+ CONFIRMAR PEDIDO");
+                        btnConfirmar.setEnabled(true);
+                        btnConfirmar.setText("CONFIRMAR PEDIDO");
                     }
                 } else {
-                    if (btnConfirmar != null) { btnConfirmar.setEnabled(true); btnConfirmar.setText("+ CONFIRMAR PEDIDO"); }
+                    if (btnConfirmar != null) { btnConfirmar.setEnabled(true); btnConfirmar.setText("CONFIRMAR PEDIDO"); }
                     Toast.makeText(MainActivity.this, "Error al confirmar. Intenta de nuevo.", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<Pedido> call, Throwable t) {
-                if (btnConfirmar != null) { btnConfirmar.setEnabled(true); btnConfirmar.setText("+ CONFIRMAR PEDIDO"); }
+                if (btnConfirmar != null) { btnConfirmar.setEnabled(true); btnConfirmar.setText("CONFIRMAR PEDIDO"); }
                 Toast.makeText(MainActivity.this, "Sin conexión. Verifica tu internet.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 200 && resultCode == RESULT_OK) {
+            // El pago fue exitoso y el pedido ya se envió desde la actividad de pago
+            actualizarCarritoTab();
+            bottomNav.setSelectedItemId(R.id.nav_pedidos); // Ir a mis pedidos
+        }
     }
 
     // ─────────────────────────── PERFIL ──────────────────────────────────────

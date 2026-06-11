@@ -256,6 +256,18 @@
             android:name="sv.edu.agroconecta.ui.SoporteActivity"
             android:exported="false" />
 
+        <!-- Pago Tarjeta -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.PagoTarjetaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pago Transferencia -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.PagoTransferenciaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"

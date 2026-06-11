@@ -202,6 +202,16 @@
         <activity android:name=".ui.SoporteActivity"
             android:exported="false"/>
 
+        <!-- Pago Tarjeta -->
+        <activity android:name=".ui.PagoTarjetaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- Pago Transferencia -->
+        <activity android:name=".ui.PagoTransferenciaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
         <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"

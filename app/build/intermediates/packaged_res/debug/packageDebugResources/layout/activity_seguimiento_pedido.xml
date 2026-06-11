@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/verde_primario"
-        android:paddingTop="44dp"
+        android:paddingTop="14dp"
         android:paddingBottom="14dp"
         android:paddingHorizontal="16dp"
         android:gravity="center_vertical"
@@ -130,7 +130,7 @@
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
                         <View android:id="@+id/step2" android:layout_width="20dp" android:layout_height="20dp" android:background="@color/gris_borde"/>
                         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="En preparacion" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="En preparación" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/texto_primario"/>
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Preparando tu pedido" android:textSize="12sp" android:textColor="@color/texto_tenue"/>
                         </LinearLayout>
                     </LinearLayout>
