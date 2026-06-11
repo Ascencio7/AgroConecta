@@ -89,8 +89,9 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         holder.txtAvatar.setVisibility(android.view.View.VISIBLE);
         String foto = u.getFotoPerfil();
         if (foto != null && !foto.isEmpty() && holder.ivFotoUsuario != null) {
+            String fullUrl = foto.startsWith("http") ? foto : "https://ac-backend-4iax.onrender.com/" + foto;
             Glide.with(context)
-                .load(foto)
+                .load(fullUrl)
                 .transform(new CircleCrop())
                 .into(holder.ivFotoUsuario);
             holder.ivFotoUsuario.setVisibility(android.view.View.VISIBLE);
@@ -98,7 +99,31 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         }
         holder.txtCorreo.setText(u.getCorreo());
         holder.txtTelefono.setText(u.getTelefono());
-        if (holder.txtRol != null) holder.txtRol.setText(u.getRol() != null ? u.getRol() : "Usuario");
+        
+        // Rol
+        if (holder.txtRol != null) {
+            String rol = u.getRol();
+            
+            // Fallback si el nombre del rol no viene del backend
+            if (rol == null || rol.isEmpty()) {
+                int rolId = u.getRolId();
+                if (rolId == 1) rol = "Admin";
+                else if (rolId == 2) rol = "Vendedor";
+                else if (rolId == 3) rol = "Cliente";
+                else rol = "Usuario";
+            }
+            
+            holder.txtRol.setText(rol.toUpperCase());
+            
+            // Colores por rol
+            if (rol.equalsIgnoreCase("Admin")) {
+                holder.txtRol.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
+            } else if (rol.equalsIgnoreCase("Vendedor")) {
+                holder.txtRol.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
+            } else {
+                holder.txtRol.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.texto_tenue));
+            }
+        }
 
         // Estado visual
         if (u.getEstado() != null && u.getEstado()) {
@@ -119,6 +144,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
             intent.putExtra("correo", u.getCorreo());
             intent.putExtra("telefono", u.getTelefono());
             intent.putExtra("estado", u.getEstado());
+            intent.putExtra("rol_id", u.getRolId());
             context.startActivity(intent);
         });
 

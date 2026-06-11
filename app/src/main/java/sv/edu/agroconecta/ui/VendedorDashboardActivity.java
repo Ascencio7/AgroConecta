@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,18 +35,12 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import sv.edu.agroconecta.ChatManager;
 import sv.edu.agroconecta.R;
-import sv.edu.agroconecta.ui.SoporteActivity;
-import sv.edu.agroconecta.ui.PerfilAdminActivity;
-import sv.edu.agroconecta.ui.PerfilVendedorActivity;
 import sv.edu.agroconecta.modelo.Pedido;
 import sv.edu.agroconecta.modelo.Product;
 import sv.edu.agroconecta.network.ApiClient;
 import sv.edu.agroconecta.network.ProductApi;
 import sv.edu.agroconecta.utils.FCMHelper;
 import sv.edu.agroconecta.utils.SessionManager;
-
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 
 public class VendedorDashboardActivity extends AppCompatActivity {
 
@@ -58,14 +55,16 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     private List<Product> misProductos = new ArrayList<>();
     private List<Product> misProductosFiltrados = new ArrayList<>();
     private List<Pedido> misPedidos = new ArrayList<>();
+    private List<Pedido> misPedidosFiltrados = new ArrayList<>();
     private RecyclerView rvMisProductos, rvPedidosVendedor;
     private TextView tvTotalProd, tvActivos, tvAgotados, tvAvatar, tvWelcomeVendedor;
-    private android.widget.ImageView ivAvatarFoto;
+    private ImageView ivAvatarFoto;
     private LinearLayout panelProductos, panelPedidos;
     private BottomNavigationView bottomNav;
     private androidx.appcompat.widget.SearchView searchView;
     private android.widget.ProgressBar progressProductos, progressPedidos;
     private android.widget.TextView tvEmptyProductos, tvEmptyPedidos;
+    private Spinner spFiltroEstadoPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +80,6 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         if (nombre != null) {
             tvWelcomeVendedor.setText("¡Hola, " + nombre + "! 👋");
             ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Vendedor - AgroConecta");
-        } else {
-            tvWelcomeVendedor.setText("AgroConecta");
-            ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Panel de Vendedor");
         }
 
         tvTotalProd    = findViewById(R.id.tvTotalProductos);
@@ -100,51 +96,63 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         progressPedidos   = findViewById(R.id.progressPedidosVendedor);
         tvEmptyProductos  = findViewById(R.id.tvEmptyProductosVendedor);
         tvEmptyPedidos    = findViewById(R.id.tvEmptyPedidosVendedor);
+        spFiltroEstadoPedido = findViewById(R.id.spFiltroEstadoPedido);
 
         rvMisProductos.setLayoutManager(new LinearLayoutManager(this));
         rvPedidosVendedor.setLayoutManager(new LinearLayoutManager(this));
 
-        // Header Avatar / Logout
-        if (sessionManager.isLoggedIn()) {
-            String nom = sessionManager.getNombre();
-            if (nom != null && !nom.isEmpty()) {
-                tvAvatar.setText(String.valueOf(nom.charAt(0)).toUpperCase());
-            }
+        setupHeaderProfile();
+        setupSearch();
+        setupBottomNav();
+        setupPedidosFilter();
+
+        CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
+        new ChatManager(this, root);
+
+        handleIntent(getIntent());
+        cargarMisProductos();
+    }
+
+    private void setupHeaderProfile() {
+        String nombre = sessionManager.getNombre();
+        if (nombre != null && !nombre.isEmpty()) {
+            tvAvatar.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
-        // Foto de perfil en header
         String fotoPerfil = sessionManager.getFotoPerfil();
         if (fotoPerfil != null && !fotoPerfil.isEmpty() && ivAvatarFoto != null) {
             Glide.with(this).load(fotoPerfil).transform(new CircleCrop()).into(ivAvatarFoto);
-            ivAvatarFoto.setVisibility(android.view.View.VISIBLE);
-            tvAvatar.setVisibility(android.view.View.GONE);
+            ivAvatarFoto.setVisibility(View.VISIBLE);
+            tvAvatar.setVisibility(View.GONE);
         }
         tvAvatar.setOnClickListener(this::showProfileMenu);
         if (ivAvatarFoto != null) ivAvatarFoto.setOnClickListener(this::showProfileMenu);
+    }
 
-        // ── AgroBot IA flotante para el vendedor ──────────────────────────
-        
-        CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
-        new ChatManager(this, root);
-        // ──────────────────────────────────────────────────────────────────
+    private void setupPedidosFilter() {
+        String[] estados = {"Todos", "Pendiente", "En preparacion", "En camino", "Entregado", "Pagado"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, estados);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spFiltroEstadoPedido.setAdapter(adapter);
+        spFiltroEstadoPedido.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                filtrarPedidos(estados[position]);
+            }
+            @Override public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
 
+    private void setupSearch() {
         searchView = findViewById(R.id.searchMisProductos);
         if (searchView != null) {
             searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    filtrarProductos(query);
-                    return true;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    filtrarProductos(newText);
-                    return true;
-                }
+                @Override public boolean onQueryTextSubmit(String query) { filtrarProductos(query); return true; }
+                @Override public boolean onQueryTextChange(String newText) { filtrarProductos(newText); return true; }
             });
         }
+    }
 
-        // Bottom Nav logic
+    private void setupBottomNav() {
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_seller_products) {
@@ -160,32 +168,24 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             }
             return false;
         });
-
-        handleIntent(getIntent());
-        cargarMisProductos();
     }
 
     private void handleIntent(Intent intent) {
         if (intent != null && intent.hasExtra("nav_to")) {
             String target = intent.getStringExtra("nav_to");
-            if ("productos".equals(target)) {
-                bottomNav.setSelectedItemId(R.id.nav_seller_products);
-            } else if ("pedidos".equals(target)) {
-                bottomNav.setSelectedItemId(R.id.nav_seller_orders);
-            }
+            if ("productos".equals(target)) bottomNav.setSelectedItemId(R.id.nav_seller_products);
+            else if ("pedidos".equals(target)) bottomNav.setSelectedItemId(R.id.nav_seller_orders);
         } else {
             bottomNav.setSelectedItemId(R.id.nav_seller_products);
         }
     }
 
     private void mostrarTab(String tab) {
-        String nombre = sessionManager.getNombre();
         if ("productos".equals(tab)) {
             panelProductos.setVisibility(View.VISIBLE);
             panelPedidos.setVisibility(View.GONE);
-            if (nombre != null) {
-                tvWelcomeVendedor.setText("¡Hola, " + nombre + "! 👋");
-            }
+            String n = sessionManager.getNombre();
+            if (n != null) tvWelcomeVendedor.setText("¡Hola, " + n + "! 👋");
             ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Vendedor - AgroConecta");
         } else {
             panelProductos.setVisibility(View.GONE);
@@ -199,42 +199,37 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        cargarMisProductos(); // Recargar al volver de editar
-        String fp = sessionManager.getFotoPerfil();
-        if (fp != null && !fp.isEmpty() && ivAvatarFoto != null) {
-            Glide.with(this).load(fp).transform(new CircleCrop()).into(ivAvatarFoto);
-            ivAvatarFoto.setVisibility(android.view.View.VISIBLE);
-            tvAvatar.setVisibility(android.view.View.GONE);
-        }
+        cargarMisProductos();
+        setupHeaderProfile();
     }
 
     private void showProfileMenu(View v) {
-        PopupMenu popupMenu = new PopupMenu(VendedorDashboardActivity.this, v);
-        popupMenu.getMenu().add(0, 1, 0, "👤 Mi Perfil");
-        popupMenu.getMenu().add(0, 2, 1, "🛠️ Soporte técnico");
-        popupMenu.getMenu().add(0, 3, 2, "🚪 Cerrar Sesión");
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
-            if (id == 1) { mostrarPerfil(); return true; }
-            if (id == 2) { startActivity(new Intent(VendedorDashboardActivity.this, SoporteActivity.class)); return true; }
-            if (id == 3) { confirmarLogout(); return true; }
+            if (id == R.id.menu_view_profile) {
+                startActivity(new Intent(this, PerfilVendedorActivity.class));
+                return true;
+            } else if (id == R.id.menu_soporte) {
+                startActivity(new Intent(this, SoporteActivity.class));
+                return true;
+            } else if (id == R.id.menu_logout) {
+                confirmarLogout();
+                return true;
+            }
             return false;
         });
         popupMenu.show();
     }
 
-    private void mostrarPerfil() {
-        Intent intent = new Intent(this, PerfilVendedorActivity.class);
-        startActivity(intent);
-    }
-
     private void confirmarLogout() {
-        new AlertDialog.Builder(VendedorDashboardActivity.this)
+        new AlertDialog.Builder(this)
                 .setTitle("Cerrar sesión")
                 .setMessage("¿Seguro que quieres salir?")
                 .setPositiveButton("Sí", (d, w) -> {
                     sessionManager.logout();
-                    Intent i = new Intent(VendedorDashboardActivity.this, LoginActivity.class);
+                    Intent i = new Intent(this, LoginActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                     finish();
@@ -242,35 +237,26 @@ public class VendedorDashboardActivity extends AppCompatActivity {
                 .setNegativeButton("No", null).show();
     }
 
-    // ── Mis Productos ─────────────────────────────────────
     private void cargarMisProductos() {
         int userId = sessionManager.getUserId();
-        if (progressProductos != null) progressProductos.setVisibility(android.view.View.VISIBLE);
-        if (tvEmptyProductos != null) tvEmptyProductos.setVisibility(android.view.View.GONE);
-        rvMisProductos.setVisibility(android.view.View.GONE);
+        if (progressProductos != null) progressProductos.setVisibility(View.VISIBLE);
+        if (tvEmptyProductos != null) tvEmptyProductos.setVisibility(View.GONE);
+        rvMisProductos.setVisibility(View.GONE);
         productApi.getProductos().enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> r) {
-                if (progressProductos != null) progressProductos.setVisibility(android.view.View.GONE);
+                if (progressProductos != null) progressProductos.setVisibility(View.GONE);
                 if (r.isSuccessful() && r.body() != null) {
                     misProductos.clear();
                     for (Product p : r.body())
                         if (p.getUsuarioId() != null && p.getUsuarioId() == userId)
                             misProductos.add(p);
-                    misProductosFiltrados.clear();
-                    misProductosFiltrados.addAll(misProductos);
+                    filtrarProductos("");
                     actualizarStats();
-                    if (misProductos.isEmpty()) {
-                        if (tvEmptyProductos != null) { tvEmptyProductos.setText("No tienes productos publicados aún"); tvEmptyProductos.setVisibility(android.view.View.VISIBLE); }
-                    } else {
-                        rvMisProductos.setVisibility(android.view.View.VISIBLE);
-                        rvMisProductos.setAdapter(new ProductoVendedorAdapter(misProductosFiltrados));
-                    }
                 }
             }
             @Override public void onFailure(Call<List<Product>> c, Throwable t) {
-                if (progressProductos != null) progressProductos.setVisibility(android.view.View.GONE);
-                if (tvEmptyProductos != null) { tvEmptyProductos.setText("Sin conexión. Intenta de nuevo."); tvEmptyProductos.setVisibility(android.view.View.VISIBLE); }
+                if (progressProductos != null) progressProductos.setVisibility(View.GONE);
                 Toast.makeText(VendedorDashboardActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
             }
         });
@@ -278,29 +264,22 @@ public class VendedorDashboardActivity extends AppCompatActivity {
 
     private void filtrarProductos(String texto) {
         misProductosFiltrados.clear();
-        if (texto.isEmpty()) {
-            misProductosFiltrados.addAll(misProductos);
+        String query = texto.toLowerCase().trim();
+        for (Product p : misProductos) {
+            if (p.getNombre().toLowerCase().contains(query)) misProductosFiltrados.add(p);
+        }
+        if (misProductosFiltrados.isEmpty()) {
+            tvEmptyProductos.setVisibility(View.VISIBLE);
+            rvMisProductos.setVisibility(View.GONE);
         } else {
-            String query = texto.toLowerCase().trim();
-            for (Product p : misProductos) {
-                if (p.getNombre().toLowerCase().contains(query)) {
-                    misProductosFiltrados.add(p);
-                }
-            }
-        }
-        
-        View tvNoRes = findViewById(R.id.tvNoResultadosVendedor);
-        if (tvNoRes != null) {
-            tvNoRes.setVisibility(misProductosFiltrados.isEmpty() ? View.VISIBLE : View.GONE);
-        }
-
-        if (rvMisProductos.getAdapter() != null) {
-            rvMisProductos.getAdapter().notifyDataSetChanged();
+            tvEmptyProductos.setVisibility(View.GONE);
+            rvMisProductos.setVisibility(View.VISIBLE);
+            rvMisProductos.setAdapter(new ProductoVendedorAdapter(misProductosFiltrados));
         }
     }
 
     private void actualizarStats() {
-        int total   = misProductos.size();
+        int total = misProductos.size();
         int activos = 0;
         for (Product p : misProductos) if (p.getExistencia() > 0) activos++;
         if (tvTotalProd != null) tvTotalProd.setText(String.valueOf(total));
@@ -308,298 +287,158 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         if (tvAgotados != null) tvAgotados.setText(String.valueOf(total - activos));
     }
 
-    // ── Pedidos recibidos ─────────────────────────────────
     private void cargarPedidosVendedor() {
         int userId = sessionManager.getUserId();
-        if (progressPedidos != null) progressPedidos.setVisibility(android.view.View.VISIBLE);
-        if (tvEmptyPedidos != null) tvEmptyPedidos.setVisibility(android.view.View.GONE);
-        rvPedidosVendedor.setVisibility(android.view.View.GONE);
+        if (progressPedidos != null) progressPedidos.setVisibility(View.VISIBLE);
         vendedorApi.getPedidosVendedor(userId).enqueue(new Callback<List<Pedido>>() {
             @Override
             public void onResponse(Call<List<Pedido>> call, Response<List<Pedido>> r) {
-                if (progressPedidos != null) progressPedidos.setVisibility(android.view.View.GONE);
+                if (progressPedidos != null) progressPedidos.setVisibility(View.GONE);
                 if (r.isSuccessful() && r.body() != null) {
-                    misPedidos.clear();
-                    misPedidos.addAll(r.body());
-                    if (misPedidos.isEmpty()) {
-                        if (tvEmptyPedidos != null) { tvEmptyPedidos.setText("No tienes pedidos aún"); tvEmptyPedidos.setVisibility(android.view.View.VISIBLE); }
-                    } else {
-                        rvPedidosVendedor.setVisibility(android.view.View.VISIBLE);
-                        rvPedidosVendedor.setAdapter(new PedidoVendedorAdapter());
-                    }
-                } else {
-                    if (tvEmptyPedidos != null) { tvEmptyPedidos.setText("Error al cargar pedidos"); tvEmptyPedidos.setVisibility(android.view.View.VISIBLE); }
-                    Toast.makeText(VendedorDashboardActivity.this,
-                            "Error al cargar pedidos", Toast.LENGTH_SHORT).show();
+                    misPedidos = r.body();
+                    filtrarPedidos(spFiltroEstadoPedido.getSelectedItem().toString());
                 }
             }
             @Override public void onFailure(Call<List<Pedido>> c, Throwable t) {
-                if (progressPedidos != null) progressPedidos.setVisibility(android.view.View.GONE);
-                if (tvEmptyPedidos != null) { tvEmptyPedidos.setText("Sin conexión. Intenta de nuevo."); tvEmptyPedidos.setVisibility(android.view.View.VISIBLE); }
-                Toast.makeText(VendedorDashboardActivity.this,
-                        "Sin conexión", Toast.LENGTH_SHORT).show();
+                if (progressPedidos != null) progressPedidos.setVisibility(View.GONE);
+                Toast.makeText(VendedorDashboardActivity.this, "Sin conexión", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    // ── Adapter Productos del vendedor ────────────────────
+    private void filtrarPedidos(String estado) {
+        misPedidosFiltrados.clear();
+        for (Pedido p : misPedidos) {
+            String estTxt = p.getEstado() != null ? p.getEstado() : p.getEstadoTexto();
+            if (estado.equals("Todos") || (estTxt != null && estTxt.equalsIgnoreCase(estado))) {
+                misPedidosFiltrados.add(p);
+            }
+        }
+        if (misPedidosFiltrados.isEmpty()) {
+            tvEmptyPedidos.setVisibility(View.VISIBLE);
+            rvPedidosVendedor.setVisibility(View.GONE);
+        } else {
+            tvEmptyPedidos.setVisibility(View.GONE);
+            rvPedidosVendedor.setVisibility(View.VISIBLE);
+            rvPedidosVendedor.setAdapter(new PedidoVendedorAdapter());
+        }
+    }
+
     class ProductoVendedorAdapter extends RecyclerView.Adapter<ProductoVendedorAdapter.VH> {
         private List<Product> lista;
         ProductoVendedorAdapter(List<Product> lista) { this.lista = lista; }
-        
         class VH extends RecyclerView.ViewHolder { VH(View v) { super(v); } }
-
-        @NonNull @Override
-        public VH onCreateViewHolder(@NonNull ViewGroup p, int t) {
-            return new VH(LayoutInflater.from(p.getContext())
-                    .inflate(R.layout.item_producto_vendedor, p, false));
+        @NonNull @Override public VH onCreateViewHolder(@NonNull ViewGroup p, int t) {
+            return new VH(LayoutInflater.from(p.getContext()).inflate(R.layout.item_producto_vendedor, p, false));
         }
-
-        @Override
-        public void onBindViewHolder(@NonNull VH h, int pos) {
+        @Override public void onBindViewHolder(@NonNull VH h, int pos) {
             Product p = lista.get(pos);
             ((TextView) h.itemView.findViewById(R.id.tvNombreVendedor)).setText(p.getNombre());
-            ((TextView) h.itemView.findViewById(R.id.tvPrecioVendedor))
-                    .setText(String.format("$%.2f", p.getPrecio()));
-            ((TextView) h.itemView.findViewById(R.id.tvStockVendedor))
-                    .setText("Stock: " + p.getExistencia());
-
-            TextView tvEstado = h.itemView.findViewById(R.id.tvEstadoVendedor);
+            ((TextView) h.itemView.findViewById(R.id.tvPrecioVendedor)).setText(String.format("$%.2f", p.getPrecio()));
+            ((TextView) h.itemView.findViewById(R.id.tvStockVendedor)).setText("Stock: " + p.getExistencia());
+            TextView tvE = h.itemView.findViewById(R.id.tvEstadoVendedor);
             if (p.getExistencia() > 0) {
-                tvEstado.setText("Activo");
-                tvEstado.setTextColor(0xFF27AE60);
-                tvEstado.setBackgroundResource(R.drawable.bg_badge_verde);
+                tvE.setText("Activo"); tvE.setTextColor(0xFF27AE60); tvE.setBackgroundResource(R.drawable.bg_badge_verde);
             } else {
-                tvEstado.setText("Agotado");
-                tvEstado.setTextColor(0xFFC0392B);
-                tvEstado.setBackgroundResource(R.drawable.bg_badge_rojo);
+                tvE.setText("Agotado"); tvE.setTextColor(0xFFC0392B); tvE.setBackgroundResource(R.drawable.bg_badge_rojo);
             }
-
             if (p.getImagen() != null && !p.getImagen().isEmpty()) {
-                Glide.with(h.itemView).load(p.getImagen())
-                        .placeholder(R.drawable.ic_launcher_foreground)
-                        .into((android.widget.ImageView) h.itemView.findViewById(R.id.ivProductoVendedor));
+                Glide.with(h.itemView).load(p.getImagen()).placeholder(R.drawable.ic_launcher_foreground).into((ImageView) h.itemView.findViewById(R.id.ivProductoVendedor));
             }
-
             h.itemView.findViewById(R.id.btnEditarProductoV).setOnClickListener(v -> {
-                Intent i = new Intent(VendedorDashboardActivity.this,
-                        AgregarProductoVendedorActivity.class);
+                Intent i = new Intent(VendedorDashboardActivity.this, AgregarProductoVendedorActivity.class);
                 i.putExtra("producto_id", p.getProductoId());
                 startActivity(i);
             });
-
             h.itemView.findViewById(R.id.btnEliminarProductoV).setOnClickListener(v ->
-                    new AlertDialog.Builder(VendedorDashboardActivity.this)
-                            .setTitle("Eliminar producto")
-                            .setMessage("¿Eliminar \"" + p.getNombre() + "\"?")
-                            .setPositiveButton("Eliminar", (d, w) -> eliminarProducto(p))
-                            .setNegativeButton("Cancelar", null).show());
+                new AlertDialog.Builder(VendedorDashboardActivity.this).setTitle("Eliminar").setMessage("¿Eliminar?").setPositiveButton("Sí", (d, w) -> eliminarProducto(p)).setNegativeButton("No", null).show());
         }
-
         @Override public int getItemCount() { return lista.size(); }
     }
 
-    // ── Adapter Pedidos recibidos ─────────────────────────
     class PedidoVendedorAdapter extends RecyclerView.Adapter<PedidoVendedorAdapter.VH> {
         class VH extends RecyclerView.ViewHolder { VH(View v) { super(v); } }
-
-        @NonNull @Override
-        public VH onCreateViewHolder(@NonNull ViewGroup p, int t) {
-            return new VH(LayoutInflater.from(p.getContext())
-                    .inflate(R.layout.item_pedido_vendedor, p, false));
+        @NonNull @Override public VH onCreateViewHolder(@NonNull ViewGroup p, int t) {
+            return new VH(LayoutInflater.from(p.getContext()).inflate(R.layout.item_pedido_vendedor, p, false));
         }
-
-        @Override
-        public void onBindViewHolder(@NonNull VH h, int pos) {
-            Pedido p = misPedidos.get(pos);
-
-            ((TextView) h.itemView.findViewById(R.id.tvPedidoId))
-                    .setText("Pedido #" + p.getPedidoId());
-            ((TextView) h.itemView.findViewById(R.id.tvPedidoTotal))
-                    .setText(String.format("$%.2f", p.getTotal()));
-            ((TextView) h.itemView.findViewById(R.id.tvPedidoFecha))
-                    .setText("📅 " + (p.getFecha() != null ?
-                            p.getFecha().substring(0, 10) : "Hoy"));
-
-            // Items del pedido
-            TextView tvItems = h.itemView.findViewById(R.id.tvPedidoItems);
-            if (p.getDetalles() != null && !p.getDetalles().isEmpty()) {
-                StringBuilder sb = new StringBuilder("🛒 ");
-                for (int i = 0; i < p.getDetalles().size(); i++) {
-                    sb.append(p.getDetalles().get(i).getNombre())
-                      .append(" x").append(p.getDetalles().get(i).getCantidad());
-                    if (i < p.getDetalles().size() - 1) sb.append(", ");
-                }
-                tvItems.setText(sb.toString());
+        @Override public void onBindViewHolder(@NonNull VH h, int pos) {
+            Pedido p = misPedidosFiltrados.get(pos);
+            ((TextView) h.itemView.findViewById(R.id.tvPedidoId)).setText("Pedido #" + p.getPedidoId());
+            ((TextView) h.itemView.findViewById(R.id.tvPedidoTotal)).setText(String.format("$%.2f", p.getTotal()));
+            ((TextView) h.itemView.findViewById(R.id.tvPedidoFecha)).setText("📅 " + (p.getFecha() != null ? p.getFecha().substring(0, 10) : "Hoy"));
+            TextView tvE = h.itemView.findViewById(R.id.tvPedidoEstado);
+            String est = p.getEstado() != null ? p.getEstado() : p.getEstadoTexto();
+            tvE.setText(est);
+            
+            if (p.getEstadoId() == 4) { // Entregado
+                tvE.setTextColor(0xFF27AE60); 
+                tvE.setBackgroundResource(R.drawable.bg_badge_verde);
+            } else if (p.getEstadoId() == 5) { // Pagado
+                tvE.setTextColor(0xFF2980B9); // Azul
+                tvE.setBackgroundResource(R.drawable.bg_badge_verde); // Usar verde o uno neutro si no hay azul
             } else {
-                tvItems.setText("Ver detalles");
+                tvE.setTextColor(0xFFB7770D);
+                tvE.setBackgroundResource(R.drawable.bg_badge_amber);
+            }
+            
+            // Foto y Nombre del Cliente
+            TextView tvAvatarC = h.itemView.findViewById(R.id.tvAvatarCliente);
+            ImageView ivFotoC = h.itemView.findViewById(R.id.ivFotoCliente);
+            TextView tvNombreC = h.itemView.findViewById(R.id.tvNombreCliente);
+            
+            if (p.getNombreCliente() != null) {
+                tvNombreC.setText(p.getNombreCliente());
+                if (tvAvatarC != null) tvAvatarC.setText(String.valueOf(p.getNombreCliente().charAt(0)).toUpperCase());
+            }
+            
+            if (p.getFotoCliente() != null && !p.getFotoCliente().isEmpty()) {
+                Glide.with(h.itemView.getContext())
+                    .load(p.getFotoCliente())
+                    .transform(new CircleCrop())
+                    .into(ivFotoC);
+                ivFotoC.setVisibility(View.VISIBLE);
+                if (tvAvatarC != null) tvAvatarC.setVisibility(View.GONE);
+            } else {
+                ivFotoC.setVisibility(View.GONE);
+                if (tvAvatarC != null) tvAvatarC.setVisibility(View.VISIBLE);
             }
 
-            // Estado con color
-            TextView tvEstado = h.itemView.findViewById(R.id.tvPedidoEstado);
-            String estado = p.getEstado() != null ? p.getEstado() : p.getEstadoTexto();
-            tvEstado.setText(estado);
-            switch (p.getEstadoId()) {
-                case 3:
-                    tvEstado.setTextColor(0xFF27AE60);
-                    tvEstado.setBackgroundResource(R.drawable.bg_badge_verde); break;
-                case 4:
-                    tvEstado.setTextColor(0xFFC0392B);
-                    tvEstado.setBackgroundResource(R.drawable.bg_badge_rojo); break;
-                default:
-                    tvEstado.setTextColor(0xFFB7770D);
-                    tvEstado.setBackgroundResource(R.drawable.bg_badge_amber); break;
-            }
-
-            // ── Cliente info ─────────────────────────────────────────
-            android.widget.TextView tvAvatarC = h.itemView.findViewById(R.id.tvAvatarCliente);
-            android.widget.ImageView ivFotoC  = h.itemView.findViewById(R.id.ivFotoCliente);
-            android.widget.TextView tvNombreC = h.itemView.findViewById(R.id.tvNombreCliente);
-            com.google.android.material.button.MaterialButton btnWAC = h.itemView.findViewById(R.id.btnWhatsAppCliente);
-
-            String nombreC = p.getNombreCliente();
-            if (nombreC != null && !nombreC.isEmpty()) {
-                if (tvNombreC != null) tvNombreC.setText(nombreC);
-                if (tvAvatarC != null) tvAvatarC.setText(String.valueOf(nombreC.charAt(0)).toUpperCase());
-            }
-            String fotoC = p.getFotoCliente();
-            if (fotoC != null && !fotoC.isEmpty() && ivFotoC != null) {
-                com.bumptech.glide.Glide.with(VendedorDashboardActivity.this)
-                    .load(fotoC).transform(new com.bumptech.glide.load.resource.bitmap.CircleCrop()).into(ivFotoC);
-                ivFotoC.setVisibility(android.view.View.VISIBLE);
-                if (tvAvatarC != null) tvAvatarC.setVisibility(android.view.View.GONE);
-            }
-            String telC = p.getTelefonoCliente();
-            if (btnWAC != null && telC != null && !telC.isEmpty()) {
-                btnWAC.setVisibility(android.view.View.VISIBLE);
-                btnWAC.setOnClickListener(v -> {
-                    String num = telC.replaceAll("[^0-9]", "");
-                    String msg = android.net.Uri.encode("Hola! Soy el vendedor de AgroConecta. Tu pedido #" + p.getPedidoId() + " está siendo procesado.");
-                    android.content.Intent waIntent = new android.content.Intent(android.content.Intent.ACTION_VIEW,
-                        android.net.Uri.parse("https://wa.me/503" + num + "?text=" + msg));
-                    try { startActivity(waIntent); } catch (Exception e) { }
-                });
-            }
-
-            // Botón cambiar estado del pedido
-            android.view.View btnSeg = h.itemView.findViewById(R.id.btnSeg);
-            if (btnSeg != null) {
-                btnSeg.setOnClickListener(v -> mostrarDialogoCambioEstado(p, pos));
-            }
+            h.itemView.findViewById(R.id.btnSeg).setOnClickListener(v -> mostrarDialogoCambioEstado(p, pos));
         }
-
-        @Override public int getItemCount() { return misPedidos.size(); }
+        @Override public int getItemCount() { return misPedidosFiltrados.size(); }
     }
 
     private void mostrarDialogoCambioEstado(Pedido pedido, int pos) {
-        String[] estados = {"Pendiente", "En preparacion", "En camino", "Entregado"};
-        String[] emojis  = {"⏳", "🔧", "🚚", "✅"};
-        int estadoActual = pedido.getEstadoId() - 1;
-
-        new AlertDialog.Builder(this)
-            .setTitle("Cambiar estado del Pedido #" + pedido.getPedidoId())
-            .setSingleChoiceItems(
-                new String[]{
-                    emojis[0] + " " + estados[0],
-                    emojis[1] + " " + estados[1],
-                    emojis[2] + " " + estados[2],
-                    emojis[3] + " " + estados[3]
-                },
-                estadoActual >= 0 ? estadoActual : 0,
-                null
-            )
+        String[] estados = {"Pendiente", "En preparacion", "En camino", "Entregado", "Pagado"};
+        int actual = pedido.getEstadoId() - 1;
+        new AlertDialog.Builder(this).setTitle("Estado Pedido #" + pedido.getPedidoId()).setSingleChoiceItems(estados, actual >= 0 ? actual : 0, null)
             .setPositiveButton("Confirmar", (dialog, which) -> {
-                android.widget.ListView lv = ((AlertDialog) dialog).getListView();
-                int seleccionado = lv.getCheckedItemPosition();
-                int nuevoEstadoId = seleccionado + 1;
-                actualizarEstadoPedido(pedido, nuevoEstadoId, pos);
-            })
-            .setNegativeButton("Cancelar", null)
-            .show();
+                int sel = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+                actualizarEstadoPedido(pedido, sel + 1, pos);
+            }).setNegativeButton("Cancelar", null).show();
     }
 
-    interface PedidoUpdateApi {
-        @PUT("pedidos/{id}")
-        retrofit2.Call<Void> actualizarEstado(@Path("id") int id, @Body Map<String, Object> body);
-    }
+    interface PedidoUpdateApi { @PUT("pedidos/{id}") Call<Void> actualizarEstado(@Path("id") int id, @Body Map<String, Object> body); }
 
     private void actualizarEstadoPedido(Pedido pedido, int nuevoEstadoId, int pos) {
-        Map<String, Object> body = new HashMap<>();
-        body.put("estado_id", nuevoEstadoId);
-
-        ApiClient.getClient()
-            .create(PedidoUpdateApi.class)
-            .actualizarEstado(pedido.getPedidoId(), body)
-            .enqueue(new retrofit2.Callback<Void>() {
-                @Override
-                public void onResponse(retrofit2.Call<Void> c, retrofit2.Response<Void> r) {
-                    if (r.isSuccessful()) {
-                        // Actualizar en Firebase para seguimiento en tiempo real
-                        Map<String, Object> firebaseData = new HashMap<>();
-                        firebaseData.put("estado_id", nuevoEstadoId);
-                        firebaseData.put("fecha", new java.text.SimpleDateFormat(
-                            "yyyy-MM-dd HH:mm", java.util.Locale.getDefault())
-                            .format(new java.util.Date()));
-                        com.google.firebase.database.FirebaseDatabase.getInstance()
-                            .getReference("pedidos_estado")
-                            .child(String.valueOf(pedido.getPedidoId()))
-                            .setValue(firebaseData);
-
-                        // ── Notificar al comprador del cambio de estado ──────
-                        String[] mensajes = {
-                            "Tu pedido #" + pedido.getPedidoId() + " está pendiente ⏳",
-                            "Tu pedido #" + pedido.getPedidoId() + " está en preparación 🔧",
-                            "Tu pedido #" + pedido.getPedidoId() + " va en camino 🚚",
-                            "Tu pedido #" + pedido.getPedidoId() + " fue entregado ✅"
-                        };
-                        int idx = Math.min(nuevoEstadoId - 1, mensajes.length - 1);
-                        FCMHelper.notificarUsuario(
-                            String.valueOf(pedido.getUsuarioId()),
-                            "📦 Actualización de tu pedido",
-                            mensajes[idx],
-                            "pedido"
-                        );
-                        // ────────────────────────────────────────────────────
-
-                        // Actualizar lista local
-                        pedido.setEstadoId(nuevoEstadoId);
-                        misPedidos.set(pos, pedido);
-                        rvPedidosVendedor.getAdapter().notifyItemChanged(pos);
-
-                        Toast.makeText(VendedorDashboardActivity.this,
-                            "Estado actualizado a: " + pedido.getEstadoTexto(),
-                            Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(VendedorDashboardActivity.this,
-                            "Error al actualizar", Toast.LENGTH_SHORT).show();
-                    }
+        Map<String, Object> body = new HashMap<>(); body.put("estado_id", nuevoEstadoId);
+        ApiClient.getClient().create(PedidoUpdateApi.class).actualizarEstado(pedido.getPedidoId(), body).enqueue(new Callback<Void>() {
+            @Override public void onResponse(Call<Void> c, Response<Void> r) {
+                if (r.isSuccessful()) {
+                    pedido.setEstadoId(nuevoEstadoId);
+                    cargarPedidosVendedor();
                 }
-                @Override
-                public void onFailure(retrofit2.Call<Void> c, Throwable t) {
-                    Toast.makeText(VendedorDashboardActivity.this,
-                        "Sin conexion", Toast.LENGTH_SHORT).show();
-                }
-            });
+            }
+            @Override public void onFailure(Call<Void> c, Throwable t) {}
+        });
     }
 
     private void eliminarProducto(Product p) {
         productApi.eliminarProducto(p.getProductoId()).enqueue(new Callback<Void>() {
             @Override public void onResponse(Call<Void> c, Response<Void> r) {
-                if (r.isSuccessful()) {
-                    Toast.makeText(VendedorDashboardActivity.this,
-                            "✅ Producto eliminado", Toast.LENGTH_SHORT).show();
-                    cargarMisProductos();
-                } else {
-                    Toast.makeText(VendedorDashboardActivity.this,
-                            "❌ Error al eliminar (código " + r.code() + ")", Toast.LENGTH_LONG).show();
-                    android.util.Log.e("DELETE_PRODUCTO", "Error HTTP: " + r.code() + " id=" + p.getProductoId());
-                }
+                if (r.isSuccessful()) { Toast.makeText(VendedorDashboardActivity.this, "Eliminado", Toast.LENGTH_SHORT).show(); cargarMisProductos(); }
             }
-            @Override public void onFailure(Call<Void> c, Throwable t) {
-                Toast.makeText(VendedorDashboardActivity.this,
-                        "❌ Sin conexión: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                android.util.Log.e("DELETE_PRODUCTO", "Fallo: " + t.getMessage());
-            }
+            @Override public void onFailure(Call<Void> c, Throwable t) {}
         });
     }
 }

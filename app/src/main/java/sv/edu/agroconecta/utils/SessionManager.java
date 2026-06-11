@@ -10,6 +10,7 @@ public class SessionManager {
     private static final String KEY_NOMBRE       = "nombre";
     private static final String KEY_CORREO       = "correo";
     private static final String KEY_ROL          = "rol";
+    private static final String KEY_TELEFONO     = "telefono";
     private static final String KEY_FOTO_PERFIL  = "foto_perfil";
     private static final String KEY_HIDE_TERMS   = "hideTerms";
 
@@ -58,6 +59,13 @@ public class SessionManager {
     public String getNombre()   { return pref.getString(KEY_NOMBRE, ""); }
     public String getRol()      { return pref.getString(KEY_ROL, ""); }
     public String getCorreo()   { return pref.getString(KEY_CORREO, ""); }
+    
+    public void setTelefono(String tel) {
+        editor.putString(KEY_TELEFONO, tel);
+        editor.apply();
+    }
+    
+    public String getTelefono() { return pref.getString(KEY_TELEFONO, ""); }
 
     public void logout() {
         sv.edu.agroconecta.utils.CarritoManager.getInstance().limpiar();

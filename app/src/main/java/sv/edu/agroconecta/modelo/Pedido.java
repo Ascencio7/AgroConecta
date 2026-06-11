@@ -82,9 +82,9 @@ public class Pedido {
     public String getEstadoTexto() {
         switch (estadoId) {
             case 1: return "Pendiente";
-            case 2: return "En proceso";
-            case 3: return "Entregado";
-            case 4: return "Cancelado";
+            case 2: return "En preparacion";
+            case 3: return "En camino";
+            case 4: return "Entregado";
             default: return "Pendiente";
         }
     }

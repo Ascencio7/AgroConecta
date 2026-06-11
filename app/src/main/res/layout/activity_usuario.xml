@@ -62,17 +62,31 @@
                 </LinearLayout>
 
                 <!-- Avatar Logout -->
-                <TextView
-                    android:id="@+id/tvAvatarAdmin"
+                <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:layout_marginStart="8dp"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/carbon"
-                    android:background="@drawable/bg_avatar_circle"/>
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/tvAvatarAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/carbon"
+                        android:background="@drawable/bg_avatar_circle"/>
+
+                    <ImageView
+                        android:id="@+id/ivAvatarFotoAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:visibility="gone"
+                        android:contentDescription="Foto de perfil"/>
+                </FrameLayout>
             </LinearLayout>
 
             <androidx.appcompat.widget.SearchView
@@ -98,37 +112,69 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="12dp"
-                android:gravity="center">
+                android:orientation="vertical"
+                android:paddingVertical="12dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnActivos"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Activos"
-                    android:textColor="@color/verde_primario"
-                    android:layout_marginEnd="6dp"
-                    app:backgroundTint="@color/blanco"
-                    app:strokeColor="@color/verde_primario"
-                    app:strokeWidth="1dp"
-                    app:cornerRadius="12dp"
-                    style="@style/Widget.Material3.Button.TonalButton"/>
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnInactivos"
-                    android:layout_width="0dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnActivos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Activos"
+                        android:textColor="@color/verde_primario"
+                        android:layout_marginEnd="6dp"
+                        app:backgroundTint="@color/blanco"
+                        app:strokeColor="@color/verde_primario"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInactivos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Inactivos"
+                        android:textColor="@color/texto_secundario"
+                        android:layout_marginStart="6dp"
+                        app:backgroundTint="@color/blanco"
+                        app:strokeColor="@color/gris_borde"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Inactivos"
-                    android:textColor="@color/texto_secundario"
-                    android:layout_marginStart="6dp"
-                    app:backgroundTint="@color/blanco"
-                    app:strokeColor="@color/gris_borde"
-                    app:strokeWidth="1dp"
-                    app:cornerRadius="12dp"
-                    style="@style/Widget.Material3.Button.TonalButton"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_input"
+                    android:paddingHorizontal="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rol:"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_secundario"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spFiltroRol"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <androidx.cardview.widget.CardView

@@ -54,6 +54,7 @@ public class ReportesActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     private com.google.android.material.bottomnavigation.BottomNavigationView bottomNavAdmin;
     private TextView tvAvatarAdmin;
+    private android.widget.ImageView ivAvatarFotoAdmin;
     private android.widget.ProgressBar progressReporte;
 
     @Override
@@ -71,6 +72,7 @@ public class ReportesActivity extends AppCompatActivity {
         CardView btnReporteUsuarios = findViewById(R.id.btnReporteUsuarios);
         CardView btnReporteProductos = findViewById(R.id.btnReporteProductos);
         tvAvatarAdmin = findViewById(R.id.tvAvatarAdmin);
+        ivAvatarFotoAdmin = findViewById(R.id.ivAvatarFotoAdmin);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
 
         // Avatar
@@ -78,10 +80,28 @@ public class ReportesActivity extends AppCompatActivity {
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
+        
+        // Cargar foto de perfil
+        String fotoAdmin = sessionManager.getFotoPerfil();
+        if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {
+            com.bumptech.glide.Glide.with(this)
+                    .load(fotoAdmin)
+                    .transform(new com.bumptech.glide.load.resource.bitmap.CircleCrop())
+                    .into(ivAvatarFotoAdmin);
+            ivAvatarFotoAdmin.setVisibility(android.view.View.VISIBLE);
+            tvAvatarAdmin.setVisibility(android.view.View.GONE);
+        }
+
         tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
+        if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setOnClickListener(this::showProfileMenu);
 
         btnReporteUsuarios.setOnClickListener(v -> showUserReportMenu(v));
         btnReporteProductos.setOnClickListener(v -> showProductReportMenu(v));
+
+        findViewById(R.id.btnVerEstadisticaUsuarios).setOnClickListener(v -> 
+                startActivity(new Intent(this, EstadisticaUsuariosActivity.class)));
+        findViewById(R.id.btnVerEstadisticaProductos).setOnClickListener(v -> 
+                startActivity(new Intent(this, EstadisticaProductosActivity.class)));
 
         setupBottomNav();
     }
@@ -112,6 +132,12 @@ public class ReportesActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.menu_view_profile) {
                 mostrarPerfil();
+                return true;
+            } else if (id == R.id.menu_soporte) {
+                startActivity(new Intent(this, SoporteActivity.class));
+                return true;
+            } else if (id == R.id.menu_logout) {
+                confirmarLogout();
                 return true;
             }
             return false;
@@ -237,7 +263,7 @@ public class ReportesActivity extends AppCompatActivity {
             boolean agregar = false;
             String userRol = u.getRol() != null ? u.getRol().toUpperCase().trim() : "";
             int rId = u.getRolId();
-            
+
             switch (subType) {
                 case "Usuarios Activos":
                     agregar = u.isActivo();
@@ -314,22 +340,22 @@ public class ReportesActivity extends AppCompatActivity {
         paint.setFakeBoldText(true);
 
         int startY = 210;
-        
+
         if (subType.equals("Estado y Fecha de Creación")) {
             drawTableRow(canvas, paint, "ID", "Nombre", "Rol", "Fecha Registro", startY);
         } else {
             drawTableRow5(canvas, paint, "ID", "Nombre", "Correo", "Teléfono", "Rol", startY);
         }
-        
+
         paint.setStrokeWidth(1);
         canvas.drawLine(40, startY + 5, 555, startY + 5, paint);
         
         paint.setFakeBoldText(false);
         startY += 30;
-        
+
         for (Usuario u : filtrados) {
             if (startY > 780) { Toast.makeText(this, "Reporte truncado - demasiados registros", Toast.LENGTH_SHORT).show(); break; }
-            
+
             String rolTexto = "N/A";
             if (u.getRol() != null && !u.getRol().isEmpty()) {
                 rolTexto = u.getRol().toUpperCase();
@@ -353,18 +379,18 @@ public class ReportesActivity extends AppCompatActivity {
                         fechaFormateada = fechaOriginal;
                     }
                 }
-                drawTableRow(canvas, paint, 
-                        String.valueOf(u.getUsuarioId()), 
-                        u.getNombre(), 
+                drawTableRow(canvas, paint,
+                        String.valueOf(u.getUsuarioId()),
+                        u.getNombre(),
                         rolTexto,
-                        fechaFormateada, 
+                        fechaFormateada,
                         startY);
             } else {
-                drawTableRow5(canvas, paint, 
-                        String.valueOf(u.getUsuarioId()), 
-                        u.getNombre(), 
-                        u.getCorreo(), 
-                        u.getTelefono() != null ? u.getTelefono() : "N/A", 
+                drawTableRow5(canvas, paint,
+                        String.valueOf(u.getUsuarioId()),
+                        u.getNombre(),
+                        u.getCorreo(),
+                        u.getTelefono() != null ? u.getTelefono() : "N/A",
                         rolTexto,
                         startY);
             }
@@ -449,17 +475,17 @@ public class ReportesActivity extends AppCompatActivity {
         drawTableRow(canvas, paint, "ID", "Nombre del Producto", "Precio", "Existencia", startY);
         paint.setStrokeWidth(1);
         canvas.drawLine(40, startY + 5, 555, startY + 5, paint);
-        
+
         paint.setFakeBoldText(false);
         startY += 30;
-        
+
         for (Product p : filtrados) {
             if (startY > 780) { Toast.makeText(this, "Reporte truncado - demasiados registros", Toast.LENGTH_SHORT).show(); break; }
-            drawTableRow(canvas, paint, 
-                    String.valueOf(p.getProductoId()), 
-                    p.getName(), 
-                    String.format(Locale.getDefault(), "$%.2f", p.getPrice()), 
-                    String.valueOf(p.getExistencia()), 
+            drawTableRow(canvas, paint,
+                    String.valueOf(p.getProductoId()),
+                    p.getName(),
+                    String.format(Locale.getDefault(), "$%.2f", p.getPrice()),
+                    String.valueOf(p.getExistencia()),
                     startY);
             startY += 25;
         }
@@ -533,11 +559,11 @@ public class ReportesActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, flags);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.stat_sys_download_done)
                 .setContentTitle("Descarga completada")
-                .setContentText("Toca para abrir: " + fileName)
+                .setContentText("Guardado: " + fileName)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);

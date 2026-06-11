@@ -43,20 +43,9 @@ public class AdminDashboardActivity extends AppCompatActivity {
         tvWelcomeAdmin = findViewById(R.id.tvWelcomeAdmin);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
 
-        // Avatar
-        String nombre = sessionManager.getNombre();
-        if (nombre != null && !nombre.isEmpty()) {
-            tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
-            tvWelcomeAdmin.setText("¡Hola, " + nombre + "! 👋");
-            txtTitulo.setText("Panel de Control ⚙️");
-        }
-        // Cargar foto de perfil si existe
-        String fotoAdmin = sessionManager.getFotoPerfil();
-        if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {
-            Glide.with(this).load(fotoAdmin).transform(new CircleCrop()).into(ivAvatarFotoAdmin);
-            ivAvatarFotoAdmin.setVisibility(android.view.View.VISIBLE);
-            tvAvatarAdmin.setVisibility(android.view.View.GONE);
-        }
+        // Inicializar datos del Header
+        cargarDatosHeader();
+
         tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
         if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setOnClickListener(this::showProfileMenu);
 
@@ -70,6 +59,36 @@ public class AdminDashboardActivity extends AppCompatActivity {
         // AgroBot IA flotante para el Admin
         CoordinatorLayout rootAdmin = findViewById(R.id.coordinatorAdmin);
         new ChatManager(this, rootAdmin);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Refrescar datos de perfil (nombre, foto) al volver
+        cargarDatosHeader();
+    }
+
+    private void cargarDatosHeader() {
+        String nombre = sessionManager.getNombre();
+        if (nombre != null && !nombre.isEmpty()) {
+            tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
+            tvWelcomeAdmin.setText("¡Hola, " + nombre + "! 👋");
+            txtTitulo.setText("Panel de Control ⚙️");
+        }
+        
+        String fotoAdmin = sessionManager.getFotoPerfil();
+        if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {
+            Glide.with(this).load(fotoAdmin)
+                    .transform(new CircleCrop())
+                    .placeholder(R.drawable.bg_avatar_circle)
+                    .error(R.drawable.bg_avatar_circle)
+                    .into(ivAvatarFotoAdmin);
+            ivAvatarFotoAdmin.setVisibility(View.VISIBLE);
+            tvAvatarAdmin.setVisibility(View.GONE);
+        } else {
+            if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setVisibility(View.GONE);
+            tvAvatarAdmin.setVisibility(View.VISIBLE);
+        }
     }
 
     private void showProfileMenu(View v) {

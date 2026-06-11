@@ -223,8 +223,42 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:visibility="gone">
-    <ProgressBar
-        android:id="@+id/progressPedidosVendedor"
+
+                <!-- Filtro por Estado -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/blanco">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estado:"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/texto_secundario"
+                            android:layout_marginEnd="10dp"/>
+
+                        <Spinner
+                            android:id="@+id/spFiltroEstadoPedido"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_input"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <ProgressBar
+                    android:id="@+id/progressPedidosVendedor"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

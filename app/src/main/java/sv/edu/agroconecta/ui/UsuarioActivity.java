@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.PopupMenu;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
@@ -33,12 +34,15 @@ public class UsuarioActivity extends AppCompatActivity {
     private List<Usuario> currentFullList = new ArrayList<>();
     private SearchView searchUsuarios;
     private TextView tvEmptyMessage;
+    private Spinner spFiltroRol;
 
     private SessionManager sessionManager;
     private com.google.android.material.bottomnavigation.BottomNavigationView bottomNavAdmin;
     private TextView tvAvatarAdmin;
+    private android.widget.ImageView ivAvatarFotoAdmin;
     private MaterialButton btnActivos, btnInactivos;
     private android.widget.ProgressBar progressUsuarios;
+    private boolean showingActivos = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,18 +53,34 @@ public class UsuarioActivity extends AppCompatActivity {
         tvEmptyMessage = findViewById(R.id.tvEmptyMessage);
         searchUsuarios = findViewById(R.id.searchUsuarios);
         tvAvatarAdmin  = findViewById(R.id.tvAvatarAdmin);
+        ivAvatarFotoAdmin = findViewById(R.id.ivAvatarFotoAdmin);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
         btnActivos     = findViewById(R.id.btnActivos);
         btnInactivos   = findViewById(R.id.btnInactivos);
         progressUsuarios = findViewById(R.id.progressUsuarios);
+        spFiltroRol = findViewById(R.id.spFiltroRol);
+        
         setupSearch();
+        setupRoleFilter();
 
         // Avatar
         String nombre = sessionManager.getNombre();
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
+        // Foto de perfil
+        String fotoAdmin = sessionManager.getFotoPerfil();
+        if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {
+            com.bumptech.glide.Glide.with(this)
+                    .load(fotoAdmin)
+                    .transform(new com.bumptech.glide.load.resource.bitmap.CircleCrop())
+                    .into(ivAvatarFotoAdmin);
+            ivAvatarFotoAdmin.setVisibility(View.VISIBLE);
+            tvAvatarAdmin.setVisibility(View.GONE);
+        }
+
         tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
+        if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setOnClickListener(this::showProfileMenu);
 
         com.google.android.material.floatingactionbutton.FloatingActionButton fabAgregar =
                 findViewById(R.id.fabAgregar);
@@ -75,11 +95,88 @@ public class UsuarioActivity extends AppCompatActivity {
         recyclerUsuarios = findViewById(R.id.recyclerUsuarios);
         recyclerUsuarios.setLayoutManager(new LinearLayoutManager(this));
 
-        btnActivos.setOnClickListener(v -> listarUsuariosActivos());
-        btnInactivos.setOnClickListener(v -> listarUsuariosInactivos());
+        btnActivos.setOnClickListener(v -> {
+            showingActivos = true;
+            filter();
+        });
+        btnInactivos.setOnClickListener(v -> {
+            showingActivos = false;
+            filter();
+        });
 
         setupBottomNav();
-        listarUsuariosActivos();
+        cargarUsuarios();
+    }
+
+    private void setupRoleFilter() {
+        String[] roles = {"Todos", "Admin", "Vendedor", "Cliente"};
+        android.widget.ArrayAdapter<String> adapterRole = new android.widget.ArrayAdapter<>(this, android.R.layout.simple_spinner_item, roles);
+        adapterRole.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spFiltroRol.setAdapter(adapterRole);
+        spFiltroRol.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+            @Override public void onItemSelected(android.widget.AdapterView<?> p, View v, int pos, long id) { filter(); }
+            @Override public void onNothingSelected(android.widget.AdapterView<?> p) {}
+        });
+    }
+
+    private void cargarUsuarios() {
+        if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.VISIBLE);
+        usuarioRepository.getUsuarios().enqueue(new Callback<List<Usuario>>() {
+            @Override
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
+                if (response.isSuccessful() && response.body() != null) {
+                    currentFullList = response.body();
+                    filter();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
+                Toast.makeText(UsuarioActivity.this, "Error al cargar", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cargarUsuarios();
+    }
+
+    private void filter() {
+        updateFilterButtons(showingActivos);
+        String query = searchUsuarios.getQuery().toString().toLowerCase().trim();
+        String selectedRole = spFiltroRol.getSelectedItem().toString();
+        
+        List<Usuario> filteredList = new ArrayList<>();
+        for (Usuario u : currentFullList) {
+            boolean matchesStatus = (showingActivos && u.isActivo()) || (!showingActivos && u.isInactivo());
+            boolean matchesSearch = u.getNombre().toLowerCase().contains(query) || u.getCorreo().toLowerCase().contains(query);
+            
+            // Lógica de Rol para el filtro
+            String userRol = u.getRol();
+            if (userRol == null || userRol.isEmpty()) {
+                if (u.getRolId() == 1) userRol = "Admin";
+                else if (u.getRolId() == 2) userRol = "Vendedor";
+                else if (u.getRolId() == 3) userRol = "Cliente";
+                else userRol = "Usuario";
+            }
+            
+            boolean matchesRole = selectedRole.equals("Todos") || (userRol != null && userRol.equalsIgnoreCase(selectedRole));
+            
+            if (matchesStatus && matchesSearch && matchesRole) {
+                filteredList.add(u);
+            }
+        }
+        actualizarRecycler(filteredList, "SIN RESULTADOS");
+    }
+
+    private void setupSearch() {
+        searchUsuarios.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override public boolean onQueryTextSubmit(String query) { return false; }
+            @Override public boolean onQueryTextChange(String newText) { filter(); return true; }
+        });
     }
 
     private void setupBottomNav() {
@@ -87,7 +184,7 @@ public class UsuarioActivity extends AppCompatActivity {
         bottomNavAdmin.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_admin_dashboard) {
-                finish(); // Volver al dashboard
+                finish();
                 return true;
             } else if (id == R.id.nav_admin_products) {
                 startActivity(new Intent(this, ProductosAdminActivity.class));
@@ -105,6 +202,12 @@ public class UsuarioActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.menu_view_profile) {
                 mostrarPerfil();
+                return true;
+            } else if (id == R.id.menu_soporte) {
+                startActivity(new Intent(this, SoporteActivity.class));
+                return true;
+            } else if (id == R.id.menu_logout) {
+                confirmarLogout();
                 return true;
             }
             return false;
@@ -132,92 +235,18 @@ public class UsuarioActivity extends AppCompatActivity {
                 .show();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //listarUsuarios(true);
-    }
-
-    private void listarUsuariosActivos() {
-        updateFilterButtons(true);
-        if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.VISIBLE);
-        recyclerUsuarios.setVisibility(android.view.View.GONE);
-        tvEmptyMessage.setVisibility(android.view.View.GONE);
-        usuarioRepository.getUsuarios().enqueue(new Callback<List<Usuario>>() {
-            @Override
-            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
-                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
-                if (response.isSuccessful() && response.body() != null) {
-                    currentFullList.clear();
-                    for (Usuario u : response.body()) {
-                        if (u.isActivo()) currentFullList.add(u);
-                    }
-                    filter(searchUsuarios.getQuery().toString());
-                } else {
-                    tvEmptyMessage.setText("Error al cargar usuarios");
-                    tvEmptyMessage.setVisibility(android.view.View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Usuario>> call, Throwable t) {
-                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
-                tvEmptyMessage.setText("Sin conexión. Intenta de nuevo.");
-                tvEmptyMessage.setVisibility(android.view.View.VISIBLE);
-                Toast.makeText(UsuarioActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void listarUsuariosInactivos() {
-        updateFilterButtons(false);
-        if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.VISIBLE);
-        recyclerUsuarios.setVisibility(android.view.View.GONE);
-        tvEmptyMessage.setVisibility(android.view.View.GONE);
-        usuarioRepository.getUsuarios().enqueue(new Callback<List<Usuario>>() {
-            @Override
-            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
-                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
-                if (response.isSuccessful() && response.body() != null) {
-                    currentFullList.clear();
-                    for (Usuario u : response.body()) {
-                        if (u.isInactivo()) currentFullList.add(u);
-                    }
-                    filter(searchUsuarios.getQuery().toString());
-                } else {
-                    tvEmptyMessage.setText("Error al cargar usuarios");
-                    tvEmptyMessage.setVisibility(android.view.View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Usuario>> call, Throwable t) {
-                if (progressUsuarios != null) progressUsuarios.setVisibility(android.view.View.GONE);
-                tvEmptyMessage.setText("Sin conexión. Intenta de nuevo.");
-                tvEmptyMessage.setVisibility(android.view.View.VISIBLE);
-                Toast.makeText(UsuarioActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
     private void updateFilterButtons(boolean isActivosSelected) {
         if (isActivosSelected) {
-            // Activos seleccionado
             btnActivos.setTextColor(ContextCompat.getColor(this, R.color.verde_primario));
             btnActivos.setStrokeColor(android.content.res.ColorStateList.valueOf(ContextCompat.getColor(this, R.color.verde_primario)));
             btnActivos.setStrokeWidth(4);
-
-            // Inactivos deseleccionado
             btnInactivos.setTextColor(ContextCompat.getColor(this, R.color.texto_secundario));
             btnInactivos.setStrokeColor(android.content.res.ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gris_borde)));
             btnInactivos.setStrokeWidth(2);
         } else {
-            // Inactivos seleccionado
             btnInactivos.setTextColor(ContextCompat.getColor(this, R.color.verde_primario));
             btnInactivos.setStrokeColor(android.content.res.ColorStateList.valueOf(ContextCompat.getColor(this, R.color.verde_primario)));
             btnInactivos.setStrokeWidth(4);
-
-            // Activos deseleccionado
             btnActivos.setTextColor(ContextCompat.getColor(this, R.color.texto_secundario));
             btnActivos.setStrokeColor(android.content.res.ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gris_borde)));
             btnActivos.setStrokeWidth(2);
@@ -240,31 +269,5 @@ public class UsuarioActivity extends AppCompatActivity {
             tvEmptyMessage.setVisibility(View.GONE);
             recyclerUsuarios.setVisibility(View.VISIBLE);
         }
-    }
-
-    private void setupSearch() {
-        searchUsuarios.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) { return false; }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filter(newText);
-                return true;
-            }
-        });
-    }
-
-    private void filter(String text) {
-        List<Usuario> filteredList = new ArrayList<>();
-        String query = text.toLowerCase().trim();
-        for (Usuario item : currentFullList) {
-            String n = item.getNombre() != null ? item.getNombre().toLowerCase() : "";
-            String e = item.getCorreo() != null ? item.getCorreo().toLowerCase() : "";
-            if (n.contains(query) || e.contains(query)) {
-                filteredList.add(item);
-            }
-        }
-        actualizarRecycler(filteredList, "SIN RESULTADOS");
     }
 }

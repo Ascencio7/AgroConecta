@@ -59,17 +59,31 @@
                     android:textSize="11sp"/>
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvAvatarVendedorAdd"
+            <FrameLayout
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:gravity="center"
-                android:text="U"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/carbon"
-                android:background="@drawable/bg_avatar_circle"/>
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/tvAvatarVendedorAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="U"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/carbon"
+                    android:background="@drawable/bg_avatar_circle"/>
+
+                <ImageView
+                    android:id="@+id/ivAvatarFotoVendedorAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Foto de perfil"/>
+            </FrameLayout>
         </LinearLayout>
 
         <androidx.core.widget.NestedScrollView
@@ -198,17 +212,39 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/btnPublicarProducto"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:text="🌿  Publicar producto"
-                    android:textColor="@color/blanco"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="@color/verde_primario"
-                    android:layout_marginBottom="24dp"
-                    style="@style/BtnPrimario"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="32dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelarProductoV"
+                        android:layout_width="0dp"
+                        android:layout_height="54dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="CANCELAR"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_secundario"
+                        android:textSize="13sp"
+                        app:backgroundTint="@color/crema_medio"
+                        app:cornerRadius="14dp"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPublicarProducto"
+                        android:layout_width="0dp"
+                        android:layout_height="54dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="ACTUALIZAR"
+                        android:textColor="@color/blanco"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/verde_primario"
+                        app:cornerRadius="14dp"/>
+                </LinearLayout>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

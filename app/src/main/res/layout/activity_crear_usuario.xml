@@ -181,8 +181,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="54dp"
                                 android:layout_weight="1"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="8dp"
                                 android:text="CANCELAR"
+                                android:textStyle="bold"
                                 android:textColor="@color/texto_secundario"
                                 android:textSize="13sp"
                                 app:backgroundTint="@color/crema_medio"
@@ -194,10 +195,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="54dp"
                                 android:layout_weight="1"
+                                android:layout_marginStart="8dp"
                                 android:text="CREAR"
                                 android:textStyle="bold"
                                 android:textColor="@color/blanco"
-                                android:textSize="14sp"
+                                android:textSize="13sp"
                                 app:backgroundTint="@color/verde_primario"
                                 app:cornerRadius="14dp"/>
                         </LinearLayout>

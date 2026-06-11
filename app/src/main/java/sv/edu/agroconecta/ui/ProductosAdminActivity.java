@@ -33,6 +33,7 @@ public class ProductosAdminActivity extends AppCompatActivity {
     private List<Product> filteredProducts = new ArrayList<>();
     private ProductApi productApi;
     private TextView tvEmpty, tvAvatarAdmin;
+    private android.widget.ImageView ivAvatarFotoAdmin;
     private android.widget.ProgressBar progressProductos;
     private SearchView searchView;
     private SessionManager sessionManager;
@@ -56,7 +57,19 @@ public class ProductosAdminActivity extends AppCompatActivity {
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarAdmin.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
         }
+        // Foto de perfil
+        String fotoAdmin = sessionManager.getFotoPerfil();
+        if (fotoAdmin != null && !fotoAdmin.isEmpty() && ivAvatarFotoAdmin != null) {
+            com.bumptech.glide.Glide.with(this)
+                    .load(fotoAdmin)
+                    .transform(new com.bumptech.glide.load.resource.bitmap.CircleCrop())
+                    .into(ivAvatarFotoAdmin);
+            ivAvatarFotoAdmin.setVisibility(View.VISIBLE);
+            tvAvatarAdmin.setVisibility(View.GONE);
+        }
+
         tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
+        if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setOnClickListener(this::showProfileMenu);
 
         findViewById(R.id.fabAgregarProducto).setOnClickListener(v -> {
             Intent intent = new Intent(this, AgregarEditarProductoActivity.class);
@@ -72,6 +85,7 @@ public class ProductosAdminActivity extends AppCompatActivity {
         searchView = findViewById(R.id.searchProducts);
         progressProductos = findViewById(R.id.progressProductosAdmin);
         tvAvatarAdmin = findViewById(R.id.tvAvatarAdmin);
+        ivAvatarFotoAdmin = findViewById(R.id.ivAvatarFotoAdmin);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
     }
 
@@ -98,6 +112,12 @@ public class ProductosAdminActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.menu_view_profile) {
                 mostrarPerfil();
+                return true;
+            } else if (id == R.id.menu_soporte) {
+                startActivity(new Intent(this, SoporteActivity.class));
+                return true;
+            } else if (id == R.id.menu_logout) {
+                confirmarLogout();
                 return true;
             }
             return false;

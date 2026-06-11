@@ -4,7 +4,24 @@
             "outputFile": "sv.edu.agroconecta.app-mergeDebugResources-45:/values-nl/values-nl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\c5995e3b5f77939b744b24dbb5e2c635\\workspace\\transformed\\play-services-basement-18.3.0\\res\\values-nl\\values.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\2de3653d769bd6725b454b376ec1a752\\workspace\\transformed\\play-services-base-18.3.0\\res\\values-nl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,297,444,568,675,838,961,1080,1182,1356,1458,1623,1745,1904,2082,2146,2205",
+                        "endColumns": "103,146,123,106,162,122,118,101,173,101,164,121,158,177,63,58,74",
+                        "endOffsets": "296,443,567,674,837,960,1079,1181,1355,1457,1622,1744,1903,2081,2145,2204,2279"
+                    },
+                    "to": {
+                        "startLines": "47,48,49,50,51,52,53,54,56,57,58,59,60,61,62,63,64",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4414,4522,4673,4801,4912,5079,5206,5329,5578,5756,5862,6031,6157,6320,6502,6570,6633",
+                        "endColumns": "107,150,127,110,166,126,122,105,177,105,168,125,162,181,67,62,78",
+                        "endOffsets": "4517,4668,4796,4907,5074,5201,5324,5430,5751,5857,6026,6152,6315,6497,6565,6628,6707"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\894904c7c086c79be1bc0092c059c17f\\workspace\\transformed\\play-services-basement-18.3.0\\res\\values-nl\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\c5c64892acfd7bcc7fe21a6d53cb1a44\\workspace\\transformed\\material-1.13.0\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\\workspace\\transformed\\core-1.18.0\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,259,359,459,566,670,789",
+                        "endColumns": "101,101,99,99,106,103,118,100",
+                        "endOffsets": "152,254,354,454,561,665,784,885"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,143",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3380,3482,3584,3684,3784,3891,3995,12976",
+                        "endColumns": "101,101,99,99,106,103,118,100",
+                        "endOffsets": "3477,3579,3679,3779,3886,3990,4109,13072"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\42710450fef60fc1869f028082695562\\workspace\\transformed\\material-1.13.0\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\86cb269bad4b7648131db92c4c89bf92\\workspace\\transformed\\appcompat-1.7.1\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\17ccf05ac99cd8f90f18675e77ce70f0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\a70cb5a99b4e4c1dceb41356573ef1af\\workspace\\transformed\\browser-1.4.0\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\43b05022b1542c9a38a1201fd7884426\\workspace\\transformed\\browser-1.4.0\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -71,40 +105,6 @@
                         "startOffsets": "6712,7028,7129,7240",
                         "endColumns": "102,100,110,98",
                         "endOffsets": "6810,7124,7235,7334"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\63636e1656dfa49c5cc4b8339c2e71fc\\workspace\\transformed\\play-services-base-18.3.0\\res\\values-nl\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,297,444,568,675,838,961,1080,1182,1356,1458,1623,1745,1904,2082,2146,2205",
-                        "endColumns": "103,146,123,106,162,122,118,101,173,101,164,121,158,177,63,58,74",
-                        "endOffsets": "296,443,567,674,837,960,1079,1181,1355,1457,1622,1744,1903,2081,2145,2204,2279"
-                    },
-                    "to": {
-                        "startLines": "47,48,49,50,51,52,53,54,56,57,58,59,60,61,62,63,64",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4414,4522,4673,4801,4912,5079,5206,5329,5578,5756,5862,6031,6157,6320,6502,6570,6633",
-                        "endColumns": "107,150,127,110,166,126,122,105,177,105,168,125,162,181,67,62,78",
-                        "endOffsets": "4517,4668,4796,4907,5074,5201,5324,5430,5751,5857,6026,6152,6315,6497,6565,6628,6707"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\9ff5cd39a5d00d63971b2386ff036d2b\\workspace\\transformed\\core-1.18.0\\res\\values-nl\\values-nl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,259,359,459,566,670,789",
-                        "endColumns": "101,101,99,99,106,103,118,100",
-                        "endOffsets": "152,254,354,454,561,665,784,885"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,42,43,143",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3380,3482,3584,3684,3784,3891,3995,12976",
-                        "endColumns": "101,101,99,99,106,103,118,100",
-                        "endOffsets": "3477,3579,3679,3779,3886,3990,4109,13072"
                     }
                 }
             ]

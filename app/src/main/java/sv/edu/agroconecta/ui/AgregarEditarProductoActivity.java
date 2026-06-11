@@ -29,7 +29,7 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
 
     private EditText etNombre, etDescripcion, etPrecio, etExistencia, etUsuarioId, etImagenUrl;
     private Spinner spCategoria;
-    private Button btnGuardar;
+    private Button btnGuardar, btnCancelar;
     private ProductApi productApi;
     private CategoriaApi categoriaApi;
     private int productoId = -1;
@@ -51,10 +51,22 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
 
         if (productoId != -1) {
             ((TextView) findViewById(R.id.txtTitulo)).setText("Editar Producto");
+            btnGuardar.setText("ACTUALIZAR");
+        } else {
+            ((TextView) findViewById(R.id.txtTitulo)).setText("Agregar Producto");
+            btnGuardar.setText("AGREGAR");
         }
 
         //findViewById(R.id.btnBack).setOnClickListener(v -> finish());
         btnGuardar.setOnClickListener(v -> saveProduct());
+        btnCancelar.setOnClickListener(v -> {
+            new androidx.appcompat.app.AlertDialog.Builder(this)
+                    .setTitle("Cancelar")
+                    .setMessage("¿Estás seguro que deseas cancelar?")
+                    .setPositiveButton("Sí", (dialog, which) -> finish())
+                    .setNegativeButton("No", null)
+                    .show();
+        });
     }
 
     private void initViews() {
@@ -65,7 +77,8 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         etUsuarioId = findViewById(R.id.etUsuarioId);
         etImagenUrl = findViewById(R.id.etImagenUrl);
         spCategoria = findViewById(R.id.spCategoria);
-        btnGuardar = findViewById(R.id.btnGuardar);
+        btnGuardar = findViewById(R.id.id_guardar_btn);
+        btnCancelar = findViewById(R.id.id_cancelar_btn);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
     }
 

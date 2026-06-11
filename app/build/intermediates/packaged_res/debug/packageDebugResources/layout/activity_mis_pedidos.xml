@@ -10,18 +10,18 @@
     <!-- HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#25632d"
+        android:background="@color/verde_primario"
         android:paddingHorizontal="20dp"
-        android:paddingTop="44dp"
+        android:paddingTop="28dp"
         android:paddingBottom="16dp"
         android:gravity="center_vertical"
         android:elevation="8dp">
 
         <ImageView
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
             android:src="@drawable/logoapp"
             android:scaleType="fitCenter"
             android:layout_marginEnd="12dp"/>
@@ -36,28 +36,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AgroConecta"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.02"/>
+                android:textColor="@color/blanco"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mis Pedidos"
-                android:textColor="#D4B896"
-                android:textSize="12sp"
-                android:layout_marginTop="2dp"/>
-
+                android:textColor="#AAFFCC"
+                android:textSize="12sp"/>
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="📦"
-            android:textSize="26sp"/>
+            android:textSize="24sp"/>
 
     </LinearLayout>
+
+    <!-- FILTROS -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="2dp"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FILTRAR POR ESTADO"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto_secundario"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/spFiltroEstadoPedidos"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Label -->
     <TextView
@@ -67,9 +95,8 @@
         android:textSize="10sp"
         android:letterSpacing="0.12"
         android:textStyle="bold"
-        android:textColor="#5C4A30"
+        android:textColor="@color/texto_secundario"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"/>
 
     <!-- RecyclerView -->

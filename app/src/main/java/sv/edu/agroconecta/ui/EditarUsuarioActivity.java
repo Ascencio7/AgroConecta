@@ -1,35 +1,45 @@
 package sv.edu.agroconecta.ui;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import sv.edu.agroconecta.R;
+import sv.edu.agroconecta.model.Rol;
 import sv.edu.agroconecta.model.Usuario;
 import sv.edu.agroconecta.repository.UsuarioRepository;
 
 public class EditarUsuarioActivity extends AppCompatActivity {
 
-    int usuarioId;
+    int usuarioId, rolIdOriginal;
 
     EditText etNombre, etCorreo, etTelefono;
+    Spinner spRol;
     MaterialSwitch switchEstado;
     TextView txtEstadoLabel;
     Button btnGuardar, btnCancelar;
     BottomNavigationView bottomNavAdmin;
 
     UsuarioRepository repository;
+    List<Rol> rolesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +52,7 @@ public class EditarUsuarioActivity extends AppCompatActivity {
         etNombre = findViewById(R.id.etNombre);
         etCorreo = findViewById(R.id.etCorreo);
         etTelefono = findViewById(R.id.etTelefono);
+        spRol = findViewById(R.id.spRol);
         switchEstado = findViewById(R.id.switchEstado);
         txtEstadoLabel = findViewById(R.id.txtEstadoLabel);
         btnGuardar = findViewById(R.id.btnGuardar);
@@ -50,6 +61,7 @@ public class EditarUsuarioActivity extends AppCompatActivity {
 
         // Aqui se reciben los datos
         usuarioId = getIntent().getIntExtra("usuario_id", -1);
+        rolIdOriginal = getIntent().getIntExtra("rol_id", -1);
         etNombre.setText(getIntent().getStringExtra("nombre"));
         etCorreo.setText(getIntent().getStringExtra("correo"));
         etTelefono.setText(getIntent().getStringExtra("telefono"));
@@ -57,9 +69,13 @@ public class EditarUsuarioActivity extends AppCompatActivity {
         switchEstado.setChecked(estado);
         actualizarLabelEstado(estado);
 
+        cargarRoles();
+        setupPhoneFormatting();
+
         switchEstado.setOnCheckedChangeListener((buttonView, isChecked) -> actualizarLabelEstado(isChecked));
 
         // Se guardan los datos y se actualizan
+        btnGuardar.setText("ACTUALIZAR");
         btnGuardar.setOnClickListener(v -> actualizarUsuario());
 
         // Agregar validación en tiempo real del correo
@@ -86,6 +102,68 @@ public class EditarUsuarioActivity extends AppCompatActivity {
         });
 
         setupBottomNav();
+    }
+
+    private void cargarRoles() {
+        repository.getRoles().enqueue(new Callback<List<Rol>>() {
+            @Override
+            public void onResponse(Call<List<Rol>> call, Response<List<Rol>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    rolesList = response.body();
+                    List<String> nombres = new ArrayList<>();
+                    int selectionIndex = 0;
+                    for (int i = 0; i < rolesList.size(); i++) {
+                        Rol r = rolesList.get(i);
+                        nombres.add(r.getNombre().toUpperCase());
+                        if (r.getRolId() == rolIdOriginal) {
+                            selectionIndex = i;
+                        }
+                    }
+                    ArrayAdapter<String> adapterRol = new ArrayAdapter<>(
+                            EditarUsuarioActivity.this,
+                            android.R.layout.simple_spinner_item,
+                            nombres
+                    );
+                    adapterRol.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spRol.setAdapter(adapterRol);
+                    spRol.setSelection(selectionIndex);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Rol>> call, Throwable t) {
+                Toast.makeText(EditarUsuarioActivity.this, "Error al cargar roles", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setupPhoneFormatting() {
+        etTelefono.addTextChangedListener(new TextWatcher() {
+            private boolean isUpdating = false;
+
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (isUpdating) return;
+                isUpdating = true;
+
+                String str = s.toString().replaceAll("[^0-9]", "");
+                StringBuilder formatted = new StringBuilder();
+                
+                // Salvadoran format: XXXX-XXXX (8 digits)
+                for (int i = 0; i < str.length() && i < 8; i++) {
+                    formatted.append(str.charAt(i));
+                    if (i == 3 && str.length() > 4) {
+                        formatted.append("-");
+                    }
+                }
+
+                s.replace(0, s.length(), formatted.toString());
+                isUpdating = false;
+            }
+        });
     }
 
     private void actualizarLabelEstado(boolean isChecked) {
@@ -132,9 +210,23 @@ public class EditarUsuarioActivity extends AppCompatActivity {
         if (telefono.isEmpty()) {
             etTelefono.setError("Ingresa el teléfono"); etTelefono.requestFocus(); return;
         }
+        
+        // El teléfono debe tener 9 caracteres (8 dígitos + 1 guion)
+        if (telefono.length() < 9) {
+            etTelefono.setError("Teléfono incompleto (formato XXXX-XXXX)");
+            etTelefono.requestFocus();
+            return;
+        }
+
+        if (rolesList.isEmpty()) {
+            Toast.makeText(this, "Espera a que carguen los roles", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         btnGuardar.setEnabled(false);
         btnGuardar.setText("Guardando...");
+
+        int rolId = rolesList.get(spRol.getSelectedItemPosition()).getRolId();
 
         Usuario usuario = new Usuario();
         usuario.setUsuarioId(usuarioId);
@@ -142,13 +234,14 @@ public class EditarUsuarioActivity extends AppCompatActivity {
         usuario.setCorreo(correo);
         usuario.setTelefono(telefono);
         usuario.setEstado(estado);
+        usuario.setRolId(rolId);
 
         repository.actualizar(usuarioId, usuario)
                 .enqueue(new Callback<Usuario>() {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                         btnGuardar.setEnabled(true);
-                        btnGuardar.setText("Guardar cambios");
+                        btnGuardar.setText("ACTUALIZAR");
                         if (response.isSuccessful()) {
                             Toast.makeText(EditarUsuarioActivity.this,
                                     "Usuario actualizado correctamente",
@@ -164,7 +257,7 @@ public class EditarUsuarioActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Usuario> call, Throwable t) {
                         btnGuardar.setEnabled(true);
-                        btnGuardar.setText("Guardar cambios");
+                        btnGuardar.setText("ACTUALIZAR");
                         Toast.makeText(EditarUsuarioActivity.this,
                                 "Sin conexión. Verifica tu red.",
                                 Toast.LENGTH_SHORT).show();

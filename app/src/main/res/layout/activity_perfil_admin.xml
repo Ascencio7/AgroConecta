@@ -6,7 +6,6 @@
     android:background="@color/crema"
     android:orientation="vertical">
 
-    <!-- HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,17 +23,18 @@
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_revert"
-            app:tint="@color/blanco"
-            android:contentDescription="Volver" />
+            android:contentDescription="Volver"
+            app:tint="@color/blanco"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_marginStart="16dp"
             android:text="Mi Perfil"
             android:textColor="@color/blanco"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <ScrollView
@@ -47,9 +47,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="250dp">
 
-            <!-- FOTO DE PERFIL -->
+            <!-- FOTO -->
             <FrameLayout
                 android:layout_width="110dp"
                 android:layout_height="110dp"
@@ -91,7 +93,17 @@
                     android:contentDescription="Cambiar foto"/>
             </FrameLayout>
 
-            <!-- INFO CARD -->
+            <TextView
+                android:id="@+id/tvRolAdminPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADMINISTRADOR"
+                android:textColor="@color/verde_primario"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- CARD INFO -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,79 +122,104 @@
                         android:layout_height="wrap_content"
                         android:text="Información Personal"
                         android:textColor="@color/texto_primario"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="16dp"/>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#EEEEEE"
-                        android:layout_marginBottom="16dp"/>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#EEEEEE" android:layout_marginBottom="16dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre Completo"
-                        android:textColor="@color/texto_tenue"
-                        android:textSize="12sp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nombre completo" style="@style/TextInputOutlined" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombreAdminPerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPersonName" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/tvProfileName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="—"
-                        android:textColor="@color/texto_primario"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Correo electrónico" style="@style/TextInputOutlined" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCorreoAdminPerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textEmailAddress" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rol del Sistema"
-                        android:textColor="@color/texto_tenue"
-                        android:textSize="12sp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Teléfono" style="@style/TextInputOutlined" android:layout_marginBottom="20dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTelefonoAdminPerfil"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="phone" android:imeOptions="actionDone"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/tvProfileRole"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Administrador"
-                        android:textColor="@color/verde_primario"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
+                    <Button
+                        android:id="@+id/btnGuardarPerfilAdmin"
+                        android:layout_width="match_parent" android:layout_height="54dp"
+                        android:text="ACTUALIZAR"
+                        android:backgroundTint="@color/verde_primario"
+                        android:textColor="@color/blanco" android:textStyle="bold"
+                        style="@style/BtnPrimario"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Correo Electrónico"
-                        android:textColor="@color/texto_tenue"
-                        android:textSize="12sp" />
+            <!-- CARD CONTRASEÑA -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/blanco" android:layout_marginTop="16dp">
 
-                    <TextView
-                        android:id="@+id/tvProfileEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="—"
-                        android:textColor="@color/texto_primario"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="24dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Cambiar Contraseña" android:textColor="@color/texto_primario"
+                        android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#EEEEEE" android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nueva contraseña" style="@style/TextInputOutlined"
+                        app:endIconMode="password_toggle" android:layout_marginBottom="12dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNuevaPasswordAdmin"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPassword" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Confirmar contraseña" style="@style/TextInputOutlined"
+                        app:endIconMode="password_toggle" android:layout_marginBottom="16dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etConfirmarPasswordAdmin"
+                            android:layout_width="match_parent" android:layout_height="56dp"
+                            android:inputType="textPassword" android:imeOptions="actionDone"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnCambiarPasswordAdmin"
+                        android:layout_width="match_parent" android:layout_height="54dp"
+                        android:text="🔒 Cambiar contraseña"
+                        android:backgroundTint="@color/dorado_medio"
+                        android:textColor="@color/carbon" android:textStyle="bold"
+                        style="@style/BtnPrimario"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/btnLogoutProfile"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="32dp"
-                android:text="Cerrar Sesión"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:layout_marginTop="24dp" android:text="🚪 Cerrar Sesión"
                 android:backgroundTint="@color/rojo_error"
-                android:textColor="@color/blanco"
-                android:textStyle="bold"
-                style="@style/BtnPrimario" />
+                android:textColor="@color/blanco" android:textStyle="bold"
+                style="@style/BtnPrimario"/>
 
         </LinearLayout>
     </ScrollView>

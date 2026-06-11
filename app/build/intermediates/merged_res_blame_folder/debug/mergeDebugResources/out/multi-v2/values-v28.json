@@ -4,7 +4,7 @@
             "outputFile": "sv.edu.agroconecta.app-mergeDebugResources-45:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\86cb269bad4b7648131db92c4c89bf92\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\17ccf05ac99cd8f90f18675e77ce70f0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\c5c64892acfd7bcc7fe21a6d53cb1a44\\workspace\\transformed\\material-1.13.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\caches\\9.3.1\\transforms\\42710450fef60fc1869f028082695562\\workspace\\transformed\\material-1.13.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",

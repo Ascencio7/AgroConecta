@@ -381,9 +381,46 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // ─────────────────────────── PEDIDOS ─────────────────────────────────────
+    private android.widget.Spinner spFiltroPedidos;
+    private List<Pedido> listaPedidosCompleta = new ArrayList<>();
+    private PedidoClienteAdapter pedidoAdapter;
+
     private void initPedidos() {
         rvPedidos = viewPedidos.findViewById(R.id.rvPedidos);
         rvPedidos.setLayoutManager(new LinearLayoutManager(this));
+
+        spFiltroPedidos = viewPedidos.findViewById(R.id.spFiltroEstadoPedidos);
+        if (spFiltroPedidos != null) {
+            String[] opciones = {"Todos", "Pendiente", "En preparacion", "En camino", "Entregado"};
+            android.widget.ArrayAdapter<String> adapterF = new android.widget.ArrayAdapter<>(this,
+                    android.R.layout.simple_spinner_item, opciones);
+            adapterF.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spFiltroPedidos.setAdapter(adapterF);
+
+            spFiltroPedidos.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(android.widget.AdapterView<?> parent, View view, int position, long id) {
+                    filtrarPedidos(opciones[position]);
+                }
+                @Override public void onNothingSelected(android.widget.AdapterView<?> parent) {}
+            });
+        }
+    }
+
+    private void filtrarPedidos(String estado) {
+        if (listaPedidosCompleta == null || pedidoAdapter == null) return;
+
+        if (estado.equals("Todos")) {
+            pedidoAdapter.updateList(listaPedidosCompleta);
+        } else {
+            List<Pedido> filtrados = new ArrayList<>();
+            for (Pedido p : listaPedidosCompleta) {
+                if (p.getEstadoTexto().equalsIgnoreCase(estado)) {
+                    filtrados.add(p);
+                }
+            }
+            pedidoAdapter.updateList(filtrados);
+        }
     }
 
     private void cargarPedidos() {
@@ -395,7 +432,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onResponse(Call<List<Pedido>> call, Response<List<Pedido>> r) {
                     if (r.isSuccessful() && r.body() != null) {
-                        rvPedidos.setAdapter(new PedidoClienteAdapter(r.body(), MainActivity.this));
+                        listaPedidosCompleta = r.body();
+                        pedidoAdapter = new PedidoClienteAdapter(new ArrayList<>(listaPedidosCompleta), MainActivity.this);
+                        rvPedidos.setAdapter(pedidoAdapter);
+
+                        // Aplicar filtro actual
+                        if (spFiltroPedidos != null) {
+                            filtrarPedidos(spFiltroPedidos.getSelectedItem().toString());
+                        }
                     } else {
                         Toast.makeText(MainActivity.this, "Sin pedidos por el momento", Toast.LENGTH_SHORT).show();
                     }
@@ -405,6 +449,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             });
     }
+
 
     // ─────────────────────────── MAPA ────────────────────────────────────────
     private void initMapa() {

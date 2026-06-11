@@ -115,16 +115,20 @@
                 <!-- GOOGLE -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGoogleSignIn"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
-                    android:text="  Continuar con Google"
-                    android:textColor="@color/texto_primario"
+                    android:text="Continuar con Google"
+                    android:textColor="#3C4043"
                     android:textStyle="bold"
-                    android:backgroundTint="@color/blanco"
-                    app:strokeColor="@color/gris_borde"
+                    app:backgroundTint="@color/blanco"
+                    app:strokeColor="#DADCE0"
                     app:strokeWidth="1dp"
                     app:cornerRadius="12dp"
-                    app:icon="@android:drawable/ic_menu_search"/>
+                    app:icon="@android:drawable/ic_menu_search"
+                    app:iconTint="@null"
+                    app:iconGravity="textStart"
+                    android:textAllCaps="false"/>
                 <!-- BOTÓN LOGIN -->
                 <Button
                     android:id="@+id/btnLogin"

@@ -80,58 +80,58 @@
 42        </intent>
 43        <!-- Needs to be explicitly declared on Android R+ -->
 44        <package android:name="com.google.android.apps.maps" />
-44-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
-44-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+44-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+44-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
 45    </queries>
 46
 47    <!-- Include required permissions for Google Maps API to run. -->
 48    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-48-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-48-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
+48-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+48-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
 49
 50    <uses-feature
-50-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+50-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
 51        android:glEsVersion="0x00020000"
-51-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+51-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
 52        android:required="true" />
-52-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+52-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
 53
 54    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-54-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:24:5-68
-54-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:24:22-65
+54-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:24:5-68
+54-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:24:22-65
 55    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-55-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:26:5-82
-55-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:26:22-79
+55-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:26:5-82
+55-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:26:22-79
 56    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-56-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
-56-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:25:22-76
+56-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
+56-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:25:22-76
 57    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-57-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:26:5-88
-57-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:26:22-85
+57-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:26:5-88
+57-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:26:22-85
 58    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-58-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:27:5-82
-58-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:27:22-79
+58-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:27:5-82
+58-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:27:22-79
 59    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-59-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:26:5-110
-59-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:26:22-107
+59-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:26:5-110
+59-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:26:22-107
 60
 61    <permission
-61-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
+61-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
 62        android:name="sv.edu.agroconecta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-62-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
+62-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
 63        android:protectionLevel="signature" />
-63-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
+63-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
 64
 65    <uses-permission android:name="sv.edu.agroconecta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-65-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
-65-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
+65-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
+65-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
 66
 67    <application
-67-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-205:19
+67-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:29:5-216:19
 68        android:allowBackup="true"
 68-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:30:9-35
 69        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-69-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9ff5cd39a5d00d63971b2386ff036d2b\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
+69-->[androidx.core:core:1.18.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3aa44c6ee1a9d5e3b4e2fd4fe9f56091\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 70        android:dataExtractionRules="@xml/data_extraction_rules"
 70-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:32:9-65
 71        android:debuggable="true"
@@ -228,616 +228,638 @@
 124
 125        <!-- Main (Comprador) -->
 126        <activity
-126-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-82:38
+126-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:80:9-83:57
 127            android:name="sv.edu.agroconecta.MainActivity"
 127-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:81:13-41
-128            android:exported="true" />
+128            android:exported="true"
 128-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:82:13-36
-129
-130        <!-- Buyer Module -->
-131        <activity
-131-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:85:9-87:39
-132            android:name="sv.edu.agroconecta.ui.BuyerModuleActivity"
-132-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:86:13-51
-133            android:exported="false" />
-133-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-37
-134
-135        <!-- Producto Detalle -->
-136        <activity
-136-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:90:9-92:39
-137            android:name="sv.edu.agroconecta.ui.ProductoDetalleActivity"
-137-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:91:13-55
-138            android:exported="false" />
-138-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-37
-139
-140        <!-- Carrito -->
-141        <activity
-141-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:95:9-97:39
-142            android:name="sv.edu.agroconecta.ui.CarritoActivity"
-142-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:96:13-47
-143            android:exported="false" />
-143-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-37
-144
-145        <!-- Mis Pedidos -->
-146        <activity
-146-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:100:9-102:39
-147            android:name="sv.edu.agroconecta.ui.MisPedidosActivity"
-147-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:13-50
-148            android:exported="false" />
-148-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-37
-149
-150        <!-- Perfil Cliente -->
-151        <activity
-151-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:9-107:57
-152            android:name="sv.edu.agroconecta.ui.PerfilClienteActivity"
-152-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:105:19-59
-153            android:exported="false"
-153-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:13-37
-154            android:windowSoftInputMode="adjustResize" />
-154-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-55
-155
-156        <!-- Mapa -->
-157        <activity
-157-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:110:9-112:39
-158            android:name="sv.edu.agroconecta.ui.MapaActivity"
-158-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:13-44
-159            android:exported="false" />
-159-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-37
-160
-161        <!-- Calificacion -->
-162        <activity
-162-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:9-116:39
-163            android:name="sv.edu.agroconecta.ui.CalificacionActivity"
-163-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:115:19-58
-164            android:exported="false" />
-164-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:13-37
-165
-166        <!-- Seguimiento -->
-167        <activity
-167-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:119:9-120:39
-168            android:name="sv.edu.agroconecta.ui.SeguimientoPedidoActivity"
-168-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:119:19-63
-169            android:exported="false" />
-169-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:120:13-37
-170
-171        <!-- Chat -->
-172        <activity
-172-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:9-124:39
-173            android:name="sv.edu.agroconecta.ui.ChatActivity"
-173-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:123:19-50
-174            android:exported="false" />
-174-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:13-37
-175
-176        <!-- Contactar Vendedor -->
-177        <activity
-177-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:9-129:57
-178            android:name="sv.edu.agroconecta.ui.ContactarVendedorActivity"
-178-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:127:19-63
-179            android:exported="false"
-179-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:13-37
-180            android:windowSoftInputMode="adjustResize" />
-180-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:129:13-55
-181
-182        <!-- ── ADMIN ── -->
-183        <activity
-183-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:9-133:39
-184            android:name="sv.edu.agroconecta.ui.AdminDashboardActivity"
-184-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:132:19-60
-185            android:exported="false" />
-185-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:13-37
-186        <activity
-186-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:9-137:57
-187            android:name="sv.edu.agroconecta.ui.PerfilAdminActivity"
-187-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:19-57
-188            android:exported="false"
-188-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:136:13-37
-189            android:windowSoftInputMode="adjustResize" />
-189-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:13-55
-190        <activity
-190-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:9-140:39
-191            android:name="sv.edu.agroconecta.ui.UsuarioActivity"
-191-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:19-53
-192            android:exported="false" />
-192-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:140:13-37
-193        <activity
-193-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:9-144:57
-194            android:name="sv.edu.agroconecta.ui.CrearUsuarioActivity"
-194-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:19-58
-195            android:exported="false"
-195-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:143:13-37
-196            android:windowSoftInputMode="adjustResize" />
-196-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:13-55
-197        <activity
-197-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:9-148:57
-198            android:name="sv.edu.agroconecta.ui.EditarUsuarioActivity"
-198-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:19-59
-199            android:exported="false"
-199-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:147:13-37
-200            android:windowSoftInputMode="adjustResize" />
-200-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:13-55
-201        <activity
-201-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:9-151:39
-202            android:name="sv.edu.agroconecta.ui.ProductosAdminActivity"
-202-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:19-60
-203            android:exported="false" />
-203-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:151:13-37
-204        <activity
-204-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:9-155:57
-205            android:name="sv.edu.agroconecta.ui.AgregarEditarProductoActivity"
-205-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:19-67
-206            android:exported="false"
-206-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:154:13-37
-207            android:windowSoftInputMode="adjustResize" />
-207-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:13-55
-208        <activity
-208-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:9-158:39
-209            android:name="sv.edu.agroconecta.ui.ReportesActivity"
-209-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:19-54
-210            android:exported="false" />
-210-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:158:13-37
-211
-212        <!-- ── VENDEDOR ── -->
+129            android:windowSoftInputMode="adjustResize" />
+129-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:83:13-55
+130
+131        <!-- Buyer Module -->
+132        <activity
+132-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:86:9-88:39
+133            android:name="sv.edu.agroconecta.ui.BuyerModuleActivity"
+133-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:87:13-51
+134            android:exported="false" />
+134-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:88:13-37
+135
+136        <!-- Producto Detalle -->
+137        <activity
+137-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:91:9-93:39
+138            android:name="sv.edu.agroconecta.ui.ProductoDetalleActivity"
+138-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:92:13-55
+139            android:exported="false" />
+139-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:93:13-37
+140
+141        <!-- Carrito -->
+142        <activity
+142-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:96:9-98:39
+143            android:name="sv.edu.agroconecta.ui.CarritoActivity"
+143-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:97:13-47
+144            android:exported="false" />
+144-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:98:13-37
+145
+146        <!-- Mis Pedidos -->
+147        <activity
+147-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:101:9-103:39
+148            android:name="sv.edu.agroconecta.ui.MisPedidosActivity"
+148-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:102:13-50
+149            android:exported="false" />
+149-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:103:13-37
+150
+151        <!-- Perfil Cliente -->
+152        <activity
+152-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:9-108:57
+153            android:name="sv.edu.agroconecta.ui.PerfilClienteActivity"
+153-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:106:19-59
+154            android:exported="false"
+154-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:107:13-37
+155            android:windowSoftInputMode="adjustResize" />
+155-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:108:13-55
+156
+157        <!-- Mapa -->
+158        <activity
+158-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:111:9-113:39
+159            android:name="sv.edu.agroconecta.ui.MapaActivity"
+159-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:112:13-44
+160            android:exported="false" />
+160-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:113:13-37
+161
+162        <!-- Calificacion -->
+163        <activity
+163-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:9-117:39
+164            android:name="sv.edu.agroconecta.ui.CalificacionActivity"
+164-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:116:19-58
+165            android:exported="false" />
+165-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:117:13-37
+166
+167        <!-- Seguimiento -->
+168        <activity
+168-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:120:9-121:39
+169            android:name="sv.edu.agroconecta.ui.SeguimientoPedidoActivity"
+169-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:120:19-63
+170            android:exported="false" />
+170-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:121:13-37
+171
+172        <!-- Chat -->
+173        <activity
+173-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:9-125:39
+174            android:name="sv.edu.agroconecta.ui.ChatActivity"
+174-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:124:19-50
+175            android:exported="false" />
+175-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:125:13-37
+176
+177        <!-- Contactar Vendedor -->
+178        <activity
+178-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:9-130:57
+179            android:name="sv.edu.agroconecta.ui.ContactarVendedorActivity"
+179-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:128:19-63
+180            android:exported="false"
+180-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:129:13-37
+181            android:windowSoftInputMode="adjustResize" />
+181-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:130:13-55
+182
+183        <!-- ── ADMIN ── -->
+184        <activity
+184-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:9-135:57
+185            android:name="sv.edu.agroconecta.ui.AdminDashboardActivity"
+185-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:133:19-60
+186            android:exported="false"
+186-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:134:13-37
+187            android:windowSoftInputMode="adjustResize" />
+187-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:135:13-55
+188        <activity
+188-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:9-139:57
+189            android:name="sv.edu.agroconecta.ui.PerfilAdminActivity"
+189-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:137:19-57
+190            android:exported="false"
+190-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:138:13-37
+191            android:windowSoftInputMode="adjustResize" />
+191-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:139:13-55
+192        <activity
+192-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:141:9-142:39
+193            android:name="sv.edu.agroconecta.ui.UsuarioActivity"
+193-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:141:19-53
+194            android:exported="false" />
+194-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:142:13-37
+195        <activity
+195-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:9-146:57
+196            android:name="sv.edu.agroconecta.ui.CrearUsuarioActivity"
+196-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:144:19-58
+197            android:exported="false"
+197-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:145:13-37
+198            android:windowSoftInputMode="adjustResize" />
+198-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:146:13-55
+199        <activity
+199-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:9-150:57
+200            android:name="sv.edu.agroconecta.ui.EditarUsuarioActivity"
+200-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:148:19-59
+201            android:exported="false"
+201-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:149:13-37
+202            android:windowSoftInputMode="adjustResize" />
+202-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:150:13-55
+203        <activity
+203-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:152:9-153:39
+204            android:name="sv.edu.agroconecta.ui.ProductosAdminActivity"
+204-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:152:19-60
+205            android:exported="false" />
+205-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:153:13-37
+206        <activity
+206-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:9-157:57
+207            android:name="sv.edu.agroconecta.ui.AgregarEditarProductoActivity"
+207-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:155:19-67
+208            android:exported="false"
+208-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:156:13-37
+209            android:windowSoftInputMode="adjustResize" />
+209-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:157:13-55
+210        <activity
+210-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:159:9-160:39
+211            android:name="sv.edu.agroconecta.ui.ReportesActivity"
+211-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:159:19-54
+212            android:exported="false" />
+212-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:160:13-37
 213        <activity
-213-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:9-162:38
-214            android:name="sv.edu.agroconecta.ui.VendedorDashboardActivity"
-214-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:161:19-63
-215            android:exported="true" />
-215-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:13-36
-216        <activity
-216-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:9-166:57
-217            android:name="sv.edu.agroconecta.ui.PerfilVendedorActivity"
-217-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:19-60
-218            android:exported="false"
-218-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:165:13-37
-219            android:windowSoftInputMode="adjustResize" />
-219-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:166:13-55
-220        <activity
-220-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:9-170:57
-221            android:name="sv.edu.agroconecta.ui.AgregarProductoVendedorActivity"
-221-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:19-69
-222            android:exported="false"
-222-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:169:13-37
-223            android:windowSoftInputMode="adjustResize" />
-223-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:170:13-55
-224
-225        <!-- Maps API Key -->
-226        <meta-data
-226-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:173:9-175:70
-227            android:name="com.google.android.geo.API_KEY"
-227-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:174:13-58
-228            android:value="AIzaSyAkKvBXZo39gk1fqnxVJ7PCd0UVECRT7kI" />
-228-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:175:13-68
-229
-230        <!-- FCM -->
-231        <meta-data
-231-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:178:9-180:46
-232            android:name="com.google.firebase.messaging.default_notification_channel_id"
-232-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:179:13-89
-233            android:value="canal_productos" />
-233-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:180:13-44
-234
-235        <service
-235-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:182:9-188:19
-236            android:name="sv.edu.agroconecta.service.AgroConectaFirebaseService"
-236-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:183:13-63
-237            android:exported="false" >
-237-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:13-37
-238            <intent-filter>
-238-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:185:13-187:29
-239                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-239-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:17-77
-239-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:25-75
-240            </intent-filter>
-241        </service>
-242
-243        <!-- Soporte Técnico -->
-244        <activity
-244-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:191:9-192:39
-245            android:name="sv.edu.agroconecta.ui.SoporteActivity"
-245-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:191:19-53
-246            android:exported="false" />
-246-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:192:13-37
-247
-248        <!-- FileProvider -->
-249        <provider
-249-->INJECTED
-250            android:name="androidx.core.content.FileProvider"
-250-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:196:13-62
-251            android:authorities="sv.edu.agroconecta.fileprovider"
-251-->INJECTED
-252            android:exported="false"
-252-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:198:13-37
-253            android:grantUriPermissions="true" >
-253-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:199:13-47
-254            <meta-data
-254-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:200:13-202:53
-255                android:name="android.support.FILE_PROVIDER_PATHS"
-255-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:201:17-67
-256                android:resource="@xml/file_paths" />
-256-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:202:17-51
-257        </provider>
+213-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:9-164:51
+214            android:name="sv.edu.agroconecta.ui.EstadisticaUsuariosActivity"
+214-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:162:19-65
+215            android:exported="false"
+215-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:163:13-37
+216            android:screenOrientation="portrait" />
+216-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:164:13-49
+217        <activity
+217-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:166:9-168:51
+218            android:name="sv.edu.agroconecta.ui.EstadisticaProductosActivity"
+218-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:166:19-66
+219            android:exported="false"
+219-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:167:13-37
+220            android:screenOrientation="portrait" />
+220-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:168:13-49
+221
+222        <!-- ── VENDEDOR ── -->
+223        <activity
+223-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:9-173:57
+224            android:name="sv.edu.agroconecta.ui.VendedorDashboardActivity"
+224-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:171:19-63
+225            android:exported="true"
+225-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:172:13-36
+226            android:windowSoftInputMode="adjustResize" />
+226-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:173:13-55
+227        <activity
+227-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:175:9-177:57
+228            android:name="sv.edu.agroconecta.ui.PerfilVendedorActivity"
+228-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:175:19-60
+229            android:exported="false"
+229-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:176:13-37
+230            android:windowSoftInputMode="adjustResize" />
+230-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:177:13-55
+231        <activity
+231-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:179:9-181:57
+232            android:name="sv.edu.agroconecta.ui.AgregarProductoVendedorActivity"
+232-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:179:19-69
+233            android:exported="false"
+233-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:180:13-37
+234            android:windowSoftInputMode="adjustResize" />
+234-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:181:13-55
+235
+236        <!-- Maps API Key -->
+237        <meta-data
+237-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:184:9-186:70
+238            android:name="com.google.android.geo.API_KEY"
+238-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:185:13-58
+239            android:value="AIzaSyAkKvBXZo39gk1fqnxVJ7PCd0UVECRT7kI" />
+239-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:13-68
+240
+241        <!-- FCM -->
+242        <meta-data
+242-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:189:9-191:46
+243            android:name="com.google.firebase.messaging.default_notification_channel_id"
+243-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:190:13-89
+244            android:value="canal_productos" />
+244-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:191:13-44
+245
+246        <service
+246-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:193:9-199:19
+247            android:name="sv.edu.agroconecta.service.AgroConectaFirebaseService"
+247-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:194:13-63
+248            android:exported="false" >
+248-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:195:13-37
+249            <intent-filter>
+249-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:196:13-198:29
+250                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+250-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:197:17-77
+250-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:197:25-75
+251            </intent-filter>
+252        </service>
+253
+254        <!-- Soporte Técnico -->
+255        <activity
+255-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:202:9-203:39
+256            android:name="sv.edu.agroconecta.ui.SoporteActivity"
+256-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:202:19-53
+257            android:exported="false" />
+257-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:203:13-37
 258
-259        <!-- Needs to be explicitly declared on P+ -->
-260        <uses-library
-260-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
-261            android:name="org.apache.http.legacy"
-261-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
-262            android:required="false" />
-262-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\7e3e5375c99316f1bf39627f7595d5cc\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
-263
-264        <activity
-264-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:23:9-27:75
-265            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-265-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:24:13-93
-266            android:excludeFromRecents="true"
-266-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:25:13-46
-267            android:exported="false"
-267-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:26:13-37
-268            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-268-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:27:13-72
-269        <!--
-270            Service handling Google Sign-In user revocation. For apps that do not integrate with
-271            Google Sign-In, this service will never be started.
-272        -->
-273        <service
-273-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:33:9-37:51
-274            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-274-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:34:13-89
-275            android:exported="true"
-275-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:35:13-36
-276            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-276-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:36:13-107
-277            android:visibleToInstantApps="true" />
-277-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\76409c706621f3ebae1f97237e6eaa41\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:37:13-48
-278
-279        <receiver
-279-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:29:9-40:20
-280            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-280-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:30:13-78
-281            android:exported="true"
-281-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:31:13-36
-282            android:permission="com.google.android.c2dm.permission.SEND" >
-282-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:32:13-73
-283            <intent-filter>
-283-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:33:13-35:29
-284                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-284-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:34:17-81
-284-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:34:25-78
-285            </intent-filter>
-286
-287            <meta-data
-287-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:37:13-39:40
-288                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
-288-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:38:17-92
-289                android:value="true" />
-289-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:39:17-37
-290        </receiver>
-291        <!--
-292             FirebaseMessagingService performs security checks at runtime,
-293             but set to not exported to explicitly avoid allowing another app to call it.
-294        -->
-295        <service
-295-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:46:9-53:19
-296            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-296-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:47:13-82
-297            android:directBootAware="true"
-297-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:48:13-43
-298            android:exported="false" >
-298-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:49:13-37
-299            <intent-filter android:priority="-500" >
-299-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:185:13-187:29
-300                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-300-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:17-77
-300-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:186:25-75
-301            </intent-filter>
-302        </service>
-303        <service
-303-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:54:9-63:19
-304            android:name="com.google.firebase.components.ComponentDiscoveryService"
-304-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:55:13-84
-305            android:directBootAware="true"
-305-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
-306            android:exported="false" >
-306-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:56:13-37
-307            <meta-data
-307-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:57:13-59:85
-308                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
-308-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:58:17-122
-309                android:value="com.google.firebase.components.ComponentRegistrar" />
-309-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:59:17-82
-310            <meta-data
-310-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:60:13-62:85
-311                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-311-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:61:17-119
-312                android:value="com.google.firebase.components.ComponentRegistrar" />
-312-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f3a7e35e03425cf50f36962ab59be297\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:62:17-82
-313            <meta-data
-313-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:29:13-31:85
-314                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-314-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:30:17-120
-315                android:value="com.google.firebase.components.ComponentRegistrar" />
-315-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:31:17-82
-316            <meta-data
-316-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:32:13-34:85
-317                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-317-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:33:17-109
-318                android:value="com.google.firebase.components.ComponentRegistrar" />
-318-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9b5f29d9a96e8616c7d78ecf029ce9f4\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:34:17-82
-319            <meta-data
-319-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:69:13-71:85
-320                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-320-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:70:17-109
-321                android:value="com.google.firebase.components.ComponentRegistrar" />
-321-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:71:17-82
-322            <meta-data
-322-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:37:13-39:85
-323                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-323-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:38:17-139
-324                android:value="com.google.firebase.components.ComponentRegistrar" />
-324-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:39:17-82
-325            <meta-data
-325-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
-326                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-326-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
-327                android:value="com.google.firebase.components.ComponentRegistrar" />
-327-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
-328            <meta-data
-328-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
-329                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-329-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
-330                android:value="com.google.firebase.components.ComponentRegistrar" />
-330-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee2e8512a785beebbe3364eb9eda0c36\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
-331            <meta-data
-331-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
-332                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-332-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
-333                android:value="com.google.firebase.components.ComponentRegistrar" />
-333-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\bc212f600111dad3b8c02b5c392c44ea\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
-334            <meta-data
-334-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
-335                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-335-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
-336                android:value="com.google.firebase.components.ComponentRegistrar" />
-336-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
-337            <meta-data
-337-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
-338                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-338-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
-339                android:value="com.google.firebase.components.ComponentRegistrar" />
-339-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5e31d4a135aed9be738dbf8e981c135a\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
-340        </service>
-341
-342        <activity
-342-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:29:9-46:20
-343            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-343-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:30:13-80
-344            android:excludeFromRecents="true"
-344-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:31:13-46
-345            android:exported="true"
-345-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:32:13-36
-346            android:launchMode="singleTask"
-346-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:33:13-44
-347            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-347-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:34:13-72
-348            <intent-filter>
-348-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:35:13-45:29
-349                <action android:name="android.intent.action.VIEW" />
-349-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:17-69
-349-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:25-66
-350
-351                <category android:name="android.intent.category.DEFAULT" />
-351-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:17-76
-351-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:27-73
-352                <category android:name="android.intent.category.BROWSABLE" />
-352-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:17-78
-352-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:27-75
-353
-354                <data
-354-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:13-47
-355                    android:host="firebase.auth"
-356                    android:path="/"
-357                    android:scheme="genericidp" />
-358            </intent-filter>
-359        </activity>
-360        <activity
-360-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:47:9-64:20
-361            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-361-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:48:13-79
-362            android:excludeFromRecents="true"
-362-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:49:13-46
-363            android:exported="true"
-363-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:50:13-36
-364            android:launchMode="singleTask"
-364-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:51:13-44
-365            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-365-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:52:13-72
-366            <intent-filter>
-366-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:53:13-63:29
-367                <action android:name="android.intent.action.VIEW" />
-367-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:17-69
-367-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:25-66
-368
-369                <category android:name="android.intent.category.DEFAULT" />
-369-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:17-76
-369-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:27-73
-370                <category android:name="android.intent.category.BROWSABLE" />
-370-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:17-78
-370-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6938c13681cf197d8061449b646f7a3f\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:27-75
-371
-372                <data
-372-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:13-47
-373                    android:host="firebase.auth"
-374                    android:path="/"
-375                    android:scheme="recaptcha" />
-376            </intent-filter>
-377        </activity>
-378        <activity
-378-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
-379            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-379-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:19-85
-380            android:exported="false"
-380-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:22:19-43
-381            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-381-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\63636e1656dfa49c5cc4b8339c2e71fc\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+259        <!-- FileProvider -->
+260        <provider
+260-->INJECTED
+261            android:name="androidx.core.content.FileProvider"
+261-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:207:13-62
+262            android:authorities="sv.edu.agroconecta.fileprovider"
+262-->INJECTED
+263            android:exported="false"
+263-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:209:13-37
+264            android:grantUriPermissions="true" >
+264-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:210:13-47
+265            <meta-data
+265-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:211:13-213:53
+266                android:name="android.support.FILE_PROVIDER_PATHS"
+266-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:212:17-67
+267                android:resource="@xml/file_paths" />
+267-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:213:17-51
+268        </provider>
+269
+270        <!-- Needs to be explicitly declared on P+ -->
+271        <uses-library
+271-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+272            android:name="org.apache.http.legacy"
+272-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+273            android:required="false" />
+273-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a9ed4023a1c3cfe21bb7fac22fc92977\workspace\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+274
+275        <activity
+275-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:23:9-27:75
+276            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+276-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:24:13-93
+277            android:excludeFromRecents="true"
+277-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:25:13-46
+278            android:exported="false"
+278-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:26:13-37
+279            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+279-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:27:13-72
+280        <!--
+281            Service handling Google Sign-In user revocation. For apps that do not integrate with
+282            Google Sign-In, this service will never be started.
+283        -->
+284        <service
+284-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:33:9-37:51
+285            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+285-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:34:13-89
+286            android:exported="true"
+286-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:35:13-36
+287            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+287-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:36:13-107
+288            android:visibleToInstantApps="true" />
+288-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3a199c47f120cb8bf2f879fb469fcb39\workspace\transformed\play-services-auth-21.0.0\AndroidManifest.xml:37:13-48
+289
+290        <receiver
+290-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:29:9-40:20
+291            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+291-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:30:13-78
+292            android:exported="true"
+292-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:31:13-36
+293            android:permission="com.google.android.c2dm.permission.SEND" >
+293-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:32:13-73
+294            <intent-filter>
+294-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:33:13-35:29
+295                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+295-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:34:17-81
+295-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:34:25-78
+296            </intent-filter>
+297
+298            <meta-data
+298-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:37:13-39:40
+299                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+299-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:38:17-92
+300                android:value="true" />
+300-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:39:17-37
+301        </receiver>
+302        <!--
+303             FirebaseMessagingService performs security checks at runtime,
+304             but set to not exported to explicitly avoid allowing another app to call it.
+305        -->
+306        <service
+306-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:46:9-53:19
+307            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+307-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:47:13-82
+308            android:directBootAware="true"
+308-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:48:13-43
+309            android:exported="false" >
+309-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:49:13-37
+310            <intent-filter android:priority="-500" >
+310-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:196:13-198:29
+311                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+311-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:197:17-77
+311-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:197:25-75
+312            </intent-filter>
+313        </service>
+314        <service
+314-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:54:9-63:19
+315            android:name="com.google.firebase.components.ComponentDiscoveryService"
+315-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:55:13-84
+316            android:directBootAware="true"
+316-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
+317            android:exported="false" >
+317-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:56:13-37
+318            <meta-data
+318-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:57:13-59:85
+319                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+319-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:58:17-122
+320                android:value="com.google.firebase.components.ComponentRegistrar" />
+320-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:59:17-82
+321            <meta-data
+321-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:60:13-62:85
+322                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+322-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:61:17-119
+323                android:value="com.google.firebase.components.ComponentRegistrar" />
+323-->[com.google.firebase:firebase-messaging:23.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6f0f0e9bb9b8654184762a9a684bbe60\workspace\transformed\firebase-messaging-23.4.0\AndroidManifest.xml:62:17-82
+324            <meta-data
+324-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:29:13-31:85
+325                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+325-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:30:17-120
+326                android:value="com.google.firebase.components.ComponentRegistrar" />
+326-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:31:17-82
+327            <meta-data
+327-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:32:13-34:85
+328                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+328-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:33:17-109
+329                android:value="com.google.firebase.components.ComponentRegistrar" />
+329-->[com.google.firebase:firebase-database:20.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\366ae34873884626017dc442d28a5046\workspace\transformed\firebase-database-20.3.0\AndroidManifest.xml:34:17-82
+330            <meta-data
+330-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:69:13-71:85
+331                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+331-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:70:17-109
+332                android:value="com.google.firebase.components.ComponentRegistrar" />
+332-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:71:17-82
+333            <meta-data
+333-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:37:13-39:85
+334                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+334-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:38:17-139
+335                android:value="com.google.firebase.components.ComponentRegistrar" />
+335-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:39:17-82
+336            <meta-data
+336-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
+337                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+337-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
+338                android:value="com.google.firebase.components.ComponentRegistrar" />
+338-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
+339            <meta-data
+339-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
+340                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+340-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
+341                android:value="com.google.firebase.components.ComponentRegistrar" />
+341-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\a8ff62124327cc178c5b5c6f18d92b9a\workspace\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
+342            <meta-data
+342-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9fe575d625a45cf26a0e9eb078e06450\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
+343                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+343-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9fe575d625a45cf26a0e9eb078e06450\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
+344                android:value="com.google.firebase.components.ComponentRegistrar" />
+344-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\9fe575d625a45cf26a0e9eb078e06450\workspace\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
+345            <meta-data
+345-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
+346                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+346-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
+347                android:value="com.google.firebase.components.ComponentRegistrar" />
+347-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
+348            <meta-data
+348-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\29a85f2866d7fb7d3d3d3fdee1c0eade\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
+349                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+349-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\29a85f2866d7fb7d3d3d3fdee1c0eade\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
+350                android:value="com.google.firebase.components.ComponentRegistrar" />
+350-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\29a85f2866d7fb7d3d3d3fdee1c0eade\workspace\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
+351        </service>
+352
+353        <activity
+353-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:29:9-46:20
+354            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+354-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:30:13-80
+355            android:excludeFromRecents="true"
+355-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:31:13-46
+356            android:exported="true"
+356-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:32:13-36
+357            android:launchMode="singleTask"
+357-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:33:13-44
+358            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+358-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:34:13-72
+359            <intent-filter>
+359-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:35:13-45:29
+360                <action android:name="android.intent.action.VIEW" />
+360-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:17-69
+360-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:25-66
+361
+362                <category android:name="android.intent.category.DEFAULT" />
+362-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:17-76
+362-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:27-73
+363                <category android:name="android.intent.category.BROWSABLE" />
+363-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:17-78
+363-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:27-75
+364
+365                <data
+365-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:13-47
+366                    android:host="firebase.auth"
+367                    android:path="/"
+368                    android:scheme="genericidp" />
+369            </intent-filter>
+370        </activity>
+371        <activity
+371-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:47:9-64:20
+372            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+372-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:48:13-79
+373            android:excludeFromRecents="true"
+373-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:49:13-46
+374            android:exported="true"
+374-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:50:13-36
+375            android:launchMode="singleTask"
+375-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:51:13-44
+376            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+376-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:52:13-72
+377            <intent-filter>
+377-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:53:13-63:29
+378                <action android:name="android.intent.action.VIEW" />
+378-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:17-69
+378-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:36:25-66
+379
+380                <category android:name="android.intent.category.DEFAULT" />
+380-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:17-76
+380-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:38:27-73
+381                <category android:name="android.intent.category.BROWSABLE" />
+381-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:17-78
+381-->[com.google.firebase:firebase-auth:22.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5df10f2e1a8affafffa4e5e7dc6eca3c\workspace\transformed\firebase-auth-22.3.0\AndroidManifest.xml:39:27-75
 382
-383        <property
-383-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:30:9-32:61
-384            android:name="android.adservices.AD_SERVICES_CONFIG"
-384-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:31:13-65
-385            android:resource="@xml/ga_ad_services_config" />
-385-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\3c50a44ce6030eaf71d5c9e152113a0b\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:32:13-58
-386
-387        <provider
-387-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
-388            android:name="com.google.firebase.provider.FirebaseInitProvider"
-388-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:24:13-77
-389            android:authorities="sv.edu.agroconecta.firebaseinitprovider"
-389-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:25:13-72
-390            android:directBootAware="true"
-390-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+383                <data
+383-->C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\AndroidManifest.xml:21:13-47
+384                    android:host="firebase.auth"
+385                    android:path="/"
+386                    android:scheme="recaptcha" />
+387            </intent-filter>
+388        </activity>
+389        <activity
+389-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2de3653d769bd6725b454b376ec1a752\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+390            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+390-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2de3653d769bd6725b454b376ec1a752\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:19-85
 391            android:exported="false"
-391-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:27:13-37
-392            android:initOrder="100" />
-392-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\233ce76fd10ca8f48ac4956cfc50e9c7\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+391-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2de3653d769bd6725b454b376ec1a752\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+392            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+392-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\2de3653d769bd6725b454b376ec1a752\workspace\transformed\play-services-base-18.3.0\AndroidManifest.xml:21:19-78
 393
-394        <receiver
-394-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:29:9-33:20
-395            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-395-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:30:13-85
-396            android:enabled="true"
-396-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:31:13-35
-397            android:exported="false" >
-397-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:32:13-37
-398        </receiver>
-399
-400        <service
-400-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:35:9-38:40
-401            android:name="com.google.android.gms.measurement.AppMeasurementService"
-401-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:36:13-84
-402            android:enabled="true"
-402-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:37:13-35
-403            android:exported="false" />
-403-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:38:13-37
-404        <service
-404-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:39:9-43:72
-405            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-405-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:40:13-87
-406            android:enabled="true"
-406-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:41:13-35
-407            android:exported="false"
-407-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:42:13-37
-408            android:permission="android.permission.BIND_JOB_SERVICE" />
-408-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f21c98470dd2b99e4f21e6bb50198994\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:43:13-69
-409
-410        <provider
-410-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-411            android:name="androidx.startup.InitializationProvider"
-411-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-412            android:authorities="sv.edu.agroconecta.androidx-startup"
-412-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-413            android:exported="false" >
-413-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-414            <meta-data
-414-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-415                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-415-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-416                android:value="androidx.startup" />
-416-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5a8ccda23063a0f482d5f854b60604f\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-417            <meta-data
-417-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-418                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-418-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-419                android:value="androidx.startup" />
-419-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\f38787e36c566817506d57a2525e74fa\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-420            <meta-data
-420-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-421                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-421-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-422                android:value="androidx.startup" />
-422-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-423        </provider>
-424
-425        <uses-library
-425-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
-426            android:name="android.ext.adservices"
-426-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
-427            android:required="false" />
-427-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\70a06f40e932a1e78e986a436d1dd836\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
-428
-429        <receiver
-429-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-430            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-430-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-431            android:directBootAware="false"
-431-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-432            android:enabled="true"
-432-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-433            android:exported="true"
-433-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-434            android:permission="android.permission.DUMP" >
-434-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-435            <intent-filter>
-435-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-436                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-436-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-436-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-437            </intent-filter>
-438            <intent-filter>
-438-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-439                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-439-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-439-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-440            </intent-filter>
-441            <intent-filter>
-441-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-442                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-442-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-442-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-443            </intent-filter>
-444            <intent-filter>
-444-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-445                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-445-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-445-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\5743a4f5ddd7d3a1d1a8af61e127760a\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-446            </intent-filter>
-447        </receiver>
-448
-449        <meta-data
-449-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
-450            android:name="com.google.android.gms.version"
-450-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
-451            android:value="@integer/google_play_services_version" />
-451-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\c5995e3b5f77939b744b24dbb5e2c635\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
-452
-453        <service
-453-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
-454            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-454-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
-455            android:exported="false" >
-455-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
-456            <meta-data
-456-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
-457                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-457-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
-458                android:value="cct" />
-458-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\fd5c33e77a2a683784ca51235ccfe308\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
-459        </service>
-460        <service
-460-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
-461            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-461-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
-462            android:exported="false"
-462-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
-463            android:permission="android.permission.BIND_JOB_SERVICE" >
-463-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
-464        </service>
-465
-466        <receiver
-466-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
-467            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-467-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
-468            android:exported="false" />
-468-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6b65a03ef4b5165c6bbea73974fd893c\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
-469    </application>
-470
-471</manifest>
+394        <property
+394-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:30:9-32:61
+395            android:name="android.adservices.AD_SERVICES_CONFIG"
+395-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:31:13-65
+396            android:resource="@xml/ga_ad_services_config" />
+396-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\90db43e64aeaf1402f92bb97db5788c7\workspace\transformed\play-services-measurement-api-21.5.0\AndroidManifest.xml:32:13-58
+397
+398        <provider
+398-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
+399            android:name="com.google.firebase.provider.FirebaseInitProvider"
+399-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:24:13-77
+400            android:authorities="sv.edu.agroconecta.firebaseinitprovider"
+400-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:25:13-72
+401            android:directBootAware="true"
+401-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+402            android:exported="false"
+402-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:27:13-37
+403            android:initOrder="100" />
+403-->[com.google.firebase:firebase-common:20.4.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\49d54ae0c25aa5238256454466302d0d\workspace\transformed\firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+404
+405        <receiver
+405-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:29:9-33:20
+406            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+406-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:30:13-85
+407            android:enabled="true"
+407-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:31:13-35
+408            android:exported="false" >
+408-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:32:13-37
+409        </receiver>
+410
+411        <service
+411-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:35:9-38:40
+412            android:name="com.google.android.gms.measurement.AppMeasurementService"
+412-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:36:13-84
+413            android:enabled="true"
+413-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:37:13-35
+414            android:exported="false" />
+414-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:38:13-37
+415        <service
+415-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:39:9-43:72
+416            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+416-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:40:13-87
+417            android:enabled="true"
+417-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:41:13-35
+418            android:exported="false"
+418-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:42:13-37
+419            android:permission="android.permission.BIND_JOB_SERVICE" />
+419-->[com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\6393a78827c4418fe4f8927045b62ddf\workspace\transformed\play-services-measurement-21.5.0\AndroidManifest.xml:43:13-69
+420
+421        <provider
+421-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+422            android:name="androidx.startup.InitializationProvider"
+422-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+423            android:authorities="sv.edu.agroconecta.androidx-startup"
+423-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+424            android:exported="false" >
+424-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+425            <meta-data
+425-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+426                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+426-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+427                android:value="androidx.startup" />
+427-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\cbe160a0ea890e206cc98a23b377d3f8\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+428            <meta-data
+428-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\79d7b5fb8717778900857fc05e1cc6b0\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+429                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+429-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\79d7b5fb8717778900857fc05e1cc6b0\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+430                android:value="androidx.startup" />
+430-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\79d7b5fb8717778900857fc05e1cc6b0\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+431            <meta-data
+431-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+432                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+432-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+433                android:value="androidx.startup" />
+433-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+434        </provider>
+435
+436        <uses-library
+436-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\574a41fc22c2d2cea4eea1f469f5602a\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+437            android:name="android.ext.adservices"
+437-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\574a41fc22c2d2cea4eea1f469f5602a\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+438            android:required="false" />
+438-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\574a41fc22c2d2cea4eea1f469f5602a\workspace\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+439
+440        <receiver
+440-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+441            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+441-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+442            android:directBootAware="false"
+442-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+443            android:enabled="true"
+443-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+444            android:exported="true"
+444-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+445            android:permission="android.permission.DUMP" >
+445-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+446            <intent-filter>
+446-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+447                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+447-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+447-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+448            </intent-filter>
+449            <intent-filter>
+449-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+450                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+450-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+450-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+451            </intent-filter>
+452            <intent-filter>
+452-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+453                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+453-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+453-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+454            </intent-filter>
+455            <intent-filter>
+455-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+456                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+456-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+456-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\d22db7e43954d51de16fa79cfd74ae61\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+457            </intent-filter>
+458        </receiver>
+459
+460        <meta-data
+460-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\894904c7c086c79be1bc0092c059c17f\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+461            android:name="com.google.android.gms.version"
+461-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\894904c7c086c79be1bc0092c059c17f\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+462            android:value="@integer/google_play_services_version" />
+462-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\894904c7c086c79be1bc0092c059c17f\workspace\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+463
+464        <service
+464-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+465            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+465-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+466            android:exported="false" >
+466-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+467            <meta-data
+467-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+468                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+468-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+469                android:value="cct" />
+469-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\ee9a124a495d632d19b2778a9bae20d6\workspace\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+470        </service>
+471        <service
+471-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+472            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+472-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+473            android:exported="false"
+473-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+474            android:permission="android.permission.BIND_JOB_SERVICE" >
+474-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+475        </service>
+476
+477        <receiver
+477-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+478            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+478-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+479            android:exported="false" />
+479-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Vladimir Ascencio\.gradle\caches\9.3.1\transforms\0c31f604140706cd5a18e1403c486505\workspace\transformed\transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+480    </application>
+481
+482</manifest>

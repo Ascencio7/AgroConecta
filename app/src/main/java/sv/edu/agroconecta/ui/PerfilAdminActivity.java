@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,6 +25,7 @@ import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -31,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import sv.edu.agroconecta.R;
@@ -49,58 +52,176 @@ public class PerfilAdminActivity extends AppCompatActivity {
     private static final int REQ_CAMERA   = 4002;
     private static final int REQ_CAM_PERM = 4003;
 
-    private TextView tvAvatarLarge, tvProfileName, tvProfileRole, tvProfileEmail;
+    private TextView tvAvatarLarge, tvRolAdmin;
+    private TextInputEditText etNombre, etCorreo, etTelefono, etNuevaPassword, etConfirmarPassword;
     private ImageView ivFoto;
     private TextView btnCambiarFoto;
     private ImageButton btnBackProfile;
-    private Button btnLogoutProfile;
+    private Button btnLogoutProfile, btnGuardar, btnCambiarPassword;
     private SessionManager sessionManager;
+    private UsuarioApi usuarioApi;
     private Uri fotoUri = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Evitar que el teclado tape los campos
+        getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         setContentView(R.layout.activity_perfil_admin);
 
         sessionManager = new SessionManager(this);
+        usuarioApi = ApiClient.getClient().create(UsuarioApi.class);
 
-        ivFoto          = findViewById(R.id.ivFotoPerfilAdmin);
-        tvAvatarLarge   = findViewById(R.id.tvAvatarLarge);
-        tvProfileName   = findViewById(R.id.tvProfileName);
-        tvProfileRole   = findViewById(R.id.tvProfileRole);
-        tvProfileEmail  = findViewById(R.id.tvProfileEmail);
-        btnCambiarFoto  = findViewById(R.id.btnCambiarFotoAdmin);
-        btnBackProfile  = findViewById(R.id.btnBackProfile);
-        btnLogoutProfile= findViewById(R.id.btnLogoutProfile);
+        ivFoto              = findViewById(R.id.ivFotoPerfilAdmin);
+        tvAvatarLarge       = findViewById(R.id.tvAvatarLarge);
+        etNombre            = findViewById(R.id.etNombreAdminPerfil);
+        etCorreo            = findViewById(R.id.etCorreoAdminPerfil);
+        etTelefono          = findViewById(R.id.etTelefonoAdminPerfil);
+        tvRolAdmin          = findViewById(R.id.tvRolAdminPerfil);
+        etNuevaPassword     = findViewById(R.id.etNuevaPasswordAdmin);
+        etConfirmarPassword = findViewById(R.id.etConfirmarPasswordAdmin);
+        btnCambiarFoto      = findViewById(R.id.btnCambiarFotoAdmin);
+        btnBackProfile      = findViewById(R.id.btnBackProfile);
+        btnLogoutProfile    = findViewById(R.id.btnLogoutProfile);
+        btnGuardar          = findViewById(R.id.btnGuardarPerfilAdmin);
+        btnCambiarPassword  = findViewById(R.id.btnCambiarPasswordAdmin);
 
+        cargarDatosSesion();
+        cargarDatosBackend();
+
+        btnBackProfile.setOnClickListener(v -> finish());
+        btnCambiarFoto.setOnClickListener(v -> mostrarDialogoFoto());
+        btnGuardar.setOnClickListener(v -> guardarCambios());
+        btnCambiarPassword.setOnClickListener(v -> cambiarPassword());
+        btnLogoutProfile.setOnClickListener(v -> confirmarLogout());
+        
+        setupPhoneFormatting();
+    }
+
+    private void setupPhoneFormatting() {
+        if (etTelefono == null) return;
+        etTelefono.addTextChangedListener(new android.text.TextWatcher() {
+            private boolean isUpdating = false;
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(android.text.Editable s) {
+                if (isUpdating) return;
+                isUpdating = true;
+                String str = s.toString().replaceAll("[^0-9]", "");
+                StringBuilder formatted = new StringBuilder();
+                for (int i = 0; i < str.length() && i < 8; i++) {
+                    formatted.append(str.charAt(i));
+                    if (i == 3 && str.length() > 4) formatted.append("-");
+                }
+                s.replace(0, s.length(), formatted.toString());
+                isUpdating = false;
+            }
+        });
+    }
+
+    private void cargarDatosSesion() {
         String nombre = sessionManager.getNombre();
-        String rol    = sessionManager.getRol();
         String correo = sessionManager.getCorreo();
 
         if (nombre != null && !nombre.isEmpty()) {
             tvAvatarLarge.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
-            tvProfileName.setText(nombre);
+            etNombre.setText(nombre);
         }
-        tvProfileRole.setText(rol);
-        tvProfileEmail.setText(correo);
-
-        if ("ADMIN".equalsIgnoreCase(rol)) {
-            tvProfileRole.setTextColor(getResources().getColor(R.color.dorado, getTheme()));
-        } else if ("VENDEDOR".equalsIgnoreCase(rol)) {
-            tvProfileRole.setTextColor(getResources().getColor(R.color.verde_primario, getTheme()));
-        } else {
-            tvProfileRole.setTextColor(getResources().getColor(R.color.texto_secundario, getTheme()));
-        }
+        if (correo != null) etCorreo.setText(correo);
+        if (tvRolAdmin != null) tvRolAdmin.setText("ADMINISTRADOR");
 
         // Cargar foto guardada
         String fotoGuardada = sessionManager.getFotoPerfil();
         if (fotoGuardada != null && !fotoGuardada.isEmpty()) {
             mostrarFoto(fotoGuardada);
         }
+    }
 
-        btnBackProfile.setOnClickListener(v -> finish());
-        btnCambiarFoto.setOnClickListener(v -> mostrarDialogoFoto());
-        btnLogoutProfile.setOnClickListener(v -> confirmarLogout());
+    private void cargarDatosBackend() {
+        int myId = sessionManager.getUserId();
+        if (myId < 0) return;
+        usuarioApi.getUsuarios().enqueue(new Callback<List<Usuario>>() {
+            @Override public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                if (!response.isSuccessful() || response.body() == null) return;
+                for (Usuario u : response.body()) {
+                    if (u.getUsuarioId() == myId) {
+                        runOnUiThread(() -> {
+                            if (u.getNombre() != null && !u.getNombre().isEmpty()) {
+                                etNombre.setText(u.getNombre());
+                                tvAvatarLarge.setText(String.valueOf(u.getNombre().charAt(0)).toUpperCase());
+                            }
+                            if (u.getCorreo() != null) etCorreo.setText(u.getCorreo());
+                            if (u.getTelefono() != null) etTelefono.setText(u.getTelefono());
+                        });
+                        break;
+                    }
+                }
+            }
+            @Override public void onFailure(Call<List<Usuario>> call, Throwable t) {}
+        });
+    }
+
+    private void guardarCambios() {
+        String nombre   = etNombre.getText() != null ? etNombre.getText().toString().trim() : "";
+        String correo   = etCorreo.getText() != null ? etCorreo.getText().toString().trim() : "";
+        String telefono = etTelefono.getText() != null ? etTelefono.getText().toString().trim() : "";
+
+        if (TextUtils.isEmpty(nombre)) { etNombre.setError("Requerido"); return; }
+        if (TextUtils.isEmpty(correo)) { etCorreo.setError("Requerido"); return; }
+
+        btnGuardar.setEnabled(false); btnGuardar.setText("Guardando...");
+        int myId = sessionManager.getUserId();
+        Usuario u = new Usuario();
+        u.setNombre(nombre); u.setCorreo(correo);
+        u.setTelefono(telefono);
+        String fp = sessionManager.getFotoPerfil();
+        if (fp != null) u.setFotoPerfil(fp);
+        u.setRolId(1); // ADMIN
+
+        usuarioApi.updateUsuario(myId, u).enqueue(new Callback<Usuario>() {
+            @Override public void onResponse(Call<Usuario> c, Response<Usuario> r) {
+                runOnUiThread(() -> {
+                    btnGuardar.setEnabled(true); btnGuardar.setText("ACTUALIZAR");
+                    if (r.isSuccessful()) {
+                        sessionManager.createSession(myId, nombre, correo, "ADMIN");
+                        tvAvatarLarge.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
+                        Toast.makeText(PerfilAdminActivity.this, "✅ Perfil actualizado", Toast.LENGTH_SHORT).show();
+                    } else Toast.makeText(PerfilAdminActivity.this, "❌ Error al guardar", Toast.LENGTH_SHORT).show();
+                });
+            }
+            @Override public void onFailure(Call<Usuario> c, Throwable t) {
+                runOnUiThread(() -> { btnGuardar.setEnabled(true); btnGuardar.setText("ACTUALIZAR");
+                    Toast.makeText(PerfilAdminActivity.this, "❌ Sin conexión", Toast.LENGTH_SHORT).show(); });
+            }
+        });
+    }
+
+    private void cambiarPassword() {
+        String nueva = etNuevaPassword.getText() != null ? etNuevaPassword.getText().toString().trim() : "";
+        String conf  = etConfirmarPassword.getText() != null ? etConfirmarPassword.getText().toString().trim() : "";
+        if (TextUtils.isEmpty(nueva)) { etNuevaPassword.setError("Ingresa la nueva contraseña"); return; }
+        if (nueva.length() < 8) { etNuevaPassword.setError("Mínimo 8 caracteres"); return; }
+        if (!nueva.equals(conf)) { etConfirmarPassword.setError("No coinciden"); return; }
+
+        btnCambiarPassword.setEnabled(false); btnCambiarPassword.setText("Actualizando...");
+        int myId = sessionManager.getUserId();
+        Usuario u = new Usuario();
+        u.setNombre(sessionManager.getNombre()); u.setCorreo(sessionManager.getCorreo());
+        u.setPassword(nueva); u.setRolId(1);
+
+        usuarioApi.updateUsuario(myId, u).enqueue(new Callback<Usuario>() {
+            @Override public void onResponse(Call<Usuario> c, Response<Usuario> r) {
+                runOnUiThread(() -> {
+                    btnCambiarPassword.setEnabled(true); btnCambiarPassword.setText("🔒 Cambiar contraseña");
+                    if (r.isSuccessful()) { etNuevaPassword.setText(""); etConfirmarPassword.setText("");
+                        Toast.makeText(PerfilAdminActivity.this, "✅ Contraseña actualizada", Toast.LENGTH_SHORT).show();
+                    } else Toast.makeText(PerfilAdminActivity.this, "❌ Error", Toast.LENGTH_SHORT).show();
+                });
+            }
+            @Override public void onFailure(Call<Usuario> c, Throwable t) {
+                runOnUiThread(() -> { btnCambiarPassword.setEnabled(true); btnCambiarPassword.setText("🔒 Cambiar contraseña"); });
+            }
+        });
     }
 
     private void mostrarDialogoFoto() {

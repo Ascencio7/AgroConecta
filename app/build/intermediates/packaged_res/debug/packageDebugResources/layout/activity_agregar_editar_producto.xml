@@ -60,228 +60,245 @@
             </LinearLayout>
         </LinearLayout>
 
-        <FrameLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingBottom="120dp">
 
-                <LinearLayout
+                <!-- DATOS PRINCIPALES -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/blanco"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
 
-                    <!-- DATOS PRINCIPALES -->
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        app:cardBackgroundColor="@color/blanco"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp">
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="DATOS DEL PRODUCTO"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:hint="Nombre del producto">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapWords" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:hint="Descripción">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etDescripcion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:inputType="textMultiLine"
+                                android:minLines="3" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="CATEGORÍA"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spCategoria"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_input"
+                            android:paddingHorizontal="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- PRECIO Y STOCK -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/blanco"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="PRECIO Y EXISTENCIA"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:text="DATOS DEL PRODUCTO"
-                                android:textColor="@color/texto_secundario"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
+                            android:orientation="horizontal">
 
                             <com.google.android.material.textfield.TextInputLayout
                                 style="@style/TextInputOutlined"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:hint="Nombre del producto">
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                android:hint="Precio ($)">
 
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etNombre"
+                                    android:id="@+id/etPrecio"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="textCapWords" />
+                                    android:inputType="numberDecimal" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 style="@style/TextInputOutlined"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:hint="Descripción">
+                                android:layout_marginStart="6dp"
+                                android:layout_weight="1"
+                                android:hint="Existencia">
 
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etDescripcion"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="top"
-                                    android:inputType="textMultiLine"
-                                    android:minLines="3" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:text="CATEGORÍA"
-                                android:textColor="@color/texto_secundario"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-
-                            <Spinner
-                                android:id="@+id/spCategoria"
-                                android:layout_width="match_parent"
-                                android:layout_height="54dp"
-                                android:background="@drawable/bg_input"
-                                android:paddingHorizontal="12dp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- PRECIO Y STOCK -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        app:cardBackgroundColor="@color/blanco"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:text="PRECIO Y EXISTENCIA"
-                                android:textColor="@color/texto_secundario"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/TextInputOutlined"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="6dp"
-                                    android:layout_weight="1"
-                                    android:hint="Precio ($)">
-
-                                    <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/etPrecio"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:inputType="numberDecimal" />
-                                </com.google.android.material.textfield.TextInputLayout>
-
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/TextInputOutlined"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="6dp"
-                                    android:layout_weight="1"
-                                    android:hint="Existencia">
-
-                                    <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/etExistencia"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:inputType="number" />
-                                </com.google.android.material.textfield.TextInputLayout>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- INFO ADICIONAL -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/blanco"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="2dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:text="INFORMACIÓN ADICIONAL"
-                                android:textColor="@color/texto_secundario"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                style="@style/TextInputOutlined"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="12dp"
-                                android:hint="URL de imagen">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etImagenUrl"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="textUri" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                style="@style/TextInputOutlined"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="ID Vendedor">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/etUsuarioId"
+                                    android:id="@+id/etExistencia"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:inputType="number" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
-            </ScrollView>
-
-            <!-- BOTÓN GUARDAR FIJO -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@color/crema"
-                android:elevation="8dp"
-                android:padding="20dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnGuardar"
-                    style="@style/BtnPrimario"
+                <!-- INFO ADICIONAL -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:text="Guardar Producto" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="@color/blanco"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
 
-        </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="INFORMACIÓN ADICIONAL"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:hint="URL de imagen">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etImagenUrl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textUri" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputOutlined"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="ID Vendedor">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etUsuarioId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- BOTONES FIJOS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/crema"
+            android:elevation="12dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/id_cancelar_btn"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="CANCELAR"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/crema_medio"
+                app:cornerRadius="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/id_guardar_btn"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="ACTUALIZAR"
+                android:textColor="@color/blanco"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/verde_primario"
+                app:cornerRadius="14dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

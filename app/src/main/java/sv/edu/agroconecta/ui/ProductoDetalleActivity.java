@@ -59,26 +59,35 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         MaterialButton btnAgregar = (MaterialButton) findViewById(R.id.btnAgregarCarrito);
 
         // Header views
+        ImageButton btnBack = findViewById(R.id.btnBackDetalle);
+        if (btnBack != null) btnBack.setOnClickListener(v -> finish());
+        
+        // Removed elements from header (Avatar and Cart icon)
+        /*
         TextView tvAvatar = findViewById(R.id.tvAvatar);
         TextView tvCarritoBadge = findViewById(R.id.tvCarritoBadge);
         
-        if (sessionManager.isLoggedIn()) {
+        if (sessionManager.isLoggedIn() && tvAvatar != null) {
             String nombreU = sessionManager.getNombre();
             if (nombreU != null && !nombreU.isEmpty()) {
                 tvAvatar.setText(String.valueOf(nombreU.charAt(0)).toUpperCase());
             }
+            tvAvatar.setOnClickListener(this::showProfileMenu);
         }
-        tvAvatar.setOnClickListener(this::showProfileMenu);
-        
-        findViewById(R.id.btnHeaderCarrito).setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("nav_to", "carrito");
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            finish();
-        });
+
+        View btnCarrito = findViewById(R.id.btnHeaderCarrito);
+        if (btnCarrito != null) {
+            btnCarrito.setOnClickListener(v -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("nav_to", "carrito");
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
+        }
 
         actualizarBadge(tvCarritoBadge);
+        */
 
         // Bottom Navigation
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);

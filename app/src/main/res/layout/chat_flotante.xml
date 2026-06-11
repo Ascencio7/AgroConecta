@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Panel de chat - responsive: usa wrap_content con minHeight/maxHeight via weight -->
+    <!-- Panel de chat -->
     <androidx.cardview.widget.CardView
         android:id="@+id/panelChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="84dp"
         android:layout_marginHorizontal="12dp"
         android:visibility="gone"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp"
         app:cardBackgroundColor="@color/blanco">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <!-- Header -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="56dp"
                 android:background="@color/verde_primario"
                 android:gravity="center_vertical"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="16dp">
 
                 <TextView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:gravity="center"
                     android:text="🤖"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:background="@drawable/bg_avatar_circle"/>
 
                 <TextView
@@ -46,25 +46,25 @@
                     android:text="Asistente AgroConecta"
                     android:textColor="@color/blanco"
                     android:textStyle="bold"
-                    android:textSize="16sp"/>
+                    android:textSize="15sp"/>
 
                 <ImageButton
                     android:id="@+id/btnCerrarChat"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@android:drawable/ic_menu_close_clear_cancel"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Cerrar"
                     app:tint="@color/blanco"/>
             </LinearLayout>
 
-            <!-- Mensajes - altura fija adaptable -->
+            <!-- Mensajes -->
             <ScrollView
                 android:id="@+id/scrollChat"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="220dp"
                 android:background="@color/crema"
-                android:padding="16dp">
+                android:padding="12dp">
                 <LinearLayout
                     android:id="@+id/contenedorMensajes"
                     android:layout_width="match_parent"
@@ -76,30 +76,34 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
+                android:padding="10dp"
                 android:background="@color/blanco"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/etMensaje"
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:minHeight="48dp"
                     android:hint="Pregunta algo..."
                     android:background="@drawable/bg_input"
                     android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
                     android:textSize="14sp"
                     android:layout_marginEnd="8dp"
-                    android:inputType="text"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="3"
                     android:importantForAutofill="no"/>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                <ImageButton
                     android:id="@+id/btnEnviar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:src="@android:drawable/ic_menu_send"
-                    app:fabSize="mini"
-                    app:backgroundTint="@color/verde_primario"
+                    android:background="@drawable/bg_boton_verde"
+                    android:padding="10dp"
                     app:tint="@color/blanco"
                     android:contentDescription="Enviar"/>
             </LinearLayout>
@@ -111,13 +115,14 @@
         android:id="@+id/fabChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="80dp"
         android:src="@android:drawable/ic_dialog_info"
         app:backgroundTint="@color/dorado_medio"
         app:tint="@color/carbon"
-        app:elevation="12dp"
+        app:elevation="8dp"
         android:contentDescription="Asistente IA"/>
 
-</FrameLayout>
+</RelativeLayout>

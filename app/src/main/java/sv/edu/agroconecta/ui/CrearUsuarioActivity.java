@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -34,9 +36,9 @@ public class CrearUsuarioActivity extends AppCompatActivity {
         etTelefono = findViewById(R.id.etTelefono);
         spRol = findViewById(R.id.spRol);
         btnGuardar = findViewById(R.id.btnGuardar);
-
         btnCancelar = findViewById(R.id.btnCancelar);
 
+        setupPhoneFormatting();
         cargarRoles();
 
         btnGuardar.setOnClickListener(v -> crearUsuario());
@@ -54,25 +56,43 @@ public class CrearUsuarioActivity extends AppCompatActivity {
 
     }
 
+    private void setupPhoneFormatting() {
+        etTelefono.addTextChangedListener(new TextWatcher() {
+            private boolean isUpdating = false;
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(Editable s) {
+                if (isUpdating) return;
+                isUpdating = true;
+                String str = s.toString().replaceAll("[^0-9]", "");
+                StringBuilder formatted = new StringBuilder();
+                for (int i = 0; i < str.length() && i < 8; i++) {
+                    formatted.append(str.charAt(i));
+                    if (i == 3 && str.length() > 4) formatted.append("-");
+                }
+                s.replace(0, s.length(), formatted.toString());
+                isUpdating = false;
+            }
+        });
+    }
+
     private void cargarRoles() {
-        repo.getRoles() .enqueue(new Callback<List<Rol>>() {
+        repo.getRoles().enqueue(new Callback<List<Rol>>() {
             @Override
             public void onResponse(Call<List<Rol>> call, Response<List<Rol>> response) {
-                rolesList = response.body();
-                if (rolesList == null) {
-                    Toast.makeText(CrearUsuarioActivity.this, "Error roles", Toast.LENGTH_SHORT).show();
-                    return;
+                if (response.isSuccessful() && response.body() != null) {
+                    rolesList = response.body();
+                    List<String> nombres = new ArrayList<>();
+                    for (Rol r : rolesList) nombres.add(r.getNombre().toUpperCase());
+                    
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                            CrearUsuarioActivity.this,
+                            android.R.layout.simple_spinner_item,
+                            nombres
+                    );
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spRol.setAdapter(adapter);
                 }
-                List<String> nombres = new ArrayList<>();
-                for (Rol r : rolesList) {
-                    nombres.add(r.getNombre());
-                }
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                        CrearUsuarioActivity.this,
-                        android.R.layout.simple_spinner_item,
-                        nombres
-                );
-                spRol.setAdapter(adapter);
             }
 
             @Override
@@ -96,6 +116,11 @@ public class CrearUsuarioActivity extends AppCompatActivity {
         }
         if (password.length() < 8) {
             etPassword.setError("Mínimo 8 caracteres"); etPassword.requestFocus(); return;
+        }
+        if (telefono.length() < 9) {
+            etTelefono.setError("Teléfono incompleto (formato XXXX-XXXX)");
+            etTelefono.requestFocus();
+            return;
         }
 
         if (rolesList.isEmpty()) {
