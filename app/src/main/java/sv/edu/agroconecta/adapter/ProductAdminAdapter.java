@@ -24,6 +24,7 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
     public interface OnProductActionListener {
         void onEdit(Product product);
         void onDelete(Product product);
+        void onRestore(Product product);
     }
 
     public ProductAdminAdapter(Context context, List<Product> lista, OnProductActionListener listener) {
@@ -34,7 +35,7 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNombre, txtPrecio, txtStock, txtStatusBadge;
-        View btnEdit, btnDelete;
+        com.google.android.material.button.MaterialButton btnEdit, btnDelete;
         ImageView imgProducto;
 
         public ViewHolder(View view) {
@@ -63,14 +64,36 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
         holder.txtPrecio.setText(String.format(Locale.getDefault(), "$%.2f", p.getPrice()));
         holder.txtStock.setText(p.getExistencia() + " unidades");
 
-        if (p.getExistencia() > 0) {
-            holder.txtStatusBadge.setText("DISPONIBLE");
-            holder.txtStatusBadge.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
-            holder.txtStatusBadge.setBackgroundResource(R.drawable.bg_badge_verde);
-        } else {
-            holder.txtStatusBadge.setText("AGOTADO");
-            holder.txtStatusBadge.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
+        if (p.getEstado() != null && !p.getEstado()) {
+            holder.txtStatusBadge.setText("NO DISPONIBLE");
+            holder.txtStatusBadge.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.texto_tenue));
             holder.txtStatusBadge.setBackgroundResource(R.drawable.bg_badge_rojo);
+            
+            // UI para Restaurar
+            holder.btnDelete.setText("Activar");
+            holder.btnDelete.setIconResource(android.R.drawable.ic_menu_revert);
+            holder.btnDelete.setIconTint(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario)));
+            holder.btnDelete.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
+            holder.btnDelete.setBackgroundTintList(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.verde_superficial)));
+            holder.btnDelete.setOnClickListener(v -> listener.onRestore(p));
+        } else {
+            if (p.getExistencia() > 0) {
+                holder.txtStatusBadge.setText("DISPONIBLE");
+                holder.txtStatusBadge.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
+                holder.txtStatusBadge.setBackgroundResource(R.drawable.bg_badge_verde);
+            } else {
+                holder.txtStatusBadge.setText("AGOTADO");
+                holder.txtStatusBadge.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
+                holder.txtStatusBadge.setBackgroundResource(R.drawable.bg_badge_rojo);
+            }
+            
+            // UI para Desactivar
+            holder.btnDelete.setText("Desactivar");
+            holder.btnDelete.setIconResource(android.R.drawable.ic_lock_power_off);
+            holder.btnDelete.setIconTint(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error)));
+            holder.btnDelete.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
+            holder.btnDelete.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#FFF1F0")));
+            holder.btnDelete.setOnClickListener(v -> listener.onDelete(p));
         }
 
         // Carga de imagen
@@ -88,7 +111,6 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
         }
 
         holder.btnEdit.setOnClickListener(v -> listener.onEdit(p));
-        holder.btnDelete.setOnClickListener(v -> listener.onDelete(p));
     }
 
     @Override

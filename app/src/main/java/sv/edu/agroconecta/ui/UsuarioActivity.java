@@ -82,6 +82,17 @@ public class UsuarioActivity extends AppCompatActivity {
         tvAvatarAdmin.setOnClickListener(this::showProfileMenu);
         if (ivAvatarFotoAdmin != null) ivAvatarFotoAdmin.setOnClickListener(this::showProfileMenu);
 
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        View ivHeaderLogo = findViewById(R.id.ivHeaderLogoUsuarios);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                Intent intent = new Intent(this, AdminDashboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
+        }
+
         com.google.android.material.floatingactionbutton.FloatingActionButton fabAgregar =
                 findViewById(R.id.fabAgregar);
 

@@ -70,6 +70,17 @@ public class EstadisticaUsuariosActivity extends AppCompatActivity {
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
         findViewById(R.id.btnDescargarPDF).setOnClickListener(v -> generatePDF());
 
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        android.view.View ivHeaderLogo = findViewById(R.id.ivHeaderLogoEstadisticaUsuarios);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                Intent intent = new Intent(this, AdminDashboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
+        }
+
         createNotificationChannel();
         setupSpinner();
         loadData();

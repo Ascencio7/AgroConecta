@@ -41,6 +41,17 @@ public class CrearUsuarioActivity extends AppCompatActivity {
         setupPhoneFormatting();
         cargarRoles();
 
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        android.view.View ivHeaderLogo = findViewById(R.id.ivHeaderLogoCrearUsuario);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                android.content.Intent intent = new android.content.Intent(this, AdminDashboardActivity.class);
+                intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP | android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
+        }
+
         btnGuardar.setOnClickListener(v -> crearUsuario());
 
         btnCancelar.setOnClickListener(v ->{

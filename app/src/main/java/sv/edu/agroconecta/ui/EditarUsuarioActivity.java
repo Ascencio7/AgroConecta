@@ -74,6 +74,17 @@ public class EditarUsuarioActivity extends AppCompatActivity {
 
         switchEstado.setOnCheckedChangeListener((buttonView, isChecked) -> actualizarLabelEstado(isChecked));
 
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        android.view.View ivHeaderLogo = findViewById(R.id.ivHeaderLogoEditarUsuario);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                Intent intent = new Intent(this, AdminDashboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
+        }
+
         // Se guardan los datos y se actualizan
         btnGuardar.setText("ACTUALIZAR");
         btnGuardar.setOnClickListener(v -> actualizarUsuario());

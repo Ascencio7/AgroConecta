@@ -66,6 +66,8 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     private android.widget.ProgressBar progressProductos, progressPedidos;
     private android.widget.TextView tvEmptyProductos, tvEmptyPedidos;
     private Spinner spFiltroEstadoPedido;
+    private com.google.android.material.button.MaterialButton btnFiltroTodos, btnFiltroActivos, btnFiltroNoDisp, btnFiltroAgotados;
+    private String filtroActualProductos = "Todos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,11 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         tvEmptyPedidos    = findViewById(R.id.tvEmptyPedidosVendedor);
         spFiltroEstadoPedido = findViewById(R.id.spFiltroEstadoPedido);
 
+        btnFiltroTodos    = findViewById(R.id.btnFiltroTodosV);
+        btnFiltroActivos  = findViewById(R.id.btnFiltroActivosV);
+        btnFiltroNoDisp   = findViewById(R.id.btnFiltroNoDispV);
+        btnFiltroAgotados = findViewById(R.id.btnFiltroAgotadosV);
+
         rvMisProductos.setLayoutManager(new LinearLayoutManager(this));
         rvPedidosVendedor.setLayoutManager(new LinearLayoutManager(this));
 
@@ -106,12 +113,51 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         setupSearch();
         setupBottomNav();
         setupPedidosFilter();
+        setupProductosFilters();
+
+        // Logo del header -> ir a la pantalla principal del vendedor (Productos)
+        View ivHeaderLogo = findViewById(R.id.ivHeaderLogoVendedor);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                bottomNav.setSelectedItemId(R.id.nav_seller_products);
+            });
+        }
 
         CoordinatorLayout root = findViewById(R.id.coordinatorVendedor);
         new ChatManager(this, root);
 
         handleIntent(getIntent());
         cargarMisProductos();
+    }
+
+    private void setupProductosFilters() {
+        btnFiltroTodos.setOnClickListener(v -> { filtroActualProductos = "Todos"; updateFiltroButtonsUI(); filtrarProductos(searchView.getQuery().toString()); });
+        btnFiltroActivos.setOnClickListener(v -> { filtroActualProductos = "Disponibles"; updateFiltroButtonsUI(); filtrarProductos(searchView.getQuery().toString()); });
+        btnFiltroNoDisp.setOnClickListener(v -> { filtroActualProductos = "No Disponibles"; updateFiltroButtonsUI(); filtrarProductos(searchView.getQuery().toString()); });
+        btnFiltroAgotados.setOnClickListener(v -> { filtroActualProductos = "Agotados"; updateFiltroButtonsUI(); filtrarProductos(searchView.getQuery().toString()); });
+        updateFiltroButtonsUI();
+    }
+
+    private void updateFiltroButtonsUI() {
+        resetFiltroButton(btnFiltroTodos);
+        resetFiltroButton(btnFiltroActivos);
+        resetFiltroButton(btnFiltroNoDisp);
+        resetFiltroButton(btnFiltroAgotados);
+
+        com.google.android.material.button.MaterialButton selected = btnFiltroTodos;
+        if ("Disponibles".equals(filtroActualProductos)) selected = btnFiltroActivos;
+        else if ("No Disponibles".equals(filtroActualProductos)) selected = btnFiltroNoDisp;
+        else if ("Agotados".equals(filtroActualProductos)) selected = btnFiltroAgotados;
+
+        selected.setStrokeWidth(4);
+        selected.setStrokeColor(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(this, R.color.verde_primario)));
+        selected.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.verde_primario));
+    }
+
+    private void resetFiltroButton(com.google.android.material.button.MaterialButton btn) {
+        btn.setStrokeWidth(2);
+        btn.setStrokeColor(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(this, R.color.gris_borde)));
+        btn.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.texto_secundario));
     }
 
     private void setupHeaderProfile() {
@@ -165,6 +211,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             } else if (id == R.id.nav_seller_add) {
                 Intent i = new Intent(this, AgregarProductoVendedorActivity.class);
                 startActivity(i);
+                overridePendingTransition(0, 0);
                 return true;
             }
             return false;
@@ -187,12 +234,12 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             panelPedidos.setVisibility(View.GONE);
             String n = sessionManager.getNombre();
             if (n != null) tvWelcomeVendedor.setText("¡Hola, " + n + "! 👋");
-            ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Vendedor - AgroConecta");
+            ((TextView) findViewById(R.id.tvVendedorNombre)).setText("MIS PRODUCTOS");
         } else {
             panelProductos.setVisibility(View.GONE);
             panelPedidos.setVisibility(View.VISIBLE);
             tvWelcomeVendedor.setText("AgroConecta");
-            ((TextView) findViewById(R.id.tvVendedorNombre)).setText("Gestión de Pedidos 🛒");
+            ((TextView) findViewById(R.id.tvVendedorNombre)).setText("GESTIÓN DE PEDIDOS");
             cargarPedidosVendedor();
         }
     }
@@ -228,7 +275,7 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Cerrar sesión")
                 .setMessage("¿Seguro que quieres salir?")
-                .setPositiveButton("Sí", (d, w) -> {
+                .setPositiveButton("Sí, salir", (d, w) -> {
                     sessionManager.logout();
                     Intent i = new Intent(this, LoginActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -267,10 +314,25 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         misProductosFiltrados.clear();
         String query = texto.toLowerCase().trim();
         for (Product p : misProductos) {
-            if (p.getNombre().toLowerCase().contains(query)) misProductosFiltrados.add(p);
+            boolean matchesSearch = p.getNombre().toLowerCase().contains(query);
+            boolean matchesFilter = false;
+
+            if ("Todos".equals(filtroActualProductos)) {
+                matchesFilter = true;
+            } else if ("Disponibles".equals(filtroActualProductos)) {
+                matchesFilter = (p.getEstado() == null || p.getEstado()) && p.getExistencia() > 0;
+            } else if ("No Disponibles".equals(filtroActualProductos)) {
+                matchesFilter = p.getEstado() != null && !p.getEstado();
+            } else if ("Agotados".equals(filtroActualProductos)) {
+                matchesFilter = (p.getEstado() == null || p.getEstado()) && p.getExistencia() == 0;
+            }
+
+            if (matchesSearch && matchesFilter) misProductosFiltrados.add(p);
         }
+
         if (misProductosFiltrados.isEmpty()) {
             tvEmptyProductos.setVisibility(View.VISIBLE);
+            tvEmptyProductos.setText("No se encontraron productos");
             rvMisProductos.setVisibility(View.GONE);
         } else {
             tvEmptyProductos.setVisibility(View.GONE);
@@ -282,10 +344,14 @@ public class VendedorDashboardActivity extends AppCompatActivity {
     private void actualizarStats() {
         int total = misProductos.size();
         int activos = 0;
-        for (Product p : misProductos) if (p.getExistencia() > 0) activos++;
+        int agotados = 0;
+        for (Product p : misProductos) {
+            if ((p.getEstado() == null || p.getEstado()) && p.getExistencia() > 0) activos++;
+            if ((p.getEstado() == null || p.getEstado()) && p.getExistencia() == 0) agotados++;
+        }
         if (tvTotalProd != null) tvTotalProd.setText(String.valueOf(total));
         if (tvActivos != null) tvActivos.setText(String.valueOf(activos));
-        if (tvAgotados != null) tvAgotados.setText(String.valueOf(total - activos));
+        if (tvAgotados != null) tvAgotados.setText(String.valueOf(agotados));
     }
 
     private void cargarPedidosVendedor() {
@@ -338,23 +404,85 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             ((TextView) h.itemView.findViewById(R.id.tvPrecioVendedor)).setText(String.format("$%.2f", p.getPrecio()));
             ((TextView) h.itemView.findViewById(R.id.tvStockVendedor)).setText("Stock: " + p.getExistencia());
             TextView tvE = h.itemView.findViewById(R.id.tvEstadoVendedor);
-            if (p.getExistencia() > 0) {
-                tvE.setText("Activo"); tvE.setTextColor(0xFF27AE60); tvE.setBackgroundResource(R.drawable.bg_badge_verde);
+            com.google.android.material.button.MaterialButton btnDesactivar = h.itemView.findViewById(R.id.btnEliminarProductoV);
+            ImageView ivProducto = h.itemView.findViewById(R.id.ivProductoVendedor);
+            View llFotoNoDisponible = h.itemView.findViewById(R.id.llFotoNoDisponible);
+
+            if (p.getEstado() != null && !p.getEstado()) {
+                tvE.setText("No Disponible");
+                tvE.setTextColor(0xFF7F8C8D); // Gris
+                tvE.setBackgroundResource(R.drawable.bg_badge_rojo);
+                
+                btnDesactivar.setText("Activar");
+                btnDesactivar.setIconResource(android.R.drawable.ic_menu_revert);
+                btnDesactivar.setIconTint(android.content.res.ColorStateList.valueOf(0xFF27AE60));
+                btnDesactivar.setTextColor(0xFF27AE60);
+                btnDesactivar.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFFE8F5E9));
+                btnDesactivar.setOnClickListener(v -> confirmarCambioEstado(p, true));
             } else {
-                tvE.setText("Agotado"); tvE.setTextColor(0xFFC0392B); tvE.setBackgroundResource(R.drawable.bg_badge_rojo);
+                if (p.getExistencia() > 0) {
+                    tvE.setText("Activo"); tvE.setTextColor(0xFF27AE60); tvE.setBackgroundResource(R.drawable.bg_badge_verde);
+                } else {
+                    tvE.setText("Agotado"); tvE.setTextColor(0xFFC0392B); tvE.setBackgroundResource(R.drawable.bg_badge_rojo);
+                }
+                
+                btnDesactivar.setText("Desactivar");
+                btnDesactivar.setIconResource(android.R.drawable.ic_lock_power_off);
+                btnDesactivar.setIconTint(android.content.res.ColorStateList.valueOf(0xFFC0392B));
+                btnDesactivar.setTextColor(0xFFC0392B);
+                btnDesactivar.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFFFFF1F0));
+                btnDesactivar.setOnClickListener(v -> confirmarCambioEstado(p, false));
             }
+
             if (p.getImagen() != null && !p.getImagen().isEmpty()) {
-                Glide.with(h.itemView).load(p.getImagen()).placeholder(R.drawable.ic_launcher_foreground).into((ImageView) h.itemView.findViewById(R.id.ivProductoVendedor));
+                llFotoNoDisponible.setVisibility(View.GONE);
+                ivProducto.setVisibility(View.VISIBLE);
+                Glide.with(h.itemView)
+                        .load(p.getImagen())
+                        .placeholder(R.drawable.ic_launcher_foreground)
+                        .error(R.drawable.logoapp)
+                        .into(ivProducto);
+            } else {
+                ivProducto.setVisibility(View.GONE);
+                llFotoNoDisponible.setVisibility(View.VISIBLE);
             }
+
             h.itemView.findViewById(R.id.btnEditarProductoV).setOnClickListener(v -> {
                 Intent i = new Intent(VendedorDashboardActivity.this, AgregarProductoVendedorActivity.class);
                 i.putExtra("producto_id", p.getProductoId());
                 startActivity(i);
             });
-            h.itemView.findViewById(R.id.btnEliminarProductoV).setOnClickListener(v ->
-                new AlertDialog.Builder(VendedorDashboardActivity.this).setTitle("Eliminar").setMessage("¿Eliminar?").setPositiveButton("Sí", (d, w) -> eliminarProducto(p)).setNegativeButton("No", null).show());
         }
         @Override public int getItemCount() { return lista.size(); }
+    }
+
+    private void confirmarCambioEstado(Product p, boolean activar) {
+        String msg = activar ? "¿Deseas activar este producto?" : "¿Deseas desactivar este producto?";
+        new AlertDialog.Builder(this)
+                .setTitle(activar ? "Activar" : "Desactivar")
+                .setMessage(msg)
+                .setPositiveButton("Sí", (d, w) -> cambiarEstadoProducto(p, activar))
+                .setNegativeButton("No", null).show();
+    }
+
+    private void cambiarEstadoProducto(Product p, boolean activo) {
+        p.setEstado(activo);
+        productApi.actualizarProducto(p.getProductoId(), p).enqueue(new Callback<okhttp3.ResponseBody>() {
+            @Override
+            public void onResponse(Call<okhttp3.ResponseBody> call, Response<okhttp3.ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(VendedorDashboardActivity.this, activo ? "Producto activado" : "Producto desactivado", Toast.LENGTH_SHORT).show();
+                    cargarMisProductos();
+                } else {
+                    p.setEstado(!activo); // Revertir si falla
+                    Toast.makeText(VendedorDashboardActivity.this, "Error al actualizar", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override public void onFailure(Call<okhttp3.ResponseBody> call, Throwable t) {
+                p.setEstado(!activo);
+                Toast.makeText(VendedorDashboardActivity.this, "Error de red", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     class PedidoVendedorAdapter extends RecyclerView.Adapter<PedidoVendedorAdapter.VH> {

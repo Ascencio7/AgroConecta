@@ -152,6 +152,9 @@
         <activity android:name=".ui.ProductosAdminActivity"
             android:exported="false"/>
 
+        <activity android:name=".ui.VendedorProductosAdminActivity"
+            android:exported="false"/>
+
         <activity android:name=".ui.AgregarEditarProductoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>

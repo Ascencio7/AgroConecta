@@ -127,8 +127,7 @@
                     app:cornerRadius="12dp"
                     app:icon="@android:drawable/ic_menu_search"
                     app:iconTint="@null"
-                    app:iconGravity="textStart"
-                    android:textAllCaps="false"/>
+                    app:iconGravity="textStart"/>
                 <!-- BOTÓN LOGIN -->
                 <Button
                     android:id="@+id/btnLogin"

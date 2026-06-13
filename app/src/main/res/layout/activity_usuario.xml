@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/verde_primario"
-            android:paddingTop="12dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
             android:paddingHorizontal="20dp"
             android:elevation="8dp">
 
@@ -34,11 +34,15 @@
                 android:gravity="center_vertical">
 
                 <ImageView
+                    android:id="@+id/ivHeaderLogoUsuarios"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:src="@drawable/logoapp"
                     android:scaleType="fitCenter"
                     android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Logo"/>
 
                 <LinearLayout
@@ -58,7 +62,8 @@
                         android:layout_height="wrap_content"
                         android:text="Gestión de Usuarios 👥"
                         android:textColor="#AAFFCC"
-                        android:textSize="11sp"/>
+                        android:textSize="11sp"
+                        android:textAllCaps="true"/>
                 </LinearLayout>
 
                 <!-- Avatar Logout -->
@@ -88,6 +93,15 @@
                         android:contentDescription="Foto de perfil"/>
                 </FrameLayout>
             </LinearLayout>
+        </LinearLayout>
+
+        <!-- CONTENIDO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchUsuarios"
@@ -98,15 +112,6 @@
                 app:queryHint="Buscar por nombre o correo..."
                 app:iconifiedByDefault="false"
                 app:queryBackground="@android:color/transparent"/>
-        </LinearLayout>
-
-        <!-- CONTENIDO -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="12dp">
 
             <!-- Filtros Rápidos -->
             <LinearLayout

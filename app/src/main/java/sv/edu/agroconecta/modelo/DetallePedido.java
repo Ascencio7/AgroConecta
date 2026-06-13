@@ -25,6 +25,11 @@ public class DetallePedido {
     // ID del vendedor dueño del producto — se usa para notificarle al hacer pedido
     private int vendedorId;
 
+    // Compatibilidad de métodos de pago
+    private boolean aceptaEfectivo;
+    private boolean aceptaTransferencia;
+    private boolean aceptaTarjeta;
+
     // Constructor para agregar al carrito localmente (sin vendedorId — compatibilidad)
     public DetallePedido(int productoId, String nombre, double precio, int cantidad, String imagen) {
         this.productoId = productoId;
@@ -33,16 +38,26 @@ public class DetallePedido {
         this.cantidad   = cantidad;
         this.imagen     = imagen;
         this.vendedorId = -1;
+        this.aceptaEfectivo = true; // Por defecto
     }
 
-    // Constructor con vendedorId para poder notificarle
-    public DetallePedido(int productoId, String nombre, double precio, int cantidad, String imagen, int vendedorId) {
+    // Constructor completo para el carrito
+    public DetallePedido(int productoId, String nombre, double precio, int cantidad, String imagen, 
+                         int vendedorId, boolean efectivo, boolean transferencia, boolean tarjeta) {
         this.productoId = productoId;
         this.nombre     = nombre;
         this.precio     = precio;
         this.cantidad   = cantidad;
         this.imagen     = imagen;
         this.vendedorId = vendedorId;
+        this.aceptaEfectivo = efectivo;
+        this.aceptaTransferencia = transferencia;
+        this.aceptaTarjeta = tarjeta;
+    }
+
+    // Constructor anterior (mantener compatibilidad si se usa en otros lados)
+    public DetallePedido(int productoId, String nombre, double precio, int cantidad, String imagen, int vendedorId) {
+        this(productoId, nombre, precio, cantidad, imagen, vendedorId, true, false, false);
     }
 
     public int getDetalleId()   { return detalleId; }
@@ -53,6 +68,10 @@ public class DetallePedido {
     public String getImagen()   { return imagen; }
     public int getVendedorId()  { return vendedorId; }
     public double getSubtotal() { return precio * cantidad; }
+
+    public boolean isAceptaEfectivo()      { return aceptaEfectivo; }
+    public boolean isAceptaTransferencia() { return aceptaTransferencia; }
+    public boolean isAceptaTarjeta()       { return aceptaTarjeta; }
 
     public void setCantidad(int cantidad)   { this.cantidad = cantidad; }
     public void setPrecio(double precio)    { this.precio = precio; }

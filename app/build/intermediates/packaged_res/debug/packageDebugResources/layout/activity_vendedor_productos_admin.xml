@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorVendedorProductos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_primario"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutVendedorProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/crema"
+        android:paddingBottom="72dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/verde_primario"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:paddingHorizontal="20dp"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivHeaderLogoVendedorProductos"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/logoapp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Logo"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvVendedorNombreHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre Vendedor"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Productos del Vendedor"
+                        android:textColor="#AAFFCC"
+                        android:textSize="11sp"
+                        android:textAllCaps="true"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/blanco"
+                    android:contentDescription="Volver"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CONTENIDO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchProducts"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_input"
+                app:queryHint="Buscar productos..."
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"/>
+
+            <!-- Filtros Rápidos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProductosDisponibles"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Disp."
+                    android:textSize="12sp"
+                    android:textColor="@color/verde_primario"
+                    android:layout_marginEnd="4dp"
+                    app:icon="@android:drawable/checkbox_on_background"
+                    app:iconTint="@color/verde_primario"
+                    app:iconSize="16dp"
+                    app:backgroundTint="@color/blanco"
+                    app:strokeColor="@color/verde_primario"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProductosNoDisponibles"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="No Disp."
+                    android:textSize="12sp"
+                    android:textColor="@color/texto_secundario"
+                    android:layout_marginStart="4dp"
+                    app:icon="@android:drawable/checkbox_off_background"
+                    app:iconTint="@color/texto_secundario"
+                    app:iconSize="16dp"
+                    app:backgroundTint="@color/blanco"
+                    app:strokeColor="@color/gris_borde"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/blanco">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ProgressBar
+                        android:id="@+id/progressProductos"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/verde_primario"
+                        android:visibility="gone"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerProductos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:clipToPadding="false"/>
+
+                    <TextView
+                        android:id="@+id/tvEmptyMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="EL VENDEDOR NO TIENE PRODUCTOS AGREGADOS"
+                        android:textColor="@color/texto_tenue"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:padding="24dp"
+                        android:gravity="center"/>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregarProductoVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="90dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/verde_primario"
+        app:tint="@color/blanco"
+        android:contentDescription="Agregar producto al vendedor"/>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavAdmin"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/blanco"
+        android:elevation="14dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_anchor="@+id/linearLayoutVendedorProductos"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/admin_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

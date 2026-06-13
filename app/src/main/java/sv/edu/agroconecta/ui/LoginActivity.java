@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Si ya hay una sesión activa, redirigir al dashboard correspondiente
         if (sessionManager.isLoggedIn()) {
+            sv.edu.agroconecta.utils.CarritoManager.getInstance().cargarCarrito(this, sessionManager.getUserId());
             navigateToDashboard(sessionManager.getRol(), sessionManager.getNombre(), sessionManager.getUserId());
             finish();
             return;
@@ -191,6 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String rolBackend = (u.getRol() != null) ? u.getRol() : "CLIENTE";
                                 sessionManager.createSession(u.getUsuarioId(), nombre, correo, rolBackend);
                                 if (foto != null) sessionManager.setFotoPerfil(foto);
+                                sv.edu.agroconecta.utils.CarritoManager.getInstance().cargarCarrito(LoginActivity.this, u.getUsuarioId());
                                 showWelcomeNotification(nombre);
                                 navigateToDashboard(rolBackend, nombre, u.getUsuarioId());
                                 finish();
@@ -258,6 +260,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String rolStr = (rolId == 2) ? "VENDEDOR" : "CLIENTE";
                                 sessionManager.createSession(uid, nombre, correo, rolStr);
                                 if (foto != null) sessionManager.setFotoPerfil(foto);
+                                sv.edu.agroconecta.utils.CarritoManager.getInstance().cargarCarrito(LoginActivity.this, uid);
                                 showWelcomeNotification(nombre);
                                 navigateToDashboard(rolStr, nombre, uid);
                                 finish();
@@ -353,6 +356,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Guardar la sesión para que se mantenga abierta
                     sessionManager.createSession(user.getUsuarioId(), user.getNombre(), user.getCorreo(), user.getRol());
+                    // Cargar el carrito guardado del usuario
+                    sv.edu.agroconecta.utils.CarritoManager.getInstance().cargarCarrito(LoginActivity.this, user.getUsuarioId());
                     // Guardar foto de perfil si el backend la devuelve
                     if (user.getFotoPerfil() != null && !user.getFotoPerfil().isEmpty()) {
                         sessionManager.setFotoPerfil(user.getFotoPerfil());

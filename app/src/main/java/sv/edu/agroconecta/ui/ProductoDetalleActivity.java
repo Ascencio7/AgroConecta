@@ -127,6 +127,10 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         final double lat  = getIntent().getDoubleExtra("latitud", 0);
         final double lon  = getIntent().getDoubleExtra("longitud", 0);
         final String fotoVendedor = getIntent().getStringExtra("foto_perfil_vendedor");
+        
+        final boolean aceptaE = getIntent().getBooleanExtra("acepta_efectivo", true);
+        final boolean aceptaT = getIntent().getBooleanExtra("acepta_transferencia", false);
+        final boolean aceptaC = getIntent().getBooleanExtra("acepta_tarjeta", false);
 
         // Producto
         if (tvNombre   != null) tvNombre.setText(nombre != null ? nombre : "");
@@ -171,7 +175,10 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         // Agregar al carrito — incluimos vendedorId para poder notificarle al confirmar pedido
         if (btnAgregar != null) btnAgregar.setOnClickListener(v -> {
             CarritoManager.getInstance().agregarItem(
-                    new DetallePedido(productoId, nombre, precio, cantidad, imagen, usuarioId));
+                    new DetallePedido(productoId, nombre, precio, cantidad, imagen, usuarioId, aceptaE, aceptaT, aceptaC),
+                    this,
+                    sessionManager.getUserId()
+            );
             btnAgregar.setEnabled(false);
             Toast.makeText(this, "🛒 " + nombre + " ×" + cantidad + " al carrito",
                     Toast.LENGTH_SHORT).show();

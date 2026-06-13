@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
+import com.google.android.material.checkbox.MaterialCheckBox;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,7 +54,7 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
     private static final int REQ_CAM_PERM = 2004;
 
     private EditText etNombre, etDescripcion, etPrecio, etExistencia, etDireccion, etLatitud, etLongitud, etTelefono;
-    private CheckBox cbEfectivo, cbTransferencia, cbTarjeta;
+    private MaterialCheckBox cbEfectivo, cbTransferencia, cbTarjeta;
     private Spinner spCategoria;
     private TextView tvUbicacionStatus, tvAvatar;
     private Button btnTomarFoto, btnElegirGaleria, btnUsarMiUbicacion;
@@ -124,6 +125,12 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         });
 
         setupBottomNav();
+
+        // Logo del header -> ir a la pantalla principal del vendedor (Productos)
+        View ivHeaderLogo = findViewById(R.id.ivHeaderLogoAddProducto);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> irADashboard("productos"));
+        }
     }
 
     private void setupHeaderProfile() {
@@ -201,6 +208,7 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         i.putExtra("nav_to", tab);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(i);
+        overridePendingTransition(0, 0);
         finish();
     }
 
@@ -300,6 +308,11 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
 
         if (n.isEmpty() || pStr.isEmpty() || eStr.isEmpty()) { Toast.makeText(this, "Campos obligatorios", Toast.LENGTH_SHORT).show(); return; }
         
+        if (!cbEfectivo.isChecked() && !cbTransferencia.isChecked() && !cbTarjeta.isChecked()) {
+            Toast.makeText(this, "DEBES SELECCIONAR AL MENOS UN MÉTODO DE PAGO", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         if (!tel.isEmpty() && tel.length() < 9) {
             etTelefono.setError("Teléfono incompleto (formato XXXX-XXXX)");
             etTelefono.requestFocus();

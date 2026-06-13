@@ -54,6 +54,14 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cardProductos.setOnClickListener(v -> startActivity(new Intent(this, ProductosAdminActivity.class)));
         cardReportes.setOnClickListener(v -> startActivity(new Intent(this, ReportesActivity.class)));
 
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        View ivHeaderLogo = findViewById(R.id.ivHeaderLogoAdmin);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                bottomNavAdmin.setSelectedItemId(R.id.nav_admin_dashboard);
+            });
+        }
+
         setupBottomNav();
 
         // AgroBot IA flotante para el Admin

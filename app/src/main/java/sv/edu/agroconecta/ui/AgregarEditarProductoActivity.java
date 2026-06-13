@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import com.google.android.material.checkbox.MaterialCheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class AgregarEditarProductoActivity extends AppCompatActivity {
 
     private EditText etNombre, etDescripcion, etPrecio, etExistencia, etUsuarioId, etImagenUrl;
+    private MaterialCheckBox cbEfectivo, cbTransferencia, cbTarjeta;
     private Spinner spCategoria;
     private Button btnGuardar, btnCancelar;
     private ProductApi productApi;
@@ -49,12 +51,30 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         loadCategorias();
         setupBottomNav();
 
+        int forcedVendedorId = getIntent().getIntExtra("vendedor_id_forced", -1);
+
         if (productoId != -1) {
             ((TextView) findViewById(R.id.txtTitulo)).setText("Editar Producto");
             btnGuardar.setText("ACTUALIZAR");
+            etUsuarioId.setEnabled(false); // No permitir cambiar el dueño del producto al editar
         } else {
             ((TextView) findViewById(R.id.txtTitulo)).setText("Agregar Producto");
             btnGuardar.setText("AGREGAR");
+            if (forcedVendedorId != -1) {
+                etUsuarioId.setText(String.valueOf(forcedVendedorId));
+                etUsuarioId.setEnabled(false); // Evitar que el admin lo cambie si viene de un vendedor específico
+            }
+        }
+
+        // Logo del header -> ir a la pantalla principal del admin (Dashboard)
+        android.view.View ivHeaderLogo = findViewById(R.id.ivHeaderLogoAgregarEditarProducto);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                Intent intent = new Intent(this, AdminDashboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            });
         }
 
         //findViewById(R.id.btnBack).setOnClickListener(v -> finish());
@@ -77,6 +97,9 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         etUsuarioId = findViewById(R.id.etUsuarioId);
         etImagenUrl = findViewById(R.id.etImagenUrl);
         spCategoria = findViewById(R.id.spCategoria);
+        cbEfectivo = findViewById(R.id.cbEfectivo);
+        cbTransferencia = findViewById(R.id.cbTransferencia);
+        cbTarjeta = findViewById(R.id.cbTarjeta);
         btnGuardar = findViewById(R.id.id_guardar_btn);
         btnCancelar = findViewById(R.id.id_cancelar_btn);
         bottomNavAdmin = findViewById(R.id.bottomNavAdmin);
@@ -130,6 +153,11 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
                     etExistencia.setText(String.valueOf(p.getExistencia()));
                     etUsuarioId.setText(String.valueOf(p.getUsuarioId()));
                     etImagenUrl.setText(p.getImagen());
+                    
+                    cbEfectivo.setChecked(Boolean.TRUE.equals(p.getAceptaEfectivo()));
+                    cbTransferencia.setChecked(Boolean.TRUE.equals(p.getAceptaTransferencia()));
+                    cbTarjeta.setChecked(Boolean.TRUE.equals(p.getAceptaTarjeta()));
+
                     for (int i = 0; i < categoriasList.size(); i++) {
                         if (categoriasList.get(i).getCategoriaId() == p.getCategoriaId()) {
                             spCategoria.setSelection(i);
@@ -158,6 +186,11 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
             return;
         }
 
+        if (!cbEfectivo.isChecked() && !cbTransferencia.isChecked() && !cbTarjeta.isChecked()) {
+            Toast.makeText(this, "DEBES SELECCIONAR AL MENOS UN MÉTODO DE PAGO", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         Categoria cat = (Categoria) spCategoria.getSelectedItem();
         Product product = new Product();
         product.setNombre(n);
@@ -168,6 +201,9 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         product.setCategoriaId(cat != null ? cat.getCategoriaId() : 1);
         product.setImagen(img.isEmpty() ? null : img);
         product.setEstado(true);
+        product.setAceptaEfectivo(cbEfectivo.isChecked());
+        product.setAceptaTransferencia(cbTransferencia.isChecked());
+        product.setAceptaTarjeta(cbTarjeta.isChecked());
 
         if (productoId == -1) {
             Log.d("API_SAVE", "Enviando nuevo producto: " + n);

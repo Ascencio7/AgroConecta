@@ -1,4 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TextViewUppercase" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
     <style name="Base.Theme.AgroConecta" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/verde_primario</item>
         <item name="colorPrimaryVariant">@color/verde_oscuro</item>
@@ -16,6 +21,13 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:windowTranslucentStatus">false</item>
+
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textViewStyle">@style/TextViewUppercase</item>
+        <item name="android:editTextStyle">@style/TextViewUppercase</item>
+        <item name="android:buttonStyle">@style/BtnPrimario</item>
+        <item name="materialButtonStyle">@style/BtnPrimario</item>
+
         <!-- Shapes -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeSmall</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeMedium</item>
@@ -23,6 +35,7 @@
         <!-- TextInputLayout colores -->
         <item name="textInputStyle">@style/TextInputOutlined</item>
     </style>
+
     <style name="Theme.AgroConecta" parent="Base.Theme.AgroConecta"/>
 
     <!-- Shapes -->
@@ -36,6 +49,10 @@
         <item name="cornerSize">24dp</item>
     </style>
 
+    <style name="HintUppercase" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
     <!-- TextInput mejorado -->
     <style name="TextInputOutlined" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/verde_primario</item>
@@ -45,6 +62,8 @@
         <item name="boxCornerRadiusTopEnd">12dp</item>
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="hintTextAppearance">@style/HintUppercase</item>
     </style>
 
     <!-- Botón primario -->
@@ -55,6 +74,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <!-- Botón secundario -->
@@ -65,6 +85,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <!-- Botón peligro -->
@@ -72,6 +93,7 @@
         <item name="backgroundTint">@color/rojo_error</item>
         <item name="android:textColor">@color/blanco</item>
         <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <!-- CardView mejorado -->
@@ -88,6 +110,7 @@
         <item name="android:background">@color/verde_primario</item>
         <item name="titleTextColor">@color/blanco</item>
         <item name="navigationIconTint">@color/blanco</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <!-- BottomNav Restaurado al código funcional -->

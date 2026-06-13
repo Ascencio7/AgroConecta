@@ -110,6 +110,10 @@ id btnEnviar
 id btnEnviarCalificacion
 id btnEnviarChat
 id btnEnviarWhatsApp
+id btnFiltroActivosV
+id btnFiltroAgotadosV
+id btnFiltroNoDispV
+id btnFiltroTodosV
 id btnGoogleSignIn
 id btnGuardar
 id btnGuardarPerfilAdmin
@@ -131,6 +135,8 @@ id btnMisPedidos
 id btnOnboardingSaltar
 id btnOnboardingSiguiente
 id btnOrder
+id btnProductosDisponibles
+id btnProductosNoDisponibles
 id btnPublicarProducto
 id btnRegistrar
 id btnReporteProductos
@@ -142,6 +148,8 @@ id btnSiguiente
 id btnTomarFoto
 id btnUsarMiUbicacion
 id btnValidarTarjeta
+id btnVendedoresActivos
+id btnVendedoresInactivos
 id btnVerEnMapa
 id btnVerEstadisticaProductos
 id btnVerEstadisticaUsuarios
@@ -157,6 +165,7 @@ id cbAcepto
 id cbEfectivo
 id cbTarjeta
 id cbTransferencia
+id containerImagenVendedor
 id contenedorMensajes
 id coordinatorAdmin
 id coordinatorAgregarEditar
@@ -167,6 +176,7 @@ id coordinatorProductosAdmin
 id coordinatorReportes
 id coordinatorUsuarios
 id coordinatorVendedor
+id coordinatorVendedorProductos
 id dot1
 id dot2
 id dot3
@@ -218,6 +228,7 @@ id etVPrecio
 id etVTelefono
 id fabAgregar
 id fabAgregarProducto
+id fabAgregarProductoVendedor
 id fabChat
 id fabMiUbicacion
 id frameContenido
@@ -238,6 +249,19 @@ id ivFotoProducto
 id ivFotoUsuario
 id ivFotoVendedor
 id ivFotoVendedorDetalle
+id ivHeaderLogo
+id ivHeaderLogoAddProducto
+id ivHeaderLogoAdmin
+id ivHeaderLogoAgregarEditarProducto
+id ivHeaderLogoCrearUsuario
+id ivHeaderLogoEditarUsuario
+id ivHeaderLogoEstadisticaProductos
+id ivHeaderLogoEstadisticaUsuarios
+id ivHeaderLogoProductosAdmin
+id ivHeaderLogoReportes
+id ivHeaderLogoUsuarios
+id ivHeaderLogoVendedor
+id ivHeaderLogoVendedorProductos
 id ivImagenCarrito
 id ivImagenDetalle
 id ivImagenProducto
@@ -259,8 +283,11 @@ id linearLayoutProductosAdmin
 id linearLayoutReportes
 id linearLayoutUsuarios
 id linearLayoutVendedor
+id linearLayoutVendedorProductos
+id llCarritoVacio
 id llCategorias
 id llFincas
+id llFotoNoDisponible
 id mapFragment
 id mapView
 id menu_logout
@@ -284,6 +311,7 @@ id pieChart
 id progressBarProductos
 id progressMisPedidos
 id progressPedidosVendedor
+id progressProductos
 id progressProductosAdmin
 id progressProductosVendedor
 id progressReporte
@@ -410,6 +438,7 @@ id tvTotalCarrito
 id tvTotalProductos
 id tvUbicacionStatus
 id tvVendedorNombre
+id tvVendedorNombreHeader
 id tvWelcome
 id tvWelcomeAdmin
 id tvWelcomeVendedor
@@ -462,6 +491,7 @@ layout activity_splash
 layout activity_terms
 layout activity_usuario
 layout activity_vendedor_dashboard
+layout activity_vendedor_productos_admin
 layout chat_flotante
 layout fragment_carrito
 layout fragment_catalogo
@@ -502,10 +532,12 @@ style BtnPeligro
 style BtnPrimario
 style BtnSecundario
 style CardMejorado
+style HintUppercase
 style ShapeLarge
 style ShapeMedium
 style ShapeSmall
 style TextInputOutlined
+style TextViewUppercase
 style Theme.AgroConecta
 style ToolbarAgroConecta
 style Widget.App.BottomNavigationView

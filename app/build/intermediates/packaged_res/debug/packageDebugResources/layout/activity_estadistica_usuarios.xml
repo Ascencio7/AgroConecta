@@ -15,8 +15,8 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="20dp"
-        android:paddingTop="28dp"
-        android:paddingBottom="16dp">
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -27,13 +27,25 @@
             app:tint="@color/blanco"
             android:contentDescription="Volver"/>
 
+        <ImageView
+            android:id="@+id/ivHeaderLogoEstadisticaUsuarios"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/logoapp"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Logo"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="12dp"
             android:text="Estadísticas de Usuarios"
             android:textColor="@color/blanco"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"/>
     </LinearLayout>
 

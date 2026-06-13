@@ -137,9 +137,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         bottomNav        = findViewById(R.id.bottomNav);
 
         // Saludo y avatar
-        if (nombreUsuario != null && !nombreUsuario.isEmpty()) {
-            tvAvatar.setText(String.valueOf(nombreUsuario.charAt(0)).toUpperCase());
-            tvWelcome.setText("¡Bienvenido!");
+        String nombreDisplay = (nombreUsuario != null && !nombreUsuario.isEmpty()) ? nombreUsuario : sessionManager.getNombre();
+        if (nombreDisplay != null && !nombreDisplay.isEmpty()) {
+            tvAvatar.setText(String.valueOf(nombreDisplay.charAt(0)).toUpperCase());
+            tvWelcome.setText("¡Bienvenido, " + nombreDisplay + "! 👋");
         }
 
         String fotoPerfil = sessionManager.getFotoPerfil();
@@ -160,6 +161,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (btnHeaderCarrito != null) {
             btnHeaderCarrito.setOnClickListener(v -> {
                 bottomNav.setSelectedItemId(R.id.nav_carrito);
+            });
+        }
+
+        // Logo del header -> ir a la pantalla principal (Catálogo)
+        View ivHeaderLogo = findViewById(R.id.ivHeaderLogo);
+        if (ivHeaderLogo != null) {
+            ivHeaderLogo.setOnClickListener(v -> {
+                bottomNav.setSelectedItemId(R.id.nav_catalogo);
             });
         }
 
@@ -219,6 +228,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         viewCarrito.setVisibility(View.GONE);
         target.setVisibility(View.VISIBLE);
         tvHeaderSubtitle.setText(subtitulo);
+
+        // Cambiar el título principal según la pestaña
+        if (target == viewCatalogo) {
+            String nombre = (nombreUsuario != null && !nombreUsuario.isEmpty()) ? nombreUsuario : sessionManager.getNombre();
+            tvWelcome.setText("¡Bienvenido, " + nombre + "! 👋");
+        } else {
+            tvWelcome.setText("AgroConecta");
+        }
     }
 
     // ─────────────────────────── CATÁLOGO ────────────────────────────────────
@@ -257,7 +274,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 public void onResponse(Call<List<Product>> call, Response<List<Product>> r) {
                     if (r.isSuccessful() && r.body() != null) {
                         allProducts.clear();
-                        allProducts.addAll(r.body());
+                        // Filtrar solo productos activos para el cliente
+                        for (Product p : r.body()) {
+                            if (p.getEstado() == null || p.getEstado()) {
+                                allProducts.add(p);
+                            }
+                        }
                         filteredProducts.clear();
                         filteredProducts.addAll(allProducts);
                         productAdapter.notifyDataSetChanged();
@@ -377,6 +399,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         intent.putExtra("direccion",            product.getDireccion());
         intent.putExtra("latitud",              product.getLatitud()  != null ? product.getLatitud()  : 0.0);
         intent.putExtra("longitud",             product.getLongitud() != null ? product.getLongitud() : 0.0);
+        intent.putExtra("acepta_efectivo",      Boolean.TRUE.equals(product.getAceptaEfectivo()));
+        intent.putExtra("acepta_transferencia", Boolean.TRUE.equals(product.getAceptaTransferencia()));
+        intent.putExtra("acepta_tarjeta",       Boolean.TRUE.equals(product.getAceptaTarjeta()));
         startActivity(intent);
     }
 
@@ -582,7 +607,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Habilitar/deshabilitar botón confirmar
         MaterialButton btnConfirmar = viewCarrito.findViewById(R.id.btnConfirmarTab);
-        if (btnConfirmar != null) btnConfirmar.setEnabled(!items.isEmpty());
+        View llVacio = viewCarrito.findViewById(R.id.llCarritoVacio);
+
+        if (items.isEmpty()) {
+            if (btnConfirmar != null) btnConfirmar.setEnabled(false);
+            if (llVacio != null) llVacio.setVisibility(View.VISIBLE);
+            if (rvCarritoTab != null) rvCarritoTab.setVisibility(View.GONE);
+        } else {
+            if (btnConfirmar != null) btnConfirmar.setEnabled(true);
+            if (llVacio != null) llVacio.setVisibility(View.GONE);
+            if (rvCarritoTab != null) rvCarritoTab.setVisibility(View.VISIBLE);
+        }
+
+        // Persistir cambios localmente
+        CarritoManager.getInstance().guardarCarrito(this, sessionManager.getUserId());
 
         if (carritoAdapter != null) carritoAdapter.notifyDataSetChanged();
     }
@@ -597,23 +635,74 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         double subtotal = CarritoManager.getInstance().getTotal();
         double total    = subtotal * (1 + IVA);
 
-        String[] metodos = {"Efectivo", "Tarjeta de Crédito/Débito", "Transferencia Bancaria"};
+        // 1. Calcular intersección de métodos de pago
+        boolean compatibleEfectivo = true;
+        boolean compatibleTarjeta = true;
+        boolean compatibleTransferencia = true;
+        
+        boolean hayDiferencias = false;
+        DetallePedido primerItem = items.get(0);
+
+        for (DetallePedido item : items) {
+            if (!item.isAceptaEfectivo())      compatibleEfectivo = false;
+            if (!item.isAceptaTarjeta())       compatibleTarjeta = false;
+            if (!item.isAceptaTransferencia()) compatibleTransferencia = false;
+
+            // Detectar si este producto tiene una configuración distinta al primero
+            if (item.isAceptaEfectivo() != primerItem.isAceptaEfectivo() ||
+                item.isAceptaTarjeta() != primerItem.isAceptaTarjeta() ||
+                item.isAceptaTransferencia() != primerItem.isAceptaTransferencia()) {
+                hayDiferencias = true;
+            }
+        }
+
+        List<String> opciones = new ArrayList<>();
+        if (compatibleEfectivo)      opciones.add("Efectivo");
+        if (compatibleTarjeta)       opciones.add("Tarjeta de Crédito/Débito");
+        if (compatibleTransferencia) opciones.add("Transferencia Bancaria");
+
+        // 2. Manejar casos según disponibilidad
+        if (opciones.isEmpty()) {
+            new AlertDialog.Builder(this)
+                .setTitle("⚠️ INCOMPATIBILIDAD DE PAGO")
+                .setMessage("Los productos en tu carrito no comparten ningún método de pago en común. Por favor, realiza pedidos por separado para cada vendedor.")
+                .setPositiveButton("Entendido", null)
+                .show();
+            return;
+        }
+
+        if (hayDiferencias) {
+            // Informar al cliente que hay diferencias y se filtrarán las opciones
+            new AlertDialog.Builder(this)
+                .setTitle("⚠️ MÉTODOS DE PAGO MIXTOS")
+                .setMessage("Algunos productos tienen formas de pago distintas. Para realizar un solo pedido, solo se mostrarán los métodos aceptados por TODOS los vendedores.")
+                .setPositiveButton("Continuar", (d, w) -> mostrarDialogoSeleccionPago(opciones, total, items))
+                .setNegativeButton("Cancelar", null)
+                .show();
+        } else {
+            mostrarDialogoSeleccionPago(opciones, total, items);
+        }
+    }
+
+    private void mostrarDialogoSeleccionPago(List<String> opciones, double total, List<DetallePedido> items) {
+        final String[] metodos = opciones.toArray(new String[0]);
 
         new AlertDialog.Builder(this)
             .setTitle("Selecciona tu forma de pago")
             .setItems(metodos, (dialog, which) -> {
-                if (which == 0) { // Efectivo
+                String seleccion = metodos[which];
+                if (seleccion.equals("Efectivo")) {
                     new AlertDialog.Builder(this)
                         .setTitle("Confirmar pedido")
                         .setMessage(String.format("¿Confirmar pedido por $%.2f con pago en Efectivo?", total))
                         .setPositiveButton("✅ Confirmar", (d, w) -> enviarPedido(new ArrayList<>(items), total, "Efectivo"))
                         .setNegativeButton("Cancelar", null)
                         .show();
-                } else if (which == 1) { // Tarjeta
+                } else if (seleccion.equals("Tarjeta de Crédito/Débito")) {
                     Intent intent = new Intent(this, sv.edu.agroconecta.ui.PagoTarjetaActivity.class);
                     intent.putExtra("total", total);
                     startActivityForResult(intent, 200);
-                } else if (which == 2) { // Transferencia
+                } else if (seleccion.equals("Transferencia Bancaria")) {
                     Intent intent = new Intent(this, sv.edu.agroconecta.ui.PagoTransferenciaActivity.class);
                     intent.putExtra("total", total);
                     startActivityForResult(intent, 200);
@@ -653,7 +742,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         }
                     }
 
-                    CarritoManager.getInstance().limpiar();
+                    CarritoManager.getInstance().limpiarYPersistir(MainActivity.this, sessionManager.getUserId());
                     actualizarCarritoTab();
                     Toast.makeText(MainActivity.this,
                         "🎉 ¡Pedido confirmado! Total: " + String.format("$%.2f", total),

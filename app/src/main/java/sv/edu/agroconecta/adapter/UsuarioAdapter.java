@@ -130,10 +130,30 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
             holder.txtEstado.setText("ACTIVO");
             holder.txtEstado.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
             holder.txtEstado.setBackgroundResource(R.drawable.bg_badge_verde);
+
+            // Estilo botón Desactivar
+            if (holder.btnEliminar instanceof com.google.android.material.button.MaterialButton) {
+                com.google.android.material.button.MaterialButton btn = (com.google.android.material.button.MaterialButton) holder.btnEliminar;
+                btn.setText("Desactivar");
+                btn.setIconResource(android.R.drawable.ic_lock_power_off);
+                btn.setIconTint(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error)));
+                btn.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
+                btn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#FFF1F0")));
+            }
         } else {
             holder.txtEstado.setText("INACTIVO");
             holder.txtEstado.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.rojo_error));
             holder.txtEstado.setBackgroundResource(R.drawable.bg_badge_rojo);
+
+            // Estilo botón Activar
+            if (holder.btnEliminar instanceof com.google.android.material.button.MaterialButton) {
+                com.google.android.material.button.MaterialButton btn = (com.google.android.material.button.MaterialButton) holder.btnEliminar;
+                btn.setText("Activar");
+                btn.setIconResource(android.R.drawable.ic_menu_revert);
+                btn.setIconTint(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario)));
+                btn.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.verde_primario));
+                btn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.verde_superficial)));
+            }
         }
 
         // Editar
@@ -148,43 +168,41 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
             context.startActivity(intent);
         });
 
-        // Eliminar
+        // Desactivar / Activar
         holder.btnEliminar.setOnClickListener(v -> {
             int pos = holder.getAdapterPosition();
             if (pos == RecyclerView.NO_POSITION) return;
 
             Usuario usuario = lista.get(pos);
+            boolean activar = !usuario.isActivo();
+
+            String titulo = activar ? "Activar usuario" : "Desactivar usuario";
+            String mensaje = activar ? "¿Seguro que deseas activar este usuario?" : "¿Seguro que deseas desactivar este usuario?";
 
             new AlertDialog.Builder(context)
-                    .setTitle("Eliminar usuario")
-                    .setMessage("¿Seguro que deseas eliminar este usuario?")
+                    .setTitle(titulo)
+                    .setMessage(mensaje)
                     .setPositiveButton("Sí", (dialog, which) -> {
-
-                        repository.eliminarUsuario(usuario.getUsuarioId())
-                                .enqueue(new Callback<Void>() {
+                        usuario.setEstado(activar);
+                        repository.actualizar(usuario.getUsuarioId(), usuario)
+                                .enqueue(new Callback<Usuario>() {
                                     @Override
-                                    public void onResponse(Call<Void> call, Response<Void> response) {
-
+                                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                                         if (response.isSuccessful()) {
-                                            if (pos < lista.size()) {
-                                                lista.remove(pos);
-                                                notifyItemRemoved(pos);
-                                            }
+                                            notifyItemChanged(pos);
                                             Toast.makeText(context,
-                                                    "Usuario eliminado",
+                                                    activar ? "Usuario activado" : "Usuario desactivado",
                                                     Toast.LENGTH_SHORT).show();
                                         } else {
-                                            Toast.makeText(context,
-                                                    "Error al eliminar",
-                                                    Toast.LENGTH_SHORT).show();
+                                            usuario.setEstado(!activar); // Revertir localmente si falla
+                                            Toast.makeText(context, "Error al actualizar", Toast.LENGTH_SHORT).show();
                                         }
                                     }
 
                                     @Override
-                                    public void onFailure(Call<Void> call, Throwable t) {
-                                        Toast.makeText(context,
-                                                "Error de conexión",
-                                                Toast.LENGTH_SHORT).show();
+                                    public void onFailure(Call<Usuario> call, Throwable t) {
+                                        usuario.setEstado(!activar);
+                                        Toast.makeText(context, "Error de conexión", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     })

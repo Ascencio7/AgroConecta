@@ -12404,6 +12404,13 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:windowTranslucentStatus">false</item>
+
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textViewStyle">@style/TextViewUppercase</item>
+        <item name="android:editTextStyle">@style/TextViewUppercase</item>
+        <item name="android:buttonStyle">@style/BtnPrimario</item>
+        <item name="materialButtonStyle">@style/BtnPrimario</item>
+
         
         <item name="shapeAppearanceSmallComponent">@style/ShapeSmall</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeMedium</item>
@@ -12424,6 +12431,8 @@
         <item name="boxCornerRadiusTopEnd">12dp</item>
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="hintTextAppearance">@style/HintUppercase</item>
     </style><style name="BtnPrimario" parent="Widget.Material3.Button">
         <item name="backgroundTint">@color/verde_primario</item>
         <item name="android:textColor">@color/blanco</item>
@@ -12431,6 +12440,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
     </style><style name="BtnSecundario" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">@color/verde_primario</item>
         <item name="android:textColor">@color/verde_primario</item>
@@ -12438,10 +12448,12 @@
         <item name="android:textSize">14sp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
     </style><style name="BtnPeligro" parent="Widget.Material3.Button">
         <item name="backgroundTint">@color/rojo_error</item>
         <item name="android:textColor">@color/blanco</item>
         <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">true</item>
     </style><style name="CardMejorado" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">2dp</item>
@@ -12452,6 +12464,7 @@
         <item name="android:background">@color/verde_primario</item>
         <item name="titleTextColor">@color/blanco</item>
         <item name="navigationIconTint">@color/blanco</item>
+        <item name="android:textAllCaps">true</item>
     </style><style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemIconTint">@color/bottom_nav_color</item>
         <item name="itemTextColor">@color/bottom_nav_color</item>
@@ -12459,10 +12472,14 @@
         <item name="android:background">@color/blanco</item>
         <item name="backgroundTint">@color/blanco</item>
         <item name="labelVisibilityMode">labeled</item>
+    </style><style name="HintUppercase" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textAllCaps">true</item>
+    </style><style name="TextViewUppercase" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">true</item>
     </style></file><file path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\values-night\themes.xml" qualifiers="night-v8"><style name="Base.Theme.AgroConecta" parent="Theme.Material3.DayNight.NoActionBar">
         
         
-    </style></file><file name="backup_rules" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\backup_rules.xml" qualifiers="" type="xml"/><file name="data_extraction_rules" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\data_extraction_rules.xml" qualifiers="" type="xml"/><file name="file_paths" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\file_paths.xml" qualifiers="" type="xml"/><file name="network_security_config" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\network_security_config.xml" qualifiers="" type="xml"/><file name="activity_pago_tarjeta" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\layout\activity_pago_tarjeta.xml" qualifiers="" type="layout"/><file name="activity_pago_transferencia" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\layout\activity_pago_transferencia.xml" qualifiers="" type="layout"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices"><file path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices\values\values.xml" qualifiers=""><string name="default_web_client_id" translatable="false">1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com</string><string name="firebase_database_url" translatable="false">https://agroconecta-3d352-default-rtdb.firebaseio.com</string><string name="gcm_defaultSenderId" translatable="false">1060116256720</string><string name="google_api_key" translatable="false">AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk</string><string name="google_app_id" translatable="false">1:1060116256720:android:634066a2de0d9858334bd5</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk</string><string name="google_storage_bucket" translatable="false">agroconecta-3d352.firebasestorage.app</string><string name="project_id" translatable="false">agroconecta-3d352</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices" generated-set="res-processDebugGoogleServices$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"/><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style></file><file name="backup_rules" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\backup_rules.xml" qualifiers="" type="xml"/><file name="data_extraction_rules" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\data_extraction_rules.xml" qualifiers="" type="xml"/><file name="file_paths" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\file_paths.xml" qualifiers="" type="xml"/><file name="network_security_config" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\xml\network_security_config.xml" qualifiers="" type="xml"/><file name="activity_pago_tarjeta" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\layout\activity_pago_tarjeta.xml" qualifiers="" type="layout"/><file name="activity_pago_transferencia" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\layout\activity_pago_transferencia.xml" qualifiers="" type="layout"/><file name="activity_vendedor_productos_admin" path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\main\res\layout\activity_vendedor_productos_admin.xml" qualifiers="" type="layout"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices"><file path="C:\Users\Vladimir Ascencio\OneDrive\Escritorio\AC\app\build\generated\res\processDebugGoogleServices\values\values.xml" qualifiers=""><string name="default_web_client_id" translatable="false">1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com</string><string name="firebase_database_url" translatable="false">https://agroconecta-3d352-default-rtdb.firebaseio.com</string><string name="gcm_defaultSenderId" translatable="false">1060116256720</string><string name="google_api_key" translatable="false">AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk</string><string name="google_app_id" translatable="false">1:1060116256720:android:634066a2de0d9858334bd5</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMt7LV_08kLcsq3Dw3bYuPJS6Kj4kZUCk</string><string name="google_storage_bucket" translatable="false">agroconecta-3d352.firebasestorage.app</string><string name="project_id" translatable="false">agroconecta-3d352</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices" generated-set="res-processDebugGoogleServices$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"/><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>

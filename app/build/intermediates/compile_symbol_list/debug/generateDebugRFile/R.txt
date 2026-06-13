@@ -108,6 +108,10 @@ int id btnEnviar 0x0
 int id btnEnviarCalificacion 0x0
 int id btnEnviarChat 0x0
 int id btnEnviarWhatsApp 0x0
+int id btnFiltroActivosV 0x0
+int id btnFiltroAgotadosV 0x0
+int id btnFiltroNoDispV 0x0
+int id btnFiltroTodosV 0x0
 int id btnGoogleSignIn 0x0
 int id btnGuardar 0x0
 int id btnGuardarPerfilAdmin 0x0
@@ -129,6 +133,8 @@ int id btnMisPedidos 0x0
 int id btnOnboardingSaltar 0x0
 int id btnOnboardingSiguiente 0x0
 int id btnOrder 0x0
+int id btnProductosDisponibles 0x0
+int id btnProductosNoDisponibles 0x0
 int id btnPublicarProducto 0x0
 int id btnRegistrar 0x0
 int id btnReporteProductos 0x0
@@ -140,6 +146,8 @@ int id btnSiguiente 0x0
 int id btnTomarFoto 0x0
 int id btnUsarMiUbicacion 0x0
 int id btnValidarTarjeta 0x0
+int id btnVendedoresActivos 0x0
+int id btnVendedoresInactivos 0x0
 int id btnVerEnMapa 0x0
 int id btnVerEstadisticaProductos 0x0
 int id btnVerEstadisticaUsuarios 0x0
@@ -155,6 +163,7 @@ int id cbAcepto 0x0
 int id cbEfectivo 0x0
 int id cbTarjeta 0x0
 int id cbTransferencia 0x0
+int id containerImagenVendedor 0x0
 int id contenedorMensajes 0x0
 int id coordinatorAdmin 0x0
 int id coordinatorAgregarEditar 0x0
@@ -165,6 +174,7 @@ int id coordinatorProductosAdmin 0x0
 int id coordinatorReportes 0x0
 int id coordinatorUsuarios 0x0
 int id coordinatorVendedor 0x0
+int id coordinatorVendedorProductos 0x0
 int id dot1 0x0
 int id dot2 0x0
 int id dot3 0x0
@@ -216,6 +226,7 @@ int id etVPrecio 0x0
 int id etVTelefono 0x0
 int id fabAgregar 0x0
 int id fabAgregarProducto 0x0
+int id fabAgregarProductoVendedor 0x0
 int id fabChat 0x0
 int id fabMiUbicacion 0x0
 int id frameContenido 0x0
@@ -236,6 +247,19 @@ int id ivFotoProducto 0x0
 int id ivFotoUsuario 0x0
 int id ivFotoVendedor 0x0
 int id ivFotoVendedorDetalle 0x0
+int id ivHeaderLogo 0x0
+int id ivHeaderLogoAddProducto 0x0
+int id ivHeaderLogoAdmin 0x0
+int id ivHeaderLogoAgregarEditarProducto 0x0
+int id ivHeaderLogoCrearUsuario 0x0
+int id ivHeaderLogoEditarUsuario 0x0
+int id ivHeaderLogoEstadisticaProductos 0x0
+int id ivHeaderLogoEstadisticaUsuarios 0x0
+int id ivHeaderLogoProductosAdmin 0x0
+int id ivHeaderLogoReportes 0x0
+int id ivHeaderLogoUsuarios 0x0
+int id ivHeaderLogoVendedor 0x0
+int id ivHeaderLogoVendedorProductos 0x0
 int id ivImagenCarrito 0x0
 int id ivImagenDetalle 0x0
 int id ivImagenProducto 0x0
@@ -257,8 +281,11 @@ int id linearLayoutProductosAdmin 0x0
 int id linearLayoutReportes 0x0
 int id linearLayoutUsuarios 0x0
 int id linearLayoutVendedor 0x0
+int id linearLayoutVendedorProductos 0x0
+int id llCarritoVacio 0x0
 int id llCategorias 0x0
 int id llFincas 0x0
+int id llFotoNoDisponible 0x0
 int id mapFragment 0x0
 int id mapView 0x0
 int id menu_logout 0x0
@@ -282,6 +309,7 @@ int id pieChart 0x0
 int id progressBarProductos 0x0
 int id progressMisPedidos 0x0
 int id progressPedidosVendedor 0x0
+int id progressProductos 0x0
 int id progressProductosAdmin 0x0
 int id progressProductosVendedor 0x0
 int id progressReporte 0x0
@@ -408,6 +436,7 @@ int id tvTotalCarrito 0x0
 int id tvTotalProductos 0x0
 int id tvUbicacionStatus 0x0
 int id tvVendedorNombre 0x0
+int id tvVendedorNombreHeader 0x0
 int id tvWelcome 0x0
 int id tvWelcomeAdmin 0x0
 int id tvWelcomeVendedor 0x0
@@ -460,6 +489,7 @@ int layout activity_splash 0x0
 int layout activity_terms 0x0
 int layout activity_usuario 0x0
 int layout activity_vendedor_dashboard 0x0
+int layout activity_vendedor_productos_admin 0x0
 int layout chat_flotante 0x0
 int layout fragment_carrito 0x0
 int layout fragment_catalogo 0x0
@@ -500,10 +530,12 @@ int style BtnPeligro 0x0
 int style BtnPrimario 0x0
 int style BtnSecundario 0x0
 int style CardMejorado 0x0
+int style HintUppercase 0x0
 int style ShapeLarge 0x0
 int style ShapeMedium 0x0
 int style ShapeSmall 0x0
 int style TextInputOutlined 0x0
+int style TextViewUppercase 0x0
 int style Theme_AgroConecta 0x0
 int style ToolbarAgroConecta 0x0
 int style Widget_App_BottomNavigationView 0x0

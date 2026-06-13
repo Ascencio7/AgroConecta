@@ -70,6 +70,9 @@ public class CarritoActivity extends AppCompatActivity implements CarritoAdapter
         if (tvCantidadItems != null)
             tvCantidadItems.setText(count + " " + (count == 1 ? "item" : "items"));
 
+        // Persistir cambios
+        CarritoManager.getInstance().guardarCarrito(this, sessionManager.getUserId());
+
         // Actualizar estado del botón según si hay items
         if (btnConfirmar != null)
             btnConfirmar.setEnabled(!items.isEmpty());
@@ -123,7 +126,7 @@ public class CarritoActivity extends AppCompatActivity implements CarritoAdapter
                     }
                     // ───────────────────────────────────────────────────────────
 
-                    CarritoManager.getInstance().limpiar();
+                    CarritoManager.getInstance().limpiarYPersistir(CarritoActivity.this, sessionManager.getUserId());
                     actualizarResumen(); // badge a 0
                     Toast.makeText(CarritoActivity.this,
                             "🎉 ¡Pedido confirmado! Total: " + String.format("$%.2f", total),
