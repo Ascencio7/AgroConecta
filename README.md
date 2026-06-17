@@ -100,8 +100,6 @@ https://github.com/Ascencio7/AgroConecta.git
 4. Ejecutar: "Conecta tu dispositivo o inicia un emulador y presiona el botón Run (triángulo verde)".
 
 ---
-Así concluye la descripción detallada del proyecto de gestión de AgroConecta.
----
 
 # ✨ Autores
 
