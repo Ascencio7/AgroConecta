@@ -10,14 +10,7 @@
 
 ## Tecnologías utilizadas en AgroConecta
 
-✅Java<br>
-✅ Android Studio<br>
-✅ Kotlin<br>
-✅ PostgreSQL<br>
-✅ Supabase<br>
-✅ Render<br>
-✅ Node.js<br>
-✅ JavaScript<br>
+✅ Java<br>✅ Android Studio<br>✅ Kotlin<br>✅ PostgreSQL<br>✅ Supabase<br>✅ Render<br>✅ Node.js<br>✅ JavaScript<br>
 ---
 
 ## 🎯 Propósito
