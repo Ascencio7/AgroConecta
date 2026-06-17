@@ -32,11 +32,11 @@ acceder a alimentos frescos, locales y a precios más justos.
 # App
 
 ## Inicio
+
 <figure>
   <img src="/images/login.png" alt="AgroConecta" style="max-width: 600px; display:block; margin:auto;">
 </figure>
 
-<br>
 ---
 
 # Requisitos previos
