@@ -4,10 +4,10 @@
 
 ##  AgroConecta
 
-
 <picture>
   <img align="right" src="https://cdna.artstation.com/p/assets/images/images/052/141/832/original/johan-cediel-rodriguez-pixel-art-take-008.gif?1659036879?raw=true" width="200"/>
 </picture>
+* Tecnologías utilizadas en AgroConecta
 
 ✅Java<br>
 ✅ Android Studio<br>
@@ -28,14 +28,20 @@ brindándoles mayor control sobre sus precios y condiciones de venta, mientras q
 acceder a alimentos frescos, locales y a precios más justos.
 ---
 
-## App Móvil
-<br>
+# App
 
+## Inicio
+<figure>
+  <img src="/images/login.png" alt="AgroConecta" style="max-width: 600px; display:block; margin:auto;">
+</figure>
+
+<br>
+---
 # Requisitos previos
 
 * Android Studio: 253.32098.37.0-AI | Panda Version
 * Java SDK: JDK 22, JDK 23 o JDK 24
-* SDK Mínimo: 24
+* SDK Mínimo: 22
 * Dispositivo/Emulador: API 30 o superior
 * Windows Version: Versión 11
 ---
@@ -76,22 +82,26 @@ acceder a alimentos frescos, locales y a precios más justos.
 * CardView — Tarjetas visuales.
 * CoordinatorLayout — Layout principal con navegación.
 
-
 Todo está declarado en app/build.gradle.kts
 ---
 
-## Imagen
-<figure>
-  <img src="/images/login.png" alt="AgroConecta" style="max-width: 600px; display:block; margin:auto;">
-</figure>
+## Instrucciones de Compilación y Ejecución
 
-<br>
+1. Clonar el proyecto por medio el enlace de GitHub:
+```bash
+https://github.com/Ascencio7/AgroConecta.git
+```
+2. Abrir: "Abre Android Studio, selecciona Open an Existing Project y navega a la carpeta raíz del repositorio".
+
+3. Sincronizar: "Espera a que Gradle sincronice todas las dependencias automáticamente".
+
+4. Ejecutar: "Conecta tu dispositivo o inicia un emulador y presiona el botón Run (triángulo verde)".
 
 ---
 Así concluye la descripción detallada del proyecto de gestión de AgroConecta.
-
 ---
-## ✨ Autor
+
+## ✨ Autores
 
 Ruth Abigail Vaquerano Melara<br>
 Jonathan Vladimir Ascencio Ramos<br>
@@ -100,7 +110,7 @@ Ismael Alexander Bonito Aragon<br>
 
 Desarrolladores en aprendizaje continuo 🚀
 
-¡Gracias por visitar este proyecto! 🧑‍💻
+¡Gracias por visitar nuestro proyecto! 🧑‍💻
 <br><br>
 ---
 
