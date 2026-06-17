@@ -48,36 +48,36 @@ acceder a alimentos frescos, locales y a precios más justos.
 * Windows Version: Versión 11
 ---
 
-## Librerías utilizadas en AgroConecta
+# Librerías utilizadas en AgroConecta
 
-# Red y API
+## Red y API
 
 * Retrofit2 — Llamadas HTTP al backend
 * OkHttp3 — Cliente HTTP base y para enviar notificaciones FCM.
 * Gson — Serializar/Deserializar JSON.
 
-# Firebase
+## Firebase
 
 * firebase-messaging — Notificaciones push (FCM).
 * firebase-database — Chat en tiempo real y seguimiento de pedidos.
 * firebase-analytics — Analíticas básicas.
 
-# UI
+## UI
 
 * Material Components (1.13.0) — Botones, inputs, tabs, cards.
 * Glide — Cargar imágenes desde URL.
 * Markwon — Renderizar markdown en el chat del AgroBot.
 
-# Google
+## Google
 
 * play-services-maps — Google Maps.
 * play-services-location — GPS y ubicación actual.
 
-# IA
+## IA
 
 * generativeai (Gemini) — AgroBot con IA
 
-# Utilidades
+## Utilidades
 
 * AppCompat — Compatibilidad con versiones anteriores de Android.
 * RecyclerView — Listas de productos, pedidos, carrito.
@@ -87,7 +87,7 @@ acceder a alimentos frescos, locales y a precios más justos.
 Todo está declarado en app/build.gradle.kts
 ---
 
-## Instrucciones de Compilación y Ejecución
+# Instrucciones de Compilación y Ejecución
 
 1. Clonar el proyecto por medio el enlace de GitHub:
 ```bash
@@ -103,7 +103,7 @@ https://github.com/Ascencio7/AgroConecta.git
 Así concluye la descripción detallada del proyecto de gestión de AgroConecta.
 ---
 
-## ✨ Autores
+# ✨ Autores
 
 Ruth Abigail Vaquerano Melara<br>
 Jonathan Vladimir Ascencio Ramos<br>
