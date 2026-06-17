@@ -320,11 +320,28 @@ public class AgregarProductoVendedorActivity extends AppCompatActivity {
         }
 
         Product p = new Product();
-        p.setNombre(n); p.setDescripcion(etDescripcion.getText().toString().trim());
-        p.setPrecio(Double.parseDouble(pStr)); p.setExistencia(Integer.parseInt(eStr));
-        p.setEstado(true); p.setUsuarioId(sessionManager.getUserId());
-        p.setCategoriaId(categorias.get(spCategoria.getSelectedItemPosition()).getCategoriaId());
-        p.setTelefonoVendedor(tel); p.setDireccion(etDireccion.getText().toString().trim());
+        p.setNombre(n); 
+        p.setDescripcion(etDescripcion.getText().toString().trim());
+        
+        try {
+            p.setPrecio(Double.parseDouble(pStr)); 
+            p.setExistencia(Integer.parseInt(eStr));
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Precio o existencia inválidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        p.setEstado(true); 
+        p.setUsuarioId(sessionManager.getUserId());
+        
+        if (categorias != null && !categorias.isEmpty() && spCategoria.getSelectedItemPosition() != AdapterView.INVALID_POSITION) {
+            p.setCategoriaId(categorias.get(spCategoria.getSelectedItemPosition()).getCategoriaId());
+        } else {
+            p.setCategoriaId(1); // Categoria por defecto
+        }
+        
+        p.setTelefonoVendedor(tel); 
+        p.setDireccion(etDireccion.getText().toString().trim());
         p.setLatitud(latSeleccionada); p.setLongitud(lonSeleccionada);
         p.setAceptaEfectivo(cbEfectivo.isChecked()); p.setAceptaTransferencia(cbTransferencia.isChecked()); p.setAceptaTarjeta(cbTarjeta.isChecked());
         p.setImagen(imagenUrl);

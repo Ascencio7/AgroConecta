@@ -186,7 +186,8 @@ public class VendedorProductosAdminActivity extends AppCompatActivity {
         String lowerQuery = query.toLowerCase().trim();
         for (Product p : allProducts) {
             boolean matchesStatus = showingAvailable ? (p.getEstado() == null || p.getEstado()) : (p.getEstado() != null && !p.getEstado());
-            boolean matchesSearch = p.getName().toLowerCase().contains(lowerQuery);
+            String nombreP = p.getName() != null ? p.getName().toLowerCase() : "";
+            boolean matchesSearch = nombreP.contains(lowerQuery);
 
             if (matchesStatus && matchesSearch) {
                 filteredProducts.add(p);

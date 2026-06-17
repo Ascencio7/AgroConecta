@@ -195,9 +195,16 @@ public class AgregarEditarProductoActivity extends AppCompatActivity {
         Product product = new Product();
         product.setNombre(n);
         product.setDescripcion(d);
-        product.setPrecio(Double.parseDouble(pStr));
-        product.setExistencia(Integer.parseInt(eStr));
-        product.setUsuarioId(Integer.parseInt(uIdStr));
+        
+        try {
+            product.setPrecio(Double.parseDouble(pStr));
+            product.setExistencia(Integer.parseInt(eStr));
+            product.setUsuarioId(Integer.parseInt(uIdStr));
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Valores numéricos inválidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         product.setCategoriaId(cat != null ? cat.getCategoriaId() : 1);
         product.setImagen(img.isEmpty() ? null : img);
         product.setEstado(true);

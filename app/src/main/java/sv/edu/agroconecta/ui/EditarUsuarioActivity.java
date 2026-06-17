@@ -158,21 +158,26 @@ public class EditarUsuarioActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (isUpdating) return;
-                isUpdating = true;
 
-                String str = s.toString().replaceAll("[^0-9]", "");
+                String original = s.toString();
+                String digits = original.replaceAll("[^0-9]", "");
                 StringBuilder formatted = new StringBuilder();
                 
-                // Salvadoran format: XXXX-XXXX (8 digits)
-                for (int i = 0; i < str.length() && i < 8; i++) {
-                    formatted.append(str.charAt(i));
-                    if (i == 3 && str.length() > 4) {
+                for (int i = 0; i < digits.length() && i < 8; i++) {
+                    formatted.append(digits.charAt(i));
+                    if (i == 3 && digits.length() > 4) {
                         formatted.append("-");
                     }
                 }
 
-                s.replace(0, s.length(), formatted.toString());
-                isUpdating = false;
+                String result = formatted.toString();
+                if (!result.equals(original)) {
+                    isUpdating = true;
+                    // Usar replace de forma segura para mantener el foco y evitar crashes en WordIterator
+                    etTelefono.setText(result);
+                    etTelefono.setSelection(result.length());
+                    isUpdating = false;
+                }
             }
         });
     }

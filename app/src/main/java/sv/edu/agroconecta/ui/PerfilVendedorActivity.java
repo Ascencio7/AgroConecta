@@ -108,15 +108,20 @@ public class PerfilVendedorActivity extends AppCompatActivity {
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override public void afterTextChanged(Editable s) {
                 if (isUpdating) return;
-                isUpdating = true;
-                String str = s.toString().replaceAll("[^0-9]", "");
+                String original = s.toString();
+                String digits = original.replaceAll("[^0-9]", "");
                 StringBuilder formatted = new StringBuilder();
-                for (int i = 0; i < str.length() && i < 8; i++) {
-                    formatted.append(str.charAt(i));
-                    if (i == 3 && str.length() > 4) formatted.append("-");
+                for (int i = 0; i < digits.length() && i < 8; i++) {
+                    formatted.append(digits.charAt(i));
+                    if (i == 3 && digits.length() > 4) formatted.append("-");
                 }
-                s.replace(0, s.length(), formatted.toString());
-                isUpdating = false;
+                String result = formatted.toString();
+                if (!result.equals(original)) {
+                    isUpdating = true;
+                    etTelefono.setText(result);
+                    etTelefono.setSelection(result.length());
+                    isUpdating = false;
+                }
             }
         });
     }

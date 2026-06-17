@@ -314,7 +314,8 @@ public class VendedorDashboardActivity extends AppCompatActivity {
         misProductosFiltrados.clear();
         String query = texto.toLowerCase().trim();
         for (Product p : misProductos) {
-            boolean matchesSearch = p.getNombre().toLowerCase().contains(query);
+            String nombreP = p.getNombre() != null ? p.getNombre().toLowerCase() : "";
+            boolean matchesSearch = nombreP.contains(query);
             boolean matchesFilter = false;
 
             if ("Todos".equals(filtroActualProductos)) {
@@ -518,9 +519,12 @@ public class VendedorDashboardActivity extends AppCompatActivity {
             ImageView ivFotoC = h.itemView.findViewById(R.id.ivFotoCliente);
             TextView tvNombreC = h.itemView.findViewById(R.id.tvNombreCliente);
             
-            if (p.getNombreCliente() != null) {
+            if (p.getNombreCliente() != null && !p.getNombreCliente().isEmpty()) {
                 tvNombreC.setText(p.getNombreCliente());
                 if (tvAvatarC != null) tvAvatarC.setText(String.valueOf(p.getNombreCliente().charAt(0)).toUpperCase());
+            } else {
+                tvNombreC.setText("Cliente");
+                if (tvAvatarC != null) tvAvatarC.setText("C");
             }
             
             if (p.getFotoCliente() != null && !p.getFotoCliente().isEmpty()) {

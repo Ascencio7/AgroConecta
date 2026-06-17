@@ -27,6 +27,7 @@
     </queries>
 
     <application
+        android:name=".AgroConectaApp"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
