@@ -7,7 +7,8 @@
 <picture>
   <img align="right" src="https://cdna.artstation.com/p/assets/images/images/052/141/832/original/johan-cediel-rodriguez-pixel-art-take-008.gif?1659036879?raw=true" width="200"/>
 </picture>
-* Tecnologías utilizadas en AgroConecta
+
+## Tecnologías utilizadas en AgroConecta
 
 ✅Java<br>
 ✅ Android Studio<br>
