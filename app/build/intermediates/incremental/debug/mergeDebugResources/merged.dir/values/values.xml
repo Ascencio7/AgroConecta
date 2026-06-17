@@ -2959,7 +2959,7 @@
     </style>
     <style name="Base.TextAppearance.Widget.AppCompat.Toolbar.Title" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
     </style>
-    <style name="Base.Theme.AgroConecta" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AgroConecta" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/verde_primario</item>
         <item name="colorPrimaryVariant">@color/verde_oscuro</item>
         <item name="colorOnPrimary">@color/blanco</item>
@@ -2977,9 +2977,7 @@
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:windowTranslucentStatus">false</item>
 
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textViewStyle">@style/TextViewUppercase</item>
-        <item name="android:editTextStyle">@style/TextViewUppercase</item>
+        
         <item name="android:buttonStyle">@style/BtnPrimario</item>
         <item name="materialButtonStyle">@style/BtnPrimario</item>
 
@@ -7510,7 +7508,6 @@
         <item name="boxCornerRadiusTopEnd">12dp</item>
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
-        <item name="android:textAllCaps">true</item>
         <item name="hintTextAppearance">@style/HintUppercase</item>
     </style>
     <style name="TextViewUppercase" parent="android:Widget.TextView">
