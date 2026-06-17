@@ -2,18 +2,18 @@
 
 <br>
 
-##  AgroConecta
+#  AgroConecta
 
 <picture>
   <img align="right" src="https://cdna.artstation.com/p/assets/images/images/052/141/832/original/johan-cediel-rodriguez-pixel-art-take-008.gif?1659036879?raw=true" width="200"/>
 </picture>
 
-## Tecnologías utilizadas en AgroConecta
+# Tecnologías utilizadas en AgroConecta
 
 ✅ Java<br>✅ Android Studio<br>✅ Kotlin<br>✅ PostgreSQL<br>✅ Supabase<br>✅ Render<br>✅ Node.js<br>✅ JavaScript<br>
 ---
 
-## 🎯 Propósito
+# 🎯 Propósito
 
 AgroConecta se plantea como una aplicación móvil que busca acortar la brecha entre 
 productores y compradores, facilitando una conexión directa, rápida y confiable. 
