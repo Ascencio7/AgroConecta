@@ -83,7 +83,6 @@ acceder a alimentos frescos, locales y a precios más justos.
 * RecyclerView — Listas de productos, pedidos, carrito.
 * CardView — Tarjetas visuales.
 * CoordinatorLayout — Layout principal con navegación.
-
 Todo está declarado en app/build.gradle.kts
 ---
 
@@ -107,11 +106,9 @@ Ruth Abigail Vaquerano Melara<br>
 Jonathan Vladimir Ascencio Ramos<br>
 Samuel Isaac Bernal Sanchez<br>
 Ismael Alexander Bonito Aragon<br>
-
 Desarrolladores en aprendizaje continuo 🚀
-
 ¡Gracias por visitar nuestro proyecto! 🧑‍💻
-<br><br>
+<br>
 ---
 
 <!-- Footer -->
