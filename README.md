@@ -38,6 +38,7 @@ acceder a alimentos frescos, locales y a precios más justos.
 
 <br>
 ---
+
 # Requisitos previos
 
 * Android Studio: 253.32098.37.0-AI | Panda Version
