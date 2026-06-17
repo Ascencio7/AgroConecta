@@ -98,7 +98,7 @@ Jonathan Vladimir Ascencio Ramos<br>
 Samuel Isaac Bernal Sanchez<br>
 Ismael Alexander Bonito Aragon<br>
 
-– Desarrolladores en aprendizaje continuo 🚀
+Desarrolladores en aprendizaje continuo 🚀
 
 ¡Gracias por visitar este proyecto! 🧑‍💻
 <br><br>
