@@ -67,6 +67,7 @@ id bottomNav
 id bottomNavAdmin
 id bottomNavVendedor
 id bottomNavVendedorAdd
+id btnAceptar
 id btnActivos
 id btnAgregarCarrito
 id btnBack
@@ -157,6 +158,7 @@ id btnVerProducto
 id btnVerUbicacion
 id btnWhatsAppCliente
 id btnWhatsAppVendedor
+id cardMessage
 id cardProductos
 id cardRegistro
 id cardReportes
@@ -265,6 +267,7 @@ id ivHeaderLogoVendedorProductos
 id ivImagenCarrito
 id ivImagenDetalle
 id ivImagenProducto
+id ivLogo
 id ivProductoImagen
 id ivProductoVendedor
 id ivSplashLogo
@@ -307,6 +310,7 @@ id panelChat
 id panelContenedorVendedor
 id panelMisPedidosVendedor
 id panelMisProductos
+id pbCargando
 id pieChart
 id progressBarProductos
 id progressMisPedidos
@@ -356,6 +360,7 @@ id tilNombre
 id tilPassword
 id tilTelefono
 id tvAdminSubtitulo
+id tvAppName
 id tvAvatar
 id tvAvatarAdmin
 id tvAvatarChat
@@ -391,6 +396,7 @@ id tvHeaderSubtitle
 id tvMensajeEstado
 id tvMensajeHora
 id tvMensajeTexto
+id tvMessage
 id tvMetodosPago
 id tvMetodosPagoDetalle
 id tvNoResultados
@@ -432,6 +438,7 @@ id tvSplashSlogan
 id tvStockDetalle
 id tvStockVendedor
 id tvSubtotalCarrito
+id tvTagline
 id tvTelefonoVendedorDetalle
 id tvTituloFormVendedor
 id tvTotalCarrito
@@ -465,6 +472,7 @@ layout activity_buyer_module
 layout activity_calificacion
 layout activity_carrito
 layout activity_chat
+layout activity_conexion_lenta
 layout activity_contactar_vendedor
 layout activity_crear_usuario
 layout activity_editar_usuario
@@ -517,6 +525,8 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 string bienvenido_a
+string btn_aceptar
+string content_desc_logo
 string crear_cuenta
 string default_web_client_id
 string firebase_database_url
@@ -525,8 +535,10 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string msg_conexion_lenta
 string nombre_completo
 string project_id
+string tagline_agroconecta
 style Base.Theme.AgroConecta
 style BtnPeligro
 style BtnPrimario

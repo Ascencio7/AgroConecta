@@ -3,6 +3,12 @@
     <string name="bienvenido_a">Bienvenido/a</string>
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="nombre_completo">Nombre completo</string>
+    <!-- Conexión Lenta -->
+    <string name="msg_conexion_lenta">Parece que tu conexión es algo lenta o la señal es débil en este momento.</string>
+    <string name="btn_aceptar">Aceptar</string>
+    <string name="tagline_agroconecta">Conectando el campo</string>
+    <string name="content_desc_logo">Logo AgroConecta</string>
+
     <!-- Google Sign-In Web Client ID  -->
     <string name="default_web_client_id">1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com</string>
 </resources>

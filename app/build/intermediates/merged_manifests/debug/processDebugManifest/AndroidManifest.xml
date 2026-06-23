@@ -260,6 +260,13 @@
             android:name="sv.edu.agroconecta.ui.SoporteActivity"
             android:exported="false" />
 
+        <!-- Conexión Lenta -->
+        <activity
+            android:name="sv.edu.agroconecta.ui.ConexionLentaActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgroConecta" />
+
         <!-- Pago Tarjeta -->
         <activity
             android:name="sv.edu.agroconecta.ui.PagoTarjetaActivity"

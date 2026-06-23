@@ -65,6 +65,7 @@ int id bottomNav 0x0
 int id bottomNavAdmin 0x0
 int id bottomNavVendedor 0x0
 int id bottomNavVendedorAdd 0x0
+int id btnAceptar 0x0
 int id btnActivos 0x0
 int id btnAgregarCarrito 0x0
 int id btnBack 0x0
@@ -155,6 +156,7 @@ int id btnVerProducto 0x0
 int id btnVerUbicacion 0x0
 int id btnWhatsAppCliente 0x0
 int id btnWhatsAppVendedor 0x0
+int id cardMessage 0x0
 int id cardProductos 0x0
 int id cardRegistro 0x0
 int id cardReportes 0x0
@@ -263,6 +265,7 @@ int id ivHeaderLogoVendedorProductos 0x0
 int id ivImagenCarrito 0x0
 int id ivImagenDetalle 0x0
 int id ivImagenProducto 0x0
+int id ivLogo 0x0
 int id ivProductoImagen 0x0
 int id ivProductoVendedor 0x0
 int id ivSplashLogo 0x0
@@ -305,6 +308,7 @@ int id panelChat 0x0
 int id panelContenedorVendedor 0x0
 int id panelMisPedidosVendedor 0x0
 int id panelMisProductos 0x0
+int id pbCargando 0x0
 int id pieChart 0x0
 int id progressBarProductos 0x0
 int id progressMisPedidos 0x0
@@ -354,6 +358,7 @@ int id tilNombre 0x0
 int id tilPassword 0x0
 int id tilTelefono 0x0
 int id tvAdminSubtitulo 0x0
+int id tvAppName 0x0
 int id tvAvatar 0x0
 int id tvAvatarAdmin 0x0
 int id tvAvatarChat 0x0
@@ -389,6 +394,7 @@ int id tvHeaderSubtitle 0x0
 int id tvMensajeEstado 0x0
 int id tvMensajeHora 0x0
 int id tvMensajeTexto 0x0
+int id tvMessage 0x0
 int id tvMetodosPago 0x0
 int id tvMetodosPagoDetalle 0x0
 int id tvNoResultados 0x0
@@ -430,6 +436,7 @@ int id tvSplashSlogan 0x0
 int id tvStockDetalle 0x0
 int id tvStockVendedor 0x0
 int id tvSubtotalCarrito 0x0
+int id tvTagline 0x0
 int id tvTelefonoVendedorDetalle 0x0
 int id tvTituloFormVendedor 0x0
 int id tvTotalCarrito 0x0
@@ -463,6 +470,7 @@ int layout activity_buyer_module 0x0
 int layout activity_calificacion 0x0
 int layout activity_carrito 0x0
 int layout activity_chat 0x0
+int layout activity_conexion_lenta 0x0
 int layout activity_contactar_vendedor 0x0
 int layout activity_crear_usuario 0x0
 int layout activity_editar_usuario 0x0
@@ -515,6 +523,8 @@ int mipmap ic_launcher_foreground 0x0
 int mipmap ic_launcher_round 0x0
 int string app_name 0x0
 int string bienvenido_a 0x0
+int string btn_aceptar 0x0
+int string content_desc_logo 0x0
 int string crear_cuenta 0x0
 int string default_web_client_id 0x0
 int string firebase_database_url 0x0
@@ -523,8 +533,10 @@ int string google_api_key 0x0
 int string google_app_id 0x0
 int string google_crash_reporting_api_key 0x0
 int string google_storage_bucket 0x0
+int string msg_conexion_lenta 0x0
 int string nombre_completo 0x0
 int string project_id 0x0
+int string tagline_agroconecta 0x0
 int style Base_Theme_AgroConecta 0x0
 int style BtnPeligro 0x0
 int style BtnPrimario 0x0

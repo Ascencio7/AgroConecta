@@ -3896,6 +3896,7 @@ int id browser_actions_menu_item_icon 0x7f080071
 int id browser_actions_menu_item_text 0x7f080072
 int id browser_actions_menu_items 0x7f080073
 int id browser_actions_menu_view 0x7f080074
+int id btnAceptar 0x7f0803a8
 int id btnActivos 0x7f080075
 int id btnAgregarCarrito 0x7f080076
 int id btnBack 0x7f080077
@@ -3990,6 +3991,7 @@ int id buttonPanel 0x7f0800c7
 int id cache_measures 0x7f0800c8
 int id callMeasure 0x7f0800c9
 int id cancel_button 0x7f0800ca
+int id cardMessage 0x7f0803a9
 int id cardProductos 0x7f0800cb
 int id cardRegistro 0x7f0800cc
 int id cardReportes 0x7f0800cd
@@ -4232,6 +4234,7 @@ int id ivHeaderLogoVendedorProductos 0x7f080399
 int id ivImagenCarrito 0x7f0801aa
 int id ivImagenDetalle 0x7f0801ab
 int id ivImagenProducto 0x7f0801ac
+int id ivLogo 0x7f0803aa
 int id ivProductoImagen 0x7f0801ad
 int id ivProductoVendedor 0x7f0801ae
 int id ivSplashLogo 0x7f0801af
@@ -4399,6 +4402,7 @@ int id parent_matrix 0x7f08024d
 int id password_toggle 0x7f08024e
 int id path 0x7f08024f
 int id pathRelative 0x7f080250
+int id pbCargando 0x7f0803ab
 int id peekHeight 0x7f080251
 int id percent 0x7f080252
 int id pieChart 0x7f080253
@@ -4584,6 +4588,7 @@ int id transition_scene_layoutid_cache 0x7f080305
 int id transition_transform 0x7f080306
 int id triangle 0x7f080307
 int id tvAdminSubtitulo 0x7f080308
+int id tvAppName 0x7f0803ac
 int id tvAvatar 0x7f080309
 int id tvAvatarAdmin 0x7f08030a
 int id tvAvatarChat 0x7f08030b
@@ -4619,6 +4624,7 @@ int id tvHeaderSubtitle 0x7f080328
 int id tvMensajeEstado 0x7f080329
 int id tvMensajeHora 0x7f08032a
 int id tvMensajeTexto 0x7f08032b
+int id tvMessage 0x7f0803ad
 int id tvMetodosPago 0x7f08032c
 int id tvMetodosPagoDetalle 0x7f08032d
 int id tvNoResultados 0x7f08032e
@@ -4660,6 +4666,7 @@ int id tvSplashSlogan 0x7f080351
 int id tvStockDetalle 0x7f080352
 int id tvStockVendedor 0x7f080353
 int id tvSubtotalCarrito 0x7f080354
+int id tvTagline 0x7f0803ae
 int id tvTelefonoVendedorDetalle 0x7f080355
 int id tvTituloFormVendedor 0x7f080356
 int id tvTotalCarrito 0x7f080357
@@ -4838,6 +4845,7 @@ int layout activity_buyer_module 0x7f0b001f
 int layout activity_calificacion 0x7f0b0020
 int layout activity_carrito 0x7f0b0021
 int layout activity_chat 0x7f0b0022
+int layout activity_conexion_lenta 0x7f0b00a1
 int layout activity_contactar_vendedor 0x7f0b0023
 int layout activity_crear_usuario 0x7f0b0024
 int layout activity_editar_usuario 0x7f0b0025
@@ -5009,6 +5017,7 @@ int string bottomsheet_action_collapse 0x7f110020
 int string bottomsheet_action_expand 0x7f110021
 int string bottomsheet_action_expand_halfway 0x7f110022
 int string bottomsheet_drag_handle_content_description 0x7f110023
+int string btn_aceptar 0x7f1100cf
 int string call_notification_answer_action 0x7f110024
 int string call_notification_answer_video_action 0x7f110025
 int string call_notification_decline_action 0x7f110026
@@ -5038,6 +5047,7 @@ int string common_google_play_services_wear_update_text 0x7f11003d
 int string common_open_on_phone 0x7f11003e
 int string common_signin_button_text 0x7f11003f
 int string common_signin_button_text_long 0x7f110040
+int string content_desc_logo 0x7f1100d0
 int string copy_toast_msg 0x7f110041
 int string crear_cuenta 0x7f110042
 int string default_web_client_id 0x7f110043
@@ -5098,6 +5108,7 @@ int string material_timepicker_minute 0x7f110079
 int string material_timepicker_pm 0x7f11007a
 int string material_timepicker_select_time 0x7f11007b
 int string material_timepicker_text_input_mode_description 0x7f11007c
+int string msg_conexion_lenta 0x7f1100d1
 int string mtrl_badge_numberless_content_description 0x7f11007d
 int string mtrl_button_collapsed_content_description 0x7f11007e
 int string mtrl_button_expanded_content_description 0x7f11007f
@@ -5180,6 +5191,7 @@ int string searchview_navigation_content_description 0x7f1100cb
 int string side_sheet_accessibility_pane_title 0x7f1100cc
 int string side_sheet_behavior 0x7f1100cd
 int string status_bar_notification_info_overflow 0x7f1100ce
+int string tagline_agroconecta 0x7f1100d2
 int style AlertDialog_AppCompat 0x7f120000
 int style AlertDialog_AppCompat_Light 0x7f120001
 int style Animation_AppCompat_Dialog 0x7f120002
