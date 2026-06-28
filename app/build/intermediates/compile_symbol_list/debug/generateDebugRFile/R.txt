@@ -436,7 +436,6 @@ int id tvSplashSlogan 0x0
 int id tvStockDetalle 0x0
 int id tvStockVendedor 0x0
 int id tvSubtotalCarrito 0x0
-int id tvTagline 0x0
 int id tvTelefonoVendedorDetalle 0x0
 int id tvTituloFormVendedor 0x0
 int id tvTotalCarrito 0x0
@@ -527,13 +526,14 @@ int string btn_aceptar 0x0
 int string content_desc_logo 0x0
 int string crear_cuenta 0x0
 int string default_web_client_id 0x0
+int string emoji_alerta 0x0
 int string firebase_database_url 0x0
 int string gcm_defaultSenderId 0x0
 int string google_api_key 0x0
 int string google_app_id 0x0
 int string google_crash_reporting_api_key 0x0
 int string google_storage_bucket 0x0
-int string msg_conexion_lenta 0x0
+int string msg_sin_conexion 0x0
 int string nombre_completo 0x0
 int string project_id 0x0
 int string tagline_agroconecta 0x0

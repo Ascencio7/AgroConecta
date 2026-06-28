@@ -59,7 +59,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ingresa tus credenciales para continuar"
+                    android:text="INGRESA TUS CREDENCIALES PARA CONTINUAR"
                     android:textSize="12sp"
                     android:textColor="@color/texto_tenue"
                     android:layout_marginBottom="20dp"/>
@@ -107,7 +107,7 @@
                     <View android:layout_width="0dp" android:layout_height="1dp"
                         android:layout_weight="1" android:background="#DDDDDD"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="  o continúa con  " android:textColor="@color/texto_tenue" android:textSize="12sp"/>
+                        android:text="  O CONTINÚA CON  " android:textColor="@color/texto_tenue" android:textSize="12sp"/>
                     <View android:layout_width="0dp" android:layout_height="1dp"
                         android:layout_weight="1" android:background="#DDDDDD"/>
                 </LinearLayout>
@@ -146,7 +146,7 @@
                     android:id="@+id/txtForgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Olvidaste tu contraseña?"
+                    android:text="¿OLVIDASTE TU CONTRASEÑA?"
                     android:textColor="@color/verde_primario"
                     android:textSize="14sp"
                     android:layout_marginTop="12dp"
@@ -158,7 +158,7 @@
                     android:id="@+id/txtRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿No tienes cuenta? Regístrate"
+                    android:text="¿NO TIENES CUENTA? REGÍSTRATE"
                     android:textColor="@color/verde_primario"
                     android:textSize="14sp"
                     android:textStyle="bold"

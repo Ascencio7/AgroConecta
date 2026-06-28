@@ -40,24 +40,24 @@
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\activity_perfil_vendedor.xml"
     },
     {
-        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_activity_estadistica_pagos.xml.flat",
-        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\activity_estadistica_pagos.xml"
-    },
-    {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_activity_estadistica_pagos.xml.flat",
+        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\activity_estadistica_pagos.xml"
     },
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_activity_editar_usuario.xml.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\activity_editar_usuario.xml"
     },
     {
-        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\mipmap-hdpi\\ic_launcher_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_chat_flotante.xml.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\chat_flotante.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_fragment_mapa.xml.flat",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\color\\bottom_nav_color.xml"
     },
     {
-        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\drawable_bg_boton_verde.xml.flat",
-        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\drawable\\bg_boton_verde.xml"
-    },
-    {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\menu_admin_nav_menu.xml.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\menu\\admin_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\drawable_bg_boton_verde.xml.flat",
+        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\drawable\\bg_boton_verde.xml"
     },
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\xml_backup_rules.xml.flat",
@@ -146,6 +146,10 @@
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "sv.edu.agroconecta.app-debug-47:/layout_activity_login.xml.flat",
+        "source": "sv.edu.agroconecta.app-main-49:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\drawable_bg_dot_active.xml.flat",
@@ -210,6 +214,10 @@
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_item_mensaje_enviado.xml.flat",
         "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\item_mensaje_enviado.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\layout_activity_conexion_lenta.xml.flat",
+        "source": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-main-49:\\layout\\activity_conexion_lenta.xml"
     },
     {
         "merged": "C:\\Users\\Vladimir Ascencio\\.gradle\\daemon\\9.3.1\\sv.edu.agroconecta.app-debug-47:\\mipmap-xhdpi_ic_launcher.webp.flat",

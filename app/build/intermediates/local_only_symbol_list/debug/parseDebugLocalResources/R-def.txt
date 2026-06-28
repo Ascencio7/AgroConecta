@@ -438,7 +438,6 @@ id tvSplashSlogan
 id tvStockDetalle
 id tvStockVendedor
 id tvSubtotalCarrito
-id tvTagline
 id tvTelefonoVendedorDetalle
 id tvTituloFormVendedor
 id tvTotalCarrito
@@ -529,13 +528,14 @@ string btn_aceptar
 string content_desc_logo
 string crear_cuenta
 string default_web_client_id
+string emoji_alerta
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string msg_conexion_lenta
+string msg_sin_conexion
 string nombre_completo
 string project_id
 string tagline_agroconecta

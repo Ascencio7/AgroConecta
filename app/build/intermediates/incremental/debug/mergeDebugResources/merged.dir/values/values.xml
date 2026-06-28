@@ -2522,6 +2522,7 @@
     <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="default_web_client_id" translatable="false">1060116256720-toj62r9irjgetnvkjos5kapkjmlt2g2d.apps.googleusercontent.com</string>
+    <string name="emoji_alerta">📡</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
@@ -2583,7 +2584,7 @@
     <string description="Suffix for time in 12-hour standard, after noon. [CHAR_LIMIT=2]" name="material_timepicker_pm">PM</string>
     <string description="Title for the dialog with a time picker. [CHAR_LIMIT=32]" name="material_timepicker_select_time">Select time</string>
     <string name="material_timepicker_text_input_mode_description">Switch to text input mode for the time input.</string>
-    <string name="msg_conexion_lenta">Parece que tu conexión es algo lenta o la señal es débil en este momento.</string>
+    <string name="msg_sin_conexion">No se pudo establecer conexión.\nPor favor, verifica tus datos o Wi-Fi.</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string description="An announcement for the collapsed menu state of the trailing button in split button [CHAR LIMIT=NONE]" name="mtrl_button_collapsed_content_description">Collapsed</string>
     <string description="An announcement for the expanded menu state of the trailing button in split button [CHAR LIMIT=NONE]" name="mtrl_button_expanded_content_description">Expanded</string>

@@ -4666,7 +4666,6 @@ int id tvSplashSlogan 0x7f080351
 int id tvStockDetalle 0x7f080352
 int id tvStockVendedor 0x7f080353
 int id tvSubtotalCarrito 0x7f080354
-int id tvTagline 0x7f0803ae
 int id tvTelefonoVendedorDetalle 0x7f080355
 int id tvTituloFormVendedor 0x7f080356
 int id tvTotalCarrito 0x7f080357
@@ -5051,6 +5050,7 @@ int string content_desc_logo 0x7f1100d0
 int string copy_toast_msg 0x7f110041
 int string crear_cuenta 0x7f110042
 int string default_web_client_id 0x7f110043
+int string emoji_alerta 0x7f1100d3
 int string error_a11y_label 0x7f110044
 int string error_icon_content_description 0x7f110045
 int string exposed_dropdown_menu_content_description 0x7f110046
@@ -5108,7 +5108,7 @@ int string material_timepicker_minute 0x7f110079
 int string material_timepicker_pm 0x7f11007a
 int string material_timepicker_select_time 0x7f11007b
 int string material_timepicker_text_input_mode_description 0x7f11007c
-int string msg_conexion_lenta 0x7f1100d1
+int string msg_sin_conexion 0x7f1100d4
 int string mtrl_badge_numberless_content_description 0x7f11007d
 int string mtrl_button_collapsed_content_description 0x7f11007e
 int string mtrl_button_expanded_content_description 0x7f11007f
